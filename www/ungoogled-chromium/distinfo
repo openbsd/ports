@@ -93,11 +93,11 @@ SHA256 (cargo/utf8parse-0.2.2.tar.gz) = BqveNhFlet9m04PwCwk9f67Mf6VwccziV4ZgyfEB
 SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5w0KT+U=
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (chromium-157.0.8103.50-lite.tar.xz) = ZRHcOAhzYATwOoI5ei+iUXV/S2Yy4thIvHnuJbd8fw8=
-SHA256 (chromium-157.0.8103.50-testdata.tar.xz) = Jemmd2RapuVskIgFjVsD7hVsW0WjGjB7M/YPETx4oa4=
+SHA256 (chromium-157.0.8103.78-lite.tar.xz) = n9zp08hm+X8U96QlCRXo5bcp3JUvz7OjVQexJiM/BmA=
+SHA256 (chromium-157.0.8103.78-testdata.tar.xz) = IcdAn6I+2LRXCVNcK4OskJ8PLda4m8ixcB3/gLeuoyc=
 SHA256 (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = iZqIcUOSXdR4gLARaXScCT1TDom3XFmBkh21WawNuuU=
 SHA256 (microsoft-TypeScript-v7.0.2.tar.gz) = hHLyhLFGX1xIJqZMiIU+zLpmdEbzGkNe0dCyjTc9vAs=
-SHA256 (ungoogled-software-ungoogled-chromium-157.0.8103.50-1.tar.gz) = hfCvZYXeHoTNAdXp29PQwvMAUVBVwW0I2xi3yOAHzB8=
+SHA256 (ungoogled-software-ungoogled-chromium-157.0.8103.78-1.tar.gz) = QCis4BE0KN2f+w0n8npUrxs8HOyUMYYuoTDsf1p0z58=
 SIZE (TypeScript-7.0.2-vendor.tar.gz) = 3166777
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
 SIZE (cargo/anstream-1.0.0.tar.gz) = 28916
@@ -193,8 +193,8 @@ SIZE (cargo/utf8parse-0.2.2.tar.gz) = 13499
 SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (chromium-157.0.8103.50-lite.tar.xz) = 2079759852
-SIZE (chromium-157.0.8103.50-testdata.tar.xz) = 1409753472
+SIZE (chromium-157.0.8103.78-lite.tar.xz) = 2079860732
+SIZE (chromium-157.0.8103.78-testdata.tar.xz) = 1409929440
 SIZE (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = 4449463
 SIZE (microsoft-TypeScript-v7.0.2.tar.gz) = 49788068
-SIZE (ungoogled-software-ungoogled-chromium-157.0.8103.50-1.tar.gz) = 686236
+SIZE (ungoogled-software-ungoogled-chromium-157.0.8103.78-1.tar.gz) = 686260

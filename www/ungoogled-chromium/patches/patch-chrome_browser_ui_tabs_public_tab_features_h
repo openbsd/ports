@@ -17,7 +17,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
  namespace wallet {
  class ChromeWalletablePassClient;
  }  // namespace wallet
-@@ -853,7 +853,7 @@ class TabFeatures {
+@@ -846,7 +846,7 @@ class TabFeatures {
        page_context_eligibility_helper_;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -26,7 +26,7 @@ Index: chrome/browser/ui/tabs/public/tab_features.h
    std::unique_ptr<wallet::ChromeWalletablePassClient> walletable_pass_client_;
  #endif
  
-@@ -864,13 +864,13 @@ class TabFeatures {
+@@ -857,13 +857,13 @@ class TabFeatures {
    std::unique_ptr<contextual_tasks::SearchJourneyTabFeature>
        search_journey_tab_feature_;
  

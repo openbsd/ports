@@ -25,7 +25,7 @@ Index: chrome/browser/ui/tabs/tab_features.cc
  #include "chrome/browser/ui/hats/hats_helper.h"
  #include "chrome/browser/ui/performance_controls/performance_controls_hats_service_factory.h"
  #include "chrome/browser/ui/shared_highlighting/shared_highlighting_promo.h"
-@@ -883,13 +883,13 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -871,13 +871,13 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
  
    task_manager::WebContentsTags::CreateForTabContents(tab.GetContents());
  
@@ -41,7 +41,7 @@ Index: chrome/browser/ui/tabs/tab_features.cc
    inactive_window_mouse_event_controller_ =
        std::make_unique<InactiveWindowMouseEventController>();
  
-@@ -1026,7 +1026,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -1014,7 +1014,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
    }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -50,7 +50,7 @@ Index: chrome/browser/ui/tabs/tab_features.cc
    if (base::FeatureList::IsEnabled(enterprise_reporting::kSaasUsageReporting)) {
      saas_usage_navigation_observer_ =
          std::make_unique<enterprise_reporting::SaasUsageNavigationObserver>(
-@@ -1044,7 +1044,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
+@@ -1032,7 +1032,7 @@ void TabFeatures::Init(TabInterface& tab, Profile* pro
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -59,7 +59,7 @@ Index: chrome/browser/ui/tabs/tab_features.cc
    if (base::FeatureList::IsEnabled(multistep_filter::kMultistepFilter)) {
      filter_ui_controller_ =
          GetUserDataFactory()
-@@ -1720,7 +1720,7 @@ void TabFeatures::WillDiscardContents(tabs::TabInterfa
+@@ -1704,7 +1704,7 @@ void TabFeatures::WillDiscardContents(tabs::TabInterfa
            new_contents);
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
@@ -68,7 +68,7 @@ Index: chrome/browser/ui/tabs/tab_features.cc
    if (saas_usage_navigation_observer_) {
      saas_usage_navigation_observer_ =
          std::make_unique<enterprise_reporting::SaasUsageNavigationObserver>(
-@@ -1738,7 +1738,7 @@ void TabFeatures::WillDiscardContents(tabs::TabInterfa
+@@ -1722,7 +1722,7 @@ void TabFeatures::WillDiscardContents(tabs::TabInterfa
        std::make_unique<FontPrewarmerTabHelper>(new_contents);
  #endif
  

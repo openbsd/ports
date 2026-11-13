@@ -93,9 +93,9 @@ SHA256 (cargo/utf8parse-0.2.2.tar.gz) = BqveNhFlet9m04PwCwk9f67Mf6VwccziV4ZgyfEB
 SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5w0KT+U=
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (chromium-157.0.8103.50-lite.tar.xz) = ZRHcOAhzYATwOoI5ei+iUXV/S2Yy4thIvHnuJbd8fw8=
-SHA256 (chromium-157.0.8103.50-profdata.tar.xz) = Dz/TjjJtfkz2k/n2ai/dVIsYfXrnqlFVEoz/NAuCQj0=
-SHA256 (chromium-157.0.8103.50-testdata.tar.xz) = Jemmd2RapuVskIgFjVsD7hVsW0WjGjB7M/YPETx4oa4=
+SHA256 (chromium-157.0.8103.78-lite.tar.xz) = n9zp08hm+X8U96QlCRXo5bcp3JUvz7OjVQexJiM/BmA=
+SHA256 (chromium-157.0.8103.78-profdata.tar.xz) = 6HEvRevcVLvKDvLA9/uX/L0S77u4BWZeSq46EvFMM84=
+SHA256 (chromium-157.0.8103.78-testdata.tar.xz) = IcdAn6I+2LRXCVNcK4OskJ8PLda4m8ixcB3/gLeuoyc=
 SHA256 (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = iZqIcUOSXdR4gLARaXScCT1TDom3XFmBkh21WawNuuU=
 SHA256 (microsoft-TypeScript-v7.0.2.tar.gz) = hHLyhLFGX1xIJqZMiIU+zLpmdEbzGkNe0dCyjTc9vAs=
 SHA256 (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = oosiK3mFFxb4NY0oABV9n/4RezVFAxrlH2m34eG5qWk=
@@ -194,9 +194,9 @@ SIZE (cargo/utf8parse-0.2.2.tar.gz) = 13499
 SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (chromium-157.0.8103.50-lite.tar.xz) = 2079759852
-SIZE (chromium-157.0.8103.50-profdata.tar.xz) = 17095576
-SIZE (chromium-157.0.8103.50-testdata.tar.xz) = 1409753472
+SIZE (chromium-157.0.8103.78-lite.tar.xz) = 2079860732
+SIZE (chromium-157.0.8103.78-profdata.tar.xz) = 17123356
+SIZE (chromium-157.0.8103.78-testdata.tar.xz) = 1409929440
 SIZE (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = 4449463
 SIZE (microsoft-TypeScript-v7.0.2.tar.gz) = 49788068
 SIZE (test_fonts-a28b222b79851716f8358d2800157d9ffe117b3545031ae51f69b7e1e1b9a969.tar.gz) = 33233004
