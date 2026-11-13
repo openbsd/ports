@@ -1,0 +1,35 @@
+Do not waste time generating html docs.
+
+Disable archaic increasing of the pushback buffer via m4 -B 8192:
+http://osr600doc.xinuos.com/en/manC/m4.C.html
+
+Index: Configurations/unix-Makefile.tmpl
+--- Configurations/unix-Makefile.tmpl.orig
++++ Configurations/unix-Makefile.tmpl
+@@ -577,7 +577,7 @@ cov-report: $(SHLIBS)
+ 
+ ##@ Documentation
+ build_generated_pods: $(GENERATED_PODS)
+-build_docs: build_man_docs build_html_docs ## Create documentation
++build_docs: build_man_docs ## Create documentation
+ build_man_docs: doc/man/.mandocs.stamp ## Create manpages
+ 
+ # The whole manual is formatted in one run.  pod2man is a perl program that
+@@ -763,7 +763,7 @@ _install_sw: install_dev install_modules install_runti
+ 
+ uninstall_sw: uninstall_runtime uninstall_modules uninstall_dev ## Uninstall the software and libraries
+ 
+-install_docs: install_man_docs install_html_docs ## Install manpages and HTML documentation
++install_docs: install_man_docs ## Install manpages and HTML documentation
+ 
+ uninstall_docs: uninstall_man_docs uninstall_html_docs ## Uninstall manpages and HTML documentation
+ 	$(RM) -r "$(DESTDIR)$(DOCDIR)"
+@@ -1686,7 +1686,7 @@ EOF
+               $generator = 'CC="$(CC)" $(PERL)'.$gen_incs.' '.$gen0.$gen_args
+                   .' "$(PERLASM_SCHEME)"'.$incs.' '.$cppflags.$defs.' $(PROCESSOR)';
+           } elsif ($gen0 =~ /\.m4$/) {
+-              $generator = 'm4 -B 8192'.$gen_incs.' '.$gen0.$gen_args;
++              $generator = 'm4'.$gen_incs.' '.$gen0.$gen_args;
+               $to_stdout = 1;
+           } elsif ($gen0 =~ /\.S$/) {
+               $generator = undef;

@@ -1,0 +1,21 @@
+Index: exporters/pkg-config/libcrypto.pc.in
+--- exporters/pkg-config/libcrypto.pc.in.orig
++++ exporters/pkg-config/libcrypto.pc.in
+@@ -10,7 +10,7 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
+               $OpenSSL::safe::installdata::libdir[0];
+           } -}
+ includedir={- $OUT = '';
+-              $OUT .= '${prefix}/' . $_ . ' '
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl41'
+                   foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX);
+               $OUT =~ s/\s+\z//; -}
+ modulesdir=${libdir}/{- $OpenSSL::safe::installdata::MODULESDIR_REL_LIBDIR[0] -}
+@@ -23,7 +23,7 @@ Libs.private: {- join(' ', @OpenSSL::safe::installdata
+ Cflags:{- $OUT = ' -I${includedir}';
+           if (scalar @OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX > 1) {
+               $OUT = '';
+-              $OUT .= ' -I${prefix}/' . $_ . ' '
++              $OUT .= ' -I${prefix}/' . $_ . '/' . 'eopenssl41'
+                   foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX);
+               $OUT =~ s/\s+\z//;
+           } -}

@@ -1,0 +1,18 @@
+Index: exporters/cmake/OpenSSLConfig.cmake.in
+--- exporters/cmake/OpenSSLConfig.cmake.in.orig
++++ exporters/cmake/OpenSSLConfig.cmake.in
+@@ -208,12 +208,12 @@ else()
+ {- output_on() unless $lib_info{libcrypto}->{shared_import};
+    output_off() if $lib_info{libcrypto}->{shared_import}; "" -}
+   # Dependencies are assumed to be implied in the shared libraries
+-  set(OPENSSL_LIBCRYPTO_SHARED "${OPENSSL_LIBRARY_DIR}/{- $lib_info{libcrypto}->{shared} -}")
++  set(OPENSSL_LIBCRYPTO_SHARED "${OPENSSL_LIBRARY_DIR}/{- $lib_info{libcrypto}->{shared} -}.${SHLIBVER}")
+   set_target_properties(OpenSSL::Crypto PROPERTIES
+     IMPORTED_LINK_INTERFACE_LANGUAGES "C"
+     IMPORTED_LOCATION ${OPENSSL_LIBCRYPTO_SHARED})
+ 
+-  set(OPENSSL_LIBSSL_SHARED "${OPENSSL_LIBRARY_DIR}/{- $lib_info{libssl}->{shared} -}")
++  set(OPENSSL_LIBSSL_SHARED "${OPENSSL_LIBRARY_DIR}/{- $lib_info{libssl}->{shared} -}.${SHLIBVER}")
+   set_target_properties(OpenSSL::SSL PROPERTIES
+     IMPORTED_LINK_INTERFACE_LANGUAGES "C"
+     IMPORTED_LOCATION ${OPENSSL_LIBSSL_SHARED})

@@ -1,0 +1,24 @@
+Avoid SIGBUS on strict alignment arches.
+https://github.com/openssl/openssl/issues/33731
+
+Index: test/quic_memfail_test.c
+--- test/quic_memfail_test.c.orig
++++ test/quic_memfail_test.c
+@@ -199,6 +199,7 @@ static int test_ossl_quic_peer_token_fail(void)
+     int ret = 0;
+     OSSL_LIB_CTX *lctx = NULL;
+     BIO_ADDR *peer = NULL;
++    struct in_addr where;
+     const uint8_t token[] = "dummytokentest";
+ 
+     if (!TEST_ptr(lctx = OSSL_LIB_CTX_new()))
+@@ -211,7 +212,8 @@ static int test_ossl_quic_peer_token_fail(void)
+     if (!TEST_ptr(peer))
+         goto err;
+ 
+-    if (!TEST_true(BIO_ADDR_rawmake(peer, AF_INET, "\x7f\x00\x00\x01", 4, 443)))
++    memcpy(&where, "\x7f\x00\x00\x01", 4);
++    if (!TEST_true(BIO_ADDR_rawmake(peer, AF_INET, &where, 4, 443)))
+         goto err;
+ 
+     MFAIL_start();
