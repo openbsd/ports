@@ -1,9 +1,9 @@
-ttps://sourceforge.net/p/lame/bugs/516/
+https://sourceforge.net/p/lame/bugs/516/
 
 Index: libmp3lame/lame.c
 --- libmp3lame/lame.c.orig
 +++ libmp3lame/lame.c
-@@ -1050,6 +1050,11 @@ lame_init_params(lame_global_flags * gfp)
+@@ -1132,6 +1132,11 @@ init_params(lame_global_flags * gfp)
              if (gfp->quality < 0)
                  gfp->quality = LAME_DEFAULT_QUALITY;
  

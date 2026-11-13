@@ -1,9 +1,9 @@
 COMMENT=	lame ain't an MP3 encoder
 #'
 
-DISTNAME=	lame-3.101
+DISTNAME=	lame-4.1beta1
 
-SHARED_LIBS +=  mp3lame              2.2      # 0.0
+SHARED_LIBS +=  mp3lame              2.3      # 0.0
 
 CATEGORIES=	audio
 
@@ -18,6 +18,8 @@ WANTLIB += c curses iconv m mpg123
 
 SITES=		${SITE_SOURCEFORGE:=lame/}
 
+BUILD_DEPENDS=	devel/cmocka
+
 LIB_DEPENDS=	audio/mpg123 \
 		converters/libiconv
 
@@ -26,17 +28,7 @@ CONFIGURE_ARGS= --disable-cpml \
 		--disable-mp3x \
 		--enable-mp3rtp \
 		--without-dmalloc \
-		--with-fileio=lame
-
-.if ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	devel/nasm
-CONFIGURE_ARGS+= --enable-nasm
-# gmake required for i386/ directory
-USE_GMAKE=	Yes
-.else
-CONFIGURE_ARGS+= --disable-nasm
-.endif
-
-MAKE_FLAGS=	pkghtmldir=${TRUEPREFIX}/share/doc/lame
+		--with-fileio=lame \
+		--enable-unit-tests
 
 .include <bsd.port.mk>

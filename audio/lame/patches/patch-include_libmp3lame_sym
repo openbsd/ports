@@ -3,7 +3,7 @@ https://sourceforge.net/p/lame/bugs/515/
 Index: include/libmp3lame.sym
 --- include/libmp3lame.sym.orig
 +++ include/libmp3lame.sym
-@@ -193,6 +193,7 @@ hip_decode_headers
+@@ -200,6 +200,7 @@ hip_decode_headers
  hip_decode1
  hip_decode1_headers
  hip_decode1_headersB

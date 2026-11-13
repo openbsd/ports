@@ -9,18 +9,28 @@ lib/libmp3lame.la
 @lib lib/libmp3lame.so.${LIBmp3lame_VERSION}
 lib/pkgconfig/lame.pc
 @man man/man1/lame.1
+@man man/man1/mp3rtp.1
 share/doc/lame/
-share/doc/lame/about.html
-share/doc/lame/abr.html
-share/doc/lame/cbr.html
-share/doc/lame/contact.html
-share/doc/lame/contributors.html
-share/doc/lame/detailed.html
-share/doc/lame/history.html
-share/doc/lame/index.html
-share/doc/lame/introduction.html
-share/doc/lame/links.html
-share/doc/lame/list.html
-share/doc/lame/ms_stereo.html
-share/doc/lame/usage.html
-share/doc/lame/vbr.html
+share/doc/lame/html/
+share/doc/lame/html/about.html
+share/doc/lame/html/abr.html
+share/doc/lame/html/cbr.html
+share/doc/lame/html/contact.html
+share/doc/lame/html/contributors.html
+share/doc/lame/html/detailed.html
+share/doc/lame/html/history.html
+share/doc/lame/html/images/
+share/doc/lame/html/images/logo.gif
+share/doc/lame/html/images/sflogo.gif
+share/doc/lame/html/images/valid-css.png
+share/doc/lame/html/images/valid-html401.png
+share/doc/lame/html/images/valid-xhtml10.png
+share/doc/lame/html/index.html
+share/doc/lame/html/introduction.html
+share/doc/lame/html/links.html
+share/doc/lame/html/list.html
+share/doc/lame/html/ms_stereo.html
+share/doc/lame/html/styles/
+share/doc/lame/html/styles/lame.css
+share/doc/lame/html/usage.html
+share/doc/lame/html/vbr.html
