@@ -56,20 +56,10 @@ Restart PostgreSQL to allow these changes to take effect.
 
 Tuning for busy servers
 =======================
-The default sizes in the GENERIC kernel for SysV semaphores are not
-large enough for PostgreSQL.  Adding the following in /etc/sysctl.conf
-should allow PostgreSQL to start:
-
-	kern.seminfo.semmni=256
-	kern.seminfo.semmns=2048
-
-While you can start PostgreSQL with smaller limits, it's probably
-not wise unless you are very resource constrained.
-
-You may also want to tune the max_connections value in the
-postgresql.conf file to increase the number of connections to the
-backend.  However, for busy servers with many connections, these
-limits may need to be increased further.
+You may want to tune the max_connections value in the postgresql.conf
+file to increase the number of connections to the backend. However,
+for busy servers with many connections, other limits may need to be
+increased to accommodate this.
 
 By default, the _postgresql user, and so the postmaster and backend
 processes run in the login(1) class of "postgresql". On a busy server,
@@ -77,8 +67,21 @@ it may be advisable to tune resources, such as more open file
 descriptors (used for network connections as well as files), possibly
 more memory, etc.
 
-The capability database file is located at /etc/login.conf.d/postgresql
+These can be changed by editing the capability database file located at
+/etc/login.conf.d/postgresql
  
+The default sizes in the GENERIC kernel for SysV semaphores may also
+need increasing if a very high number of PostgreSQL processes are
+required, or if other applications on the system also require
+semaphores.  Adding the following in /etc/sysctl.conf should be
+sufficient for nearly any PostgreSQL use:
+
+	kern.seminfo.semmni=256
+	kern.seminfo.semmns=2048
+
+To calculate minimal required values for your configuration, consult
+https://www.postgresql.org/docs/${V_MAJOR}/kernel-resources.html
+
 Upgrade Howto (for a major upgrade)
 ===================================
 If you didn't install PostgreSQL by following this README,
