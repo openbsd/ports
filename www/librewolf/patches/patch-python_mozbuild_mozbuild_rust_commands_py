@@ -5,7 +5,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: python/mozbuild/mozbuild/rust_commands.py
 --- python/mozbuild/mozbuild/rust_commands.py.orig
 +++ python/mozbuild/mozbuild/rust_commands.py
-@@ -418,7 +418,7 @@ def _rustc_flags(cmd, substs, invocation):
+@@ -434,7 +434,7 @@ def _rustc_flags(cmd, substs, invocation):
          flags += substs.get("MOZ_RUST_LIBRARY_RUSTCFLAGS")
  
      if applies_library_lto(cmd.kind, cmd.lto, substs):
