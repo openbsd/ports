@@ -62,6 +62,12 @@ share/examples/rspamd/maps.d/mid.inc
 @sample ${ETC}/rspamd/maps.d/mid.inc
 share/examples/rspamd/maps.d/mime_types.inc
 @sample ${ETC}/rspamd/maps.d/mime_types.inc
+share/examples/rspamd/maps.d/phishing_rewrite_domains.inc
+@sample ${ETC}/rspamd/maps.d/phishing_rewrite_domains.inc
+share/examples/rspamd/maps.d/phishing_rewrite_redirectors.inc
+@sample ${ETC}/rspamd/maps.d/phishing_rewrite_redirectors.inc
+share/examples/rspamd/maps.d/phishing_trusted_redirectors.inc
+@sample ${ETC}/rspamd/maps.d/phishing_trusted_redirectors.inc
 share/examples/rspamd/maps.d/redirectors.inc
 @sample ${ETC}/rspamd/maps.d/redirectors.inc
 share/examples/rspamd/maps.d/spf_dkim_whitelist.inc
