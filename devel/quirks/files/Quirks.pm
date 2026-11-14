@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1868 2026/11/12 21:46:35 jtt Exp $
+# $OpenBSD: Quirks.pm,v 1.1869 2026/11/14 11:32:15 markp Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -686,6 +686,7 @@ setup_obsolete_reason(
 	3 => 'prboom-plus',
 	3 => 'py3-sqlparse',
 	6 => 'ctftools',
+	3 => 'postgresql-pllua',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
