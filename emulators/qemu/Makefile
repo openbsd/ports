@@ -8,6 +8,7 @@ COMMENT-ga=	QEMU guest agent
 
 VERSION=	11.1.3
 DISTNAME=	qemu-${VERSION}
+REVISION=	0
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -19,11 +20,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2, LGPLv2 and BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c glib-2.0 pixman-1 pthread
+WANTLIB=	c glib-2.0 pthread util
 WANTLIB-main=	${WANTLIB} SDL2 X11 bz2 cairo capstone curl curses epoxy fdt \
-		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls gobject-2.0 \
-		gtk-3 iconv intl iscsi jpeg lzo2 m nfs png slirp sndio \
-		ssh usb-1.0 util vte-2.91 xkbcommon z zstd
+		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls gobject-2.0 gtk-3 \
+		iconv intl iscsi jpeg lzo2 m nfs pixman-1 png slirp sndio \
+		ssh usb-1.0 vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga

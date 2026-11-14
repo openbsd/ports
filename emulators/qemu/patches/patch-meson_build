@@ -2,6 +2,7 @@
 - qga: implement 'guest-network-get-route' for FreeBSD
   0ae3840f612ba00330940f26758ae03754f6c6b6
 - qga: implement 'guest-get-users' for OpenBSD
+- meson: don't link pixman into everything using libqemuutil
 
 - localstatedir does not belong under prefix
 - remove hardcoding of optimization
@@ -54,7 +55,18 @@ Index: meson.build
  config_host_data.set('CONFIG_USBFS', have_linux_user and cc.compiles('''
    #include <linux/usbdevice_fs.h>
  
-@@ -4753,9 +4768,6 @@ if have_rust
+@@ -3794,7 +3809,9 @@ util_ss = util_ss.apply({})
+ libqemuutil = static_library('qemuutil',
+                              build_by_default: false,
+                              sources: util_ss.sources() + stub_ss.sources() + genh,
+-                             dependencies: [util_ss.dependencies(), libm, threads, glib, socket, malloc, rt, pixman, opengl])
++                             dependencies: [util_ss.dependencies(), libm, threads, glib, socket, malloc, rt,
++                                            pixman.partial_dependency(compile_args: true, includes: true),
++                                            opengl])
+ qemuutil = declare_dependency(link_with: libqemuutil,
+                               sources: genh + version_res,
+                               dependencies: [event_loop_base])
+@@ -4753,9 +4770,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
