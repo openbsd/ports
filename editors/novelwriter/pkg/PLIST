@@ -84,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/images/novelwriter-t
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/images/splash.png
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/images/welcome.webp
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/manual.pdf
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/meta.toml
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/sample.zip
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/text/
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/text/credits_en.htm
