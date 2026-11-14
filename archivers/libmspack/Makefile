@@ -1,6 +1,6 @@
 COMMENT=	library for handling Microsoft compression formats
 
-DISTNAME=	libmspack-0.11alpha
+DISTNAME=	libmspack-0.12alpha
 EPOCH=		2
 
 SHARED_LIBS +=  mspack               3.0      # 1.0
