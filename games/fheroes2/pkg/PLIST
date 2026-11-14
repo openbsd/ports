@@ -2,6 +2,7 @@
 share/applications/fheroes2.desktop
 share/doc/fheroes2/
 share/doc/fheroes2/LICENSE
+share/doc/fheroes2/LICENSE-ART
 share/doc/fheroes2/README.txt
 share/doc/fheroes2/changelog.txt
 share/doc/fheroes2/demo/
@@ -41,10 +42,16 @@ share/fheroes2/maps/
 share/fheroes2/maps/4_dimensions.fh2m
 share/fheroes2/maps/7_deserts.fh2m
 share/fheroes2/maps/Apocalypse.fh2m
+share/fheroes2/maps/Dhalsivia_Pirenaica.fh2m
 share/fheroes2/maps/Eruption.fh2m
+share/fheroes2/maps/Eternal_Winter.fh2m
 share/fheroes2/maps/Final_Invasion.fh2m
 share/fheroes2/maps/Good,_Bad,_Magne.fh2m
+share/fheroes2/maps/Good_Titans,_Bad_Titans.fh2m
+share/fheroes2/maps/Lost_Temple.fh2m
 share/fheroes2/maps/Ravenhold.fh2m
+share/fheroes2/maps/Tetra_conflict.fh2m
+share/fheroes2/maps/Utopeia.fh2m
 share/icons/hicolor/128x128/apps/fheroes2.png
 share/metainfo/
 share/metainfo/fheroes2.metainfo.xml
