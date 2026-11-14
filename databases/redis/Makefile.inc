@@ -41,13 +41,6 @@ SUBST_VARS +=		DBDIR
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Makefile
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
-	${SUBST_DATA} ${WRKSRC}/redis.conf \
-			${PREFIX}/share/examples/redis/redis.conf
-	${SUBST_DATA} ${WRKSRC}/sentinel.conf \
-			${PREFIX}/share/examples/redis/sentinel.conf
-
 pre-test:
 	@if [[ $$(ulimit -n) < 10000 ]]; then \
 		echo "\n>>> Some tests need raised limits, possibly 10000+ openfiles"; \

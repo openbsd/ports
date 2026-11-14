@@ -21,4 +21,11 @@ MAKE_FLAGS =		BUILD_TLS=yes \
 			OPTIMIZATION="" \
 			V=1
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
+	${SUBST_DATA} ${WRKSRC}/redis.conf \
+			${PREFIX}/share/examples/redis/redis.conf
+	${SUBST_DATA} ${WRKSRC}/sentinel.conf \
+			${PREFIX}/share/examples/redis/sentinel.conf
+
 .include <bsd.port.mk>
