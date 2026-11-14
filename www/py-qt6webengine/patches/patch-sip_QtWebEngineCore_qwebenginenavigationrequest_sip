@@ -1,0 +1,15 @@
+to remove with qtwebengine 6.12 ?
+
+Index: sip/QtWebEngineCore/qwebenginenavigationrequest.sip
+--- sip/QtWebEngineCore/qwebenginenavigationrequest.sip.orig
++++ sip/QtWebEngineCore/qwebenginenavigationrequest.sip
+@@ -41,9 +41,6 @@ class QWebEngineNavigationRequest : public QObject /No
+     virtual ~QWebEngineNavigationRequest();
+     QUrl url() const;
+     bool isMainFrame() const;
+-%If (QtWebEngine_6_12_0 -)
+-    bool isUserInitiated() const;
+-%End
+     QWebEngineNavigationRequest::NavigationType navigationType() const;
+     void accept();
+     void reject();

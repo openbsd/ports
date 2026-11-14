@@ -1,0 +1,15 @@
+to remove with qtwebengine 6.12 ?
+
+Index: sip/QtWebEngineCore/qwebenginewebauthuxrequest.sip
+--- sip/QtWebEngineCore/qwebenginewebauthuxrequest.sip.orig
++++ sip/QtWebEngineCore/qwebenginewebauthuxrequest.sip
+@@ -38,9 +38,6 @@ class QWebEngineWebAuthUxRequest : public QObject /NoD
+         RequestFailed,
+         Cancelled,
+         Completed,
+-%If (QtWebEngine_6_12_0 -)
+-        Discovery,
+-%End
+     };
+ 
+     enum class PinEntryReason

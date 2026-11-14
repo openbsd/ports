@@ -1,6 +1,6 @@
 COMMENT =	python Qt6WebEngine bindings
 
-MODPY_DISTV =	6.11.0
+MODPY_DISTV =	6.140.0
 DISTNAME =	pyqt6_webengine-${MODPY_DISTV}
 PKGNAME =	py-qt6webengine-${MODPY_DISTV}
 

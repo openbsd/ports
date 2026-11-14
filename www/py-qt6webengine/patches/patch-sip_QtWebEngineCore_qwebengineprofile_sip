@@ -1,0 +1,47 @@
+to remove with qtwebengine 6.12 ?
+
+Index: sip/QtWebEngineCore/qwebengineprofile.sip
+--- sip/QtWebEngineCore/qwebengineprofile.sip.orig
++++ sip/QtWebEngineCore/qwebengineprofile.sip
+@@ -293,41 +293,4 @@ signals: (public)
+ %If (QtWebEngine_6_10_0 -)
+     QWebEngineExtensionManager *extensionManager() const;
+ %End
+-%If (QtWebEngine_6_12_0 -)
+-    void setCryptoModulePasswordFunction(SIP_PYCALLABLE /KeepReference, TypeHint="Callable[[bytes, bytes, bool], bytes]"/);
+-%MethodCode
+-        Py_BEGIN_ALLOW_THREADS
+-        
+-        sipCpp->setCryptoModulePasswordFunction([a0](std::string slot_name, std::string host_name, bool retry) {
+-            std::string password;
+-            
+-            SIP_BLOCK_THREADS
+-                
+-            PyObject *res = PyObject_CallFunction(a0, "yyp", slot_name.c_str(), host_name.c_str(), int(retry));
+-        
+-            if (res)
+-            {
+-                const char *bytes = PyBytes_AsString(res);
+-        
+-                if (bytes)
+-                    password = bytes;
+-                else
+-                    pyqt6_qtwebenginecore_err_print();
+-                
+-                Py_DECREF(res);
+-            }
+-            else
+-            {
+-                pyqt6_qtwebenginecore_err_print();
+-            }
+-        
+-            SIP_UNBLOCK_THREADS
+-            
+-            return password;
+-        });
+-        
+-        Py_END_ALLOW_THREADS
+-%End
+-
+-%End
+ };
