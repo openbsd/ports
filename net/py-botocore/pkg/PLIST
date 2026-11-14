@@ -1436,6 +1436,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/imagebuilder/2019-12-02/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/imagebuilder/2019-12-02/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/imagebuilder/2019-12-02/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/imagebuilder/2019-12-02/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/imagebuilder/2019-12-02/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/importexport/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/importexport/2010-06-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/importexport/2010-06-01/endpoint-rule-set-1.json
@@ -1671,6 +1672,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-core/2026-04-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda-microvms/2025-09-09/endpoint-rule-set-1.json
@@ -2540,6 +2542,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/scheduler/2021-06-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/2019-12-02/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/schemas/2019-12-02/endpoint-rule-set-1.json
