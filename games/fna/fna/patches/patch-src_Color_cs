@@ -4,7 +4,7 @@ https://gist.github.com/flibitijibibo/ffdd7c6fe32b9846a83807dab24be8fd
 Index: src/Color.cs
 --- src/Color.cs.orig
 +++ src/Color.cs
-@@ -1392,6 +1392,25 @@ namespace Microsoft.Xna.Framework
+@@ -1380,6 +1380,25 @@ namespace Microsoft.Xna.Framework
  			private set;
  		}
  
@@ -30,7 +30,7 @@ Index: src/Color.cs
  		#endregion
  
  		#region Internal Properties
-@@ -1422,6 +1441,11 @@ namespace Microsoft.Xna.Framework
+@@ -1410,6 +1429,11 @@ namespace Microsoft.Xna.Framework
  
  		static Color()
  		{
