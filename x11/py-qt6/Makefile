@@ -1,9 +1,8 @@
 COMMENT=	Python bindings for Qt6
 
-MODPY_DISTV=	6.11.0
+MODPY_DISTV=	6.12.0
 DISTNAME=	pyqt6-${MODPY_DISTV}
 PKGNAME=	py-qt6-${MODPY_DISTV}
-REVISION=	0
 
 DPB_PROPERTIES = parallel
 
@@ -17,13 +16,13 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Bluetooth Qt6Core Qt6DBus
 WANTLIB += Qt6Designer Qt6Gui Qt6Help Qt6Multimedia Qt6MultimediaWidgets
-WANTLIB += Qt6Network Qt6Nfc Qt6OpenGL Qt6OpenGLWidgets Qt6Pdf
-WANTLIB += Qt6PdfWidgets Qt6Positioning Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6Network Qt6Nfc Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml
 WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender Qt6Quick3DUtils
 WANTLIB += Qt6QuickWidgets Qt6RemoteObjects Qt6Sensors Qt6SerialPort
 WANTLIB += Qt6ShaderTools Qt6SpatialAudio Qt6Sql Qt6StateMachine
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6WebChannel
-WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m ${MODPY_WANTLIB}
+WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m xkbcommon ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	devel/py-qt-builder>=1.19.0\
 		x11/py-sip-qt6>=13.10.0 \
@@ -50,7 +49,6 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
-		x11/qt6/qtwebengine \
 		x11/qt6/qtwebsockets
 
 NO_TEST=	Yes

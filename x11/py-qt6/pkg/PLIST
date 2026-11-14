@@ -25,10 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/QtNfc.pyi
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGL.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGLWidgets${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtOpenGLWidgets.pyi
-@so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdf${MODPY_ABI3SO}.so
-lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdf.pyi
-@so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdfWidgets${MODPY_ABI3SO}.so
-lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPdfWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPositioning${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPositioning.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtPrintSupport${MODPY_ABI3SO}.so
@@ -354,6 +350,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpolygon.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_native_interface.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qmap.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qrhi_platform.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qquaternion.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrasterwindow.sip
@@ -361,8 +358,11 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrawfont.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qregion.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrgb.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrgba64.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrhi.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qscreen.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qsessionmanager.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qshader.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qshaderdescription.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qshortcut.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qstandarditemmodel.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qstatictext.sip
@@ -490,6 +490,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qssldiffiehell
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslellipticcurve.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslerror.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslkey.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslkeyingmaterial.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslpresharedkeyauthenticator.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslserver.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslsocket.sip
@@ -534,23 +535,6 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtOpenGLWidgets/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtOpenGLWidgets/QtOpenGLWidgets.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtOpenGLWidgets/QtOpenGLWidgetsmod.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtOpenGLWidgets/qopenglwidget.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/QtPdf.toml
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/QtPdfmod.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfbookmarkmodel.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfdocument.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfdocumentrenderoptions.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdflink.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdflinkmodel.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfpagenavigator.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfpagerenderer.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfsearchmodel.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdf/qpdfselection.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdfWidgets/
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdfWidgets/QtPdfWidgets.toml
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdfWidgets/QtPdfWidgetsmod.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdfWidgets/qpdfpageselector.sip
-lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPdfWidgets/qpdfview.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPositioning/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPositioning/QtPositioning.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtPositioning/QtPositioningmod.sip
@@ -623,6 +607,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickitemgrabre
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickpainteditem.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickrendercontrol.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickrendertarget.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickrhiitem.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquicktextdocument.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickview.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qquickwindow.sip
@@ -841,6 +826,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qproxystyle.si
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qpushbutton.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qpywidgets_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qradiobutton.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qrhiwidget.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qrubberband.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qscrollarea.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtWidgets/qscrollbar.sip
