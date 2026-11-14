@@ -1440,6 +1440,7 @@ share/doc/dcmtk-${V}/dcmqrcnf.txt
 share/doc/dcmtk-${V}/dcmqrset.txt
 share/doc/dcmtk-${V}/dirstruc.txt
 share/doc/dcmtk-${V}/envvars.txt
+@comment share/doc/dcmtk-${V}/html/
 share/doc/dcmtk-${V}/macros.txt
 share/doc/dcmtk-${V}/modules.txt
 share/doc/dcmtk-${V}/randseed.txt

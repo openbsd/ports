@@ -4,6 +4,7 @@ COMMENT=		DICOM toolkit
 # DCMTK_VERSION_NUMBER, /usr/local/share/dcmtk-3.7.x, e.g. in
 # ../OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
 V =			3.7.1
+REVISION =		0
 DISTNAME=		dcmtk-$V
 
 .for l in cmr dcmdata dcmdsig dcmfg dcmimage dcmimgle dcmiod dcmjpeg \
@@ -45,8 +46,5 @@ CONFIGURE_ARGS +=	-DDCMTK_WITH_ICU=OFF \
 			-DDCMTK_INSTALL_MANDIR=man \
 			-DCMAKE_INSTALL_SYSCONFDIR=share/examples \
 			-DDCMTK_ENABLE_CXX11:BOOL=ON
-
-post-install:
-	rmdir ${PREFIX}/share/doc/dcmtk-${V}/html
 
 .include <bsd.port.mk>
