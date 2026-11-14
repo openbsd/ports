@@ -1,6 +1,6 @@
 COMMENT=	high speed universal character encoding detector
 
-MODPY_DISTV=	2.4.0
+MODPY_DISTV=	2.4.1
 DISTNAME=	cchardet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,7 +22,8 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 # needs chardet.evaluation (currently holding chardet at 5.x)
 MODPY_PYTEST_IGNORE= tests/test_accuracy.py
-# some tests in tests/test_1.py need txt files not in sdist
+# some tests in tests/test_1.py need txt files not in sdist,
+# but building from there wants to build against uchardet and fails
 
 BUILD_DEPENDS=	lang/cython
 
