@@ -10,6 +10,7 @@ FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =	gdal 54.1 #39 cf gdal.cmake
 CATEGORIES =	geo devel
