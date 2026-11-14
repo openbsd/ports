@@ -1,2 +1,0 @@
-This is a utility which will run through PostgreSQL system tables and
-returns HTML, Dot, Dia and DocBook XML which describes the database.

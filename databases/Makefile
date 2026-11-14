@@ -160,7 +160,6 @@
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-plr
      SUBDIR += postgresql-previous
-     SUBDIR += postgresql_autodoc
      SUBDIR += pspg
      SUBDIR += py-aiosqlite
      SUBDIR += py-alembic
