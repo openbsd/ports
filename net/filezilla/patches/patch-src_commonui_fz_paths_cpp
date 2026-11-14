@@ -10,20 +10,22 @@ Index: src/commonui/fz_paths.cpp
  #endif
  
  using namespace std::literals;
-@@ -512,12 +512,12 @@ std::string ShellUnescape(std::string const& path)
+@@ -512,14 +512,12 @@ std::string ShellUnescape(std::string const& path)
  {
  	std::string ret;
  
--	wordexp_t p;
+-	wordexp_t p{};
 -	int res = wordexp(path.c_str(), &p, WRDE_NOCMD);
 -	if (!res && p.we_wordc == 1 && p.we_wordv) {
 -		ret = p.we_wordv[0];
-+	glob_t p;
-+	int res = glob( path.c_str(), GLOB_ERR, NULL, &p );
++	glob_t p{};
++	int res = glob( path.c_str(), GLOB_NOCHECK | GLOB_TILDE, NULL, &p );
 +	if( !res && p.gl_pathc == 1 && p.gl_pathv ) {
 +		ret = p.gl_pathv[0];
  	}
--	wordfree(&p);
+-	if (!res || res == WRDE_NOSPACE) {
+-		wordfree(&p);
+-	}
 +	globfree(&p);
  
  	return ret;
