@@ -1,7 +1,5 @@
-V=		10.6.109
-REVISION=	0
+V=		10.6.111
 SNAPPYJ_V=	1.1.10.8
 MODJAVA_VER=	25
-REVISION=	1
 
 .include <bsd.port.mk>
