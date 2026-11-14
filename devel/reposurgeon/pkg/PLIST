@@ -10,6 +10,7 @@ bin/repobench
 @man man/man1/repotool.1
 share/doc/reposurgeon/
 share/doc/reposurgeon/COPYING
+share/doc/reposurgeon/GoNotes.html
 share/doc/reposurgeon/INSTALL.adoc
 share/doc/reposurgeon/INSTALL.html
 share/doc/reposurgeon/NEWS.adoc
