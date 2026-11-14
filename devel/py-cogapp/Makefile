@@ -1,7 +1,7 @@
 COMMENT =	content generation tool
 
 MODPY_DISTV =	3.6.0
-
+REVISION =	0
 DISTNAME =	cogapp-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
@@ -13,10 +13,7 @@ HOMEPAGE =	https://cog.readthedocs.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-
-PKG_ARCH =		*
+MODPY_PI =	Yes
 
 .include <bsd.port.mk>
