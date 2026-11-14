@@ -1,6 +1,6 @@
 COMMENT=	sip module support for PyQt6
 
-MODPY_DISTV=	13.10.2
+MODPY_DISTV=	13.13.0
 
 DISTNAME=	pyqt6_sip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
