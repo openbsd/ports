@@ -3,12 +3,27 @@ dlopen correctly - leave out Linux version suffix
 Index: lib/imgui/backends/imgui_impl_opengl3_loader.h
 --- lib/imgui/backends/imgui_impl_opengl3_loader.h.orig
 +++ lib/imgui/backends/imgui_impl_opengl3_loader.h
-@@ -658,7 +658,7 @@ static GL3WglProc (*glx_get_proc_address)(const GLubyt
+@@ -734,9 +734,9 @@ static int open_libs(void)
+     // First check what's already loaded, the windowing library might have
+     // already loaded either EGL or GLX and we want to use the same one.
  
- static int open_libgl(void)
- {
--    libgl = dlopen("libGL.so.1", RTLD_LAZY | RTLD_LOCAL);
-+    libgl = dlopen("libGL.so", RTLD_LAZY | RTLD_LOCAL);
-     if (!libgl)
-         return GL3W_ERROR_LIBRARY_OPEN;
-     *(void **)(&glx_get_proc_address) = dlsym(libgl, "glXGetProcAddressARB");
+-    if (is_library_loaded("libEGL.so.1", &libegl) ||
+-        is_library_loaded("libGLX.so.0", &libglx)) {
+-        libgl = dlopen("libOpenGL.so.0", RTLD_LAZY | RTLD_LOCAL);
++    if (is_library_loaded("libEGL.so", &libegl) ||
++        is_library_loaded("libGLX.so", &libglx)) {
++        libgl = dlopen("libOpenGL.so", RTLD_LAZY | RTLD_LOCAL);
+         if (libgl)
+             return GL3W_OK;
+         else
+@@ -754,8 +754,8 @@ static int open_libs(void)
+     // because it is supported under both X11 and Wayland.
+ 
+     // Load OpenGL + EGL
+-    libgl = dlopen("libOpenGL.so.0", RTLD_LAZY | RTLD_LOCAL);
+-    libegl = dlopen("libEGL.so.1", RTLD_LAZY | RTLD_LOCAL);
++    libgl = dlopen("libOpenGL.so", RTLD_LAZY | RTLD_LOCAL);
++    libegl = dlopen("libEGL.so", RTLD_LAZY | RTLD_LOCAL);
+     if (libgl && libegl)
+         return GL3W_OK;
+     else

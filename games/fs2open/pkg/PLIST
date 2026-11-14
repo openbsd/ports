@@ -2,8 +2,3 @@ bin/fs2open
 share/doc/pkg-readmes/${PKGSTEM}
 share/fs2open/
 @bin share/fs2open/fs2open
-share/fs2open/share/
-share/fs2open/share/doc/
-share/fs2open/share/doc/libantlr4/
-share/fs2open/share/doc/libantlr4/README.md
-share/fs2open/share/doc/libantlr4/VERSION
