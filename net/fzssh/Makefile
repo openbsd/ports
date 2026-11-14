@@ -1,10 +1,10 @@
 COMMENT =	SSH/SFTP library based on libfilezilla
 
-DISTNAME =	fzssh-1.4.0
+DISTNAME =	fzssh-1.5.2
 
-SHARED_LIBS +=  fzssh-client	2.0
+SHARED_LIBS +=  fzssh-client	2.1
 SHARED_LIBS +=  fzssh-crypt	0.0
-SHARED_LIBS +=  fzssh		2.0
+SHARED_LIBS +=  fzssh		3.0
 
 CATEGORIES =	net
 
@@ -28,7 +28,7 @@ MODULES =		devel/meson
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/gmp \
-			net/libfilezilla>=0.57.0 \
+			net/libfilezilla>=0.58.0 \
 			security/argon2 \
 			security/nettle
 
