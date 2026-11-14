@@ -478,6 +478,7 @@ webapps/docs/api/org/apache/catalina/mapper/package-summary.html
 webapps/docs/api/org/apache/catalina/mapper/package-tree.html
 webapps/docs/api/org/apache/catalina/mbeans/
 webapps/docs/api/org/apache/catalina/mbeans/BaseCatalinaMBean.html
+webapps/docs/api/org/apache/catalina/mbeans/BaseNamingResourceMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ClassNameMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ConnectorMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContainerMBean.html
@@ -630,6 +631,7 @@ webapps/docs/api/org/apache/catalina/startup/ListenerCreateRule.OptionalListener
 webapps/docs/api/org/apache/catalina/startup/ListenerCreateRule.html
 webapps/docs/api/org/apache/catalina/startup/NamingRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
+webapps/docs/api/org/apache/catalina/startup/PreSharedKeyCreateRule.html
 webapps/docs/api/org/apache/catalina/startup/RealmRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/SafeForkJoinWorkerThreadFactory.html
 webapps/docs/api/org/apache/catalina/startup/SetNextNamingRule.html
@@ -835,6 +837,7 @@ webapps/docs/api/org/apache/catalina/tribes/transport/ReplicationTransmitter.htm
 webapps/docs/api/org/apache/catalina/tribes/transport/RxTaskPool.TaskCreator.html
 webapps/docs/api/org/apache/catalina/tribes/transport/RxTaskPool.html
 webapps/docs/api/org/apache/catalina/tribes/transport/SenderState.html
+webapps/docs/api/org/apache/catalina/tribes/transport/TribesSslContext.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioReceiver.html
 webapps/docs/api/org/apache/catalina/tribes/transport/nio/NioReceiverMBean.html
@@ -1174,6 +1177,7 @@ webapps/docs/api/org/apache/el/stream/package-tree.html
 webapps/docs/api/org/apache/el/util/
 webapps/docs/api/org/apache/el/util/ConcurrentCache.html
 webapps/docs/api/org/apache/el/util/ExceptionUtils.html
+webapps/docs/api/org/apache/el/util/ExpressionUtils.html
 webapps/docs/api/org/apache/el/util/MessageFactory.html
 webapps/docs/api/org/apache/el/util/ReflectionUtil.html
 webapps/docs/api/org/apache/el/util/Validation.html
@@ -1578,10 +1582,6 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.FairIterator.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.ItemFuture.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/JdbcInterceptor.html
-webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.ExchangeCountDownLatch.html
-webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.FairIterator.html
-webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.ItemFuture.html
-webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolConfiguration.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolExhaustedException.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.InterceptorDefinition.html
@@ -1605,9 +1605,13 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/ConnectionState.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/QueryTimeoutInterceptor.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimerMBean.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.PoolStatistics.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.QueryStats.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.QueryStatsComparator.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReportJmx.PoolJmx.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReportJmx.Registration.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReportJmx.RegistrationMBean.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReportJmx.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReportJmxMBean.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementCache.CachedStatement.html
@@ -1616,6 +1620,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementCacheMBean.htm
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementDecoratorInterceptor.ResultSetProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementDecoratorInterceptor.StatementProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementDecoratorInterceptor.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementFinalizer.CloseAwareProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementFinalizer.StatementEntry.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/StatementFinalizer.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/package-summary.html
@@ -1628,6 +1633,11 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/jmx/package-summary.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/jmx/package-tree.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/package-summary.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/package-tree.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/util/
+webapps/docs/api/org/apache/tomcat/jdbc/pool/util/ExceptionUtils.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/util/MessageFactory.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/util/package-summary.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/util/package-tree.html
 webapps/docs/api/org/apache/tomcat/jni/
 webapps/docs/api/org/apache/tomcat/jni/AprStatus.html
 webapps/docs/api/org/apache/tomcat/jni/Buffer.html
@@ -1636,6 +1646,7 @@ webapps/docs/api/org/apache/tomcat/jni/FileInfo.html
 webapps/docs/api/org/apache/tomcat/jni/Library.html
 webapps/docs/api/org/apache/tomcat/jni/LibraryNotFoundError.html
 webapps/docs/api/org/apache/tomcat/jni/Pool.html
+webapps/docs/api/org/apache/tomcat/jni/PreSharedKeySelector.html
 webapps/docs/api/org/apache/tomcat/jni/SSL.html
 webapps/docs/api/org/apache/tomcat/jni/SSLConf.html
 webapps/docs/api/org/apache/tomcat/jni/SSLContext.SNICallBack.html
@@ -1998,6 +2009,7 @@ webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfig.Type.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfig.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfigCertificate.Type.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfigCertificate.html
+webapps/docs/api/org/apache/tomcat/util/net/SSLHostConfigPreSharedKey.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLImplementation.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSessionManager.html
 webapps/docs/api/org/apache/tomcat/util/net/SSLSupport.html
@@ -2040,6 +2052,7 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLConfCmd.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLEngine.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLImplementation.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLPreSharedKeySelector.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionStats.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLStatus.Name.html
@@ -2074,6 +2087,8 @@ webapps/docs/api/org/apache/tomcat/util/scan/Constants.html
 webapps/docs/api/org/apache/tomcat/util/scan/JarFactory.html
 webapps/docs/api/org/apache/tomcat/util/scan/JarFileUrlJar.html
 webapps/docs/api/org/apache/tomcat/util/scan/JarFileUrlNestedJar.html
+webapps/docs/api/org/apache/tomcat/util/scan/MultiReleaseUtil.MultiReleaseInfo.html
+webapps/docs/api/org/apache/tomcat/util/scan/MultiReleaseUtil.html
 webapps/docs/api/org/apache/tomcat/util/scan/NonClosingJarInputStream.html
 webapps/docs/api/org/apache/tomcat/util/scan/ReferenceCountedJar.html
 webapps/docs/api/org/apache/tomcat/util/scan/StandardJarScanFilter.html
