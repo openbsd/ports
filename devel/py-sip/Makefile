@@ -3,7 +3,7 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 # The following ports often usually need updating together:
 # devel/py-sip, www/py-qtwebengine, x11/py-qt5, x11/py-sip-qt5
 # API changes fairly often, be sure to test dependent ports when updating.
-MODPY_DISTV=	6.15.3
+MODPY_DISTV=	6.17.2
 
 DISTNAME=	sip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
