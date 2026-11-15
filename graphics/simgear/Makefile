@@ -1,6 +1,8 @@
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-2024.1.3
+V =			2024.1.7
+V_COMMIT =		c903a7b790473f14e196fbec91d5ecd828f7d386
+DISTNAME =		simgear-$V
 
 SHARED_LIBS +=  SimGearCore               9.0 # 2.10
 SHARED_LIBS +=  SimGearScene              9.0 # 2.10
@@ -14,7 +16,7 @@ HOMEPAGE =		http://www.flightgear.org
 # LGPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://gitlab.com/flightgear/fgmeta/-/jobs/11942161583/artifacts/raw/sgbuild/
+SITES =			https://gitlab.com/flightgear/simgear/-/archive/$V/simgear-$V.tar.bz2
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU OpenThreads avcodec avdevice
@@ -33,6 +35,8 @@ CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	-DENABLE_SIMD=OFF
 .endif
+
+WRKDIST =		${WRKDIR}/simgear-$V-${V_COMMIT}
 
 CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
