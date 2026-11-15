@@ -1,4 +1,4 @@
-NC_VERSION=	35.0.2
+NC_VERSION=	35.0.3
 
 # keep above 8.0-stable
 REVISION=	0
