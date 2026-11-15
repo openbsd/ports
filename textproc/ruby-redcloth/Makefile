@@ -2,10 +2,10 @@ COMMENT =	module for using Textile in Ruby
 
 DISTNAME =	RedCloth-4.3.2
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://redcloth.org/
+HOMEPAGE =	https://github.com/jgarber/redcloth
 
 # BSD
 PERMIT_PACKAGE = Yes
