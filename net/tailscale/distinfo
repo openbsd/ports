@@ -2106,8 +2106,8 @@ SHA256 (go_modules/github.com/tailscale/web-client-prebuilt/@v/v0.0.0-2026091722
 SHA256 (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.mod) = pwYFg8oMZmolYbOB0CsVULx//SeaQ4EyOJSJrcESfeE=
 SHA256 (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.zip) = TDtL1+CGb6cAT5Edo6CldpP79kG185ftVYBf9gSphUc=
 SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260715223240-2e01ba5b00f0.mod) = AwGJ27kZpx4OIVsGYaNOKBFdl5j9J962WnlTCI9ie5M=
-SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260928213032-417aef361226.mod) = LVE1Oxt0V9anId/9WNmxCj5Iv2jtB8HQRLJ7m+UsAHk=
-SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260928213032-417aef361226.zip) = YF8JJkd7lTu2oO4T17qtmjs+q1uxeuJr//JF34D+GbY=
+SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20261106233718-9e0ab45c16ca.mod) = LVE1Oxt0V9anId/9WNmxCj5Iv2jtB8HQRLJ7m+UsAHk=
+SHA256 (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20261106233718-9e0ab45c16ca.zip) = 9Mz7oiBr1VTheLmN6UHsMnumbzmzS97cH06txi+lIf8=
 SHA256 (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.mod) = ex59X6JiSfNTLEs8FyRHhmY2xWXHNm/vfEncuDanP6U=
 SHA256 (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.zip) = Q4q/KM5fsDrfUpwstXpFH5skPEoqGB2dBs22G7EJYOc=
 SHA256 (go_modules/github.com/tc-hib/winres/@v/v0.2.1.mod) = xcdTcji11EIL0KwcA1enH9lX2pzj6GFPo6C1hEfuJL0=
@@ -3074,7 +3074,7 @@ SHA256 (go_modules/tailscale.com/@v/v1.102.3.mod) = qD6DCntN/6gKbCR4tEdYaV0BwKPj
 SHA256 (go_modules/tailscale.com/@v/v1.103.0-pre.0.20260924185624-d229a06f9a4b.mod) = wX5xNs/CUqFWWFcUEaqX2MtbDWECBl33HRMUlZQpqoI=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.mod) = 51wk0RAzCJHq6dnTk+H/QB5QJ8AlXBO6Q/aEb4i7w9A=
 SHA256 (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.zip) = t3uWWqzld2yToLInwM0fowvuv4r+QHOBPRzWO4tfz/k=
-SHA256 (tailscale.com-v1.104.5.zip) = id8zUjqrjtqLu2z67rpdFSw4y9M7u3Nf8GPExBHcYks=
+SHA256 (tailscale.com-v1.104.6.zip) = SH8qMQO5FBS466ENeVPSryc2yGhIybV2DwSxbf6ZV9w=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.mod) = 199
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.4.0.zip) = 7266
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.2.mod) = 167
@@ -5183,8 +5183,8 @@ SIZE (go_modules/github.com/tailscale/web-client-prebuilt/@v/v0.0.0-202609172227
 SIZE (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.mod) = 601
 SIZE (go_modules/github.com/tailscale/wf/@v/v0.0.0-20240214030419-6fbb0a674ee6.zip) = 58370
 SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260715223240-2e01ba5b00f0.mod) = 500
-SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260928213032-417aef361226.mod) = 488
-SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20260928213032-417aef361226.zip) = 369086
+SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20261106233718-9e0ab45c16ca.mod) = 488
+SIZE (go_modules/github.com/tailscale/wireguard-go/@v/v0.0.0-20261106233718-9e0ab45c16ca.zip) = 369294
 SIZE (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.mod) = 164
 SIZE (go_modules/github.com/tailscale/xnet/@v/v0.0.0-20240729143630-8497ac4dab2e.zip) = 1926127
 SIZE (go_modules/github.com/tc-hib/winres/@v/v0.2.1.mod) = 141
@@ -6151,4 +6151,4 @@ SIZE (go_modules/tailscale.com/@v/v1.102.3.mod) = 26754
 SIZE (go_modules/tailscale.com/@v/v1.103.0-pre.0.20260924185624-d229a06f9a4b.mod) = 28220
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.mod) = 342
 SIZE (go_modules/tailscale.com/client/tailscale/v2/@v/v2.10.1.zip) = 59358
-SIZE (tailscale.com-v1.104.5.zip) = 7555044
+SIZE (tailscale.com-v1.104.6.zip) = 7558630
