@@ -27,6 +27,7 @@ DIST_TUPLE +=	github asarium libRocket \
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua
+BUILD_DEPENDS =		graphics/shaderc
 LIB_DEPENDS =		audio/openal \
 			devel/jansson \
 			devel/sdl3 \
