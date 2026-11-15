@@ -1,0 +1,18 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Resource limits
+===============
+
+The ad blocker uses large content filter lists which WebKit compiles inside
+the epiphany process on first start, and whenever the lists are updated.
+With the default lists this requires a lot of memory; if the data size limit is
+reached, epiphany crashes with "Illegal instruction" (WebKit's allocator
+aborting on out of memory).
+
+Increase your datasize limit using `ulimit -Sd' (you can make this permanent in
+login.conf(5).
+
+Or disable the ad blocker entirely:
+    $ gsettings set org.gnome.Epiphany.web:/org/gnome/epiphany/web/ enable-adblock false
