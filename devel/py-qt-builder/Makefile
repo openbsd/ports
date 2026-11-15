@@ -1,6 +1,6 @@
 COMMENT=	PEP 517 compliant PyQt build system
 
-MODPY_DISTV=	1.19.0
+MODPY_DISTV=	1.21.0
 
 DISTNAME=	pyqt_builder-${MODPY_DISTV}
 PKGNAME=	py-qt-builder-${MODPY_DISTV}
@@ -19,6 +19,6 @@ MODPY_PYBUILD=	setuptools_scm
 
 RUN_DEPENDS=	devel/py-sip \
 		sysutils/py-packaging \
-		x11/qt5/qtbase
+		x11/qt6/qtbase
 
 .include <bsd.port.mk>
