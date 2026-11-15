@@ -1,6 +1,7 @@
 @conflict libical-<4.0.6p0
 @pkgpath textproc/libical
 include/libical/
+include/libical-glib/libical_glib_export.h
 include/libical/ical.h
 include/libical/icalarray.h
 include/libical/icalattach.h
@@ -48,7 +49,9 @@ include/libical/icalvcal.h
 include/libical/icalversion.h
 include/libical/icptrholder_cxx.hpp
 include/libical/libical_deprecated.h
+include/libical/libical_ical_cxx_export.h
 include/libical/libical_ical_export.h
+include/libical/libical_icalss_cxx_export.h
 include/libical/libical_icalss_export.h
 include/libical/libical_sentinel.h
 include/libical/libical_vcal_export.h
