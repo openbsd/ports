@@ -1,8 +1,7 @@
 COMMENT =	list obsolete files between OpenBSD upgrades
 
-V =		4.2
+V =		4.3
 DISTNAME =	sysclean-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://codeberg.org/semarie/sysclean/
