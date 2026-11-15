@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =	sparc64
 COMMENT =	Magical shell history
 
 DISTNAME =	atuin-${V}
-V = 		18.19.0
+V = 		18.24.8
 
 DIST_TUPLE +=	github atuinsh atuin v${V} .
 
@@ -17,11 +17,10 @@ MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} m
+WANTLIB += ${MODCARGO_WANTLIB} m util
 
 MODULES =	devel/cargo
 
-MODCARGO_CRATES_KEEP += libsqlite3-sys
 MODCARGO_INSTALL_TARGET_PATHS += crates/atuin
 
 SEPARATE_BUILD =	Yes
