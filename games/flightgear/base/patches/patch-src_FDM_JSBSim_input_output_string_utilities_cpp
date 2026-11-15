@@ -1,0 +1,12 @@
+Index: src/FDM/JSBSim/input_output/string_utilities.cpp
+--- src/FDM/JSBSim/input_output/string_utilities.cpp.orig
++++ src/FDM/JSBSim/input_output/string_utilities.cpp
+@@ -88,7 +88,7 @@ double atof_locale_c(const std::string& input)
+ 
+   CNumericLocale numeric_c;
+   errno = 0;          // Reset the error code
+-  double value = strtod_l(first, nullptr, numeric_c.Locale);
++  double value = strtod(first, nullptr);
+ 
+   // Error management
+   std::stringstream s;

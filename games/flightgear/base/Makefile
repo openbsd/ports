@@ -1,5 +1,6 @@
 COMMENT =		modern, open-source flight simulator
 
+V_COMMIT =		7241807173248abd838e2ab11337fbc5b2ae20b0
 DISTNAME =		flightgear-${V}
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE OpenThreads SM SimGearCore
@@ -7,7 +8,7 @@ WANTLIB += SimGearScene X11 Xext c dbus-1 event_core event_extra
 WANTLIB += execinfo m osg osgDB osgFX osgGA osgParticle osgSim
 WANTLIB += osgTerrain osgText osgUtil osgViewer sqlite3 z
 
-SITES =		https://gitlab.com/flightgear/fgmeta/-/jobs/11942161583/artifacts/raw/fgbuild/
+SITES =		https://gitlab.com/flightgear/flightgear/-/archive/$V/flightgear-$V.tar.bz2
 
 MODULES =	devel/cmake
 COMPILER =	base-clang ports-gcc
@@ -31,8 +32,9 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-NO_TEST =	Yes
+WRKDIST =		${WRKDIR}/flightgear-$V-${V_COMMIT}
 
+NO_TEST =	Yes
 
 MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
