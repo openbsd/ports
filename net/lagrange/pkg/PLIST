@@ -1,4 +1,5 @@
 @bin bin/clagrange
+@bin bin/gmget
 @bin bin/lagrange
 @man man/man1/lagrange.1
 share/applications/fi.skyjake.Lagrange.desktop

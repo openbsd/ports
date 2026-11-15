@@ -1,6 +1,6 @@
 COMMENT =	SDL multi protocol (gemini, gopher) navigator
 
-VERSION =	1.21.2
+VERSION =	2.0.2
 DISTNAME =	lagrange-${VERSION}
 
 CATEGORIES =	net x11
@@ -12,9 +12,10 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 # BSD 2-Clause
 PERMIT_PACKAGE =Yes
 
-WANTLIB +=	ICE SDL2 SM X11 Xext c crypto curses fribidi harfbuzz jxl
-WANTLIB +=	jxl_threads m mpg123 opusfile pcre2-8 pthread ssl unistring
-WANTLIB +=	webpdecoder z
+WANTLIB += ICE SDL3 SM X11 Xext c crypto curses fontconfig freetype
+WANTLIB += fribidi harfbuzz harfbuzz-raster jxl jxl_threads m
+WANTLIB += mpg123 opusfile pcre2-8 pthread ssl unistring webpdecoder
+WANTLIB += z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
@@ -36,7 +37,7 @@ LIB_DEPENDS =	audio/mpg123 \
 		devel/fribidi \
 		devel/harfbuzz \
 		devel/pcre2 \
-		devel/sdl2 \
+		devel/sdl3 \
 		graphics/libjxl \
 		graphics/libwebp
 
