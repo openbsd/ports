@@ -1,0 +1,24 @@
+Index: auto/lib/openssl/conf
+--- auto/lib/openssl/conf.orig
++++ auto/lib/openssl/conf
+@@ -69,6 +69,20 @@ else
+ 
+         if [ $ngx_found = no ]; then
+ 
++            # OpenBSD port
++
++            ngx_feature="OpenSSL library in ${EOPENSSL_LIB}"
++            ngx_feature_path="${EOPENSSL_INC}"
++
++            ngx_feature_libs="-Wl,-R${EOPENSSL_LIB} -L${EOPENSSL_LIB} -lssl -lcrypto"
++
++            ngx_feature_libs="$ngx_feature_libs $NGX_LIBDL $NGX_LIBPTHREAD"
++
++            . auto/feature
++        fi
++
++        if [ $ngx_found = no ]; then
++
+             # FreeBSD port
+ 
+             ngx_feature="OpenSSL library in /usr/local/"

@@ -1,1 +1,2 @@
+@conflict nginx-headers-more-*
 @so ngx_http_headers_more_filter_module.so

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1870 2026/11/14 12:26:45 markp Exp $
+# $OpenBSD: Quirks.pm,v 1.1871 2026/11/16 15:15:52 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -279,7 +279,7 @@ my $stem_extensions = {
 	'libkexiv2-kf5' => 'kf6-libkexiv2',
 	'pinentry-qt5' => 'pinentry-qt',
 	'pinentry-qt6' => 'pinentry-qt',
-
+	'nginx-headers-more' => 'nginx-headers_more',
 };
 
 my $obsolete_reason = {};

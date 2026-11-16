@@ -23,24 +23,10 @@ VERSION=	1.30.6
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-headers_more=	1
 
 PKGNAME-main=		${DISTNAME}
-PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
-PKGNAME-geoip2=		nginx-geoip2-${VERSION}
-PKGNAME-headers_more=	nginx-headers-more-${VERSION}
-PKGNAME-image_filter=	nginx-image_filter-${VERSION}
-PKGNAME-ldap_auth=	nginx-ldap_auth-${VERSION}
-PKGNAME-lua=		nginx-lua-${VERSION}
-PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
-PKGNAME-modsecurity=	nginx-modsecurity-${VERSION}
-PKGNAME-naxsi=		nginx-naxsi-${VERSION}
-PKGNAME-njs=		nginx-njs-${VERSION}
-PKGNAME-perl=		nginx-perl-${VERSION}
-PKGNAME-rtmp=		nginx-rtmp-${VERSION}
-PKGNAME-securelink=	nginx-securelink-${VERSION}
-PKGNAME-stream=		nginx-stream-${VERSION}
-PKGNAME-xslt=		nginx-xslt-${VERSION}
 
 SITES=	https://nginx.org/download/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
@@ -90,15 +76,22 @@ MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
 			-modsecurity -njs -rtmp \
 			-securelink -stream -xslt
 
+# subpackages aren't flavoured, so overwrite the default name/path except
+# for the debug flavor, which applies to all subpackages
+.for _S in ${MULTI_PACKAGES:N-main}
+FULLPKGNAME${_S}?=	${PKGNAME${_S}}${FLAVOR_EXT:S/-openssl//}
+FULLPKGPATH${_S}?=	${PKGPATH},${_S}${FLAVOR_EXT:S/-openssl//:S/-/,/g}
+.endfor
+
 FLAVOR ?=
-FLAVORS =		debug
+FLAVORS =		debug openssl
 PSEUDO_FLAVORS =	no_lua no_modsecurity no_njs
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-main=		c crypto pcre2-8 ssl z
+WANTLIB-main=		c pcre2-8 z
 WANTLIB-cache_purge=
 WANTLIB-geoip2=		maxminddb
 WANTLIB-headers_more=
@@ -166,6 +159,19 @@ MODULES+=		perl
 CONFIGURE_ARGS+=	--with-debug
 .endif
 
+.if ${FLAVOR:Mopenssl}
+OPENSSL_VSN=		3.5
+EOPENSSL_VSN=		eopenssl${OPENSSL_VSN:C/\.//}
+EOPENSSL_LIB=		${LOCALBASE}/lib/${EOPENSSL_VSN}
+EOPENSSL_INC=		${LOCALBASE}/include/${EOPENSSL_VSN}
+CFLAGS+=		-I ${EOPENSSL_INC}
+LIB_DEPENDS-main+=	security/openssl/${OPENSSL_VSN}
+WANTLIB-main+=		lib/${EOPENSSL_VSN}/crypto lib/${EOPENSSL_VSN}/ssl
+SUBST_VARS+=		EOPENSSL_LIB EOPENSSL_INC
+.else
+WANTLIB-main+=		crypto ssl
+.endif
+
 .if ${BUILD_PACKAGES:M-lua}
 MODULES+=		lang/lua
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
@@ -227,7 +233,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--add-dynamic-module=${WRKSRC}/ngx_http_hmac_secure_link_module \
 			--add-dynamic-module=${WRKSRC}/ngx_cache_purge
 
-SUBSTFILES=		conf/nginx.conf */config
+SUBSTFILES=		auto/lib/openssl/conf conf/nginx.conf */config
 
 NO_TEST=		Yes
 ALL_TARGET=
