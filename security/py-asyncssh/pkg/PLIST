@@ -102,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}sk_eddsa.${MOD
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}sk_eddsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}socks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}sshsig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}sshsig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}stream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asyncssh/${MODPY_PYCACHE}subprocess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -203,6 +205,7 @@ lib/python${MODPY_VERSION}/site-packages/asyncssh/sk.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/sk_ecdsa.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/sk_eddsa.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/socks.py
+lib/python${MODPY_VERSION}/site-packages/asyncssh/sshsig.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/stream.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/subprocess.py
 lib/python${MODPY_VERSION}/site-packages/asyncssh/tuntap.py

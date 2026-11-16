@@ -1,6 +1,6 @@
 COMMENT =		SSHv2 library built on asyncio
 
-MODPY_DISTV =		2.22.0
+MODPY_DISTV =		2.24.1
 DISTNAME =		asyncssh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -12,11 +12,13 @@ HOMEPAGE =		http://asyncssh.timeheart.net
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
+# nettle optional, but used for umac via ffi, dep added to avoid
+# inconsistent behaviour. (alternatively could just go to TDEP).
 RUN_DEPENDS =		devel/py-typing-extensions \
+			security/nettle \
 			security/py-cryptography
 
 TEST_DEPENDS =		security/py-bcrypt \
@@ -27,6 +29,6 @@ TEST_DEPENDS =		security/py-bcrypt \
 # creates fairly large files for some tests; in particular,
 # test_sparse_copy wants ~4GB so disable that one
 TEST_ENV =		TMPDIR=${WRKDIR}
-MODPY_PYTEST_ARGS =	-k 'not test_sparse_copy'
+MODPY_PYTEST_ARGS =	-v -k 'not test_sparse_copy'
 
 .include <bsd.port.mk>
