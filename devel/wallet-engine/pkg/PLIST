@@ -1,0 +1,5 @@
+include/wallet_engine/
+include/wallet_engine/wallet_engine.cpp
+include/wallet_engine/wallet_engine.hpp
+include/wallet_engine/wallet_engine_scaffolding.hpp
+@lib lib/libwallet_engine.so.${LIBwallet_engine_VERSION}
