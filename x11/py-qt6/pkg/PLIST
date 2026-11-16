@@ -35,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQml.pyi
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick3D${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuick3D.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickControls2${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickControls2.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickWidgets${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PyQt6/QtQuickWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtRemoteObjects${MODPY_ABI3SO}.so
@@ -636,6 +638,11 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick3D/qquick3d.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick3D/qquick3dgeometry.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick3D/qquick3dobject.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick3D/qquick3dtexturedata.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickControls2/
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickControls2/QtQuickControls2.toml
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickControls2/QtQuickControls2mod.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickControls2/qquickattachedpropertypropagator.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickControls2/qquickstyle.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickWidgets/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickWidgets/QtQuickWidgets.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuickWidgets/QtQuickWidgetsmod.sip
