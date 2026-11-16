@@ -11,6 +11,8 @@ PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
 PKGNAME-qt6=	poppler-qt6-$V
 
+REVISION-main=	0
+
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	poppler              107.0    # 166.0
@@ -63,6 +65,7 @@ RUN_DEPENDS-main= \
 		devel/boost
 
 LIB_DEPENDS-main=${MODGCC_CPPLIBDEP} \
+		archivers/brotli \
 		converters/libiconv \
 		devel/gettext,-runtime \
 		devel/glib2 \
@@ -85,9 +88,9 @@ LIB_DEPENDS-utils=${MODGCC_CPPLIBDEP} \
 		print/poppler
 
 WANTLIB-main=	${COMPILER_LIBCXX} \
-		cairo fontconfig freetype gio-2.0 glib-2.0 gobject-2.0 \
-		harfbuzz harfbuzz-subset iconv intl jpeg lcms2 m \
-		openjp2 png tiff z
+		brotlidec cairo fontconfig freetype gio-2.0 glib-2.0 \
+		gobject-2.0 harfbuzz harfbuzz-subset iconv intl jpeg \
+		lcms2 m openjp2 png tiff z
 
 WANTLIB-qt5=	$(COMPILER_LIBCXX) Qt5Core Qt5Gui Qt5Xml freetype lcms2 \
 		m poppler
