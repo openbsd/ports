@@ -1,1 +1,2 @@
 @bin bin/retex
+@man man/man1/retex.1
