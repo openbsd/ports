@@ -8,7 +8,7 @@ COMMENT=	self-contained cryptographic library for Python
 # amd64 (AES-NI, SHA-NI, AVX2/BMI)
 # i386 (no cpu-specific code)
 # aarch64 (ARMv8 Cryptography Extensions)
-MODPY_DISTV=	4.4.0
+MODPY_DISTV=	4.5.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
