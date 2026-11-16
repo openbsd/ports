@@ -2,11 +2,11 @@ COMMENT=		tensor library for machine learning
 
 GH_ACCOUNT=		ggml-org
 GH_PROJECT=		ggml
-GH_TAGNAME =		v0.29.0
+GH_TAGNAME =		v1.0.0
 PKGNAME=		lib${DISTNAME}
 
-SHARED_LIBS +=		ggml 7.1
-SHARED_LIBS +=		ggml-base 7.0
+SHARED_LIBS +=		ggml 8.0
+SHARED_LIBS +=		ggml-base 8.0
 
 CATEGORIES=		devel
 
