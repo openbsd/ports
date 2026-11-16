@@ -1,9 +1,9 @@
 COMMENT=	simple RADIUS client library
 
 SHARED_LIBS +=	radcli               3.1      # 10.2.0
-SHARED_LIBS +=	radcli2              0.0      # 1.0.0
+SHARED_LIBS +=	radcli2              0.1      # 1.0.0
 
-V=		2.0.1
+V=		2.0.2
 DISTNAME=	radcli-$V
 EXTRACT_SUFX=	.tar.xz
 
@@ -27,13 +27,17 @@ LIB_DEPENDS=	security/gnutls
 MODULES=	devel/meson
 CONFIGURE_ARGS=	-Ddocs=disabled
 
-# most tests need a running local RADIUS server; the script (ns.sh)
-# provided to run this only supports Linux with netns.
-
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/radcli ${PREFIX}/share/examples/radcli
 
-pre-test:
-	sed -i 's,^#!/bin/bash,#!/usr/local/bin/bash,' ${WRKSRC}/tests/*.sh
+# building tests disabled via meson.build.patch; direct call to
+# syscall(SYS_sendmsg, ...) added in 83e039b4e319ec981382a51741eed28cf2c15cc4
+#
+# most tests need a running local RADIUS server anyway, this is done via
+# a script (ns.sh) which requires Linux with netns.
+NO_TEST=	Yes
+
+#pre-test:
+#	sed -i 's,^#!/bin/bash,#!/usr/local/bin/bash,' ${WRKSRC}/tests/*.sh
 
 .include <bsd.port.mk>

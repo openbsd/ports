@@ -1,0 +1,11 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -113,7 +113,6 @@ subdir('lib')
+ subdir('src')
+ subdir('etc')
+ subdir('doc')
+-subdir('tests')
+ 
+ # ---------------------------------------------------------------------------
+ # Maintainer targets: ABI check / compare-exported (not part of `meson test`)
