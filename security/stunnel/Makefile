@@ -1,6 +1,7 @@
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-5.82
+DISTNAME=	stunnel-5.83b2
+PKGNAME=	stunnel-5.83beta2
 CATEGORIES=	security
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
@@ -14,7 +15,8 @@ HOMEPAGE=	https://www.stunnel.org/
 
 SITES=		https://www.stunnel.org/downloads/archive/5.x/ \
 		https://ftp.nluug.nl/pub/networking/stunnel/ \
-		https://www.usenix.org.uk/mirrors/stunnel/
+		https://www.usenix.org.uk/mirrors/stunnel/ \
+		https://www.stunnel.org/downloads/beta/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
@@ -23,6 +25,8 @@ CONFIGURE_ARGS+=	--with-ssl=/usr \
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 
 USE_GMAKE=		Yes
+
+WRKDIST=	${WRKDIR}/${DISTNAME:C/(stunnel-[0-9]+\.[0-9]+).*/\1/}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/stunnel3.in
