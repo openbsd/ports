@@ -1,6 +1,6 @@
 COMMENT=	Python library for one-time passwords
 
-MODPY_DISTV=	2.10.0
+MODPY_DISTV=	2.12.0
 DISTNAME=	pyotp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

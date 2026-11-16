@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}hotp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}hotp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyotp/${MODPY_PYCACHE}otp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -29,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/pyotp/contrib/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/pyotp/contrib/${MODPY_PYCACHE}steam.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyotp/contrib/${MODPY_PYCACHE}steam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyotp/contrib/steam.py
+lib/python${MODPY_VERSION}/site-packages/pyotp/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pyotp/hotp.py
 lib/python${MODPY_VERSION}/site-packages/pyotp/otp.py
 lib/python${MODPY_VERSION}/site-packages/pyotp/py.typed
