@@ -1,14 +1,14 @@
 COMMENT =	language server for the Zig programming language
 
-V =		0.16.0
+V =		0.17.0
 
 DIST_TUPLE +=	github zigtools zls ${V} .
 DIST_TUPLE +=	github ziglibs known-folders \
-		d6d03830968cca6b7b9f24fd97ee348346a6905d .
+		6da0d0c41b78b9ed2d34fa364fcb81b5ebece6c4 .
 DIST_TUPLE +=	github ziglibs diffz \
-		b39fe07e7fdbcf56e43ba2890b9f484f16969f90 .
+		aac8aa99c436ab8277b0711922aad062c0167b12 .
 DIST_TUPLE +=	github zigtools lsp-kit \
-		b886a2b0d5cee85ecbcc3089b863f7517cc9ff7f .
+		3e1058db66079911fdde82f833fdce6856e0a706 .
 
 CATEGORIES =	devel
 
@@ -23,9 +23,9 @@ WANTLIB +=	c pthread
 
 BUILD_DEPENDS =	lang/zig
 
-KF_HASH =	known_folders-0.0.0-Fy-PJk3KAACzUg2us_0JvQQmod1ZA8jBt7MuoKCihq88
-DIFFZ_HASH =	diffz-0.0.1-G2tlISzNAQCldmOcINavGmF1zdt20NFPXeM8d07jp_68
-LSP_KIT_HASH =	lsp_kit-0.1.0-bi_PL3IyDACfp1xdTnkiOHEok2YpPCCCJHuuOcNzjl1D
+KF_HASH =	known_folders-0.0.0-Fy-PJiDLAAB98m3uYUzatrTb2mO2fpvwx2zpSroEtfbO
+DIFFZ_HASH =	diffz-0.0.1-G2tlISvOAQDORzPTSxDgiKwlHuADKeJMdJrw4kRfLufj
+LSP_KIT_HASH =	lsp_kit-0.1.0-bi_PL9o2DADHS1PDra3MGz1MXnsboN_ewNvrc419z7Fb
 
 ZIG_PKGDIR =	${WRKBUILD}/zig-packages
 
@@ -34,7 +34,6 @@ MAKE_ENV +=	ZIG_GLOBAL_CACHE_DIR=${WRKBUILD}/zig-global-cache \
 
 ZIG_CPU =	${ARCH:S/amd64/x86_64/:S/arm64/generic/}
 ZIG_FLAGS =	--system ${ZIG_PKGDIR} \
-		--global-cache-dir ${WRKBUILD}/zig-global-cache \
 		--cache-dir ${WRKBUILD}/zig-local-cache \
 		--color off \
 		--verbose \
@@ -44,11 +43,11 @@ ZIG_FLAGS =	--system ${ZIG_PKGDIR} \
 
 post-extract:
 	mkdir -p ${ZIG_PKGDIR}
-	mv ${WRKDIR}/known-folders-d6d03830968cca6b7b9f24fd97ee348346a6905d \
+	mv ${WRKDIR}/known-folders-6da0d0c41b78b9ed2d34fa364fcb81b5ebece6c4 \
 		${ZIG_PKGDIR}/${KF_HASH}
-	mv ${WRKDIR}/diffz-b39fe07e7fdbcf56e43ba2890b9f484f16969f90 \
+	mv ${WRKDIR}/diffz-aac8aa99c436ab8277b0711922aad062c0167b12 \
 		${ZIG_PKGDIR}/${DIFFZ_HASH}
-	mv ${WRKDIR}/lsp-kit-b886a2b0d5cee85ecbcc3089b863f7517cc9ff7f \
+	mv ${WRKDIR}/lsp-kit-3e1058db66079911fdde82f833fdce6856e0a706 \
 		${ZIG_PKGDIR}/${LSP_KIT_HASH}
 
 do-build:
