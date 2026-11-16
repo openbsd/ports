@@ -122,6 +122,7 @@
      SUBDIR += nghttp2
      SUBDIR += nghttp3
      SUBDIR += nginx
+     SUBDIR += nginx,openssl
      SUBDIR += nostromo
      SUBDIR += nostt
      SUBDIR += odoo
