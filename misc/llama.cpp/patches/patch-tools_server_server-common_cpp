@@ -1,7 +1,7 @@
 Index: tools/server/server-common.cpp
 --- tools/server/server-common.cpp.orig
 +++ tools/server/server-common.cpp
-@@ -80,6 +80,14 @@ std::filesystem::path get_server_exec_path() {
+@@ -84,6 +84,14 @@ std::filesystem::path get_server_exec_path() {
          }
          throw std::runtime_error("_NSGetExecutablePath failed after buffer resize");
      }
