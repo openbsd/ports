@@ -1,9 +1,9 @@
 COMMENT=	ASN.1 to C compiler
 
-V=		0.9.28pl20210418
+V=		0.9.29
 GH_ACCOUNT=	vlm
 GH_PROJECT=	asn1c
-GH_COMMIT=	9925dbbda86b436896108439ea3e0a31280a6065
+GH_TAGNAME=	v$V
 
 DISTNAME=	asn1c-$V
 
@@ -20,5 +20,7 @@ AUTOMAKE_VERSION=1.15
 AUTOCONF_VERSION=2.67
 
 CONFIGURE_STYLE= autoreconf
+
+TEST_DEPENDS=	shells/bash
 
 .include <bsd.port.mk>
