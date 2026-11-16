@@ -3,10 +3,9 @@ CATEGORIES =	net
 
 GH_ACCOUNT =	basepr1me
 GH_PROJECT =	thingsd
-GH_TAGNAME =	4.0.2
-REVISION =	1
+GH_TAGNAME =	5.1.0
 
-MAINTAINER =	Tracey Emery <tracey@traceyemery.net>
+MAINTAINER =	Tracey Emery <tracey@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
