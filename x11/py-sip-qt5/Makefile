@@ -1,6 +1,6 @@
 COMMENT=	sip module support for PyQt5
 
-MODPY_DISTV=	12.17.1
+MODPY_DISTV=	12.20.1
 
 DISTNAME=	pyqt5_sip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
