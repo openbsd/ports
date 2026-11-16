@@ -1,17 +1,12 @@
 COMMENT =	non-monolithic Wayland compositor
 
-V =		0.4.5
+V =		0.5.2
 
 DIST_TUPLE +=	codeberg river river v${V} .
 DIST_TUPLE +=	codeberg ifreund zig-pixman v0.3.0 .
-DIST_TUPLE +=	codeberg ifreund zig-wayland v0.6.0 .
-DIST_TUPLE +=	codeberg ifreund zig-wlroots v0.20.1 .
-DIST_TUPLE +=	codeberg ifreund zig-xkbcommon v0.4.0 .
-DIST_TUPLE +=	codeberg ziglang translate-c \
-		57c559cf581b1fcad90494eda219f98abeb155ce .
-DIST_TUPLE +=	github Vexu arocc \
-		5f5a050569a95ecc40a426f0c3666ae7ef987ede .
-REVISION =	0
+DIST_TUPLE +=	codeberg ifreund zig-wayland v0.7.0 .
+DIST_TUPLE +=	codeberg ifreund zig-wlroots v0.20.3 .
+DIST_TUPLE +=	codeberg ifreund zig-xkbcommon v0.5.0 .
 
 CATEGORIES =	wayland
 
@@ -45,11 +40,9 @@ LIB_DEPENDS =	wayland/libevdev-openbsd \
 # aro dep pulled in by translate_c); these become the directory names under
 # ZIG_PKGDIR. Update whenever the deps in build.zig.zon are bumped.
 PIXMAN_HASH =		pixman-0.3.0-LClMnz2VAAAs7QSCGwLimV5VUYx0JFnX5xWU6HwtMuDX
-WAYLAND_HASH =		wayland-0.6.0-lQa1kqz8AQADQmdNJsNhLoNHcnEGEUjrOaPV-dtEnEmX
-WLROOTS_HASH =		wlroots-0.20.1-jmOlcqNVBAB3uB5oqBTzpRlwu-FmMyyZMVAWCe5kmcSt
-XKBCOMMON_HASH =	xkbcommon-0.4.0-VDqIe0i2AgDRsok2GpMFYJ8SVhQS10_PI2M_CnHXsJJZ
-TRANSLATE_C_HASH =	translate_c-0.0.0-Q_BUWlX1BgCD1wo6uo97prlp9VJ4gxAjwN_vZ7nsSjGN
-ARO_HASH =		aro-0.0.0-JSD1Qi7QNgDnfcrdEJf82v3o6MhZySjYVrtdfEf3E4Se
+WAYLAND_HASH =		wayland-0.7.0-lQa1kuP8AQD5dW7_o-VKLVD_QbqXe7Zob78r2su7Pyex
+WLROOTS_HASH =		wlroots-0.20.3-jmOlcsh0BACce9rpfvzUI4V3AalGg9GE0QQkvRFoHo1c
+XKBCOMMON_HASH =	xkbcommon-0.5.0-VDqIe8y3AgDU-cGL02xZplwABH3WbpTimrrgbgTgD_3g
 
 ZIG_PKGDIR =	${WRKBUILD}/zig-packages
 
@@ -60,7 +53,6 @@ ZIG_CPU =	${ARCH:S/amd64/x86_64/:S/arm64/generic/}
 # --system disables all network access; zig will error if a package is
 # missing from ZIG_PKGDIR instead of silently fetching it.
 ZIG_FLAGS =	--system ${ZIG_PKGDIR} \
-		--global-cache-dir ${WRKBUILD}/zig-global-cache \
 		--cache-dir ${WRKBUILD}/zig-local-cache \
 		--color off \
 		--verbose \
@@ -83,9 +75,6 @@ post-extract:
 	mv ${WRKDIR}/zig-wayland     ${ZIG_PKGDIR}/${WAYLAND_HASH}
 	mv ${WRKDIR}/zig-wlroots     ${ZIG_PKGDIR}/${WLROOTS_HASH}
 	mv ${WRKDIR}/zig-xkbcommon   ${ZIG_PKGDIR}/${XKBCOMMON_HASH}
-	mv ${WRKDIR}/translate-c     ${ZIG_PKGDIR}/${TRANSLATE_C_HASH}
-	mv ${WRKDIR}/arocc-5f5a050569a95ecc40a426f0c3666ae7ef987ede \
-		${ZIG_PKGDIR}/${ARO_HASH}
 
 # Build into a staging prefix so the install step has somewhere writable.
 # The fake-install phase re-invokes the install step with the real prefix.
