@@ -1,0 +1,133 @@
+https://github.com/json-c/json-c/commit/f291fa81c6f21d925ea771a8cca597f5886309cc
+Move destruction outside assert()
+
+https://github.com/json-c/json-c/commit/3aa996b5b6bd96c29f2c6da98da33c3fb3d13038
+Prevent repeated userdata deletion callbacks
+
+https://github.com/json-c/json-c/commit/0c3a5a1994ed6b5957d2e878fc1298ce9aa09b3f
+Clear userdata used by the destruction traversal
+
+https://github.com/json-c/json-c/commit/69be99ef8e99d811d7810bdf75864ae800a67e50
+Correct json_object_put() return values
+
+Index: json_object.c
+--- json_object.c.orig
++++ json_object.c
+@@ -274,12 +274,30 @@ struct json_object *json_object_get(struct json_object
+ 
+ 
+ /**
++  * Return values for _json_object_put_maybe_free().
++  * json_object_put_still_refd and json_object_put_freed match the documented
++  * return values of json_object_put(), so they can be returned directly.
++  */
++enum json_object_put_result
++{
++	json_object_put_still_refd = 0, /* refcount decremented, object not freed */
++	json_object_put_freed = 1,      /* refcount reached zero, memory released */
++	json_object_put_container = 2   /* refcount reached zero, but the object is a
++	                                   non-empty container: the caller must free
++	                                   the contents, then the object itself */
++};
++
++/**
+   * Internal json_object_put function
+-  * Returns 0 if we're done "freeing" the object, either because its memory
+-  * was actually released, or we just needed to decrement the refcount.
+-  * Returns 1 when the object is a non-empty container that still needs to be handled.
++  * Returns json_object_put_still_refd if a reference remains, and the object
++  * was not freed.
++  * Returns json_object_put_freed if the object's memory was released, either
++  * because it holds no other objects, or because free_containers was set.
++  * Returns json_object_put_container when the refcount reached zero but the
++  * object is a non-empty container; the caller must free the contents, then
++  * call this function again with free_containers set to free the object itself.
+   */
+-static inline int _json_object_put_maybe_free(struct json_object *jso, int free_containers)
++static inline enum json_object_put_result _json_object_put_maybe_free(struct json_object *jso, int free_containers)
+ {
+ 	/* Avoid invalid free and crash explicitly instead of (silently)
+ 	 * segfaulting.
+@@ -298,11 +316,12 @@ static inline int _json_object_put_maybe_free(struct j
+ 	if (--jso->_ref_count > 0)
+ #endif
+ 	{
+-		return 0;  // All done, caller doesn't need to do anything else
++		return json_object_put_still_refd;
+ 	}
+ 
+ 	if (jso->_user_delete)
+ 		jso->_user_delete(jso, jso->_userdata);
++	jso->_user_delete = NULL;
+ 
+ 	switch (jso->o_type)
+ 	{
+@@ -312,15 +331,15 @@ static inline int _json_object_put_maybe_free(struct j
+ 			json_object_object_delete(jso);
+ 			break;
+ 		}
+-		return 1;
+-	case json_type_array: 
++		return json_object_put_container;
++	case json_type_array:
+ 		// container objects are handled by the caller
+ 		if (free_containers || array_list_length(JC_ARRAY(jso)->c_array) == 0)
+ 		{
+ 			json_object_array_delete(jso);
+ 			break;
+ 		}
+-		return 1;
++		return json_object_put_container;
+ 	case json_type_string:
+ 		json_object_string_delete(jso);
+ 		break;
+@@ -328,16 +347,19 @@ static inline int _json_object_put_maybe_free(struct j
+ 		json_object_generic_delete(jso);
+ 		break;
+ 	}
+-	return 0;  // All done, caller doesn't need to do anything else
++	return json_object_put_freed;
+ }
+ 
+ int json_object_put(struct json_object *jso)
+ {
++	enum json_object_put_result rc;
++
+ 	if (!jso)
+ 		return 0;
+ 
+-	if (_json_object_put_maybe_free(jso, 0) == 0)
+-		return 0;
++	rc = _json_object_put_maybe_free(jso, 0);
++	if (rc != json_object_put_container)
++		return (int)rc;
+ 	// else, it's a non-empty container object, handle it below
+ 
+ 	// Note: jso is now a "zombie" object, _ref_count == 0 but memory not yet released
+@@ -396,7 +418,7 @@ int json_object_put(struct json_object *jso)
+ 			}
+ 
+ 			// Now, handle actually freeing the json_object in that slot
+-			if (!child || _json_object_put_maybe_free(child, 0) == 0)
++			if (!child || _json_object_put_maybe_free(child, 0) != json_object_put_container)
+ 			{
+  				// child is either freed, or still referenced somewhere else
+ 				// leave it as-is and handle the previous slot
+@@ -435,11 +457,16 @@ int json_object_put(struct json_object *jso)
+ 		// All slots are cleared, now pop back up to the parent
+ 		{
+ 			json_object *parent = jso->_delete_parent;
++			int rc;
+ 			// jso is a child that's already been detached from its parent
+ 			// so we need to actually free it now
+ 			assert(jso->_ref_count == 0);
+ 			jso->_ref_count++;   // We're the exclusive owner of jso, non-atomic add is ok.
+-			assert(_json_object_put_maybe_free(jso, 1) == 0);
++			// Note: the call must not be inside assert(), or it gets
++			// compiled out when NDEBUG is defined and the memory leaks.
++			rc = _json_object_put_maybe_free(jso, 1);
++			assert(rc == 0);
++			(void)rc;
+ 			jso = parent;
+ 			// iteration will be reset at the top of the loop
+ 		}
