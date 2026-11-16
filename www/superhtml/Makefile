@@ -2,18 +2,18 @@ COMMENT=	HTML validator, formatter and language server
 
 CATEGORIES =	www devel
 
-VERSION =		0.6.2pl20260504
-COMMIT =		39dc8b3681f14f28fe29ceeadae1fbea54715689
+VERSION =		0.7.1
 # Look for these in ${WRKSRC}/build.zig.zon
 TRACY_COMMIT =		67d2d89e351048c76fc6d161e0ac09d8a831dc60
-SCRIPTY_COMMIT =	9c1e5903acd2a591f87f577b2ea08895e7168b9d
-KNOWN_FOLDERS_COMMIT =	175f5596b3d2ee3c658282bb07885580895a0e73
-LSP_KIT_COMMIT =	ec325a3c33d1da7708cf513355208f74d9560580
-REVISION =		0
+SCRIPTY_COMMIT =	48006feaa0d75fd3548ae222d47c0ee9bf9f0a7a
+KNOWN_FOLDERS_COMMIT =	207c34a16e4365edc20d92c7892f962b3bed46e8
+LSP_KIT_COMMIT =	3e1058db66079911fdde82f833fdce6856e0a706
+AFL_KIT_COMMIT =	e9b5dfc14c06133786a09214709316dc9fb54bd9
 
-DIST_TUPLE =	github kristoff-it superhtml ${COMMIT} . \
+DIST_TUPLE =	github kristoff-it superhtml v${VERSION} . \
 		github kristoff-it tracy ${TRACY_COMMIT} tracy \
 		github kristoff-it scripty ${SCRIPTY_COMMIT} scripty \
+		github kristoff-it zig-afl-kit ${AFL_KIT_COMMIT} zig-afl-kit \
 		github ziglibs known-folders ${KNOWN_FOLDERS_COMMIT} known_folders \
 		github zigtools lsp-kit ${LSP_KIT_COMMIT} lsp_kit
 
