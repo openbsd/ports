@@ -1,0 +1,15 @@
+This doesn't seem to work on OpenBSD/arm64:
+https://codeberg.org/ziglang/zig/commit/694c848c3e48176fb81941f0186d53100211e64c
+
+Index: lib/compiler_rt.zig
+--- lib/compiler_rt.zig.orig
++++ lib/compiler_rt.zig
+@@ -164,8 +164,6 @@ comptime {
+         symbol(&strlen, "strlen");
+     }
+ 
+-    _ = @import("compiler_rt/fmv.zig");
+-
+     // Temporarily used for uefi until https://github.com/ziglang/zig/issues/21630 is addressed.
+     if (!builtin.link_libc and (builtin.os.tag == .windows or builtin.os.tag == .uefi) and (builtin.abi == .none or builtin.abi == .msvc)) {
+         symbol(&_fltused, "_fltused");
