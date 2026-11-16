@@ -2082,6 +2082,7 @@
      SUBDIR += vtags
      SUBDIR += vtcl
      SUBDIR += vte3
+     SUBDIR += wallet-engine
      SUBDIR += woboq_codebrowser
      SUBDIR += x86_64-elf
      SUBDIR += xa
