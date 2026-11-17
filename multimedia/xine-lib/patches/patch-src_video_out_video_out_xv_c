@@ -1,0 +1,123 @@
+Add MIT-SHM 1.2 (fd passing) support, so frames no longer sit in world
+readable SysV shared memory segments.
+
+Index: src/video_out/video_out_xv.c
+--- src/video_out/video_out_xv.c.orig
++++ src/video_out/video_out_xv.c
+@@ -71,6 +71,11 @@
+ #include <xine/xineutils.h>
+ #include <xine/vo_scale.h>
+ #include "x11osd.h"
++#include "xshm_fd.h"
++#if defined(XINE_XSHM_FD) && defined(HAVE_X11_XCB)
++#  include <X11/Xlib-xcb.h>
++#  define XSHM_FD 1
++#endif
+ #define XV_PROPS
+ #include "xv_common.h"
+ 
+@@ -125,6 +130,7 @@ struct xv_driver_s {
+   XColor             black;
+ 
+   int                use_shm;
++  int                use_shm_fd;
+   int                use_pitch_alignment;
+   xv_property_t      props[XV_NUM_PROPERTIES];
+   uint32_t           capabilities;
+@@ -196,13 +202,23 @@ static void xv_frame_dispose (vo_frame_t
+   if (frame->image) {
+ 
+     if (frame->shminfo.shmaddr) {
++#ifdef XSHM_FD
++      size_t size = frame->image->data_size;
++#endif
+       LOCK_DISPLAY(this);
+       XShmDetach (this->display, &frame->shminfo);
+       XFree (frame->image);
+       UNLOCK_DISPLAY(this);
+ 
+-      shmdt (frame->shminfo.shmaddr);
+-      shmctl (frame->shminfo.shmid, IPC_RMID, NULL);
++#ifdef XSHM_FD
++      if (frame->shminfo.shmid == XINE_XSHM_FD_SHMID) {
++        munmap (frame->shminfo.shmaddr, size);
++      } else
++#endif
++      {
++        shmdt (frame->shminfo.shmaddr);
++        shmctl (frame->shminfo.shmid, IPC_RMID, NULL);
++      }
+     }
+     else {
+       LOCK_DISPLAY(this);
+@@ -337,8 +353,6 @@ static XvImage *create_ximage (xv_driver
+         }
+     }
+ 
+-    shminfo->shmid = shmget(IPC_PRIVATE, image->data_size, IPC_CREAT | 0777);
+-
+     if (image->data_size==0) {
+       xprintf(this->xine, XINE_VERBOSITY_LOG,
+ 	      _("%s: XvShmCreateImage returned a zero size\n"), LOG_MODULE);
+@@ -348,6 +362,32 @@ static XvImage *create_ximage (xv_driver
+       goto finishShmTesting;
+     }
+ 
++#ifdef XSHM_FD
++    if (this->use_shm_fd) {
++      xcb_connection_t *c = XGetXCBConnection (this->display);
++      size_t size = image->data_size;
++      int fd;
++
++      shminfo->shmaddr = xine_shm_fd_alloc (size, &fd);
++      if (shminfo->shmaddr) {
++        shminfo->shmid    = XINE_XSHM_FD_SHMID;
++        shminfo->shmseg   = xcb_generate_id (c);
++        shminfo->readOnly = False;
++        if (xine_xcb_shm_fd_attach (c, shminfo->shmseg, fd)) {
++          image->data = shminfo->shmaddr;
++          goto finishShmTesting;
++        }
++        munmap (shminfo->shmaddr, size);
++        shminfo->shmaddr = NULL;
++      }
++      xprintf(this->xine, XINE_VERBOSITY_LOG,
++	      "%s: MIT-SHM fd passing failed, using SysV shared memory.\n", LOG_MODULE);
++      this->use_shm_fd = 0;
++    }
++#endif
++
++    shminfo->shmid = shmget(IPC_PRIVATE, image->data_size, IPC_CREAT | 0777);
++
+     if (shminfo->shmid < 0 ) {
+       xprintf(this->xine, XINE_VERBOSITY_LOG,
+ 	      _("%s: shared memory error in shmget: %s\n"), LOG_MODULE, strerror(errno));
+@@ -435,6 +475,16 @@ static void dispose_ximage (xv_driver_t
+   if (shminfo->shmaddr) {
+ 
+     XShmDetach (this->display, shminfo);
++#ifdef XSHM_FD
++    if (shminfo->shmid == XINE_XSHM_FD_SHMID) {
++      size_t size = myimage->data_size;
++      XFree (myimage);
++      munmap (shminfo->shmaddr, size);
++      shminfo->shmaddr = NULL;
++      shminfo->shmid = -1;
++      return;
++    }
++#endif
+     XFree (myimage);
+     shmdt (shminfo->shmaddr);
+     if (shminfo->shmid >= 0) {
+@@ -1749,6 +1799,11 @@ static vo_driver_t *open_plugin_2 (video
+    * to find out if MIT shm really works, using supported format
+    */
+   LOCK_DISPLAY(this);
++#ifdef XSHM_FD
++  this->use_shm_fd = xine_xcb_shm_fd_usable (XGetXCBConnection (this->display));
++  xprintf(this->xine, XINE_VERBOSITY_DEBUG, "%s: MIT-SHM fd passing %s.\n",
++	  LOG_MODULE, this->use_shm_fd ? "enabled" : "not available");
++#endif
+   {
+     XvImage         *myimage;
+     XShmSegmentInfo  myshminfo;

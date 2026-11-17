@@ -1,5 +1,8 @@
 Enable VA-API support.
 
+Add MIT-SHM 1.2 (fd passing) support, so frames no longer sit in world
+readable SysV shared memory segments.
+
 Index: m4/video_out.m4
 --- m4/video_out.m4.orig
 +++ m4/video_out.m4
@@ -14,3 +17,34 @@ Index: m4/video_out.m4
          gnu*)
              default_enable_vdpau=yes
              ;;
+@@ -373,6 +377,30 @@ AC_DEFUN([XINE_VIDEO_OUT_PLUGINS], [
+     AM_CONDITIONAL([ENABLE_XCBXV], [test x"$have_xcbxv" = x"yes"])
+ 
+ 
++    dnl MIT-SHM 1.2 (fd passing)
++    if test x"$no_x" != x"yes" || test x"$have_xcbshm" = x"yes"; then
++        PKG_CHECK_EXISTS([xcb-shm >= 1.10], [have_xcbshm_fd=yes], [have_xcbshm_fd=no])
++        if test x"$have_xcbshm_fd" = x"yes"; then
++            AC_CHECK_FUNCS([memfd_create shm_mkstemp])
++            AC_CHECK_DECLS([SHM_ANON], [], [], [[#include <sys/mman.h>]])
++            saved_LIBS="$LIBS"
++            AC_SEARCH_LIBS([shm_open], [rt], [AC_DEFINE([HAVE_SHM_OPEN], 1, [Define this if you have shm_open()])])
++            LIBS="$saved_LIBS"
++            if test x"$ac_cv_search_shm_open" != x"no" && test x"$ac_cv_search_shm_open" != x"none required"; then
++                SHM_LIBS="$ac_cv_search_shm_open"
++            fi
++            AC_DEFINE([HAVE_XCB_SHM_FD], 1, [Define this if xcb-shm supports fd passing])
++            if test x"$no_x" != x"yes"; then
++                PKG_CHECK_MODULES([X11XCB], [x11-xcb xcb-shm >= 1.10], [have_x11xcb=yes], [have_x11xcb=no])
++                if test x"$have_x11xcb" = x"yes"; then
++                    AC_DEFINE([HAVE_X11_XCB], 1, [Define this if you have libX11-xcb])
++                fi
++            fi
++        fi
++    fi
++    AC_SUBST(SHM_LIBS)
++
++
+     dnl vidix/libdha
+     dnl Requires X11 or Linux framebuffer
+     XINE_ARG_ENABLE([vidix], [enable support for Vidix])

@@ -1,0 +1,42 @@
+Add MIT-SHM 1.2 (fd passing) support, so frames no longer sit in world
+readable SysV shared memory segments.
+
+Index: src/video_out/Makefile.am
+--- src/video_out/Makefile.am.orig
++++ src/video_out/Makefile.am
+@@ -14,7 +14,7 @@ endif
+ 
+ EXTRA_DIST = video_out_macosx.m color_matrix.c
+ 
+-noinst_HEADERS = xv_common.h
++noinst_HEADERS = xv_common.h xshm_fd.h
+ 
+ # helper libraries
+ 
+@@ -175,20 +175,20 @@ xineplug_vo_out_vaapi_la_LIBADD = $(XINE
+ xineplug_vo_out_vaapi_la_CFLAGS = $(AM_CFLAGS) $(X_CFLAGS) $(XV_CFLAGS) $(LIBVA_CFLAGS) $(LIBVA_GLX_CFLAGS) $(LIBVA_X11_CFLAGS)
+ 
+ xineplug_vo_out_xcbshm_la_SOURCES = video_out_xcbshm.c
+-xineplug_vo_out_xcbshm_la_LIBADD = $(XINE_LIB) $(PTHREAD_LIBS) $(XCB_LIBS) $(XCBSHM_LIBS) $(LTLIBINTL) $(XCBOSD_LIB)
++xineplug_vo_out_xcbshm_la_LIBADD = $(XINE_LIB) $(PTHREAD_LIBS) $(XCB_LIBS) $(XCBSHM_LIBS) $(SHM_LIBS) $(LTLIBINTL) $(XCBOSD_LIB)
+ xineplug_vo_out_xcbshm_la_CFLAGS = $(AM_CFLAGS) $(XCB_CFLAGS) $(XCBSHM_CFLAGS)
+ 
+ xineplug_vo_out_xcbxv_la_SOURCES = video_out_xcbxv.c
+-xineplug_vo_out_xcbxv_la_LIBADD = $(XINE_LIB) $(PTHREAD_LIBS) $(LTLIBINTL) $(XCBXV_LIBS) $(XCB_LIBS) $(XCBSHM_LIBS) $(XCBOSD_LIB)
++xineplug_vo_out_xcbxv_la_LIBADD = $(XINE_LIB) $(PTHREAD_LIBS) $(LTLIBINTL) $(XCBXV_LIBS) $(XCB_LIBS) $(XCBSHM_LIBS) $(SHM_LIBS) $(XCBOSD_LIB)
+ xineplug_vo_out_xcbxv_la_CFLAGS = $(AM_CFLAGS) $(XCB_CFLAGS) $(XCBXV_CFLAGS)
+ 
+ xineplug_vo_out_xshm_la_SOURCES = video_out_xshm.c
+-xineplug_vo_out_xshm_la_LIBADD = $(XINE_LIB) $(X_LIBS) $(PTHREAD_LIBS) $(LTLIBINTL) $(X11OSD_LIB)
+-xineplug_vo_out_xshm_la_CFLAGS = $(AM_CFLAGS) $(X_CFLAGS)
++xineplug_vo_out_xshm_la_LIBADD = $(XINE_LIB) $(X_LIBS) $(X11XCB_LIBS) $(SHM_LIBS) $(PTHREAD_LIBS) $(LTLIBINTL) $(X11OSD_LIB)
++xineplug_vo_out_xshm_la_CFLAGS = $(AM_CFLAGS) $(X_CFLAGS) $(X11XCB_CFLAGS)
+ 
+ xineplug_vo_out_xv_la_SOURCES = video_out_xv.c
+-xineplug_vo_out_xv_la_LIBADD = $(XINE_LIB) $(XV_LIBS) $(X_LIBS) $(PTHREAD_LIBS) $(LTLIBINTL) $(X11OSD_LIB)
+-xineplug_vo_out_xv_la_CFLAGS = $(AM_CFLAGS) $(X_CFLAGS) $(XV_CFLAGS)
++xineplug_vo_out_xv_la_LIBADD = $(XINE_LIB) $(XV_LIBS) $(X_LIBS) $(X11XCB_LIBS) $(SHM_LIBS) $(PTHREAD_LIBS) $(LTLIBINTL) $(X11OSD_LIB)
++xineplug_vo_out_xv_la_CFLAGS = $(AM_CFLAGS) $(X_CFLAGS) $(XV_CFLAGS) $(X11XCB_CFLAGS)
+ 
+ xineplug_vo_out_xvmc_la_SOURCES = video_out_xvmc.c
+ xineplug_vo_out_xvmc_la_LIBADD = $(XINE_LIB) $(XVMC_LIBS) $(XV_LIBS) $(X_LIBS) $(PTHREAD_LIBS) $(LTLIBINTL)

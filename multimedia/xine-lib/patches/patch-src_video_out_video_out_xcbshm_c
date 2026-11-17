@@ -1,0 +1,83 @@
+Add MIT-SHM 1.2 (fd passing) support, so frames no longer sit in world
+readable SysV shared memory segments.
+
+Index: src/video_out/video_out_xcbshm.c
+--- src/video_out/video_out_xcbshm.c.orig
++++ src/video_out/video_out_xcbshm.c
+@@ -65,6 +65,7 @@
+ #include <xine/xineutils.h>
+ #include <xine/vo_scale.h>
+ #include "xcbosd.h"
++#include "xshm_fd.h"
+ 
+ #include "xine_mmx.h"
+ 
+@@ -81,6 +82,7 @@ typedef struct {
+   uint8_t           *image;
+   int                bytes_per_line;
+   xcb_shm_seg_t      shmseg;
++  size_t             shm_size;   /* != 0: attached by fd, mmap()ed */
+ 
+   yuv2rgb_t         *yuv2rgb; /* yuv2rgb converter set up for this frame */
+   uint8_t           *rgb_dst;
+@@ -108,6 +110,7 @@ typedef struct {
+   int                bpp;
+   int                scanline_pad;
+   int                use_shm;
++  int                use_shm_fd;
+ 
+   int                brightness;
+   int                contrast;
+@@ -159,6 +162,27 @@ static void create_ximage(xshm_driver_t
+     xcb_void_cookie_t shm_attach_cookie;
+     xcb_generic_error_t *generic_error;
+ 
++#ifdef XINE_XSHM_FD
++    if (this->use_shm_fd) {
++      size_t size = (size_t)frame->bytes_per_line * height;
++      int fd;
++
++      frame->image = xine_shm_fd_alloc(size, &fd);
++      if (frame->image) {
++        frame->shmseg = xcb_generate_id(this->connection);
++        if (xine_xcb_shm_fd_attach(this->connection, frame->shmseg, fd)) {
++          frame->shm_size = size;
++          return;
++        }
++        frame->shmseg = 0;
++        munmap(frame->image, size);
++      }
++      xprintf(this->xine, XINE_VERBOSITY_LOG,
++	      "%s: MIT-SHM fd passing failed, using SysV shared memory.\n", LOG_MODULE);
++      this->use_shm_fd = 0;
++    }
++#endif
++
+     /*
+      * try shm
+      */
+@@ -228,6 +252,12 @@ static void dispose_ximage(xshm_driver_t
+   if (frame->shmseg) {
+     xcb_shm_detach(this->connection, frame->shmseg);
+     frame->shmseg = 0;
++#ifdef XINE_XSHM_FD
++    if (frame->shm_size) {
++      munmap(frame->image, frame->shm_size);
++      frame->shm_size = 0;
++    } else
++#endif
+     shmdt(frame->image);
+   } else
+     free(frame->image);
+@@ -1279,6 +1309,11 @@ static vo_driver_t *xshm_open_plugin(vid
+   query_extension_reply = xcb_get_extension_data(this->connection, &xcb_shm_id);
+   if (query_extension_reply && query_extension_reply->present) {
+     this->use_shm = 1;
++#ifdef XINE_XSHM_FD
++    this->use_shm_fd = xine_xcb_shm_fd_usable(this->connection);
++    xprintf(this->xine, XINE_VERBOSITY_DEBUG, "%s: MIT-SHM fd passing %s.\n",
++	    LOG_MODULE, this->use_shm_fd ? "enabled" : "not available");
++#endif
+   }
+   else {
+     xprintf(this->xine, XINE_VERBOSITY_LOG,

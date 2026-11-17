@@ -1,0 +1,156 @@
+Add MIT-SHM 1.2 (fd passing) support, so frames no longer sit in world
+readable SysV shared memory segments.
+
+Index: src/video_out/xshm_fd.h
+--- src/video_out/xshm_fd.h.orig
++++ src/video_out/xshm_fd.h
+@@ -0,0 +1,149 @@
++/*
++ * Copyright (C) 2026 the xine project
++ *
++ * This file is part of xine, a free video player.
++ *
++ * xine is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * xine is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
++ *
++ * xshm_fd.h: MIT-SHM 1.2 (fd passing) helpers.
++ *
++ * With fd passing the shared memory is an unlinked shm object owned by
++ * the client, instead of a world accessible SysV segment.
++ */
++
++#ifndef XINE_XSHM_FD_H
++#define XINE_XSHM_FD_H
++
++#if defined(HAVE_XCB_SHM_FD) && \
++    (defined(HAVE_MEMFD_CREATE) || (defined(HAVE_DECL_SHM_ANON) && HAVE_DECL_SHM_ANON) || \
++     defined(HAVE_SHM_MKSTEMP) || defined(HAVE_SHM_OPEN))
++
++#define XINE_XSHM_FD 1
++
++/* Fake shmid marking a segment that was attached by fd. */
++#define XINE_XSHM_FD_SHMID (-2)
++
++#include <sys/types.h>
++#include <sys/mman.h>
++#include <sys/socket.h>
++#include <errno.h>
++#include <fcntl.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <time.h>
++#include <unistd.h>
++
++#include <xcb/xcb.h>
++#include <xcb/shm.h>
++
++/* Return an unlinked shared memory object, or -1. */
++static inline int xine_shm_fd_open (void) {
++  int fd;
++#if defined(HAVE_MEMFD_CREATE)
++  fd = memfd_create ("xine-shm", MFD_CLOEXEC);
++#elif defined(HAVE_DECL_SHM_ANON) && HAVE_DECL_SHM_ANON
++  fd = shm_open (SHM_ANON, O_RDWR, 0600);
++#elif defined(HAVE_SHM_MKSTEMP)
++  char name[] = "/xine-shm-XXXXXXXXXX";
++  fd = shm_mkstemp (name);
++  if (fd >= 0) {
++    shm_unlink (name);
++    fcntl (fd, F_SETFD, FD_CLOEXEC);
++  }
++#else
++  static unsigned int count;
++  char name[64];
++  int i;
++  fd = -1;
++  for (i = 0; i < 100; i++) {
++    snprintf (name, sizeof (name), "/xine-shm-%ld-%lx-%u",
++              (long)getpid (), (unsigned long)time (NULL), count++);
++    fd = shm_open (name, O_RDWR | O_CREAT | O_EXCL, 0600);
++    if (fd >= 0) {
++      shm_unlink (name);
++      break;
++    }
++    if (errno != EEXIST)
++      break;
++  }
++#endif
++  return fd;
++}
++
++/* Map size bytes of new shared memory. Returns the mapping and its fd
++ * in *fdp, or NULL. */
++static inline void *xine_shm_fd_alloc (size_t size, int *fdp) {
++  void *p;
++  int fd;
++
++  if (size == 0)
++    return NULL;
++  fd = xine_shm_fd_open ();
++  if (fd < 0)
++    return NULL;
++  if (ftruncate (fd, (off_t)size) < 0) {
++    close (fd);
++    return NULL;
++  }
++  p = mmap (NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
++  if (p == MAP_FAILED) {
++    close (fd);
++    return NULL;
++  }
++  *fdp = fd;
++  return p;
++}
++
++/* fd passing needs MIT-SHM 1.2 and a local (unix socket) connection. */
++static inline int xine_xcb_shm_fd_usable (xcb_connection_t *c) {
++  const xcb_query_extension_reply_t *ext;
++  xcb_shm_query_version_reply_t *reply;
++  union {
++    struct sockaddr         sa;
++    struct sockaddr_storage ss;
++  } addr;
++  socklen_t len = sizeof (addr);
++  int ok;
++
++  if (getsockname (xcb_get_file_descriptor (c), &addr.sa, &len) < 0 ||
++      addr.sa.sa_family != AF_UNIX)
++    return 0;
++  ext = xcb_get_extension_data (c, &xcb_shm_id);
++  if (!ext || !ext->present)
++    return 0;
++  reply = xcb_shm_query_version_reply (c, xcb_shm_query_version (c), NULL);
++  if (!reply)
++    return 0;
++  ok = reply->major_version > 1 ||
++       (reply->major_version == 1 && reply->minor_version >= 2);
++  free (reply);
++  return ok;
++}
++
++/* Attach the memory behind fd as segment seg. xcb always closes fd. */
++static inline int xine_xcb_shm_fd_attach (xcb_connection_t *c, xcb_shm_seg_t seg, int fd) {
++  xcb_generic_error_t *error;
++
++  error = xcb_request_check (c, xcb_shm_attach_fd_checked (c, seg, fd, 0));
++  if (error) {
++    free (error);
++    return 0;
++  }
++  return 1;
++}
++
++#endif
++
++#endif
