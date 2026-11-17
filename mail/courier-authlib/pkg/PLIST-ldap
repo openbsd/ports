@@ -2,7 +2,7 @@
 @comment lib/libauthldap.la
 @lib lib/libauthldap.so.${LIBauthldap_VERSION}
 share/doc/courier-authlib/README.ldap
-share/examples/courier-authlib/authldap.schema
+share/examples/courier-authlib/authldap.ldif
 share/examples/courier-authlib/authldaprc.dist
 @mode 600
 @sample ${SYSCONFDIR}/courier/authldaprc

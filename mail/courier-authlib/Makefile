@@ -4,8 +4,7 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=		courier-authlib-0.72.3
-REVISION-userdb=	0
+DISTNAME=		courier-authlib-0.73.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -159,7 +158,7 @@ post-install:
 	@mv ${WRKINST}${SYSCONFDIR}/courier/*.dist ${EXAMPLE_DIR}
 	@chown root:wheel ${EXAMPLE_DIR}/*
 .if ${BUILD_PACKAGES:M-ldap}
-	${INSTALL_DATA} ${WRKSRC}/authldap.schema ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/authldap.ldif ${EXAMPLE_DIR}
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier-authlib
 .for i in ${DOCS}
