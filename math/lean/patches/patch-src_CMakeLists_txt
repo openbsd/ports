@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -415,7 +415,11 @@ endif()
+@@ -409,7 +409,11 @@ endif()
  
  # OpenSSL
  if(NOT "${CMAKE_SYSTEM_NAME}" MATCHES "Emscripten")
@@ -14,7 +14,19 @@ Index: src/CMakeLists.txt
    set(OPENSSL_LIBRARIES ${OPENSSL_SSL_LIBRARY} ${OPENSSL_CRYPTO_LIBRARY})
    include_directories(${OPENSSL_INCLUDE_DIR})
    string(JOIN " " OPENSSL_LIBRARIES_STR ${OPENSSL_LIBRARIES})
-@@ -622,6 +626,15 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+@@ -531,6 +535,11 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+ endif()
+ 
+ if(CADICAL_LIB)
++  if(USE_SYSTEM_CADICAL)
++    cmake_path(GET CADICAL_LIB PARENT_PATH CADICAL_LIBRARY_DIR)
++    string(APPEND TOOLCHAIN_STATIC_LINKER_FLAGS " -L${CADICAL_LIBRARY_DIR}")
++    string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -L${CADICAL_LIBRARY_DIR}")
++  endif()
+   string(APPEND TOOLCHAIN_STATIC_LINKER_FLAGS " -lcadical")
+   string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -lcadical")
+ endif()
+@@ -621,6 +630,15 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
      " -Wl,-force_load,${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export ${CMAKE_BINARY_DIR}/lib/lean/libLeanExport.a.export -install_name @rpath/libLake_shared.dylib"
    )
    string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath,@executable_path/../lib -Wl,-rpath,@executable_path/../lib/lean")

@@ -10,7 +10,7 @@ Index: stage0/src/runtime/io.cpp
  #include <sys/random.h>
  #endif
  #endif
-@@ -1384,6 +1384,11 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path() {
+@@ -1383,6 +1383,11 @@ extern "C" LEAN_EXPORT obj_res lean_io_app_path() {
      if (!realpath(buf1, buf2))
          return io_result_mk_error("failed to resolve symbolic links when locating application");
      return io_result_mk_ok(mk_string(buf2));

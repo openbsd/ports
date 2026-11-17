@@ -2,7 +2,7 @@ COMMENT =		interactive and automated theorem prover
 
 DPB_PROPERTIES =	parallel
 
-V =			4.35.0
+V =			4.36.0
 GH_ACCOUNT =		leanprover
 GH_PROJECT =		lean4
 GH_TAGNAME =		v${V}
@@ -19,15 +19,16 @@ MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto gmp m ssl uv
+WANTLIB += ${COMPILER_LIBCXX} c cadical crypto gmp m ssl uv
 
-BUILD_DEPENDS = 	archivers/leangz \
-			shells/bash \
+BUILD_DEPENDS = 	shells/bash \
 			devel/git,-main \
 			math/cadical
 
-LIB_DEPENDS = 		devel/gmp,-main \
-			devel/libuv
+LIB_DEPENDS = 		archivers/leangz \
+			devel/gmp,-main \
+			devel/libuv \
+			math/cadical
 
 TEST_DEPENDS =		shells/bash \
 			textproc/gdiff \
@@ -77,6 +78,5 @@ pre-test:
 	ln -sf ${LOCALBASE}/bin/gstat ${WRKDIR}/bin/stat
 	ln -sf ${LOCALBASE}/bin/leangz ${WRKBUILD}/stage1/bin
 	ln -sf ${LOCALBASE}/bin/leantar ${WRKBUILD}/stage1/bin
-
 
 .include <bsd.port.mk>
