@@ -2,9 +2,8 @@ COMMENT=		Lumina Desktop Environment
 
 GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
-GH_TAGNAME=		v1.4.0-p1
-PKGNAME=		lumina-1.4.0pl1
-REVISION=		11
+GH_TAGNAME=		v1.6.2
+PKGNAME=		lumina-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		x11
 
@@ -13,12 +12,12 @@ HOMEPAGE=		https://lumina-desktop.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5Widgets Qt5X11Extras Xdamage c glib-2.0 intl m
-WANTLIB += poppler-qt5 pulse pulse-mainloop-glib xcb xcb-composite
-WANTLIB += xcb-damage xcb-ewmh xcb-icccm xcb-image xcb-util
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg
+WANTLIB += Qt5Widgets Qt5X11Extras X11 Xcursor Xdamage c m xcb
+WANTLIB += xcb-composite xcb-damage xcb-dpms xcb-ewmh xcb-icccm
+WANTLIB += xcb-image xcb-util
 
 MODULES=		x11/qt5
 
@@ -31,8 +30,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/xscreensaver \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS=		print/poppler,-qt5 \
-			x11/qt5/qtmultimedia \
+LIB_DEPENDS=		x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
 

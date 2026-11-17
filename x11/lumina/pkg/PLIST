@@ -2,28 +2,26 @@
 @pkgpath x11/lumina/lumina
 bin/lte
 @bin bin/lthemeengine
+@bin bin/lthemeengine-sstest
 @bin bin/lumina-archiver
-@bin bin/lumina-calculator
 @bin bin/lumina-config
 @bin bin/lumina-desktop
 @bin bin/lumina-fileinfo
 @bin bin/lumina-fm
 @bin bin/lumina-info
 @bin bin/lumina-mediaplayer
-@bin bin/lumina-notify
 @bin bin/lumina-open
-@bin bin/lumina-pdf
+@bin bin/lumina-photo
+@bin bin/lumina-pingcursor
 @bin bin/lumina-screenshot
 @bin bin/lumina-search
 @bin bin/lumina-textedit
 @bin bin/lumina-xconfig
-@bin bin/lumina-xdg-entry
 @bin bin/start-lumina-desktop
-lib/qt5/plugins/platformthemes/liblthemeengine.so
+@so lib/qt5/plugins/platformthemes/liblthemeengine.so
 lib/qt5/plugins/styles/
-lib/qt5/plugins/styles/liblthemeengine-style.so
+@so lib/qt5/plugins/styles/liblthemeengine-style.so
 @man man/man1/lumina-archiver.1
-@man man/man1/lumina-calculator.1
 @man man/man1/lumina-config.1
 @man man/man1/lumina-desktop.1
 @man man/man1/lumina-fileinfo.1
@@ -31,30 +29,72 @@ lib/qt5/plugins/styles/liblthemeengine-style.so
 @man man/man1/lumina-info.1
 @man man/man1/lumina-mediaplayer.1
 @man man/man1/lumina-open.1
+@man man/man1/lumina-photo.1
 @man man/man1/lumina-screenshot.1
 @man man/man1/lumina-search.1
 @man man/man1/lumina-textedit.1
 @man man/man1/lumina-xconfig.1
-@man man/man1/lumina-xdg-entry.1
 @man man/man8/start-lumina-desktop.8
 share/applications/lthemeengine.desktop
 share/applications/lumina-archiver.desktop
-share/applications/lumina-calculator.desktop
 share/applications/lumina-config.desktop
 share/applications/lumina-fileinfo.desktop
 share/applications/lumina-fm.desktop
 share/applications/lumina-info.desktop
+share/applications/lumina-mediaplayer-pandora.desktop
 share/applications/lumina-mediaplayer.desktop
-share/applications/lumina-pdf.desktop
+share/applications/lumina-photo.desktop
 share/applications/lumina-screenshot.desktop
 share/applications/lumina-search.desktop
 share/applications/lumina-support.desktop
 share/applications/lumina-textedit.desktop
 share/applications/lumina-xconfig.desktop
-share/applications/lumina-xdg-entry.desktop
 share/examples/lumina/
 share/examples/lumina/luminaDesktop.conf
 @sample ${SYSCONFDIR}/luminaDesktop.conf
+share/icons/hicolor/scalable/apps/Insight-FileManager.svg
+share/icons/hicolor/scalable/apps/Lumina-DE.svg
+share/icons/lumina-icons/
+share/icons/lumina-icons/LICENSE
+share/icons/lumina-icons/actions/
+share/icons/lumina-icons/actions/symbolic/
+share/icons/lumina-icons/actions/symbolic/application.svg
+share/icons/lumina-icons/actions/symbolic/apps.svg
+share/icons/lumina-icons/actions/symbolic/arrow-down-double.svg
+share/icons/lumina-icons/actions/symbolic/arrow-down.svg
+share/icons/lumina-icons/actions/symbolic/arrow-up.svg
+share/icons/lumina-icons/actions/symbolic/audio-volume-high.svg
+share/icons/lumina-icons/actions/symbolic/audio-volume-low.svg
+share/icons/lumina-icons/actions/symbolic/audio-volume-medium.svg
+share/icons/lumina-icons/actions/symbolic/audio-volume-off.svg
+share/icons/lumina-icons/actions/symbolic/audio-volume.svg
+share/icons/lumina-icons/actions/symbolic/bookmark-new-list.svg
+share/icons/lumina-icons/actions/symbolic/bookmark-new.svg
+share/icons/lumina-icons/actions/symbolic/bookmark-remove-list.svg
+share/icons/lumina-icons/actions/symbolic/bookmark-remove.svg
+share/icons/lumina-icons/actions/symbolic/bookmark-toolbar.svg
+share/icons/lumina-icons/actions/symbolic/camera-off.svg
+share/icons/lumina-icons/actions/symbolic/camera-photo.svg
+share/icons/lumina-icons/actions/symbolic/camera-video-off.svg
+share/icons/lumina-icons/actions/symbolic/camera-video.svg
+share/icons/lumina-icons/actions/symbolic/camera-web.svg
+share/icons/lumina-icons/actions/symbolic/clock.svg
+share/icons/lumina-icons/actions/symbolic/git-gui.svg
+share/icons/lumina-icons/actions/symbolic/lock.svg
+share/icons/lumina-icons/actions/symbolic/system-cancel.svg
+share/icons/lumina-icons/actions/symbolic/system-error.svg
+share/icons/lumina-icons/actions/symbolic/system-help.svg
+share/icons/lumina-icons/actions/symbolic/system-lock-screen.svg
+share/icons/lumina-icons/actions/symbolic/system-log-out.svg
+share/icons/lumina-icons/actions/symbolic/system-reboot.svg
+share/icons/lumina-icons/actions/symbolic/system-save-session.svg
+share/icons/lumina-icons/actions/symbolic/system-search.svg
+share/icons/lumina-icons/actions/symbolic/system-shutdown.svg
+share/icons/lumina-icons/actions/symbolic/system-suspend-hibernate.svg
+share/icons/lumina-icons/actions/symbolic/system-suspend.svg
+share/icons/lumina-icons/actions/symbolic/system-switch-user.svg
+share/icons/lumina-icons/actions/symbolic/system-users.svg
+share/icons/lumina-icons/index.theme
 share/icons/material-design-dark/
 share/icons/material-design-dark/LICENSE
 share/icons/material-design-dark/index.theme
@@ -178,6 +218,8 @@ share/icons/material-design-dark/scalable/actions/configure.svg
 share/icons/material-design-dark/scalable/actions/contact-mail.svg
 share/icons/material-design-dark/scalable/actions/contact-new.svg
 share/icons/material-design-dark/scalable/actions/contact-phone.svg
+share/icons/material-design-dark/scalable/actions/cursor-pointer.svg
+share/icons/material-design-dark/scalable/actions/cursor-text.svg
 share/icons/material-design-dark/scalable/actions/dashboard-show.svg
 share/icons/material-design-dark/scalable/actions/dialog-cancel.svg
 share/icons/material-design-dark/scalable/actions/dialog-close.svg
@@ -213,7 +255,9 @@ share/icons/material-design-dark/scalable/actions/edit-clear.svg
 share/icons/material-design-dark/scalable/actions/edit-copy.svg
 share/icons/material-design-dark/scalable/actions/edit-cut.svg
 share/icons/material-design-dark/scalable/actions/edit-delete.svg
+share/icons/material-design-dark/scalable/actions/edit-find-next.svg
 share/icons/material-design-dark/scalable/actions/edit-find-page.svg
+share/icons/material-design-dark/scalable/actions/edit-find-prev.svg
 share/icons/material-design-dark/scalable/actions/edit-find-replace.svg
 share/icons/material-design-dark/scalable/actions/edit-find.svg
 share/icons/material-design-dark/scalable/actions/edit-location.svg
@@ -319,6 +363,7 @@ share/icons/material-design-dark/scalable/actions/media-playback-shuffle.svg
 share/icons/material-design-dark/scalable/actions/media-playback-slow.svg
 share/icons/material-design-dark/scalable/actions/media-playback-start-circled.svg
 share/icons/material-design-dark/scalable/actions/media-playback-start.svg
+share/icons/material-design-dark/scalable/actions/media-playback-stop-circled.svg
 share/icons/material-design-dark/scalable/actions/media-playback-stop.svg
 share/icons/material-design-dark/scalable/actions/media-record.svg
 share/icons/material-design-dark/scalable/actions/media-seek-backward.svg
@@ -343,6 +388,7 @@ share/icons/material-design-dark/scalable/actions/object-flip-horizontal.svg
 share/icons/material-design-dark/scalable/actions/object-flip-vertical.svg
 share/icons/material-design-dark/scalable/actions/object-rotate-left.svg
 share/icons/material-design-dark/scalable/actions/object-rotate-right.svg
+share/icons/material-design-dark/scalable/actions/presentation-play.svg
 share/icons/material-design-dark/scalable/actions/process-stop.svg
 share/icons/material-design-dark/scalable/actions/quickopen-file.svg
 share/icons/material-design-dark/scalable/actions/quickopen.svg
@@ -1004,6 +1050,8 @@ share/icons/material-design-light/scalable/actions/configure.svg
 share/icons/material-design-light/scalable/actions/contact-mail.svg
 share/icons/material-design-light/scalable/actions/contact-new.svg
 share/icons/material-design-light/scalable/actions/contact-phone.svg
+share/icons/material-design-light/scalable/actions/cursor-pointer.svg
+share/icons/material-design-light/scalable/actions/cursor-text.svg
 share/icons/material-design-light/scalable/actions/dashboard-show.svg
 share/icons/material-design-light/scalable/actions/dialog-cancel.svg
 share/icons/material-design-light/scalable/actions/dialog-close.svg
@@ -1039,7 +1087,9 @@ share/icons/material-design-light/scalable/actions/edit-clear.svg
 share/icons/material-design-light/scalable/actions/edit-copy.svg
 share/icons/material-design-light/scalable/actions/edit-cut.svg
 share/icons/material-design-light/scalable/actions/edit-delete.svg
+share/icons/material-design-light/scalable/actions/edit-find-next.svg
 share/icons/material-design-light/scalable/actions/edit-find-page.svg
+share/icons/material-design-light/scalable/actions/edit-find-prev.svg
 share/icons/material-design-light/scalable/actions/edit-find-replace.svg
 share/icons/material-design-light/scalable/actions/edit-find.svg
 share/icons/material-design-light/scalable/actions/edit-location.svg
@@ -1145,6 +1195,7 @@ share/icons/material-design-light/scalable/actions/media-playback-shuffle.svg
 share/icons/material-design-light/scalable/actions/media-playback-slow.svg
 share/icons/material-design-light/scalable/actions/media-playback-start-circled.svg
 share/icons/material-design-light/scalable/actions/media-playback-start.svg
+share/icons/material-design-light/scalable/actions/media-playback-stop-circled.svg
 share/icons/material-design-light/scalable/actions/media-playback-stop.svg
 share/icons/material-design-light/scalable/actions/media-record.svg
 share/icons/material-design-light/scalable/actions/media-seek-backward.svg
@@ -1169,6 +1220,7 @@ share/icons/material-design-light/scalable/actions/object-flip-horizontal.svg
 share/icons/material-design-light/scalable/actions/object-flip-vertical.svg
 share/icons/material-design-light/scalable/actions/object-rotate-left.svg
 share/icons/material-design-light/scalable/actions/object-rotate-right.svg
+share/icons/material-design-light/scalable/actions/presentation-play.svg
 share/icons/material-design-light/scalable/actions/process-stop.svg
 share/icons/material-design-light/scalable/actions/quickopen-file.svg
 share/icons/material-design-light/scalable/actions/quickopen.svg
@@ -1712,19 +1764,24 @@ share/lthemeengine/colors/
 share/lthemeengine/colors/airy.conf
 share/lthemeengine/colors/darker.conf
 share/lthemeengine/colors/dusk.conf
+share/lthemeengine/colors/lumina-dark.conf
 share/lthemeengine/colors/sand.conf
 share/lthemeengine/colors/simple.conf
 share/lthemeengine/colors/waves.conf
 share/lthemeengine/desktop_qss/
+share/lthemeengine/desktop_qss/DarkGlass-desktop-icons.qss
 share/lthemeengine/desktop_qss/DarkGlass.qss
+share/lthemeengine/desktop_qss/Glass-desktop-icons.qss
 share/lthemeengine/desktop_qss/Glass.qss
 share/lthemeengine/qss/
 share/lthemeengine/qss/scrollbar-simple.qss
 share/lthemeengine/qss/sliders-simple.qss
 share/lthemeengine/qss/tooltip-simple.qss
+share/lthemeengine/qss/traynotification-simple.qss
 share/lumina-desktop/
 share/lumina-desktop/Login.ogg
 share/lumina-desktop/Logout.ogg
+share/lumina-desktop/Lumina-DE.png
 share/lumina-desktop/compton.conf
 share/lumina-desktop/desktop-background.jpg
 share/lumina-desktop/fluxbox-init-rc
@@ -1794,69 +1851,6 @@ share/lumina-desktop/i18n/l-archiver_zh_CN.qm
 share/lumina-desktop/i18n/l-archiver_zh_HK.qm
 share/lumina-desktop/i18n/l-archiver_zh_TW.qm
 share/lumina-desktop/i18n/l-archiver_zu.qm
-share/lumina-desktop/i18n/l-calc_af.qm
-share/lumina-desktop/i18n/l-calc_ar.qm
-share/lumina-desktop/i18n/l-calc_az.qm
-share/lumina-desktop/i18n/l-calc_bg.qm
-share/lumina-desktop/i18n/l-calc_bn.qm
-share/lumina-desktop/i18n/l-calc_bs.qm
-share/lumina-desktop/i18n/l-calc_ca.qm
-share/lumina-desktop/i18n/l-calc_cs.qm
-share/lumina-desktop/i18n/l-calc_cy.qm
-share/lumina-desktop/i18n/l-calc_da.qm
-share/lumina-desktop/i18n/l-calc_de.qm
-share/lumina-desktop/i18n/l-calc_el.qm
-share/lumina-desktop/i18n/l-calc_en_AU.qm
-share/lumina-desktop/i18n/l-calc_en_GB.qm
-share/lumina-desktop/i18n/l-calc_en_ZA.qm
-share/lumina-desktop/i18n/l-calc_es.qm
-share/lumina-desktop/i18n/l-calc_et.qm
-share/lumina-desktop/i18n/l-calc_eu.qm
-share/lumina-desktop/i18n/l-calc_fa.qm
-share/lumina-desktop/i18n/l-calc_fi.qm
-share/lumina-desktop/i18n/l-calc_fr.qm
-share/lumina-desktop/i18n/l-calc_fr_CA.qm
-share/lumina-desktop/i18n/l-calc_gl.qm
-share/lumina-desktop/i18n/l-calc_he.qm
-share/lumina-desktop/i18n/l-calc_hi.qm
-share/lumina-desktop/i18n/l-calc_hr.qm
-share/lumina-desktop/i18n/l-calc_hu.qm
-share/lumina-desktop/i18n/l-calc_id.qm
-share/lumina-desktop/i18n/l-calc_is.qm
-share/lumina-desktop/i18n/l-calc_it.qm
-share/lumina-desktop/i18n/l-calc_ja.qm
-share/lumina-desktop/i18n/l-calc_ka.qm
-share/lumina-desktop/i18n/l-calc_ko.qm
-share/lumina-desktop/i18n/l-calc_lt.qm
-share/lumina-desktop/i18n/l-calc_lv.qm
-share/lumina-desktop/i18n/l-calc_mk.qm
-share/lumina-desktop/i18n/l-calc_mn.qm
-share/lumina-desktop/i18n/l-calc_ms.qm
-share/lumina-desktop/i18n/l-calc_mt.qm
-share/lumina-desktop/i18n/l-calc_nb.qm
-share/lumina-desktop/i18n/l-calc_nl.qm
-share/lumina-desktop/i18n/l-calc_pa.qm
-share/lumina-desktop/i18n/l-calc_pl.qm
-share/lumina-desktop/i18n/l-calc_pt.qm
-share/lumina-desktop/i18n/l-calc_pt_BR.qm
-share/lumina-desktop/i18n/l-calc_ro.qm
-share/lumina-desktop/i18n/l-calc_ru.qm
-share/lumina-desktop/i18n/l-calc_sk.qm
-share/lumina-desktop/i18n/l-calc_sl.qm
-share/lumina-desktop/i18n/l-calc_sr.qm
-share/lumina-desktop/i18n/l-calc_sv.qm
-share/lumina-desktop/i18n/l-calc_sw.qm
-share/lumina-desktop/i18n/l-calc_ta.qm
-share/lumina-desktop/i18n/l-calc_tg.qm
-share/lumina-desktop/i18n/l-calc_th.qm
-share/lumina-desktop/i18n/l-calc_tr.qm
-share/lumina-desktop/i18n/l-calc_uk.qm
-share/lumina-desktop/i18n/l-calc_uz.qm
-share/lumina-desktop/i18n/l-calc_vi.qm
-share/lumina-desktop/i18n/l-calc_zh_CN.qm
-share/lumina-desktop/i18n/l-calc_zh_HK.qm
-share/lumina-desktop/i18n/l-calc_zh_TW.qm
-share/lumina-desktop/i18n/l-calc_zu.qm
 share/lumina-desktop/i18n/l-fileinfo_af.qm
 share/lumina-desktop/i18n/l-fileinfo_ar.qm
 share/lumina-desktop/i18n/l-fileinfo_az.qm
@@ -1987,72 +1981,69 @@ share/lumina-desktop/i18n/l-mediap_zh_CN.qm
 share/lumina-desktop/i18n/l-mediap_zh_HK.qm
 share/lumina-desktop/i18n/l-mediap_zh_TW.qm
 share/lumina-desktop/i18n/l-mediap_zu.qm
-share/lumina-desktop/i18n/l-pdf_af.qm
-share/lumina-desktop/i18n/l-pdf_ar.qm
-share/lumina-desktop/i18n/l-pdf_az.qm
-share/lumina-desktop/i18n/l-pdf_bg.qm
-share/lumina-desktop/i18n/l-pdf_bn.qm
-share/lumina-desktop/i18n/l-pdf_bs.qm
-share/lumina-desktop/i18n/l-pdf_ca.qm
-share/lumina-desktop/i18n/l-pdf_cs.qm
-share/lumina-desktop/i18n/l-pdf_cy.qm
-share/lumina-desktop/i18n/l-pdf_da.qm
-share/lumina-desktop/i18n/l-pdf_de.qm
-share/lumina-desktop/i18n/l-pdf_el.qm
-share/lumina-desktop/i18n/l-pdf_en_AU.qm
-share/lumina-desktop/i18n/l-pdf_en_GB.qm
-share/lumina-desktop/i18n/l-pdf_en_ZA.qm
-share/lumina-desktop/i18n/l-pdf_es.qm
-share/lumina-desktop/i18n/l-pdf_et.qm
-share/lumina-desktop/i18n/l-pdf_eu.qm
-share/lumina-desktop/i18n/l-pdf_fa.qm
-share/lumina-desktop/i18n/l-pdf_fi.qm
-share/lumina-desktop/i18n/l-pdf_fr.qm
-share/lumina-desktop/i18n/l-pdf_fr_CA.qm
-share/lumina-desktop/i18n/l-pdf_gl.qm
-share/lumina-desktop/i18n/l-pdf_he.qm
-share/lumina-desktop/i18n/l-pdf_hi.qm
-share/lumina-desktop/i18n/l-pdf_hr.qm
-share/lumina-desktop/i18n/l-pdf_hu.qm
-share/lumina-desktop/i18n/l-pdf_id.qm
-share/lumina-desktop/i18n/l-pdf_is.qm
-share/lumina-desktop/i18n/l-pdf_it.qm
-share/lumina-desktop/i18n/l-pdf_ja.qm
-share/lumina-desktop/i18n/l-pdf_ka.qm
-share/lumina-desktop/i18n/l-pdf_ko.qm
-share/lumina-desktop/i18n/l-pdf_lt.qm
-share/lumina-desktop/i18n/l-pdf_lv.qm
-share/lumina-desktop/i18n/l-pdf_mk.qm
-share/lumina-desktop/i18n/l-pdf_mn.qm
-share/lumina-desktop/i18n/l-pdf_ms.qm
-share/lumina-desktop/i18n/l-pdf_mt.qm
-share/lumina-desktop/i18n/l-pdf_nb.qm
-share/lumina-desktop/i18n/l-pdf_ne.qm
-share/lumina-desktop/i18n/l-pdf_nl.qm
-share/lumina-desktop/i18n/l-pdf_pa.qm
-share/lumina-desktop/i18n/l-pdf_pl.qm
-share/lumina-desktop/i18n/l-pdf_pt.qm
-share/lumina-desktop/i18n/l-pdf_pt_BR.qm
-share/lumina-desktop/i18n/l-pdf_ro.qm
-share/lumina-desktop/i18n/l-pdf_ru.qm
-share/lumina-desktop/i18n/l-pdf_sa.qm
-share/lumina-desktop/i18n/l-pdf_sk.qm
-share/lumina-desktop/i18n/l-pdf_sl.qm
-share/lumina-desktop/i18n/l-pdf_sr.qm
-share/lumina-desktop/i18n/l-pdf_sv.qm
-share/lumina-desktop/i18n/l-pdf_sw.qm
-share/lumina-desktop/i18n/l-pdf_ta.qm
-share/lumina-desktop/i18n/l-pdf_tg.qm
-share/lumina-desktop/i18n/l-pdf_th.qm
-share/lumina-desktop/i18n/l-pdf_tr.qm
-share/lumina-desktop/i18n/l-pdf_uk.qm
-share/lumina-desktop/i18n/l-pdf_ur.qm
-share/lumina-desktop/i18n/l-pdf_uz.qm
-share/lumina-desktop/i18n/l-pdf_vi.qm
-share/lumina-desktop/i18n/l-pdf_zh_CN.qm
-share/lumina-desktop/i18n/l-pdf_zh_HK.qm
-share/lumina-desktop/i18n/l-pdf_zh_TW.qm
-share/lumina-desktop/i18n/l-pdf_zu.qm
+share/lumina-desktop/i18n/l-photo_af.qm
+share/lumina-desktop/i18n/l-photo_ar.qm
+share/lumina-desktop/i18n/l-photo_az.qm
+share/lumina-desktop/i18n/l-photo_bg.qm
+share/lumina-desktop/i18n/l-photo_bn.qm
+share/lumina-desktop/i18n/l-photo_bs.qm
+share/lumina-desktop/i18n/l-photo_ca.qm
+share/lumina-desktop/i18n/l-photo_cs.qm
+share/lumina-desktop/i18n/l-photo_cy.qm
+share/lumina-desktop/i18n/l-photo_da.qm
+share/lumina-desktop/i18n/l-photo_de.qm
+share/lumina-desktop/i18n/l-photo_el.qm
+share/lumina-desktop/i18n/l-photo_en_AU.qm
+share/lumina-desktop/i18n/l-photo_en_GB.qm
+share/lumina-desktop/i18n/l-photo_en_ZA.qm
+share/lumina-desktop/i18n/l-photo_es.qm
+share/lumina-desktop/i18n/l-photo_et.qm
+share/lumina-desktop/i18n/l-photo_eu.qm
+share/lumina-desktop/i18n/l-photo_fa.qm
+share/lumina-desktop/i18n/l-photo_fi.qm
+share/lumina-desktop/i18n/l-photo_fr.qm
+share/lumina-desktop/i18n/l-photo_fr_CA.qm
+share/lumina-desktop/i18n/l-photo_gl.qm
+share/lumina-desktop/i18n/l-photo_he.qm
+share/lumina-desktop/i18n/l-photo_hi.qm
+share/lumina-desktop/i18n/l-photo_hr.qm
+share/lumina-desktop/i18n/l-photo_hu.qm
+share/lumina-desktop/i18n/l-photo_id.qm
+share/lumina-desktop/i18n/l-photo_is.qm
+share/lumina-desktop/i18n/l-photo_it.qm
+share/lumina-desktop/i18n/l-photo_ja.qm
+share/lumina-desktop/i18n/l-photo_ka.qm
+share/lumina-desktop/i18n/l-photo_ko.qm
+share/lumina-desktop/i18n/l-photo_lt.qm
+share/lumina-desktop/i18n/l-photo_lv.qm
+share/lumina-desktop/i18n/l-photo_mk.qm
+share/lumina-desktop/i18n/l-photo_mn.qm
+share/lumina-desktop/i18n/l-photo_ms.qm
+share/lumina-desktop/i18n/l-photo_mt.qm
+share/lumina-desktop/i18n/l-photo_nb.qm
+share/lumina-desktop/i18n/l-photo_nl.qm
+share/lumina-desktop/i18n/l-photo_pa.qm
+share/lumina-desktop/i18n/l-photo_pl.qm
+share/lumina-desktop/i18n/l-photo_pt.qm
+share/lumina-desktop/i18n/l-photo_pt_BR.qm
+share/lumina-desktop/i18n/l-photo_ro.qm
+share/lumina-desktop/i18n/l-photo_ru.qm
+share/lumina-desktop/i18n/l-photo_sk.qm
+share/lumina-desktop/i18n/l-photo_sl.qm
+share/lumina-desktop/i18n/l-photo_sr.qm
+share/lumina-desktop/i18n/l-photo_sv.qm
+share/lumina-desktop/i18n/l-photo_sw.qm
+share/lumina-desktop/i18n/l-photo_ta.qm
+share/lumina-desktop/i18n/l-photo_tg.qm
+share/lumina-desktop/i18n/l-photo_th.qm
+share/lumina-desktop/i18n/l-photo_tr.qm
+share/lumina-desktop/i18n/l-photo_uk.qm
+share/lumina-desktop/i18n/l-photo_uz.qm
+share/lumina-desktop/i18n/l-photo_vi.qm
+share/lumina-desktop/i18n/l-photo_zh_CN.qm
+share/lumina-desktop/i18n/l-photo_zh_HK.qm
+share/lumina-desktop/i18n/l-photo_zh_TW.qm
+share/lumina-desktop/i18n/l-photo_zu.qm
 share/lumina-desktop/i18n/l-screenshot_af.qm
 share/lumina-desktop/i18n/l-screenshot_ar.qm
 share/lumina-desktop/i18n/l-screenshot_az.qm
@@ -2655,12 +2646,28 @@ share/lumina-desktop/i18n/lumina-xconfig_zu.qm
 share/lumina-desktop/low-battery.ogg
 share/lumina-desktop/luminaDesktop.conf
 share/lumina-desktop/menu-scripts/
+share/lumina-desktop/menu-scripts/README.md
 share/lumina-desktop/menu-scripts/ls.json.sh
+share/lumina-desktop/screensavers/
+share/lumina-desktop/screensavers/Fireflies.json
+share/lumina-desktop/screensavers/Grav.json
+share/lumina-desktop/screensavers/Matrix.json
+share/lumina-desktop/screensavers/README.md
+share/lumina-desktop/screensavers/Video.json
+share/lumina-desktop/screensavers/Warp.json
+share/lumina-desktop/screensavers/qml_scripts/
+share/lumina-desktop/screensavers/qml_scripts/Fireflies.qml
+share/lumina-desktop/screensavers/qml_scripts/Firefly.qml
+share/lumina-desktop/screensavers/qml_scripts/Grav.qml
+share/lumina-desktop/screensavers/qml_scripts/Matrix.qml
+share/lumina-desktop/screensavers/qml_scripts/Video.qml
+share/lumina-desktop/screensavers/qml_scripts/Warp.qml
 share/lumina-desktop/syntax_rules/
 share/lumina-desktop/syntax_rules/README.md
 share/lumina-desktop/syntax_rules/cpp.syntax
 share/lumina-desktop/syntax_rules/go.syntax
 share/lumina-desktop/syntax_rules/html.syntax
+share/lumina-desktop/syntax_rules/java.syntax
 share/lumina-desktop/syntax_rules/javascript.syntax
 share/lumina-desktop/syntax_rules/json.syntax
 share/lumina-desktop/syntax_rules/md.syntax
@@ -2670,15 +2677,16 @@ share/lumina-desktop/syntax_rules/rst.syntax
 share/lumina-desktop/syntax_rules/sh.syntax
 share/lumina-desktop/syntax_rules/txt.syntax
 share/lumina-desktop/syntax_rules/xml.syntax
+share/lumina-desktop/theme.cfg
 share/lumina-desktop/themes/
 share/lumina-desktop/themes/DarkGlass.qss.template
 share/lumina-desktop/themes/Glass.qss.template
 share/lumina-desktop/themes/Lumina-default.qss.template
 share/lumina-desktop/themes/None.qss.template
-share/pixmaps/Insight-FileManager.png
-share/pixmaps/Lumina-DE.png
 share/xsessions/
 share/xsessions/Lumina-DE.desktop
 @tag gtk-update-icon-cache %D/share/icons/material-design-dark
 @tag gtk-update-icon-cache %D/share/icons/material-design-light
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/lumina-icons
