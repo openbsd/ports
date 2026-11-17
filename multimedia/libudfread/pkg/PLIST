@@ -3,6 +3,5 @@ include/udfread/blockinput.h
 include/udfread/udfread-version.h
 include/udfread/udfread.h
 @static-lib lib/libudfread.a
-lib/libudfread.la
 @lib lib/libudfread.so.${LIBudfread_VERSION}
 lib/pkgconfig/libudfread.pc
