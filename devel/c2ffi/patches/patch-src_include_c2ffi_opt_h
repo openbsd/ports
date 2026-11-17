@@ -1,0 +1,14 @@
+add llvm22 support
+https://github.com/rpav/c2ffi/pull/133
+
+Index: src/include/c2ffi/opt.h
+--- src/include/c2ffi/opt.h.orig
++++ src/include/c2ffi/opt.h
+@@ -26,7 +26,6 @@
+ 
+ #include <vector>
+ #include <string>
+-#include <iostream>
+ #include <fstream>
+ 
+ #include "c2ffi.h"

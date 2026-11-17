@@ -5,6 +5,7 @@ DISTNAME =	c2ffi-21.1.0.20260104
 GH_ACCOUNT =	rpav
 GH_PROJECT =	c2ffi
 GH_COMMIT =	f52a6c90651cd5f2f5239b67b41fb9a7e4de1f2e
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -28,7 +29,7 @@ MODULES =	devel/cmake \
 		lang/clang
 
 # c2ffi has branches for each llvm version, so stick to the targeted one
-MODCLANG_VERSION =	21
+MODCLANG_VERSION =	22
 
 BUILD_DEPENDS +=	devel/llvm/${MODCLANG_VERSION}
 LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}

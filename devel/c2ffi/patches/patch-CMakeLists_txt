@@ -3,6 +3,15 @@ link with static libLLVMcore and libLLVMoption instead of whole libLLVM-NN.so
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -7,7 +7,7 @@ project(c2ffi)
+ set(SOURCE_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+ # Apparently the LLVM package doesn't support ranges
+-find_package(LLVM 21.1 CONFIG)
++find_package(LLVM 22.1 CONFIG)
+ find_package(Clang REQUIRED CONFIG)
+ 
+ message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
 @@ -64,7 +64,11 @@ target_include_directories(c2ffi PUBLIC
    ${LLVM_INCLUDE_DIRS}
    ${SOURCE_ROOT}/src/include

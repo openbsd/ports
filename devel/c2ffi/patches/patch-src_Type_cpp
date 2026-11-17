@@ -1,0 +1,27 @@
+add llvm22 support
+https://github.com/rpav/c2ffi/pull/133
+
+Index: src/Type.cpp
+--- src/Type.cpp.orig
++++ src/Type.cpp
+@@ -99,10 +99,6 @@ Type* Type::make_type(C2FFIASTConsumer *ast, const cla
+         return new SimpleType(ci, td, tdd->getDeclName().getAsString());
+     }
+ 
+-    if_const_cast(e, clang::ElaboratedType, t) {
+-        return make_type(ast, e->getNamedType().getTypePtr());
+-    }
+-
+     if_const_cast(tt, clang::SubstTemplateTypeParmType, t) {
+         if(tt != tt->desugar().getTypePtr())
+             return make_type(ast, tt->desugar().getTypePtr());
+@@ -115,9 +111,6 @@ Type* Type::make_type(C2FFIASTConsumer *ast, const cla
+ 
+         return new BasicType(ci, t, make_builtin_name(bt));
+     }
+-
+-    if_const_cast(e, clang::ElaboratedType, t)
+-        return make_type(ast, e->getNamedType().getTypePtr());
+ 
+     if(t->isFunctionPointerType())
+         return new SimpleType(ci, t, ":function-pointer");

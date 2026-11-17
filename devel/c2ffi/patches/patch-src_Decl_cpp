@@ -1,0 +1,23 @@
+add llvm22 support
+https://github.com/rpav/c2ffi/pull/133
+
+Index: src/Decl.cpp
+--- src/Decl.cpp.orig
++++ src/Decl.cpp
+@@ -21,6 +21,7 @@
+ #include <clang/AST/ASTContext.h>
+ #include <clang/AST/DeclCXX.h>
+ #include <clang/AST/DeclObjC.h>
++#include <clang/AST/TypeBase.h>
+ 
+ #include "c2ffi.h"
+ #include "c2ffi/ast.h"
+@@ -160,7 +161,7 @@ void RecordDecl::fill_record_decl(C2FFIASTConsumer* as
+ {
+     clang::ASTContext& ctx  = ast->ci().getASTContext();
+     std::string        name = d->getDeclName().getAsString();
+-    const clang::Type* t    = d->getTypeForDecl();
++    const clang::Type* t    = ctx.getCanonicalTypeDeclType(d)->getTypePtr();
+ 
+     if(!t->isIncompleteType() && !t->isInstantiationDependentType()) {
+         set_bit_size(ctx.getTypeSize(t));

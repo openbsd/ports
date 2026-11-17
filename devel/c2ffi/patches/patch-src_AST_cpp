@@ -1,0 +1,18 @@
+add llvm22 support
+https://github.com/rpav/c2ffi/pull/133
+
+Index: src/AST.cpp
+--- src/AST.cpp.orig
++++ src/AST.cpp
+@@ -295,11 +295,6 @@ Decl* C2FFIASTConsumer::make_decl(const clang::RecordD
+ 
+ bool is_underlying_valid(const clang::Type* t)
+ {
+-    if_const_cast(e, clang::ElaboratedType, t)
+-    {
+-        return is_underlying_valid(e->getNamedType().getTypePtr());
+-    }
+-
+     if_const_cast(rt, clang::RecordType, t)
+     {
+         if(rt->getDecl()->isInvalidDecl()) return false;

@@ -1,0 +1,26 @@
+add llvm22 support
+https://github.com/rpav/c2ffi/pull/133
+
+Index: src/drivers/Sexp.cpp
+--- src/drivers/Sexp.cpp.orig
++++ src/drivers/Sexp.cpp
+@@ -44,6 +44,10 @@ namespace c2ffi {
+ 
+                 os()  << "(" << i->first << " ";
+                 write(*(i->second));
++                os() << " ";
++                os() << ":bit-offset " << i->second->bit_offset() << " "
++                     << ":bit-size " << i->second->bit_size() << " "
++                     << ":bit-alignment " << i->second->bit_alignment();
+                 os() << ")";
+             }
+ 
+@@ -245,6 +249,8 @@ namespace c2ffi {
+                 os() << ":id " << d.id();
+             else
+                 os() << d.name();
++
++            os() << " :size " << d.bit_size();
+ 
+             write_fields(d.fields());
+             os() << ")"; endl();
