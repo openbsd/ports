@@ -6,8 +6,9 @@ lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/METADA
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/licenses/AUTHORS.txt
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/licenses/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/licenses/LICENSES/cpuinfo.txt
 lib/python${MODPY_VERSION}/site-packages/numexpr-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/numexpr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}/
@@ -23,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numexpr/bespoke_functions.hpp
 lib/python${MODPY_VERSION}/site-packages/numexpr/complex_functions.hpp
 lib/python${MODPY_VERSION}/site-packages/numexpr/cpuinfo.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/expressions.py
@@ -46,8 +48,11 @@ lib/python${MODPY_VERSION}/site-packages/numexpr/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}test_numexpr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}test_numexpr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numexpr/tests/conftest.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/test_numexpr.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/utils.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/version.py
