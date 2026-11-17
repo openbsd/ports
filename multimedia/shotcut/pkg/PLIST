@@ -1230,6 +1230,8 @@ share/shotcut/elements/graphics/Oval.rawr
 share/shotcut/elements/graphics/Rounded Rectangle.rawr
 share/shotcut/elements/graphics/Subscribe.json
 share/shotcut/elements/graphics/Subscribe.webp
+share/shotcut/elements/graphics/recording.json
+share/shotcut/elements/graphics/recording.webp
 share/shotcut/elements/graphics/shout1.rawr
 share/shotcut/elements/graphics/shout1.webp
 share/shotcut/elements/graphics/shout2.rawr
@@ -1954,6 +1956,7 @@ share/shotcut/qml/filters/white/ui.qml
 share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
+share/shotcut/qml/modules/Shotcut/Controls/AudioMixingAssistantTag.qml
 share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ChannelMask.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
@@ -1973,6 +1976,7 @@ share/shotcut/qml/modules/Shotcut/Controls/MotionTrackerDialog.qml
 share/shotcut/qml/modules/Shotcut/Controls/Number2D.qml
 share/shotcut/qml/modules/Shotcut/Controls/Preset.qml
 share/shotcut/qml/modules/Shotcut/Controls/RectangleControl.qml
+share/shotcut/qml/modules/Shotcut/Controls/RectangleVui.qml
 share/shotcut/qml/modules/Shotcut/Controls/SaveDefaultButton.qml
 share/shotcut/qml/modules/Shotcut/Controls/SimplePropertyUI.qml
 share/shotcut/qml/modules/Shotcut/Controls/SliderSpinner.qml
