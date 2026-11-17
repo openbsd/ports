@@ -1,11 +1,11 @@
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-VERSION =		20.0.1
+VERSION =		20.1
 DISTNAME =		dlib-${VERSION}
 
 DIST_TUPLE +=	github davisking dlib v${VERSION} .
 
-SHARED_LIBS +=  dlib                      8.0 # 20.0.0
+SHARED_LIBS +=  dlib                      9.0 # 20.0.0
 
 CATEGORIES =		devel
 
@@ -17,8 +17,8 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext avcodec avdevice
-WANTLIB += avfilter avformat avutil gif jpeg m png sqlite3 swresample
-WANTLIB += swscale z
+WANTLIB += avfilter avformat avutil cblas gif jpeg lapack m png
+WANTLIB += sqlite3 swresample swscale z
 
 MODULES =		devel/cmake
 
@@ -27,17 +27,14 @@ COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		graphics/libwebp \
 			graphics/libjxl
 
-LIB_DEPENDS =		graphics/jpeg \
-			graphics/png \
-			graphics/giflib \
+LIB_DEPENDS =		databases/sqlite3 \
 			graphics/ffmpeg \
-			databases/sqlite3
+			graphics/giflib \
+			graphics/jpeg \
+			graphics/png \
+			math/lapack
 
-# XXX Disable searching for blas (cblas lacks)
-# Check after math/blas update or OpenBLAS import
-CONFIGURE_ARGS =	-DDLIB_USE_BLAS=OFF \
-			-DDLIB_USE_LAPACK=OFF \
-			-DDLIB_USE_MKL_FFT=OFF \
+CONFIGURE_ARGS =	-DDLIB_USE_MKL_FFT=OFF \
 			-DBUILD_SHARED_LIBS=ON
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
