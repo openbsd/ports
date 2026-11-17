@@ -1,5 +1,5 @@
 bin/blender
-@bin bin/blender-bin
+bin/blender-bin
 @bin bin/blender-thumbnailer
 share/applications/blender.desktop
 share/blender/
@@ -1640,8 +1640,6 @@ share/blender/${V}/scripts/modules/
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}/
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}addon_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}addon_utils.${MODPY_PYC_MAGIC_TAG}pyc
-share/blender/${V}/scripts/modules/${MODPY_PYCACHE}animsys_refactor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/blender/${V}/scripts/modules/${MODPY_PYCACHE}animsys_refactor.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}bl_app_template_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}bl_app_template_utils.${MODPY_PYC_MAGIC_TAG}pyc
 share/blender/${V}/scripts/modules/${MODPY_PYCACHE}blend_render_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1726,7 +1724,6 @@ share/blender/${V}/scripts/modules/_bpy_internal/system_info/text_generate_runti
 share/blender/${V}/scripts/modules/_bpy_internal/system_info/url_prefill_runtime.py
 share/blender/${V}/scripts/modules/_bpy_internal/system_info/url_prefill_startup.py
 share/blender/${V}/scripts/modules/addon_utils.py
-share/blender/${V}/scripts/modules/animsys_refactor.py
 share/blender/${V}/scripts/modules/bl_app_override/
 share/blender/${V}/scripts/modules/bl_app_override/__init__.py
 share/blender/${V}/scripts/modules/bl_app_override/${MODPY_PYCACHE}/

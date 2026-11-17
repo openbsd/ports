@@ -1,11 +1,9 @@
-# powerpc - tbb 64-bit atomics
-# 32-bit archs - static assert in cuda that a pointer is the same size as ULL
 ONLY_FOR_ARCHS = aarch64 amd64 powerpc64 riscv64 sparc64
 DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-VERSION =	4.5.14
+VERSION =	4.5.16
 V =		${VERSION:R}
 DISTNAME =	blender-${VERSION}
 
@@ -19,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} Alembic Iex-3_5
 WANTLIB += IlmThread-3_5 Imath-3_2 OpenColorIO OpenEXR-3_5 OpenEXRCore-3_5
 WANTLIB += OpenImageIO OpenImageIO_Util X11 Xfixes Xi Xrender
-WANTLIB += atomic avcodec avdevice avfilter avformat avutil c
+WANTLIB += avcodec avdevice avfilter avformat avutil c
 WANTLIB += epoxy execinfo fftw3 fftw3f fftw3f_threads freetype
 WANTLIB += gmp gmpxx hpdf jpeg m manifold openal openjp2 openvdb
 WANTLIB += osdCPU osdGPU pipewire-0.3 png potrace pugixml shaderc_shared
@@ -35,7 +33,8 @@ MODULES =	devel/cmake \
 
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
+CONFIGURE_ARGS =	-DATOMIC_OPS_WITH_LIBATOMIC=OFF \
+			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
 			-DWITH_BUILDINFO=OFF \
 			-DWITH_CYCLES_DEVICE_CUDA=OFF \
@@ -58,6 +57,7 @@ CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DWITH_OPENIMAGEDENOISE=OFF \
 			-DWITH_PULSEAUDIO=OFF \
 			-DWITH_PYTHON_INSTALL=OFF \
+			-DWITH_SYSTEM_EIGEN3=ON \
 			-DWITH_SYSTEM_FREETYPE=ON \
 			-DWITH_USD=OFF \
 			-DWITH_XR_OPENXR=OFF
@@ -71,6 +71,7 @@ BUILD_DEPENDS =	devel/boost \
 		devel/sdl2 \
 		graphics/tiff \
 		lang/cython \
+		math/eigen3 \
 		math/py-numpy \
 		www/py-requests
 

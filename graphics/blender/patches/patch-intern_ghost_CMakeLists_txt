@@ -1,0 +1,16 @@
+- GHOST/Wayland: Provide fallback for systems without posix_fallocate()
+
+Index: intern/ghost/CMakeLists.txt
+--- intern/ghost/CMakeLists.txt.orig
++++ intern/ghost/CMakeLists.txt
+@@ -315,6 +315,10 @@ elseif(WITH_GHOST_X11 OR WITH_GHOST_WAYLAND)
+     if(HAVE_MEMFD_CREATE)
+       add_definitions(-DHAVE_MEMFD_CREATE)
+     endif()
++    check_symbol_exists(posix_fallocate "fcntl.h" HAVE_POSIX_FALLOCATE)
++    if(HAVE_POSIX_FALLOCATE)
++      add_definitions(-DHAVE_POSIX_FALLOCATE)
++    endif()
+ 
+     check_symbol_exists(poll "poll.h" HAVE_POLL)
+     if(HAVE_POLL)
