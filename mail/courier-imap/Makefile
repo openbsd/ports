@@ -1,8 +1,7 @@
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			5.2.10
-REVISION=		1
+V=			6.0.8
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -30,7 +29,7 @@ WANTLIB-pop3=		${WANTLIB}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.71
+AUTOCONF_VERSION=	2.73
 AUTOMAKE_VERSION=	1.15
 
 # AM_PROG_LIBTOOL, aclocal is run during build
