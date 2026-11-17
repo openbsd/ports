@@ -1,21 +1,58 @@
-@bin bin/qtikz
-@man man/man1/qtikz.1
-share/applications/qtikz.desktop
-share/mime/packages/qtikz.xml
-share/qtikz/
-share/qtikz/LICENSE.GPL2
-share/qtikz/documentation/
-share/qtikz/documentation/qtikz.qch
-share/qtikz/documentation/qtikz.qhc
-share/qtikz/locale/
-share/qtikz/locale/qtikz_cs.qm
-share/qtikz/locale/qtikz_de.qm
-share/qtikz/locale/qtikz_es.qm
-share/qtikz/locale/qtikz_fr.qm
-share/qtikz/qtikz-128.png
-share/qtikz/templates/
-share/qtikz/templates/beamer-example-template.pgs
-share/qtikz/templates/template_example.pgs
-share/qtikz/templates/template_example2.pgs
 @tag update-desktop-database
 @tag update-mime-database
+@bin bin/ktikz
+@so lib/qt6/plugins/ktikzpart.so
+@man man/man1/ktikz.1
+share/applications/ktikz.desktop
+share/config.kcfg/
+share/config.kcfg/ktikz.kcfg
+share/doc/HTML/
+share/doc/HTML/en/
+share/doc/HTML/en/ktikz/
+share/doc/HTML/en/ktikz/commands.docbook
+share/doc/HTML/en/ktikz/configuration-editor.png
+share/doc/HTML/en/ktikz/configuration-general.png
+share/doc/HTML/en/ktikz/configuration-highlighting.png
+share/doc/HTML/en/ktikz/configuration.docbook
+share/doc/HTML/en/ktikz/index.cache.bz2
+share/doc/HTML/en/ktikz/index.docbook
+share/doc/HTML/en/ktikz/interface-gotolinewidget.png
+share/doc/HTML/en/ktikz/interface-indentwidget.png
+share/doc/HTML/en/ktikz/interface-mainwindow.png
+share/doc/HTML/en/ktikz/interface-replacecurrentwidget.png
+share/doc/HTML/en/ktikz/interface-replacewidget.png
+share/doc/HTML/en/ktikz/interface-templatewidget.png
+share/doc/HTML/en/ktikz/interface.docbook
+share/doc/HTML/en/ktikz/usage.docbook
+share/doc/HTML/en/ktikz/usercommand-editdialog.png
+share/icons/hicolor/128x128/apps/ktikz.png
+share/icons/hicolor/16x16/apps/ktikz.png
+share/icons/hicolor/22x22/apps/ktikz.png
+share/icons/hicolor/32x32/apps/ktikz.png
+share/icons/hicolor/48x48/apps/ktikz.png
+share/icons/hicolor/64x64/apps/ktikz.png
+share/icons/hicolor/scalable/apps/ktikz.svg
+share/icons/hicolor/scalable/apps/ktikz.svgz
+share/ktikz/
+share/ktikz/locale/
+share/ktikz/locale/qtikz_cs.qm
+share/ktikz/locale/qtikz_de.qm
+share/ktikz/locale/qtikz_es.qm
+share/ktikz/locale/qtikz_fr.qm
+share/ktikz/templates/
+share/ktikz/templates/beamer-example-template.pgs
+share/ktikz/templates/template_example.pgs
+share/ktikz/templates/template_example2.pgs
+share/ktikzpart/
+share/ktikzpart/ktikzpart.rc
+share/kxmlgui5/
+share/kxmlgui5/ktikz/
+share/kxmlgui5/ktikz/ktikzui.rc
+share/locale/cs/LC_MESSAGES/ktikz.mo
+share/locale/de/LC_MESSAGES/ktikz.mo
+share/locale/es/LC_MESSAGES/ktikz.mo
+share/locale/fr/LC_MESSAGES/ktikz.mo
+share/metainfo/
+share/metainfo/ktikz.appdata.xml
+share/mime/packages/ktikz.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
