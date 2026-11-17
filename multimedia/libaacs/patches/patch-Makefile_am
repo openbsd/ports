@@ -1,0 +1,37 @@
+- Fix building aacs_info with libudfread outside default include paths
+- Add OpenBSD MMC device backend using SCIOCCOMMAND
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -60,13 +60,21 @@ libaacs_la_SOURCES+= \
+ 	src/file/file_win32.c \
+ 	src/file/mmc_device_win32.c
+ else
++if HAVE_OPENBSD
+ libaacs_la_SOURCES+= \
++        src/file/dirs_xdg.c \
++        src/file/file_posix.c \
++        src/file/mmc_device_openbsd.c \
++        src/file/path.c
++else
++libaacs_la_SOURCES+= \
+ 	src/file/dirs_xdg.c \
+ 	src/file/file_posix.c \
+ 	src/file/mmc_device_linux.c \
+ 	src/file/path.c
+ endif
+ endif
++endif
+ 
+ pkginclude_HEADERS = \
+ 	src/libaacs/aacs.h \
+@@ -127,7 +135,7 @@ cci_dump_SOURCES = \
+ cci_dump_CFLAGS = -std=c99
+ 
+ aacs_info_SOURCES = src/examples/aacs_info.c
+-aacs_info_CFLAGS = -std=c99
++aacs_info_CFLAGS = -std=c99 $(LIBUDFREAD_CFLAGS)
+ aacs_info_LDADD = libaacs.la $(LIBUDFREAD_LIBS)
+ if HAVE_WIN32
+ else

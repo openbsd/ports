@@ -1,0 +1,184 @@
+- Add OpenBSD MMC device backend using SCIOCCOMMAND
+
+Index: src/file/mmc_device_openbsd.c
+--- src/file/mmc_device_openbsd.c.orig
++++ src/file/mmc_device_openbsd.c
+@@ -0,0 +1,178 @@
++/* -*- Mode: C; c-basic-offset:4 ; indent-tabs-mode:nil -*- */
++/*
++ * This file is part of libaacs
++ * Copyright (C) 2026  VideoLAN
++ *
++ * This library is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU Lesser General Public
++ * License as published by the Free Software Foundation; either
++ * version 2.1 of the License, or (at your option) any later version.
++ */
++
++#if HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#include "mmc_device.h"
++#include "path.h"
++
++#include "util/logging.h"
++#include "util/macro.h"
++#include "util/strutl.h"
++
++#include <sys/types.h>
++#include <sys/param.h>
++#include <sys/mount.h>
++#include <sys/stat.h>
++#include <sys/scsiio.h>
++#include <sys/ioctl.h>
++
++#include <errno.h>
++#include <fcntl.h>
++#include <stdint.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++
++#define MMC_CDB_LEN 12
++#define MMC_TIMEOUT_MS 5000
++
++struct mmcdev {
++    int fd;
++};
++
++static int _open_device(const char *path)
++{
++    struct stat st;
++    char raw_path[PATH_MAX];
++    int fd, path_len;
++
++    fd = open(path, O_RDONLY | O_NONBLOCK);
++    if (fd >= 0) {
++        if (fstat(fd, &st) == 0) {
++            if (S_ISCHR(st.st_mode)) {
++                return fd;
++            }
++        }
++        if (fstat(fd, &st) == 0 && S_ISBLK(st.st_mode) &&
++            strncmp(path, "/dev/", 5) == 0 && strncmp(path, "/dev/r", 6) != 0) {
++            path_len = snprintf(raw_path, sizeof(raw_path), "/dev/r%s", path + 5);
++            if (path_len >= 0 && (size_t)path_len < sizeof(raw_path)) {
++                close(fd);
++                fd = open(raw_path, O_RDONLY | O_NONBLOCK);
++                if (fd >= 0 && fstat(fd, &st) == 0 && S_ISCHR(st.st_mode)) {
++                    return fd;
++                }
++            }
++        }
++        if (fd >= 0) {
++            close(fd);
++        }
++    }
++    return -1;
++}
++
++MMCDEV *device_open(const char *path)
++{
++    struct statfs *mounts;
++    char *resolved_path;
++    int fd = -1;
++    int i, nmounts;
++
++    resolved_path = aacs_resolve_path(path);
++    if (!resolved_path) {
++        BD_DEBUG(DBG_MMC | DBG_CRIT, "Failed resolving path %s\n", path ? path : "(null)");
++        return NULL;
++    }
++
++    /* The caller may pass either the raw/block device or its mount point. */
++    fd = _open_device(resolved_path);
++    if (fd < 0) {
++        nmounts = getmntinfo(&mounts, MNT_NOWAIT);
++        for (i = 0; i < nmounts; i++) {
++            if (strcmp(mounts[i].f_mntonname, resolved_path) == 0) {
++                fd = _open_device(mounts[i].f_mntfromname);
++                if (fd >= 0) {
++                    break;
++                }
++                BD_DEBUG(DBG_MMC | DBG_CRIT,
++                         "Failed opening MMC device %s mounted at %s\n",
++                         mounts[i].f_mntfromname, resolved_path);
++            }
++        }
++    }
++
++    X_FREE(resolved_path);
++
++    if (fd < 0) {
++        BD_DEBUG(DBG_MMC | DBG_CRIT, "No OpenBSD MMC device found for %s\n", path);
++        return NULL;
++    }
++
++    MMCDEV *dev = calloc(1, sizeof(*dev));
++    if (!dev) {
++        close(fd);
++        return NULL;
++    }
++
++    dev->fd = fd;
++    return dev;
++}
++
++void device_close(MMCDEV **pp)
++{
++    if (pp && *pp) {
++        if ((*pp)->fd >= 0) {
++            close((*pp)->fd);
++        }
++        X_FREE(*pp);
++    }
++}
++
++int device_send_cmd(MMCDEV *dev, const uint8_t *cmd, uint8_t *buf,
++                    size_t tx, size_t rx)
++{
++    scsireq_t req;
++    size_t len;
++    char str[512];
++
++    if (!dev || !cmd || (tx && rx) || ((tx || rx) && !buf)) {
++        return 0;
++    }
++
++    len = tx ? tx : rx;
++    memset(&req, 0, sizeof(req));
++    memcpy(req.cmd, cmd, MMC_CDB_LEN);
++    req.cmdlen = MMC_CDB_LEN;
++    req.timeout = MMC_TIMEOUT_MS;
++    req.senselen = SENSEBUFLEN;
++    if (len) {
++        req.databuf = (caddr_t)buf;
++        req.datalen = (u_long)len;
++        req.flags = tx ? SCCMD_WRITE : SCCMD_READ;
++    }
++
++    BD_DEBUG(DBG_MMC, "Send OpenBSD MMC cmd %s:\n", str_print_hex(str, cmd, MMC_CDB_LEN));
++    if (tx) {
++        BD_DEBUG(DBG_MMC, "  Buffer: %s ->\n", str_print_hex(str, buf, tx > 255 ? 255 : tx));
++    } else if (rx) {
++        BD_DEBUG(DBG_MMC, "  Buffer: %s <-\n", str_print_hex(str, buf, rx > 255 ? 255 : rx));
++    }
++
++    if (ioctl(dev->fd, SCIOCCOMMAND, &req) < 0) {
++        BD_DEBUG(DBG_MMC, "  SCIOCCOMMAND failed: %s\n", strerror(errno));
++        return 0;
++    }
++
++    if (req.retsts != SCCMD_OK) {
++        BD_DEBUG(DBG_MMC, "  SCSI command failed (status %u, return %u)\n",
++                 req.status, req.retsts);
++        return 0;
++    }
++
++    BD_DEBUG(DBG_MMC, "  Send succeeded! transferred %lu bytes\n",
++             req.datalen_used);
++    return 1;
++}
++
