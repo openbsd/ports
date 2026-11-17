@@ -5,6 +5,7 @@ V = 			2.16.0
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
+REVISION-x11 =          0
 
 SHARED_LIBS += 		zint	8.0
 
@@ -19,13 +20,14 @@ PERMIT_PACKAGE =	Yes
 
 cWANTLIB = c m png z
 WANTLIB-main = ${cWANTLIB}
-WANTLIB-x11 += ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Svg Qt5Widgets pthread
-WANTLIB-x11 += zint ${COMPILER_LIBCXX}
+WANTLIB-x11 += ${cWANTLIB} ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6OpenGL
+WANTLIB-x11 += Qt6UiTools Qt6OpenGLWidgets Qt6Svg Qt6Widgets zint
 
 SITES =			${SITE_SOURCEFORGE:=zint/}
 
 MODULES =		devel/cmake
 CONFIGURE_ARGS += 	-DDATA_INSTALL_DIR=OFF \
+			-DZINT_QT6=ON \
 			-DMAN_INSTALL_DIR=${PREFIX}/man
 
 LIB_DEPENDS-main = 	graphics/png
@@ -39,10 +41,11 @@ TEST_DEPENDS = 	${BASE_PKGPATH},-main
 
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES +=       -x11
-MODULES +=		x11/qt5
+MODULES +=		x11/qt6
 LIB_DEPENDS-x11 += 	${BASE_PKGPATH},-main \
-			x11/qt5/qtsvg \
-			${MODQT5_LIB_DEPENDS}
+			x11/qt6/qtsvg \
+			x11/qt6/qttools \
+			${MODQT6_LIB_DEPENDS}
 RUN_DEPENDS-x11 += 	devel/desktop-file-utils
 
 post-install:
