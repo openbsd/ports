@@ -1,12 +1,14 @@
 Index: daily.sh
 --- daily.sh.orig
 +++ daily.sh
-@@ -23,16 +23,16 @@
+@@ -23,18 +23,18 @@
  # define DAILY_SCRIPT as the full path to this script and LIBRENMS_DIR as the directory this script is in
  DAILY_SCRIPT=$(readlink -f "$0")
  LIBRENMS_DIR=$(dirname "$DAILY_SCRIPT")
 -COMPOSER="php ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
 +COMPOSER="${MODPHP_BIN} ${LIBRENMS_DIR}/scripts/composer_wrapper.php --no-interaction"
+ # exists while test patches applied with lnms patch:apply are present
+ PATCHES_FILE="${LIBRENMS_DIR}/storage/app/patches/patches.json"
  
  # set log_file, using librenms 'log_dir' config setting, if set
  # otherwise we default to <LibreNMS Install Directory>/logs
@@ -21,7 +23,7 @@ Index: daily.sh
  LIBRENMS_USER_ID=$(id -u "$LIBRENMS_USER")
  
  #######################################
-@@ -83,7 +83,7 @@ status_run() {
+@@ -85,7 +85,7 @@ status_run() {
      else
          printf " \\033[0;31mFAIL\\033[0m\\n"
          if [[ "${arg_option}" == "update" ]]; then
@@ -30,7 +32,7 @@ Index: daily.sh
          fi
          if [[ -n "${tmp}" ]]; then
              # print output in case of failure
-@@ -110,7 +110,7 @@ call_daily_php() {
+@@ -130,7 +130,7 @@ call_daily_php() {
      args=("$@")
  
      for arg in "${args[@]}"; do
@@ -39,7 +41,7 @@ Index: daily.sh
      done
  }
  
-@@ -132,7 +132,7 @@ set_notifiable_result() {
+@@ -152,7 +152,7 @@ set_notifiable_result() {
      arg_type=$1
      arg_result=$2
  
@@ -48,30 +50,39 @@ Index: daily.sh
  }
  
  #######################################
-@@ -143,7 +143,7 @@ set_notifiable_result() {
+@@ -163,7 +163,7 @@ set_notifiable_result() {
  check_dependencies() {
-     local branch ver_71 ver_72 ver_73 ver_81 ver_82 python3 phpver pythonver old_branches msg
+     local branch ver_71 ver_72 ver_73 ver_81 ver_82 ver_84 python3 phpver pythonver old_branches msg
  
 -    branch=$(git rev-parse --abbrev-ref HEAD)
 +    branch=master
  
      # attempt to install python requirements, will likely fail
      pip3 install -r requirements.txt > /dev/null 2>&1
-@@ -285,7 +285,7 @@ main () {
+@@ -311,7 +311,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
 -        up=$(php daily.php -f update >&2; echo $?)
 +        up=$(${MODPHP_BIN} daily.php -f update >&2; echo $?)
          if [[ "$up" == "0" ]]; then
-             "${DAILY_SCRIPT}" no-code-update
+             "${DAILY_SCRIPT}" no-code-update || return $?
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -299,7 +299,7 @@ main () {
-         status_run 'Clearing caches' 'php artisan optimize:clear'
+@@ -322,7 +322,7 @@ main () {
+         php_ver_ret=$?
  
-         # Restore composer files if user installed plugins
--        git checkout --quiet -- composer.json composer.lock
-+        #git checkout --quiet -- composer.json composer.lock
+         # Clear local bootstrap caches without flushing another node's migration lock.
+-        status_run 'Clearing bootstrap caches' 'php artisan optimize:clear --except=cache'
++        status_run 'Clearing bootstrap caches' '${MODPHP_BIN} artisan optimize:clear --except=cache'
  
-         update_res=0
-         if [[ "$up" == "2" ]] || [[ "$php_ver_ret" == "1" ]]; then
+         # Restore composer files if user installed plugins (patch:pre-update does this when test patches are applied)
+         if [[ ! -f "$PATCHES_FILE" ]]; then
+@@ -414,7 +414,7 @@ main () {
+                 # List all tasks to do after pull in the order of execution
+                 update_schema || return $?
+                 if [[ "$old_version" != "$new_version" && "$QUEUE_CONNECTION" == 'redis' ]]; then
+-                    status_run 'Restarting queue workers' 'php artisan horizon:terminate'
++                    status_run 'Restarting queue workers' '${MODPHP_BIN} artisan horizon:terminate'
+                 fi
+                 status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
+             ;;

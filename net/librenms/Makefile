@@ -1,10 +1,11 @@
 COMMENT-main=	auto-discovering network management/monitoring system
 COMMENT-doc=	documentation for LibreNMS
 
-# changelogs at https://github.com/librenms/librenms/releases
+# changelogs at https://github.com/librenms/librenms/releases or
+# https://docs.librenms.org/General/Changelog/
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	26.10.2
+GH_TAGNAME=	26.11.0
 
 # strip off last component, don't normally rebuild vendor file for minor
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
@@ -80,8 +81,7 @@ pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} daily.sh \
 	    LibreNMS/__init__.py \
 	    LibreNMS/wrapper.py \
-	    LibreNMS/Validations/Php.php \
-	    LibreNMS/Exceptions/UnserializableRouteCache.php
+	    LibreNMS/Util/Binaries.php
 
 do-install:
 	${INSTALL_DATA_DIR} ${FINSTDIR} \
@@ -100,7 +100,7 @@ do-install:
 	find ${FINSTDIR} -type d -and -name '.github' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/
 	${INSTALL_DATA} ${WRKSRC}/misc/lnms-completion.bash \
-	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/lnms
+	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
 
 COMPOSER=	${MODPHP_BIN} \
 		-d memory_limit=-1 -d allow_url_fopen=1 \

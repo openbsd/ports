@@ -1,0 +1,13 @@
+Index: LibreNMS/Util/Binaries.php
+--- LibreNMS/Util/Binaries.php.orig
++++ LibreNMS/Util/Binaries.php
+@@ -131,6 +131,9 @@ class Binaries
+ 
+     private function locate(string $binary): ?string
+     {
++	if ($binary == 'php') {
++	    $binary == 'php-${MODPHP_VERSION}';
++	}
+         $configured = $this->configured($binary);
+         if ($configured !== null) {
+             return str_starts_with($configured, '/') && self::isExecutableFile($configured) ? $configured : null;

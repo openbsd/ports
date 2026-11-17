@@ -105,6 +105,7 @@ share/doc/librenms/Developing/Design/
 share/doc/librenms/Developing/Design/Config-Backups-UI-UX.md
 share/doc/librenms/Developing/Dynamic-Config.md
 share/doc/librenms/Developing/Getting-Started.md
+share/doc/librenms/Developing/Graphs.md
 share/doc/librenms/Developing/Localization.md
 share/doc/librenms/Developing/Merging-Pull-Requests.md
 share/doc/librenms/Developing/SNMP-Traps.md
@@ -185,7 +186,6 @@ share/doc/librenms/Extensions/Applications/PowerDNS-dnsdist.md
 share/doc/librenms/Extensions/Applications/PowerDNS.md
 share/doc/librenms/Extensions/Applications/PowerMon.md
 share/doc/librenms/Extensions/Applications/Privoxy.md
-share/doc/librenms/Extensions/Applications/Proxmox.md
 share/doc/librenms/Extensions/Applications/Puppet Agent.md
 share/doc/librenms/Extensions/Applications/PureFTPd.md
 share/doc/librenms/Extensions/Applications/Pwrstatd.md
