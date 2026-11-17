@@ -34,7 +34,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.13.0.mod) = FCs0FrAOghO0CeJ5pDS5emzg
 SHA256 (go_modules/golang.org/x/tools/@v/v0.22.0.mod) = cf0XssEb8eaLYH/TgnrjtX2H7PRxsFMjic+iCIsv6zo=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = QoVxoQqrdYamfaLJN16K5IDe+NL6Ed6Mb/8oppa5WR8=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.33.0.zip) = 2np22dsJVvMN1/mVfurXqrWqEy28p4ptV4Q2+U/f7oQ=
-SHA256 (pebble-v2.10.2.zip) = qkOBphp+2Aazblh19CiuTmtrXgz5mIyTx65PUwjr+sk=
+SHA256 (pebble-v2.10.3.zip) = yMjL5bFIdeoVHU0O2S7jJM+4b0MyW8hySGfCo6L2iDU=
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.8.mod) = 48
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.1.8.zip) = 421387
 SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 41
@@ -71,4 +71,4 @@ SIZE (go_modules/golang.org/x/tools/@v/v0.13.0.mod) = 214
 SIZE (go_modules/golang.org/x/tools/@v/v0.22.0.mod) = 339
 SIZE (go_modules/golang.org/x/tools/@v/v0.33.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.33.0.zip) = 3450399
-SIZE (pebble-v2.10.2.zip) = 112190
+SIZE (pebble-v2.10.3.zip) = 112190
