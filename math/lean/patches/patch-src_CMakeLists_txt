@@ -14,6 +14,15 @@ Index: src/CMakeLists.txt
    set(OPENSSL_LIBRARIES ${OPENSSL_SSL_LIBRARY} ${OPENSSL_CRYPTO_LIBRARY})
    include_directories(${OPENSSL_INCLUDE_DIR})
    string(JOIN " " OPENSSL_LIBRARIES_STR ${OPENSSL_LIBRARIES})
+@@ -446,7 +450,7 @@ if(CCACHE AND NOT CMAKE_CXX_COMPILER_LAUNCHER AND NOT 
+   endif()
+ endif()
+ 
+-include_directories(${CMAKE_BINARY_DIR}/include)
++include_directories(BEFORE ${CMAKE_BINARY_DIR}/include)
+ 
+ # Pick up `llvm-config` to setup LLVM flags.
+ if(LLVM)
 @@ -531,6 +535,11 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
  endif()
  

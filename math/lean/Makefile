@@ -3,6 +3,7 @@ COMMENT =		interactive and automated theorem prover
 DPB_PROPERTIES =	parallel
 
 V =			4.36.0
+REVISION =		0
 GH_ACCOUNT =		leanprover
 GH_PROJECT =		lean4
 GH_TAGNAME =		v${V}
@@ -21,12 +22,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cadical crypto gmp m ssl uv
 
-BUILD_DEPENDS = 	shells/bash \
+BUILD_DEPENDS = 	archivers/leangz \
+			shells/bash \
 			devel/git,-main \
 			math/cadical
 
-LIB_DEPENDS = 		archivers/leangz \
-			devel/gmp,-main \
+RUN_DEPENDS =		archivers/leangz
+
+LIB_DEPENDS = 		devel/gmp,-main \
 			devel/libuv \
 			math/cadical
 
