@@ -1,78 +1,118 @@
-Implement XShm 1.2
+Use the shared memory helpers in x11_common.c: XShm 1.2 (fd passing
+via xcb-shm) when the X server supports it, SysV shared memory otherwise.
+Track the segment type per buffer so a failed buffer falls back to
+non-shared XvImage on its own.
 
 Index: libvo/vo_xv.c
 --- libvo/vo_xv.c.orig
 +++ libvo/vo_xv.c
-@@ -74,7 +74,11 @@ const LIBVO_EXTERN(xv)
+@@ -72,12 +72,10 @@ static const vo_info_t info = {
+ 
+ const LIBVO_EXTERN(xv)
  #ifdef HAVE_SHM
- #include <sys/ipc.h>
- #include <sys/shm.h>
-+#include <sys/mman.h>
+-#include <sys/ipc.h>
+-#include <sys/shm.h>
  #include <X11/extensions/XShm.h>
-+#include <X11/Xlib-xcb.h>
-+#include <xcb/shm.h>
-+#include <unistd.h>
  
  static XShmSegmentInfo Shminfo[NUM_BUFFERS];
- static int Shmem_Flag;
-@@ -97,6 +101,9 @@ static int num_buffers = 1;     // default
- static int visible_buf = -1;    // -1 means: no buffer was drawn yet
- static XvImage *xvimage[NUM_BUFFERS];
+-static int Shmem_Flag;
++static int Shm_Type[NUM_BUFFERS];
+ #endif
  
-+#ifdef HAVE_SHM
-+static  char myshmname[128];
-+#endif
- 
- static uint32_t image_width;
- static uint32_t image_height;
-@@ -110,6 +117,18 @@ static uint32_t max_width = 0, max_height = 0; // zero
- 
- static vo_draw_alpha_func draw_alpha_func;
- 
-+#ifdef HAVE_SHM
-+static Bool XShmAttachFd(Display *dpy, XShmSegmentInfo *shminfo)
-+{
-+    xcb_connection_t *xcb_conn = XGetXCBConnection(dpy);
-+        
-+    shminfo->shmseg = xcb_generate_id(xcb_conn);
-+    xcb_shm_attach_fd(xcb_conn, shminfo->shmseg,
-+                      shminfo->shmid, shminfo->readOnly);
-+    return 1;
-+}
-+#endif
-+
- static void fixup_osd_position(int *x0, int *y0, int *w, int *h)
- {
-     *x0 += image_width * (vo_panscan_x >> 1) / (vo_dwidth + vo_panscan_x);
-@@ -278,15 +297,18 @@ static void allocate_xvimage(int foo)
+ // Note: depends on the inclusion of X11/extensions/XShm.h
+@@ -263,31 +261,29 @@ static void allocate_xvimage(int foo)
+      * mit-shm this will bomb... trzing to fix ::atmos
+      */
+ #ifdef HAVE_SHM
++    Shm_Type[foo] = VO_X11_SHM_NONE;
+     if (mLocalDisplay && XShmQueryExtension(mDisplay))
+-        Shmem_Flag = 1;
+-    else
+     {
+-        Shmem_Flag = 0;
+-        mp_msg(MSGT_VO, MSGL_INFO,
+-               MSGTR_LIBVO_XV_SharedMemoryNotSupported);
+-    }
+-    if (Shmem_Flag)
+-    {
+         xvimage[foo] =
+             (XvImage *) XvShmCreateImage(mDisplay, xv_port, xv_format,
                                           NULL, image_width, image_height,
                                           &Shminfo[foo]);
- 
+-
 -        Shminfo[foo].shmid =
 -            shmget(IPC_PRIVATE, xvimage[foo]->data_size, IPC_CREAT | SHM_R | SHM_W);
 -        Shminfo[foo].shmaddr = (char *) shmat(Shminfo[foo].shmid, 0, 0);
-+	memcpy(myshmname, "/tmp/mplayer-xv-XXXXXXXXXX", sizeof(myshmname));
-+	Shminfo[foo].shmid = shm_mkstemp(myshmname);
-+        Shminfo[foo].shmaddr = mmap(NULL, xvimage[foo]->data_size,
-+	    PROT_READ | PROT_WRITE, MAP_SHARED|__MAP_NOFAULT,
-+	    Shminfo[foo].shmid, 0);
-+	ftruncate(Shminfo[foo].shmid, xvimage[foo]->data_size);
-         Shminfo[foo].readOnly = False;
- 
-         xvimage[foo]->data = Shminfo[foo].shmaddr;
+-        Shminfo[foo].readOnly = False;
+-
+-        xvimage[foo]->data = Shminfo[foo].shmaddr;
 -        XShmAttach(mDisplay, &Shminfo[foo]);
-+        XShmAttachFd(mDisplay, &Shminfo[foo]);
-         XSync(mDisplay, False);
+-        XSync(mDisplay, False);
 -        shmctl(Shminfo[foo].shmid, IPC_RMID, 0);
-+	shm_unlink(myshmname);
++        if (xvimage[foo])
++        {
++            Shm_Type[foo] = vo_x11_shm_attach(mDisplay, &Shminfo[foo],
++                                              xvimage[foo]->data_size);
++            if (Shm_Type[foo] == VO_X11_SHM_NONE)
++            {
++                XFree(xvimage[foo]);
++                mp_msg(MSGT_VO, MSGL_WARN,
++                       "[xv] Shared memory error, disabling.\n");
++            } else
++                xvimage[foo]->data = Shminfo[foo].shmaddr;
++        }
+     } else
++        mp_msg(MSGT_VO, MSGL_INFO,
++               MSGTR_LIBVO_XV_SharedMemoryNotSupported);
++    if (Shm_Type[foo] == VO_X11_SHM_NONE)
+ #endif
+     {
+         xvimage[foo] =
+@@ -303,10 +299,11 @@ static void allocate_xvimage(int foo)
+ static void deallocate_xvimage(int foo)
+ {
+ #ifdef HAVE_SHM
+-    if (Shmem_Flag)
++    if (Shm_Type[foo] != VO_X11_SHM_NONE)
+     {
+-        XShmDetach(mDisplay, &Shminfo[foo]);
+-        shmdt(Shminfo[foo].shmaddr);
++        vo_x11_shm_detach(mDisplay, &Shminfo[foo], xvimage[foo]->data_size,
++                          Shm_Type[foo]);
++        Shm_Type[foo] = VO_X11_SHM_NONE;
      } else
  #endif
      {
-@@ -306,6 +328,7 @@ static void deallocate_xvimage(int foo)
-     if (Shmem_Flag)
+@@ -320,10 +317,12 @@ static void deallocate_xvimage(int foo)
+     return;
+ }
+ 
+-static inline void put_xvimage( XvImage * xvi )
++static inline void put_xvimage(int buf)
+ {
++    XvImage *xvi = xvimage[buf];
++
+ #ifdef HAVE_SHM
+-    if (Shmem_Flag)
++    if (Shm_Type[buf] != VO_X11_SHM_NONE)
      {
-         XShmDetach(mDisplay, &Shminfo[foo]);
-+	close(Shminfo[foo].shmid);
-         shmdt(Shminfo[foo].shmaddr);
-     } else
- #endif
+         XvShmPutImage(mDisplay, xv_port, vo_window, vo_gc,
+                       xvi,
+@@ -355,7 +354,7 @@ static void check_events(void)
+         if ( visible_buf != -1 )
+         {
+           /* redraw the last visible buffer */
+-          put_xvimage( xvimage[visible_buf] );
++          put_xvimage(visible_buf);
+         }
+     }
+ }
+@@ -369,7 +368,7 @@ static void draw_osd(void)
+ 
+ static void flip_page(void)
+ {
+-    put_xvimage( xvimage[current_buf] );
++    put_xvimage(current_buf);
+ 
+     /* remember the currently visible buffer */
+     visible_buf = current_buf;

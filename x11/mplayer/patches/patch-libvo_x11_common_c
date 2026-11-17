@@ -1,0 +1,190 @@
+Shared memory helpers for vo_x11 and vo_xv.
+
+XShm 1.2 passes a file descriptor to the X server instead of using a
+SysV segment, so the memory stays owned by the client's uid and does
+not need to be mode 777. The fd is handed over to xcb, which closes it
+once the request is sent. fd passing is only tried over a unix socket.
+SysV shared memory is used when the server, the connection or the
+build does not support fd passing. The SysV attach is checked, so a
+server that cannot access the segment (e.g. over TCP) makes us fall
+back to plain XPutImage/XvPutImage.
+
+Index: libvo/x11_common.c
+--- libvo/x11_common.c.orig
++++ libvo/x11_common.c
+@@ -73,6 +73,18 @@
+ #include "subopt-helper.h"
+ #endif
+ 
++#ifdef HAVE_SHM
++#include <errno.h>
++#include <sys/ipc.h>
++#include <sys/shm.h>
++#ifdef CONFIG_XCB_SHM
++#include <sys/mman.h>
++#include <sys/socket.h>
++#include <X11/Xlib-xcb.h>
++#include <xcb/shm.h>
++#endif
++#endif
++
+ #include "input/input.h"
+ #include "input/mouse.h"
+ 
+@@ -2459,4 +2471,156 @@ void xv_setup_colorkeyhandling( char const * ck_method
+   }
+ }
+ 
++#endif
++
++#ifdef HAVE_SHM
++#ifdef CONFIG_XCB_SHM
++/*
++ * MIT-SHM 1.2 passes a file descriptor to the X server instead of a
++ * SysV segment, so the memory stays owned by and private to the client.
++ */
++static int shm_fd_supported(Display *dpy)
++{
++    union {
++        struct sockaddr sa;
++        struct sockaddr_storage ss;
++    } addr;
++    socklen_t addrlen = sizeof(addr);
++    int major, minor;
++    Bool pixmaps;
++
++    /* fds can only be passed over a unix socket, not over TCP */
++    if (getsockname(ConnectionNumber(dpy), &addr.sa, &addrlen) == -1 ||
++        addr.sa.sa_family != AF_UNIX)
++        return 0;
++
++    if (!XShmQueryVersion(dpy, &major, &minor, &pixmaps))
++        return 0;
++    return major > 1 || (major == 1 && minor >= 2);
++}
++
++static int shm_fd_attach(Display *dpy, XShmSegmentInfo *shminfo, size_t size)
++{
++    char name[] = "/mplayer-shm-XXXXXXXXXX";
++    xcb_connection_t *conn = XGetXCBConnection(dpy);
++    xcb_void_cookie_t cookie;
++    xcb_generic_error_t *error;
++    xcb_shm_seg_t seg;
++    void *addr;
++    int fd;
++
++    fd = shm_mkstemp(name);
++    if (fd == -1) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] shm_mkstemp: %s\n", strerror(errno));
++        return 0;
++    }
++    shm_unlink(name);
++
++    if (ftruncate(fd, size) == -1) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] ftruncate: %s\n", strerror(errno));
++        close(fd);
++        return 0;
++    }
++    addr = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
++    if (addr == MAP_FAILED) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] mmap: %s\n", strerror(errno));
++        close(fd);
++        return 0;
++    }
++    seg = xcb_generate_id(conn);
++    if (seg == (xcb_shm_seg_t)-1) {
++        munmap(addr, size);
++        close(fd);
++        return 0;
++    }
++
++    /* xcb takes ownership of fd and closes it once the request is sent */
++    cookie = xcb_shm_attach_fd_checked(conn, seg, fd, 0);
++    error = xcb_request_check(conn, cookie);
++    if (error) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] ShmAttachFd failed: error %d\n",
++               error->error_code);
++        free(error);
++        munmap(addr, size);
++        return 0;
++    }
++
++    shminfo->shmseg = seg;
++    shminfo->shmid = -1;
++    shminfo->shmaddr = addr;
++    shminfo->readOnly = False;
++    return 1;
++}
++#endif
++
++int vo_x11_shm_attach(Display *dpy, XShmSegmentInfo *shminfo, size_t size)
++{
++#ifdef CONFIG_XCB_SHM
++    if (shm_fd_supported(dpy) && shm_fd_attach(dpy, shminfo, size))
++        return VO_X11_SHM_FD;
++#endif
++
++    shminfo->shmid = shmget(IPC_PRIVATE, size, IPC_CREAT | SHM_R | SHM_W);
++    if (shminfo->shmid < 0) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] shmget: %s\n", strerror(errno));
++        return VO_X11_SHM_NONE;
++    }
++    shminfo->shmaddr = shmat(shminfo->shmid, NULL, 0);
++    if (shminfo->shmaddr == (char *)-1) {
++        mp_msg(MSGT_VO, MSGL_V, "[x11] shmat: %s\n", strerror(errno));
++        shmctl(shminfo->shmid, IPC_RMID, NULL);
++        return VO_X11_SHM_NONE;
++    }
++    shminfo->readOnly = False;
++#ifdef CONFIG_XCB_SHM
++    {
++        xcb_connection_t *conn = XGetXCBConnection(dpy);
++        xcb_void_cookie_t cookie;
++        xcb_generic_error_t *error;
++
++        /*
++         * Check the attach, so a server that cannot access the segment
++         * (e.g. over TCP) makes us fall back instead of failing later.
++         */
++        shminfo->shmseg = xcb_generate_id(conn);
++        if (shminfo->shmseg == (xcb_shm_seg_t)-1) {
++            shmdt(shminfo->shmaddr);
++            shmctl(shminfo->shmid, IPC_RMID, NULL);
++            return VO_X11_SHM_NONE;
++        }
++        cookie = xcb_shm_attach_checked(conn, shminfo->shmseg,
++                                        shminfo->shmid, 0);
++        error = xcb_request_check(conn, cookie);
++        if (error) {
++            mp_msg(MSGT_VO, MSGL_V, "[x11] ShmAttach failed: error %d\n",
++                   error->error_code);
++            free(error);
++            shmdt(shminfo->shmaddr);
++            shmctl(shminfo->shmid, IPC_RMID, NULL);
++            return VO_X11_SHM_NONE;
++        }
++    }
++#else
++    XShmAttach(dpy, shminfo);
++    XSync(dpy, False);
++#endif
++    /* the segment is destroyed once both sides have detached */
++    shmctl(shminfo->shmid, IPC_RMID, NULL);
++    return VO_X11_SHM_SYSV;
++}
++
++void vo_x11_shm_detach(Display *dpy, XShmSegmentInfo *shminfo, size_t size,
++                       int type)
++{
++    if (type == VO_X11_SHM_NONE)
++        return;
++    XShmDetach(dpy, shminfo);
++#ifdef CONFIG_XCB_SHM
++    if (type == VO_X11_SHM_FD) {
++        munmap(shminfo->shmaddr, size);
++        return;
++    }
++#endif
++    shmdt(shminfo->shmaddr);
++}
+ #endif
