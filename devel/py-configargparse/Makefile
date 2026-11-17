@@ -1,6 +1,6 @@
 COMMENT=	argparse replacement, allows options to be set via files/env
 
-MODPY_DISTV=	1.9.0
+MODPY_DISTV=	1.10.0
 DISTNAME=	configargparse-${MODPY_DISTV}
 PKGNAME=	py-ConfigArgParse-${MODPY_DISTV}
 
