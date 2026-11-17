@@ -1,4 +1,10 @@
-Implment XShm 1.2
+Use MIT-SHM 1.2 (fd passing) with POSIX shm instead of SysV shm.
+
+xcb owns the fd passed to xcb_shm_attach_fd() and closes it after
+sending it, so it must not be closed again later.  The mapping comes
+from mmap(2), so release it with munmap(2) rather than shmdt(2).
+Only use SHM if the server supports MIT-SHM 1.2 and the connection
+is a unix domain socket.
 
 Index: video/out/vo_xv.c
 --- video/out/vo_xv.c.orig
@@ -11,43 +17,118 @@ Index: video/out/vo_xv.c
  #include <errno.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -32,7 +33,10 @@
+@@ -30,9 +31,11 @@
+ #include <libavutil/common.h>
+ 
  #include <sys/types.h>
- #include <sys/ipc.h>
- #include <sys/shm.h>
+-#include <sys/ipc.h>
+-#include <sys/shm.h>
 +#include <sys/mman.h>
++#include <sys/socket.h>
  #include <X11/extensions/XShm.h>
 +#include <X11/Xlib-xcb.h>
 +#include <xcb/shm.h>
  
  // Note: depends on the inclusion of X11/extensions/XShm.h
  #include <X11/extensions/Xv.h>
-@@ -91,6 +95,7 @@ struct xvctx {
+@@ -91,6 +94,7 @@ struct xvctx {
      GC vo_gc;   // used to paint video
      int Shmem_Flag;
      XShmSegmentInfo Shminfo[MAX_BUFFERS];
-+    char shmname[128];
++    size_t shmlen[MAX_BUFFERS];
      int Shm_Warned_Slow;
      struct mp_image_params dst_params;
  };
-@@ -126,6 +131,16 @@ static int find_xv_format(int imgfmt)
+@@ -126,6 +130,79 @@ static int find_xv_format(int imgfmt)
      return 0;
  }
  
-+static Bool XShmAttachFd(Display *dpy, XShmSegmentInfo *shminfo)
++/*
++ * MIT-SHM 1.2 (fd passing) is needed, and fd passing only works over
++ * a unix domain socket.
++ */
++static bool shm_fd_usable(Display *dpy)
 +{
-+    xcb_connection_t *xcb_conn = XGetXCBConnection(dpy);
++    struct sockaddr_storage ss;
++    socklen_t sslen = sizeof(ss);
++    int major, minor;
++    Bool pixmaps;
 +
-+    shminfo->shmseg = xcb_generate_id(xcb_conn);
-+    xcb_shm_attach_fd(xcb_conn, shminfo->shmseg,
-+		    shminfo->shmid, shminfo->readOnly);
-+    return 1;
++    if (!XShmQueryVersion(dpy, &major, &minor, &pixmaps))
++        return false;
++    if (major < 1 || (major == 1 && minor < 2))
++        return false;
++    if (getsockname(ConnectionNumber(dpy), (struct sockaddr *)&ss,
++                    &sslen) == -1)
++        return false;
++    return ss.ss_family == AF_UNIX;
++}
++
++/*
++ * Create a POSIX shm segment of len bytes, map it and pass it to the
++ * X server.  xcb owns the fd once it has been handed to
++ * xcb_shm_attach_fd_checked() and closes it after sending it, so it
++ * must not be closed here after that point.
++ */
++static bool shm_fd_attach(Display *dpy, XShmSegmentInfo *si, size_t len)
++{
++    char name[] = "/tmp/mpv-xv-XXXXXXXXXX";
++    xcb_connection_t *c = XGetXCBConnection(dpy);
++    xcb_generic_error_t *err;
++    void *addr;
++    int fd;
++
++    *si = (XShmSegmentInfo){0};
++    si->shmid = -1;
++
++    fd = shm_mkstemp(name);
++    if (fd == -1)
++        return false;
++    shm_unlink(name);
++    if (ftruncate(fd, len) == -1) {
++        close(fd);
++        return false;
++    }
++    addr = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
++    if (addr == MAP_FAILED) {
++        close(fd);
++        return false;
++    }
++
++    si->shmseg = xcb_generate_id(c);
++    si->readOnly = False;
++    err = xcb_request_check(c, xcb_shm_attach_fd_checked(c, si->shmseg,
++                                                         fd, si->readOnly));
++    if (err) {
++        free(err);
++        munmap(addr, len);
++        *si = (XShmSegmentInfo){0};
++        return false;
++    }
++    si->shmaddr = addr;
++    return true;
++}
++
++static void shm_fd_detach(Display *dpy, XShmSegmentInfo *si, size_t len)
++{
++    XShmDetach(dpy, si);
++    munmap(si->shmaddr, len);
++    *si = (XShmSegmentInfo){0};
 +}
 +
  static int xv_find_atom(struct vo *vo, uint32_t xv_port, const char *name,
                          bool get, int *min, int *max)
  {
-@@ -561,18 +576,22 @@ static bool allocate_xvimage(struct vo *vo, int foo)
+@@ -544,7 +621,7 @@ static bool allocate_xvimage(struct vo *vo, int foo)
+     int aligned_w = FFALIGN(ctx->image_width, 32);
+     // round up the height to next chroma boundary too
+     int aligned_h = FFALIGN(ctx->image_height, 2);
+-    if (x11->display_is_local && XShmQueryExtension(x11->display)) {
++    if (x11->display_is_local && shm_fd_usable(x11->display)) {
+         ctx->Shmem_Flag = 1;
+         x11->ShmCompletionEvent = XShmGetEventBase(x11->display)
+                                 + ShmCompletion;
+@@ -561,18 +638,13 @@ static bool allocate_xvimage(struct vo *vo, int foo)
          if (!ctx->xvimage[foo])
              return false;
  
@@ -55,32 +136,32 @@ Index: video/out/vo_xv.c
 -                                         ctx->xvimage[foo]->data_size,
 -                                         IPC_CREAT | 0777);
 -        ctx->Shminfo[foo].shmaddr = shmat(ctx->Shminfo[foo].shmid, 0, 0);
-+	memcpy(ctx->shmname, "/tmp/mpv-xv-XXXXXXXXXX",
-+	       sizeof(ctx->shmname));
-+	ctx->Shminfo[foo].shmid = shm_mkstemp(ctx->shmname);
-+	ctx->Shminfo[foo].shmaddr = mmap(NULL, ctx->xvimage[foo]->data_size,
-+					 PROT_READ | PROT_WRITE,
-+					 MAP_SHARED | __MAP_NOFAULT,
-+					 ctx->Shminfo[foo].shmid, 0);
-+	ftruncate(ctx->Shminfo[foo].shmid, ctx->xvimage[foo]->data_size);
-         if (ctx->Shminfo[foo].shmaddr == (void *)-1)
+-        if (ctx->Shminfo[foo].shmaddr == (void *)-1)
++        if (!shm_fd_attach(x11->display, &ctx->Shminfo[foo],
++                           ctx->xvimage[foo]->data_size))
              return false;
-         ctx->Shminfo[foo].readOnly = False;
+-        ctx->Shminfo[foo].readOnly = False;
++        ctx->shmlen[foo] = ctx->xvimage[foo]->data_size;
  
          ctx->xvimage[foo]->data = ctx->Shminfo[foo].shmaddr;
 -        XShmAttach(x11->display, &ctx->Shminfo[foo]);
-+        XShmAttachFd(x11->display, &ctx->Shminfo[foo]);
          XSync(x11->display, False);
 -        shmctl(ctx->Shminfo[foo].shmid, IPC_RMID, 0);
-+	shm_unlink(ctx->shmname);
      } else {
          ctx->xvimage[foo] =
              (XvImage *) XvCreateImage(x11->display, ctx->xv_port,
-@@ -605,6 +624,7 @@ static void deallocate_xvimage(struct vo *vo, int foo)
+@@ -603,10 +675,10 @@ static bool allocate_xvimage(struct vo *vo, int foo)
+ static void deallocate_xvimage(struct vo *vo, int foo)
+ {
      struct xvctx *ctx = vo->priv;
-     if (ctx->Shmem_Flag) {
-         XShmDetach(vo->x11->display, &ctx->Shminfo[foo]);
-+	close(ctx->Shminfo[foo].shmid);
-         shmdt(ctx->Shminfo[foo].shmaddr);
-     } else {
+-    if (ctx->Shmem_Flag) {
+-        XShmDetach(vo->x11->display, &ctx->Shminfo[foo]);
+-        shmdt(ctx->Shminfo[foo].shmaddr);
+-    } else {
++    if (ctx->Shminfo[foo].shmaddr) {
++        shm_fd_detach(vo->x11->display, &ctx->Shminfo[foo],
++                      ctx->shmlen[foo]);
++    } else if (ctx->xvimage[foo]) {
          av_free(ctx->xvimage[foo]->data);
+     }
+     if (ctx->xvimage[foo])
