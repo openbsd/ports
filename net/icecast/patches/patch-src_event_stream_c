@@ -1,0 +1,24 @@
+From f5b22be8980a1d0c605c8db6dfc20cc0a316b663 Mon Sep 17 00:00:00 2001
+From: Philipp Schafft <lion@lion.leolix.org>
+Date: Wed, 19 Aug 2026 16:46:18 +0000
+Subject: [PATCH] Fix: Do not write NULL values to JSON renderer
+
+fixes icecast crashing when mpd feeds opus or vorbis metadata
+changes at track boundaries.
+
+Index: src/event_stream.c
+--- src/event_stream.c.orig
++++ src/event_stream.c
+@@ -559,7 +559,11 @@ static void event_stream_event_render(event_stream_eve
+                 json_renderer_begin(json, JSON_ELEMENT_TYPE_ARRAY);
+                 for (size_t i = 0; i < keys[j].count; i++) {
+                     const char *value = vorbis_comment_query(event->vc, name, i);
+-                    json_renderer_write_string(json, value, JSON_RENDERER_FLAGS_NONE);
++                    if (!value) {
++                        ICECAST_LOG_WARN("Vorbis key without value: %#H", name);
++                    } else {
++                        json_renderer_write_string(json, value, JSON_RENDERER_FLAGS_NONE);
++                    }
+                 }
+                 json_renderer_end(json);
+             }
