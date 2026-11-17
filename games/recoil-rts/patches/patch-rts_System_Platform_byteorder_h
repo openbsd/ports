@@ -1,7 +1,7 @@
 Index: rts/System/Platform/byteorder.h
 --- rts/System/Platform/byteorder.h.orig
 +++ rts/System/Platform/byteorder.h
-@@ -61,7 +61,7 @@
+@@ -62,7 +62,7 @@
  
  #elif defined(__FreeBSD__) || defined(__OpenBSD__)
  

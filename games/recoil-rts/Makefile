@@ -7,9 +7,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2026.07.04
+V =			2026.09.03
 PKGNAME =		recoil-rts-${V}
-REVISION =		2
 
 DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
@@ -19,7 +18,7 @@ DIST_TUPLE +=		github USCiLab cereal \
 			d1fcec807b372f04e4c1041b3058e11c12853e6e \
 			rts/lib/cereal # BSD-3
 DIST_TUPLE +=		github skypjack entt \
-			e4ccb878f47245a319704912435d3c89f34ad6be \
+			b4e58bdd364ad72246c123a0c28538eab3252672 \
 			rts/lib/entt # MIT
 DIST_TUPLE +=		github spnda fastgltf \
 			eebda658317cd907d6cdf9c9ed7e40b96e8453dd \
@@ -52,13 +51,13 @@ DIST_TUPLE +=		github wolfpld tracy \
 			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			e6b33037dfbe81f2b0eb289f884ed90a1718eec0 \
+			f4a6ca3ae096631894e194cfa9b4e8e53f4fb78c \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
 			AI/Skirmish/CircuitAI # GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
-			09a1f37c77a014f24c3116ac7b7d2e318d0ce0de \
+			185cfba7fda4dc683acec8b2ecbd15838d3022f5 \
 			tools/pr-downloader # GPL-2.0
 DIST_TUPLE +=		github cameron314 readerwriterqueue \
 			8e7627d18c2108aca178888d88514179899a044f \

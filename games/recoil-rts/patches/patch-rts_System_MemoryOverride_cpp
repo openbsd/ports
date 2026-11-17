@@ -37,7 +37,7 @@ Index: rts/System/MemoryOverride.cpp
  	#else
  		// std::aligned_alloc requires size to be a multiple of alignment (C11/C++17);
  		// unlike posix_memalign, passing a non-multiple is undefined behaviour
-@@ -118,6 +126,8 @@ void aligned_free(void* ptr)
+@@ -120,6 +128,8 @@ void aligned_free(void* ptr)
  #endif
  }
  
@@ -46,7 +46,7 @@ Index: rts/System/MemoryOverride.cpp
  size_t usable_size(void* ptr)
  {
  #ifdef USE_MIMALLOC
-@@ -130,6 +140,7 @@ size_t usable_size(void* ptr)
+@@ -132,6 +142,7 @@ size_t usable_size(void* ptr)
  	#endif
  #endif
  }

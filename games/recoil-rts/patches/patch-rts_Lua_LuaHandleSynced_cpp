@@ -7,7 +7,7 @@ Workaround until clang 23.
 Index: rts/Lua/LuaHandleSynced.cpp
 --- rts/Lua/LuaHandleSynced.cpp.orig
 +++ rts/Lua/LuaHandleSynced.cpp
-@@ -55,8 +55,6 @@
+@@ -56,8 +56,6 @@
  
  #include "System/Misc/TracyDefs.h"
  
@@ -16,11 +16,11 @@ Index: rts/Lua/LuaHandleSynced.cpp
  LuaRulesParams::Params  CSplitLuaHandle::gameParams;
  
  
-@@ -1220,7 +1218,8 @@ bool CSyncedLuaHandle::ResourceExcess(const std::map <
+@@ -1222,7 +1220,8 @@ bool CSyncedLuaHandle::ResourceExcess(const std::map <
  
  	for (const auto &[teamID, excess] : excesses) {
  		lua_createtable(L, excess.MAX_RESOURCES, 0);
--		for (const auto &[resourceID, resource] : std::views::enumerate(excess)) {
+-		for (const auto &[resourceID, resource] : spring::views::enumerate(excess)) {
 +		for (int resourceID = 0; resourceID < excess.MAX_RESOURCES; ++resourceID) {
 +			const auto resource = excess[resourceID];
  			lua_pushnumber(L, resource);

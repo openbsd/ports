@@ -8,13 +8,13 @@ Use the same construct as older code in this file.
 Index: rts/Sim/Units/Unit.cpp
 --- rts/Sim/Units/Unit.cpp.orig
 +++ rts/Sim/Units/Unit.cpp
-@@ -965,11 +965,12 @@ static auto SplitResourcePackIntoPositiveNegative (con
+@@ -969,11 +969,12 @@ static auto SplitResourcePackIntoPositiveNegative (con
  {
  	SResourcePack positive {0.0f}, negative {0.0f};
  
--	for (auto [resourceID, value] : std::views::enumerate (pack)) {
-+	for (int i = 0; i < SResourcePack::MAX_RESOURCES; ++i) {
-+		const auto value = pack[i];
+-	for (auto [resourceID, value] : spring::views::enumerate (pack)) {
++    	for (int i = 0; i < SResourcePack::MAX_RESOURCES; ++i) {
++        	const auto value = pack[i];
  		if (value < 0.0f)
 -			negative[resourceID] = -value;
 +			negative[i] = -value;

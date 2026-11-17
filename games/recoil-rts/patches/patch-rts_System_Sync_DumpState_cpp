@@ -7,7 +7,7 @@ Workaround until clang 23.
 Index: rts/System/Sync/DumpState.cpp
 --- rts/System/Sync/DumpState.cpp.orig
 +++ rts/System/Sync/DumpState.cpp
-@@ -251,7 +251,7 @@ void DumpState(int newMinFrameNum, int newMaxFrameNum,
+@@ -252,7 +252,7 @@ void DumpState(int newMinFrameNum, int newMaxFrameNum,
  	#define DUMP_UNIT_SCRIPT_ANIM
  	#define DUMP_FEATURE_DATA
  	#define DUMP_PROJECTILE_DATA
