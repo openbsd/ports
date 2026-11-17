@@ -2,9 +2,8 @@ COMMENT =	powerful and simple Qt editor
 
 GH_ACCOUNT =	psemiletov
 GH_PROJECT =	tea-qt
-GH_TAGNAME =	50.0.4
+GH_TAGNAME =	63.3.1
 PKGNAME =	teaqt-${GH_TAGNAME}
-REVISION =	1
 
 CATEGORIES =	editors x11
 
@@ -13,27 +12,26 @@ HOMEPAGE =	http://semiletov.org/tea/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
-WANTLIB += aspell c djvulibre hunspell-1.7 m poppler-qt5 z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets aspell
+WANTLIB += c djvulibre glib-2.0 hunspell-1.7 intl m poppler-cpp
 
 MODULES =	devel/cmake \
-		x11/qt5
+		x11/qt6
 
 LIB_DEPENDS =	graphics/djvulibre \
-		print/poppler,-qt5 \
+		print/poppler \
 		textproc/aspell/core \
 		textproc/hunspell
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-
-CFLAGS +=	-I${LOCALBASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
-NO_TEST =	Yes
+CONFIGURE_ARGS =	-DUSE_DJVU=ON \
+			-DUSE_ASPELL=ON \
+			-DUSE_PDF=ON
 
-MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
