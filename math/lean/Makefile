@@ -2,6 +2,7 @@ COMMENT =		interactive and automated theorem prover
 
 DPB_PROPERTIES =	parallel
 
+# keep it synced with math/mathlib
 V =			4.36.0
 REVISION =		0
 GH_ACCOUNT =		leanprover
