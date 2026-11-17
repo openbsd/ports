@@ -1,11 +1,24 @@
-Avoid crash with -l option when there are no savefiles to list.
+Avoid crash with -l option when there are no savefiles to list. Fix setgid.
 
 https://github.com/angband/angband/pull/5954/commits/affb9988687d1a6c5fc8a66c60e37f0cf2c632f5
 
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -280,9 +280,13 @@ static void list_saves(void)
+@@ -37,6 +37,12 @@
+  */
+ #include <locale.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++/* OpenBSD: set[ug]id binary MUST say so in this var */
++mode_t _permit_setugid = S_ISGID;
++#endif
++
+ #if !defined(WINDOWS)
+ #include <langinfo.h>
+ #endif
+@@ -280,9 +286,13 @@ static void list_saves(void)
  {
  	savefile_getter g = NULL;
  

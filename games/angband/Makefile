@@ -7,6 +7,7 @@ V =			4.2.5
 DISTNAME =		Angband-${V}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES=		games
+REVISION =		0
 
 HOMEPAGE=		http://rephial.org
 
