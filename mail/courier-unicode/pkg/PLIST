@@ -21,6 +21,7 @@ lib/libcourier-unicode.la
 @man man/man3/unicode::compose_default_callback.3
 @man man/man3/unicode::decompose.3
 @man man/man3/unicode::decompose_default_reallocate.3
+@man man/man3/unicode::fromu_string_converter.3
 @man man/man3/unicode::iconvert::convert.3
 @man man/man3/unicode::iconvert::convert_tocase.3
 @man man/man3/unicode::iconvert::fromu.3
@@ -31,7 +32,10 @@ lib/libcourier-unicode.la
 @man man/man3/unicode::linebreak_iter.3
 @man man/man3/unicode::linebreakc_callback_base.3
 @man man/man3/unicode::linebreakc_iter.3
+@man man/man3/unicode::string_converter.3
 @man man/man3/unicode::tolower.3
+@man man/man3/unicode::totitle.3
+@man man/man3/unicode::tou_string_converter.3
 @man man/man3/unicode::toupper.3
 @man man/man3/unicode::ucs_2.3
 @man man/man3/unicode::ucs_4.3
@@ -149,8 +153,9 @@ lib/libcourier-unicode.la
 @man man/man3/unicode_wbscan_end.3
 @man man/man3/unicode_wbscan_init.3
 @man man/man3/unicode_wbscan_next.3
+@man man/man3/unicode_wcwidth.3
+@man man/man3/unicode_wcwidth_str.3
 @man man/man3/unicode_word_break.3
 @man man/man7/courier-unicode.7
 share/aclocal/
 share/aclocal/courier-unicode-version.m4
-share/aclocal/courier-unicode.m4
