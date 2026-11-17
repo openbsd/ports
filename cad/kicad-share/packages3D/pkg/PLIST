@@ -4675,6 +4675,7 @@ share/kicad/3dmodels/Inductor_SMD.3dshapes/L_APV_APH1265.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_APV_APH1770.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_APV_APH2213.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_AVX_LMLP07A7.step
+share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Abracon_AOTA-B201610S.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0425.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPI-0628.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Abracon_ASPIAIG-F4020.step
@@ -4944,6 +4945,7 @@ share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Pulse_PA4334.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Pulse_PA4340.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Pulse_PA4341.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Pulse_PA5402.step
+share/kicad/3dmodels/Inductor_SMD.3dshapes/L_Pulse_PA5449.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI124.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI125.step
 share/kicad/3dmodels/Inductor_SMD.3dshapes/L_SXN_SMDRI127.step
@@ -5775,6 +5777,8 @@ share/kicad/3dmodels/Package_CSP.3dshapes/LFCSP-8-1EP_3x3mm_P0.5mm_EP1.45x1.74mm
 share/kicad/3dmodels/Package_CSP.3dshapes/LFCSP-WD-10-1EP_3x3mm_P0.5mm_EP1.64x2.38mm.step
 share/kicad/3dmodels/Package_CSP.3dshapes/NXP_SOT1444-5_WLCSP-49_3.44x3.44mm_Layout7x7_P0.4mm.step
 share/kicad/3dmodels/Package_CSP.3dshapes/NXP_SOT1450-2_WLCSP-100_5.07x5.07mm_Layout10x10_P0.5mm.step
+share/kicad/3dmodels/Package_CSP.3dshapes/NXP_WLCSP-12_1.055x1.405mm_Layout3x4_P0.35mm.step
+share/kicad/3dmodels/Package_CSP.3dshapes/NXP_WLCSP-15_1.54x2.56mm_Layout3x5_P0.5mm.step
 share/kicad/3dmodels/Package_CSP.3dshapes/ST_WLCSP-19_1.643x2.492mm_Layout4x11_P0.35mm_Stagger.step
 share/kicad/3dmodels/Package_CSP.3dshapes/ST_WLCSP-20_1.94x2.4mm_Layout4x5_P0.4mm.step
 share/kicad/3dmodels/Package_CSP.3dshapes/ST_WLCSP-25_2.33x2.24mm_Layout5x5_P0.4mm.step
