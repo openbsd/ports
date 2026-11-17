@@ -4,13 +4,17 @@ DPB_PROPERTIES =	parallel
 
 # keep it synced with math/mathlib
 V =			4.36.0
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		leanprover
 GH_PROJECT =		lean4
 GH_TAGNAME =		v${V}
 DISTNAME =		lean-${V}
 
-# Lean makes its dance with .a and .so, no SHARED_LIBS
+SHARED_LIBS =		Init_shared     0.0 \
+			Lake_shared     0.0 \
+			leanshared      0.0 \
+			leanshared_1    0.0 \
+			leanshared_2    0.0
 
 CATEGORIES =		math lang
 
@@ -34,7 +38,8 @@ LIB_DEPENDS = 		devel/gmp,-main \
 			devel/libuv \
 			math/cadical
 
-TEST_DEPENDS =		shells/bash \
+TEST_DEPENDS =		lang/python/3 \
+			shells/bash \
 			textproc/gdiff \
 			sysutils/coreutils \
 			sysutils/ggrep
@@ -78,8 +83,10 @@ do-install:
 pre-test:
 	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 	ln -sf ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
+	ln -sf ${LOCALBASE}/bin/gmktemp ${WRKDIR}/bin/mktemp
+	ln -sf ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 	ln -sf ${LOCALBASE}/bin/gstat ${WRKDIR}/bin/stat
-	ln -sf ${LOCALBASE}/bin/gstat ${WRKDIR}/bin/stat
+	ln -sf ${LOCALBASE}/bin/gtail ${WRKDIR}/bin/tail
 	ln -sf ${LOCALBASE}/bin/leangz ${WRKBUILD}/stage1/bin
 	ln -sf ${LOCALBASE}/bin/leantar ${WRKBUILD}/stage1/bin
 

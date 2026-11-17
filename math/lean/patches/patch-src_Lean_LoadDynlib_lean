@@ -1,0 +1,15 @@
+Index: src/Lean/LoadDynlib.lean
+--- src/Lean/LoadDynlib.lean.orig
++++ src/Lean/LoadDynlib.lean
+@@ -94,7 +94,10 @@ should be linked and loaded separately.
+ @[export lean_load_plugin]
+ def loadPlugin (path : System.FilePath) (initFn? : Option String := none) : IO Unit := do
+   -- We never want to look up plugins using the system library search
+-  let path ← IO.FS.realPath path
++  let some fileName := path.fileName
++    | throw <| IO.userError s!"error, plugin has invalid file name '{path}'"
++  let parent ← IO.FS.realPath (path.parent.getD ".")
++  let path := parent / fileName
+   let name ← initFn?.getDM do
+     let some name := path.fileStem
+     | throw <| IO.userError s!"error, plugin has invalid file name '{path}'"

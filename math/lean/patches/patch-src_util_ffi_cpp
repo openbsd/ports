@@ -1,0 +1,13 @@
+Index: src/util/ffi.cpp
+--- src/util/ffi.cpp.orig
++++ src/util/ffi.cpp
+@@ -18,6 +18,9 @@ extern "C" LEAN_EXPORT object * lean_get_leanc_interna
+ }
+ 
+ extern "C" LEAN_EXPORT object * lean_get_linker_flags(uint8 link_static) {
++#ifdef __OpenBSD__
++    link_static = false;
++#endif
+     return lean_mk_string(link_static ? "@LEANC_STATIC_LINKER_FLAGS@ @LEAN_EXTRA_LINKER_FLAGS@" : "@LEANC_SHARED_LINKER_FLAGS@ @LEAN_EXTRA_LINKER_FLAGS@");
+ }
+ 

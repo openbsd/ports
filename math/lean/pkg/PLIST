@@ -15850,24 +15850,11 @@ lib/lean/Std/WP/Triple/SpecLemmas.ir.sig
 lib/lean/Std/WP/Triple/SpecLemmas.olean
 lib/lean/Std/WP/Triple/SpecLemmas.olean.private
 lib/lean/Std/WP/Triple/SpecLemmas.olean.server
-@static-lib lib/lean/libInit.a
-@so lib/lean/libInit_shared.so
-@static-lib lib/lean/libLake.a
-@so lib/lean/libLake_shared.so
-@static-lib lib/lean/libLean.a
-@static-lib lib/lean/libLeanChecker.a
-@static-lib lib/lean/libLeanExport.a
-@static-lib lib/lean/libLeanIR.a
-@static-lib lib/lean/libLeanc.a
-@static-lib lib/lean/libStd.a
-lib/lean/libcadical.a
-@static-lib lib/lean/libinitialize_minimal_shim.a
-@static-lib lib/lean/libleancpp.a
-@static-lib lib/lean/libleanmanifest.a
-@static-lib lib/lean/libleanrt.a
-@so lib/lean/libleanshared.so
-@so lib/lean/libleanshared_1.so
-@so lib/lean/libleanshared_2.so
+@lib lib/lean/libInit_shared.so.${LIBInit_shared_VERSION}
+@lib lib/lean/libLake_shared.so.${LIBLake_shared_VERSION}
+@lib lib/lean/libleanshared.so.${LIBleanshared_VERSION}
+@lib lib/lean/libleanshared_1.so.${LIBleanshared_1_VERSION}
+@lib lib/lean/libleanshared_2.so.${LIBleanshared_2_VERSION}
 share/doc/lean/
 share/doc/lean/LICENSE
 share/doc/lean/LICENSES

@@ -23,7 +23,21 @@ Index: src/CMakeLists.txt
  
  # Pick up `llvm-config` to setup LLVM flags.
  if(LLVM)
-@@ -531,6 +535,11 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+@@ -503,6 +507,13 @@ else()
+   message(WARNING "Disabling LLVM support")
+ endif()
+ 
++foreach(name Init_shared Lake_shared leanshared leanshared_1 leanshared_2)
++  set(${name}_FILENAME "lib${name}${CMAKE_SHARED_LIBRARY_SUFFIX}")
++  if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD" AND NOT "$ENV{LIB${name}_VERSION}" STREQUAL "")
++    string(APPEND ${name}_FILENAME ".$ENV{LIB${name}_VERSION}")
++  endif()
++endforeach()
++
+ # libleancpp/Lean as well as libleanrt/Init are cyclically dependent. This works by default on macOS, which also doesn't like
+ # the linker flags necessary on other platforms.
+ # Furthermore, add LLVM flags into the list of flags we need when linking.
+@@ -531,6 +542,11 @@ if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
  endif()
  
  if(CADICAL_LIB)
@@ -35,19 +49,46 @@ Index: src/CMakeLists.txt
    string(APPEND TOOLCHAIN_STATIC_LINKER_FLAGS " -lcadical")
    string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -lcadical")
  endif()
-@@ -621,6 +630,15 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+@@ -621,6 +637,23 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
      " -Wl,-force_load,${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export ${CMAKE_BINARY_DIR}/lib/lean/libLeanExport.a.export -install_name @rpath/libLake_shared.dylib"
    )
    string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath,@executable_path/../lib -Wl,-rpath,@executable_path/../lib/lean")
 +elseif(CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +  string(APPEND CMAKE_CXX_FLAGS " -fPIC")
 +  string(APPEND LEANC_EXTRA_CC_FLAGS " -fPIC")
-+  string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -Wl,-rpath=${CMAKE_INSTALL_PREFIX}/lib:${CMAKE_INSTALL_PREFIX}/lib/lean")
++  string(APPEND TOOLCHAIN_SHARED_LINKER_FLAGS " -Wl,-rpath=\\$$ORIGIN/..:\\$$ORIGIN")
++  string(APPEND INIT_SHARED_LINKER_FLAGS " -Wl,-soname=${Init_shared_FILENAME}")
++  string(APPEND LEANSHARED_1_LINKER_FLAGS " -Wl,-soname=${leanshared_1_FILENAME}")
++  string(APPEND LEANSHARED_2_LINKER_FLAGS " -Wl,-soname=${leanshared_2_FILENAME}")
++  string(APPEND LEANSHARED_LINKER_FLAGS " -Wl,-soname=${leanshared_FILENAME}")
 +  string(
 +    APPEND LAKESHARED_LINKER_FLAGS
-+    " -Wl,--whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export -Wl,--no-whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLeanExport.a.export -Wl,-soname=libLake_shared.so"
++    " -Wl,--whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLake.a.export -Wl,--no-whole-archive ${CMAKE_BINARY_DIR}/lib/lean/libLeanExport.a.export -Wl,-soname=${Lake_shared_FILENAME}"
 +  )
-+  string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=${CMAKE_INSTALL_PREFIX}/lib:${CMAKE_INSTALL_PREFIX}/lib/lean")
++  string(
++    APPEND LEANC_SHARED_LINKER_FLAGS
++    " -lInit_shared -lleanshared_2 -lleanshared_1 -lleanshared -Wl,-rpath=${CMAKE_INSTALL_PREFIX}/lib:${CMAKE_INSTALL_PREFIX}/lib/lean"
++  )
++  string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-rpath=$ORIGIN/../lib:$ORIGIN/../lib/lean")
  elseif(CMAKE_SYSTEM_NAME MATCHES "Emscripten")
    string(APPEND CMAKE_CXX_FLAGS " -fPIC")
    string(APPEND LEANC_EXTRA_CC_FLAGS " -fPIC")
+@@ -1213,6 +1246,10 @@ if(USE_LAKE_CACHE)
+   )
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++  set(LEAN_INSTALL_STATIC_EXCLUDES PATTERN "*.a" EXCLUDE)
++endif()
++
+ install(
+   DIRECTORY "${CMAKE_BINARY_DIR}/lib/"
+   DESTINATION lib
+@@ -1222,6 +1259,7 @@ install(
+   PATTERN "*.trace" EXCLUDE
+   PATTERN "*.rsp" EXCLUDE
+   PATTERN "*.filelist" EXCLUDE
++  ${LEAN_INSTALL_STATIC_EXCLUDES}
+ )
+ 
+ # symlink source into expected installation location for go-to-definition, if file system allows it
