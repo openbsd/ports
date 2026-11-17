@@ -39,7 +39,7 @@ Index: components/BUILD.gn
  
    if (is_ios) {
      assert_no_deps += ios_assert_no_deps
-@@ -1342,8 +1340,7 @@ if (use_blink) {
+@@ -1343,8 +1341,7 @@ if (use_blink) {
      # No components should depend on Chrome.
      # Since //chrome depends on //extensions, we also only assert_no_deps on
      # extensions targets.
