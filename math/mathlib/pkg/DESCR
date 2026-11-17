@@ -1,0 +1,3 @@
+Mathlib is a user maintained library for the Lean theorem prover. It
+contains both programming infrastructure and mathematics, as well as
+tactics that use the former and allow to develop the latter.
