@@ -1,8 +1,7 @@
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
-V=			3.1.8
-REVISION=		1
+V=			4.0.5
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
 FULLPKGNAME-utils=	courier-utils-$V
@@ -26,7 +25,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.71
+AUTOCONF_VERSION=	2.73
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \

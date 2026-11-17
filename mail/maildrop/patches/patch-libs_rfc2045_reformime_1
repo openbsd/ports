@@ -10,16 +10,7 @@ Index: libs/rfc2045/reformime.1
  compliant message on standard input, except in few cases such as the
  \fB\-m\fR
  option\&.
-@@ -110,7 +110,7 @@ Arbitrarily complex MIME constructs are possible\&.
- .PP
- \-d
- .RS 4
--Parse a delivery status notification MIME message (\m[blue]\fBRFC 1894\fR\m[]\&\s-2\u[2]\d\s+2)\&.
-+Parse a delivery status notification MIME message (\fBRFC 1894\fR\&\s-2\u[2]\d\s+2)\&.
- \fBreformime\fR
- expects to see on standard input a MIME message that consists of a delivery status notification, as defined by RFC 1894\&.
- \fBreformime\fR
-@@ -170,7 +170,7 @@ MIME message digest\&.
+@@ -194,7 +194,7 @@ MIME message digest\&.
  \-r
  .RS 4
  Rewrite message, adding or standardizing
@@ -28,7 +19,7 @@ Index: libs/rfc2045/reformime.1
  MIME headers\&.
  .RE
  .PP
-@@ -464,11 +464,11 @@ MIME objects\&.
+@@ -485,11 +485,11 @@ MIME objects\&. An extra newline character is appended
  .RE
  .SH "SEE ALSO"
  .PP

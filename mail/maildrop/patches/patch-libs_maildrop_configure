@@ -1,15 +1,17 @@
 Index: libs/maildrop/configure
 --- libs/maildrop/configure.orig
 +++ libs/maildrop/configure
-@@ -19896,10 +19896,7 @@ then :
- else $as_nop
-   # Courier defaults to ./Maildir
+@@ -22323,11 +22323,8 @@ then :
+ else case e in #(
+   e) # Courier defaults to ./Maildir
  
 -	if test -d $srcdir/../../courier
 -	then
 -		maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
 -	fi
-+  maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
- 
+-	 ;;
++	maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
++	;;
+ esac
  fi
  
