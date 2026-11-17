@@ -1,33 +1,28 @@
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.3.4
+V =			1.5.0
 DISTNAME =		libbluray-${V}
 CATEGORIES =		multimedia
-REVISION =		1
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 
-SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/
-EXTRACT_SUFX =		.tar.bz2
+SITES =			https://download.videolan.org/pub/videolan/libbluray/${V}/
+EXTRACT_SUFX =		.tar.xz
 
 # LGPL v2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c expat fontconfig freetype iconv m pthread
-WANTLIB +=		udfread xml2 z
+WANTLIB +=		c fontconfig freetype pthread udfread xml2
 
-SHARED_LIBS +=		bluray		3.2	# 11.0
+SHARED_LIBS +=		bluray		3.3
 
-LIB_DEPENDS =		converters/libiconv \
-			multimedia/libudfread \
+MODULES =		devel/meson
+
+LIB_DEPENDS =		multimedia/libudfread>=1.2.0 \
 			textproc/libxml
-BUILD_DEPENDS =		devel/bison
 
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
-YACC =			${LOCALBASE}/bin/bison -y
-CONFIGURE_ARGS +=	--disable-bdjava-jar \
-			--disable-doxygen-doc \
-			--disable-optimizations
+CONFIGURE_ARGS +=	-Dbdj_jar=disabled
+
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -12,6 +12,5 @@ include/libbluray/meta_data.h
 include/libbluray/overlay.h
 include/libbluray/player_settings.h
 @static-lib lib/libbluray.a
-lib/libbluray.la
 @lib lib/libbluray.so.${LIBbluray_VERSION}
 lib/pkgconfig/libbluray.pc
