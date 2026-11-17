@@ -58,6 +58,7 @@
      SUBDIR += libtommath
      SUBDIR += lpsolve
      SUBDIR += lrs
+     SUBDIR += mathlib
      SUBDIR += mathomatic
      SUBDIR += matio
      SUBDIR += maxima
