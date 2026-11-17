@@ -127,6 +127,7 @@ include/eigen3/Eigen/src/Core/arch/AltiVec/MathFunctions.h
 include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProduct.h
 include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProductCommon.h
 include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProductMMA.h
+include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixVectorProduct.h
 include/eigen3/Eigen/src/Core/arch/AltiVec/PacketMath.h
 include/eigen3/Eigen/src/Core/arch/CUDA/
 include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h
@@ -347,7 +348,6 @@ include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h
-include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h
 include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h

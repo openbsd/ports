@@ -1,0 +1,15 @@
+- Fix erroneous EIGEN_COMP_CLANG_STRICT backport
+  1ac855c25dc4aa8453c8e18e0db55336b6bdd0ba
+
+Index: Eigen/src/Core/util/ConfigureVectorization.h
+--- Eigen/src/Core/util/ConfigureVectorization.h.orig
++++ Eigen/src/Core/util/ConfigureVectorization.h
+@@ -445,7 +445,7 @@
+ #define EIGEN_VECTORIZE_FMA
+ #endif
+ 
+-#if defined(__F16C__) && !defined(EIGEN_GPUCC) && (!EIGEN_COMP_CLANG_STRICT || EIGEN_COMP_CLANG>=380)
++#if defined(__F16C__) && (!defined(EIGEN_GPUCC) && (!EIGEN_COMP_CLANG || EIGEN_COMP_CLANG>=380))
+   // We can use the optimized fp16 to float and float to fp16 conversion routines
+   #define EIGEN_HAS_FP16_C
+ 
