@@ -1,6 +1,6 @@
 COMMENT=	data analysis and manipulation library
 
-MODPY_DISTV=	3.0.6
+MODPY_DISTV=	3.1.1
 DISTNAME=	pandas-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -31,7 +31,8 @@ RUN_DEPENDS=	devel/py-dateutil>=2.8.2 \
 		devel/py-tz>=2020.1 \
 		math/py-numpy>=1.25.0
 
-TEST_DEPENDS=	databases/py-mysqlclient \
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		databases/py-mysqlclient \
 		databases/py-psycopg2 \
 		databases/py-sqlalchemy \
 		devel/ipython \
@@ -58,10 +59,7 @@ PORTHOME=	${WRKDIR}
 TEST_ENV=	TZ=UTC
 
 do-test:
-	${MODPY_TEST_SO_CMD}
-	@echo "running non-single-cpu tests with ${MAKE_JOBS} job(s):"
-	-@${MODPY_TEST_CMD} -m "not clipboard and not single_cpu and not slow and not network and not db" -n ${MAKE_JOBS} --no-strict-data-files
-	@echo "running single-cpu tests:"
-	-@${MODPY_TEST_CMD} -m "not clipboard and single_cpu and not slow and not network and not db" --no-strict-data-files
+	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+		${MODPY_BIN} -c 'import pandas ; pandas.test()'
 
 .include <bsd.port.mk>
