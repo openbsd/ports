@@ -41,7 +41,6 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
 @lib lib/libKirigamiLayoutsPrivate.so.${LIBKirigamiLayoutsPrivate_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
-@lib lib/libKirigamiPolyfill.so.${LIBKirigamiPolyfill_VERSION}
 @lib lib/libKirigamiPrimitives.so.${LIBKirigamiPrimitives_VERSION}
 @lib lib/libKirigamiPrivate.so.${LIBKirigamiPrivate_VERSION}
 @lib lib/libKirigamiTemplates.so.${LIBKirigamiTemplates_VERSION}
@@ -64,6 +63,7 @@ lib/qt6/qml/org/kde/kirigami/controls/ActionTextField.qml
 lib/qt6/qml/org/kde/kirigami/controls/ActionToolBar.qml
 lib/qt6/qml/org/kde/kirigami/controls/ApplicationItem.qml
 lib/qt6/qml/org/kde/kirigami/controls/ApplicationWindow.qml
+lib/qt6/qml/org/kde/kirigami/controls/Avatar.qml
 lib/qt6/qml/org/kde/kirigami/controls/Badge.qml
 lib/qt6/qml/org/kde/kirigami/controls/Card.qml
 lib/qt6/qml/org/kde/kirigami/controls/CardsLayout.qml
@@ -211,16 +211,16 @@ lib/qt6/qml/org/kde/kirigami/private/
 lib/qt6/qml/org/kde/kirigami/private/KirigamiPrivate.qmltypes
 lib/qt6/qml/org/kde/kirigami/private/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so
-lib/qt6/qml/org/kde/kirigami/private/polyfill/
-lib/qt6/qml/org/kde/kirigami/private/polyfill/KirigamiPolyfill.qmltypes
-lib/qt6/qml/org/kde/kirigami/private/polyfill/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/kirigami/private/polyfill/libKirigamiPolyfillplugin.so
-lib/qt6/qml/org/kde/kirigami/private/polyfill/qmldir
 lib/qt6/qml/org/kde/kirigami/private/qmldir
 lib/qt6/qml/org/kde/kirigami/qmldir
 lib/qt6/qml/org/kde/kirigami/styles/
 lib/qt6/qml/org/kde/kirigami/styles/Material/
+lib/qt6/qml/org/kde/kirigami/styles/Material/AbstractApplicationHeader.qml
+lib/qt6/qml/org/kde/kirigami/styles/Material/Badge.qml
 lib/qt6/qml/org/kde/kirigami/styles/Material/InlineMessage.qml
+lib/qt6/qml/org/kde/kirigami/styles/Material/NavigationTabBar.qml
+lib/qt6/qml/org/kde/kirigami/styles/Material/NavigationTabButton.qml
+lib/qt6/qml/org/kde/kirigami/styles/Material/OverlayDrawer.qml
 lib/qt6/qml/org/kde/kirigami/styles/Material/Theme.qml
 lib/qt6/qml/org/kde/kirigami/styles/org.kde.desktop/
 lib/qt6/qml/org/kde/kirigami/styles/org.kde.desktop/AbstractApplicationHeader.qml
@@ -229,6 +229,7 @@ lib/qt6/qml/org/kde/kirigami/templates/
 lib/qt6/qml/org/kde/kirigami/templates/AbstractApplicationHeader.qml
 lib/qt6/qml/org/kde/kirigami/templates/AbstractCard.qml
 lib/qt6/qml/org/kde/kirigami/templates/AppHeaderSizeGroup.qml
+lib/qt6/qml/org/kde/kirigami/templates/Avatar.qml
 lib/qt6/qml/org/kde/kirigami/templates/Badge.qml
 lib/qt6/qml/org/kde/kirigami/templates/Chip.qml
 lib/qt6/qml/org/kde/kirigami/templates/Heading.qml

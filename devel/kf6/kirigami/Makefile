@@ -6,7 +6,7 @@ SHARED_LIBS +=  KirigamiDelegates         0.2 # 0.0
 SHARED_LIBS +=  KirigamiPlatform          1.0 # 0.0
 SHARED_LIBS +=  KirigamiDialogs           0.0 # 0.0
 SHARED_LIBS +=  KirigamiLayouts           0.0 # 0.0
-SHARED_LIBS +=  KirigamiPrimitives        0.0 # 0.0
+SHARED_LIBS +=  KirigamiPrimitives        0.1 # 0.0
 SHARED_LIBS +=  KirigamiPrivate           0.0 # 0.0
 SHARED_LIBS +=  KirigamiLayoutsPrivate    0.0 # 0.0
 SHARED_LIBS +=	KirigamiPolyfill          0.0 # 0.0
@@ -36,4 +36,5 @@ LIB_DEPENDS =	x11/qt6/qtdeclarative \
 post-extract:
 	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
+Warning: LIBKirigamiPolyfill_VERSION unused ? (check SHARED_LIBS)
 .include <bsd.port.mk>

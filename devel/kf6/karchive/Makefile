@@ -1,7 +1,7 @@
 COMMENT =	Qt6-based API for manipulating file archives
 DISTNAME =	karchive-${VERSION}
 
-SHARED_LIBS +=  KF6Archive                0.0 # 0.0
+SHARED_LIBS +=  KF6Archive                0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core bz2 crypto lzma m z zstd
 

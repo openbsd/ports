@@ -44,15 +44,19 @@ lib/qt6/qml/org/kde/baloo/experimental/qmldir
 lib/qt6/qml/org/kde/baloo/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/baloo/libbalooplugin.so
 lib/qt6/qml/org/kde/baloo/qmldir
+lib/systemd/user/kde-baloo-idle-monitor.service
 lib/systemd/user/kde-baloo.service
 @bin libexec/kf6/baloo_file
 @bin libexec/kf6/baloo_file_extractor
+@bin libexec/kf6/baloo_idle_monitor
 share/config.kcfg/baloosettings.kcfg
 share/dbus-1/interfaces/org.kde.BalooWatcherApplication.xml
 share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 share/dbus-1/interfaces/org.kde.baloo.main.xml
 share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
+share/dbus-1/services/org.kde.baloo.service
+share/dbus-1/services/org.kde.baloo_idle_monitor.service
 share/examples/kf6-baloo/
 share/examples/kf6-baloo/xdg/
 share/examples/kf6-baloo/xdg/autostart/
@@ -505,25 +509,41 @@ share/locale/sl/LC_MESSAGES/balooshow6.mo
 share/locale/sl/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sl/LC_MESSAGES/kio6_tags.mo
 share/locale/sl/LC_MESSAGES/kio6_timeline.mo
+share/locale/sr/LC_MESSAGES/baloo_file6.mo
+share/locale/sr/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sr/LC_MESSAGES/balooctl6.mo
+share/locale/sr/LC_MESSAGES/baloodb6.mo
+share/locale/sr/LC_MESSAGES/balooengine6.mo
 share/locale/sr/LC_MESSAGES/baloosearch6.mo
 share/locale/sr/LC_MESSAGES/balooshow6.mo
 share/locale/sr/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sr/LC_MESSAGES/kio6_tags.mo
 share/locale/sr/LC_MESSAGES/kio6_timeline.mo
+share/locale/sr@ijekavian/LC_MESSAGES/baloo_file6.mo
+share/locale/sr@ijekavian/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sr@ijekavian/LC_MESSAGES/balooctl6.mo
+share/locale/sr@ijekavian/LC_MESSAGES/baloodb6.mo
+share/locale/sr@ijekavian/LC_MESSAGES/balooengine6.mo
 share/locale/sr@ijekavian/LC_MESSAGES/baloosearch6.mo
 share/locale/sr@ijekavian/LC_MESSAGES/balooshow6.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_tags.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kio6_timeline.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/baloo_file6.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/balooctl6.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/baloodb6.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/balooengine6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/baloosearch6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/balooshow6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_tags.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_timeline.mo
+share/locale/sr@latin/LC_MESSAGES/baloo_file6.mo
+share/locale/sr@latin/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sr@latin/LC_MESSAGES/balooctl6.mo
+share/locale/sr@latin/LC_MESSAGES/baloodb6.mo
+share/locale/sr@latin/LC_MESSAGES/balooengine6.mo
 share/locale/sr@latin/LC_MESSAGES/baloosearch6.mo
 share/locale/sr@latin/LC_MESSAGES/balooshow6.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_baloosearch.mo
