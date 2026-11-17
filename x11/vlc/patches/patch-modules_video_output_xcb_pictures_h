@@ -1,0 +1,23 @@
+Use MIT-SHM 1.2 (fd passing) when the X server supports it over a local
+connection, as VLC 4 does, so frames no longer go in a SysV segment
+that is made readable by everyone when the X server cannot attach it.
+Fall back to SysV shared memory otherwise.
+
+Index: modules/video_output/xcb/pictures.h
+--- modules/video_output/xcb/pictures.h.orig
++++ modules/video_output/xcb/pictures.h
+@@ -37,7 +37,13 @@ picture_t *XCB_picture_NewFromResource (
+                                         const picture_resource_t *,
+                                         xcb_connection_t *);
+ 
++struct picture_sys_t
++{
++    xcb_shm_seg_t segment; /**< MIT-SHM segment XID, 0 if not attached */
++    size_t size; /**< size of the mapping if fd backed, 0 if SysV shm */
++};
++
+ static inline xcb_shm_seg_t XCB_picture_GetSegment(const picture_t *pic)
+ {
+-    return (uintptr_t)pic->p_sys;
++    return (pic->p_sys != NULL) ? pic->p_sys->segment : 0;
+ }

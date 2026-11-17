@@ -1,0 +1,196 @@
+Use MIT-SHM 1.2 (fd passing) when the X server supports it over a local
+connection, as VLC 4 does, so frames no longer go in a SysV segment
+that is made readable by everyone when the X server cannot attach it.
+Fall back to SysV shared memory otherwise.
+
+Index: modules/video_output/xcb/pictures.c
+--- modules/video_output/xcb/pictures.c.orig
++++ modules/video_output/xcb/pictures.c
+@@ -32,6 +32,9 @@
+ #ifdef HAVE_SYS_SHM_H
+ # include <sys/shm.h>
+ # include <sys/stat.h>
++# include <sys/mman.h>
++# include <sys/socket.h>
++# include <unistd.h>
+ #else
+ # define shmdt(mem) free(mem)
+ #endif
+@@ -40,6 +43,7 @@
+ #include <xcb/shm.h>
+ 
+ #include <vlc_common.h>
++#include <vlc_fs.h>
+ #include <vlc_vout_display.h>
+ 
+ #include "pictures.h"
+@@ -68,12 +72,95 @@ bool XCB_shm_Check (vlc_object_t *obj, x
+     return false;
+ }
+ 
++#ifdef HAVE_SYS_SHM_H
++/**
++ * Check MIT-SHM 1.2 (fd passing) support. File descriptors can only be
++ * passed over a local (unix domain socket) connection.
++ */
++static bool XCB_shm_fd_Check (xcb_connection_t *conn)
++{
++    union {
++        struct sockaddr sa;
++        struct sockaddr_storage ss;
++    } addr;
++    socklen_t len = sizeof (addr);
++
++    if (getsockname (xcb_get_file_descriptor (conn), &addr.sa, &len) != 0
++     || addr.sa.sa_family != AF_UNIX)
++        return false;
++
++    xcb_shm_query_version_reply_t *r =
++        xcb_shm_query_version_reply (conn, xcb_shm_query_version (conn), NULL);
++    if (r == NULL)
++        return false;
++
++    bool ok = r->major_version > 1
++           || (r->major_version == 1 && r->minor_version >= 2);
++    free (r);
++    return ok;
++}
++
+ /**
+- * Release picture private data: detach the shared memory segment.
++ * Allocate shared memory from an unlinked file and pass its file
++ * descriptor to the X server (MIT-SHM 1.2).
++ */
++static void *XCB_picture_AllocFd (vout_display_t *vd, size_t size,
++                                  xcb_connection_t *conn,
++                                  xcb_shm_seg_t segment)
++{
++    int fd = vlc_memfd ();
++    if (fd == -1)
++    {
++        msg_Err (vd, "shared memory file error: %s", vlc_strerror_c(errno));
++        return NULL;
++    }
++
++    if (ftruncate (fd, size) != 0)
++    {
++        msg_Err (vd, "shared memory file size error: %s",
++                 vlc_strerror_c(errno));
++        vlc_close (fd);
++        return NULL;
++    }
++
++    void *shm = mmap (NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
++    if (shm == MAP_FAILED)
++    {
++        msg_Err (vd, "shared memory mapping error: %s",
++                 vlc_strerror_c(errno));
++        vlc_close (fd);
++        return NULL;
++    }
++
++    /* xcb takes ownership of fd and closes it once it has been sent */
++    xcb_void_cookie_t ck = xcb_shm_attach_fd_checked (conn, segment, fd, 1);
++    if (vlc_xcb_error_Check(vd, conn, "shared memory fd server-side error",
++                            ck))
++    {
++        munmap (shm, size);
++        return NULL;
++    }
++    return shm;
++}
++#endif
++
++static void XCB_picture_Free (picture_sys_t *sys, void *pixels)
++{
++#ifdef HAVE_SYS_SHM_H
++    if (sys->size != 0)
++        munmap (pixels, sys->size);
++    else
++#endif
++        shmdt (pixels);
++    free (sys);
++}
++
++/**
++ * Release picture private data: unmap the shared memory.
+  */
+ static void XCB_picture_Destroy (picture_t *pic)
+ {
+-    shmdt (pic->p[0].p_pixels);
++    XCB_picture_Free (pic->p_sys, pic->p[0].p_pixels);
+     free (pic);
+ }
+ 
+@@ -86,13 +173,34 @@ int XCB_picture_Alloc (vout_display_t *v
+                        size_t size, xcb_connection_t *conn,
+                        xcb_shm_seg_t segment)
+ {
++    picture_sys_t *sys = malloc (sizeof (*sys));
++    if (unlikely(sys == NULL))
++        return -1;
++    sys->size = 0;
++
+ #ifdef HAVE_SYS_SHM_H
++    if (segment != 0 && XCB_shm_fd_Check (conn))
++    {
++        void *shm = XCB_picture_AllocFd (vd, size, conn, segment);
++        if (shm != NULL)
++        {
++            sys->segment = segment;
++            sys->size = size;
++            res->p_sys = sys;
++            res->pf_destroy = XCB_picture_Destroy;
++            res->p[0].p_pixels = shm;
++            return 0;
++        }
++        msg_Warn (vd, "falling back to SysV shared memory");
++    }
++
+     /* Allocate shared memory segment */
+     int id = shmget (IPC_PRIVATE, size, IPC_CREAT | S_IRWXU);
+     if (id == -1)
+     {
+         msg_Err (vd, "shared memory allocation error: %s",
+                  vlc_strerror_c(errno));
++        free (sys);
+         return -1;
+     }
+ 
+@@ -103,6 +211,7 @@ int XCB_picture_Alloc (vout_display_t *v
+         msg_Err (vd, "shared memory attachment error: %s",
+                  vlc_strerror_c(errno));
+         shmctl (id, IPC_RMID, 0);
++        free (sys);
+         return -1;
+     }
+ 
+@@ -141,9 +250,13 @@ int XCB_picture_Alloc (vout_display_t *v
+     /* XXX: align on 32 bytes for VLC chroma filters */
+     void *shm = malloc (size);
+     if (unlikely(shm == NULL))
++    {
++        free (sys);
+         return -1;
++    }
+ #endif
+-    res->p_sys = (void *)(uintptr_t)segment;
++    sys->segment = segment;
++    res->p_sys = sys;
+     res->pf_destroy = XCB_picture_Destroy;
+     res->p[0].p_pixels = shm;
+     return 0;
+@@ -156,11 +269,11 @@ picture_t *XCB_picture_NewFromResource (
+     picture_t *pic = picture_NewFromResource (fmt, res);
+     if (unlikely(pic == NULL))
+     {
+-        xcb_shm_seg_t seg = (uintptr_t)res->p_sys;
++        xcb_shm_seg_t seg = res->p_sys->segment;
+ 
+         if (seg != 0)
+             xcb_shm_detach (conn, seg);
+-        shmdt (res->p[0].p_pixels);
++        XCB_picture_Free (res->p_sys, res->p[0].p_pixels);
+     }
+     return pic;
+ }
