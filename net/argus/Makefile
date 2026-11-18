@@ -1,7 +1,7 @@
 COMMENT =	Audit Record Generation and Utilization System
 
 DISTNAME =	argus-3.0.8.2
-REVISION =	3
+REVISION =	4
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/

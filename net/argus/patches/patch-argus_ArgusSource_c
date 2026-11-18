@@ -1,0 +1,35 @@
+Index: argus/ArgusSource.c
+--- argus/ArgusSource.c.orig
++++ argus/ArgusSource.c
+@@ -1159,8 +1159,10 @@ ArgusMoatTshRead (struct ArgusSourceStruct *src)
+    struct ArgusMoatTshPktHdr MoatTshBuffer[2], *ArgusMoatPktHdr = &MoatTshBuffer[0];
+    int retn = 0, length = 0;
+    struct ip *iphdr = NULL;
++   struct pcap_pkthdr pcap_pkthdr;
+ 
+    bzero (ArgusMoatPktHdr, sizeof(MoatTshBuffer));
++   bzero (&pcap_pkthdr, sizeof(pcap_pkthdr));
+  
+    if ((retn = read(pcap_fileno(src->ArgusInterface[0].ArgusPd), ArgusMoatPktHdr, ARGUSMOATLEN)) == ARGUSMOATLEN) {
+       ArgusMoatPktHdr->interface = 0;
+@@ -1195,8 +1197,10 @@ ArgusMoatTshRead (struct ArgusSourceStruct *src)
+ 
+       src->ArgusThisSnapEnd = (((unsigned char *)iphdr) + src->ArgusSnapLength);
+ 
++      pcap_pkthdr.len = src->ArgusSnapLength;
++      pcap_pkthdr.caplen = src->ArgusSnapLen;
+       if ((src->ArgusInputFilter == NULL) ||
+-           (bpf_filter(src->ArgusInterface[0].ArgusFilter.bf_insns, (u_char *)iphdr, src->ArgusSnapLength, src->ArgusSnapLen))) {
++           (pcap_offline_filter(&src->ArgusInterface[0].ArgusFilter, &pcap_pkthdr, (u_char *)iphdr))) {
+ 
+          ArgusProcessIpPacket (src->ArgusModel, iphdr, length, &src->ArgusModel->ArgusGlobalTime);
+       }
+@@ -1235,7 +1239,7 @@ ArgusSnoopRead (struct ArgusSourceStruct *src)
+             pcap_pkthdr.len    = SnoopPktHdr.len;
+ 
+             if ((src->ArgusInputFilter == NULL) ||
+-               (bpf_filter(src->ArgusInterface[0].ArgusFilter.bf_insns, ArgusPacketBuf, SnoopPktHdr.tlen, src->ArgusSnapLen))) {
++               (pcap_offline_filter(&src->ArgusInterface[0].ArgusFilter, &pcap_pkthdr, ArgusPacketBuf))) {
+  
+                src->ArgusInterface[0].ArgusCallBack (NULL, &pcap_pkthdr, ArgusPacketBuf);
+             }
