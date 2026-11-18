@@ -2,7 +2,7 @@ PORTROACH=		skipv:master.lmde6,master.mint22
 
 COMMENT=		MATE/Xfce4 backend implementation for xdg-desktop-portal
 
-DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.2.0 .
+DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.2.2 .
 
 CATEGORIES=		x11
 
@@ -14,7 +14,8 @@ WANTLIB += gtk-3 intl m
 
 MODULES=		devel/meson
 
-BUILD_DEPENDS=		sysutils/flatpak/xdg-desktop-portal
+BUILD_DEPENDS=		devel/gettext,-tools \
+			sysutils/flatpak/xdg-desktop-portal
 
 LIB_DEPENDS=		x11/gtk+3
 
