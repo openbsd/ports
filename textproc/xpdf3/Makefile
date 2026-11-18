@@ -1,39 +1,31 @@
-COMMENT=	PDF viewer for X11
+COMMENT=	PDF viewer for X11 using poppler
 
-V=		3.04
-DISTNAME=	xpdf-${V}
-PKGNAME=	xpdf3-${V}
+V=		20261106
+DISTNAME=	xpopple-0.0.$V
+PKGNAME=	xpdf3-3.04pl$V
 CATEGORIES=	textproc x11
 
-SITES=		https://dl.xpdfreader.com/old/
+HOMEPAGE=	https://offog.org/code/xpopple/
 
-HOMEPAGE=	https://www.xpdfreader.com/
+# tarred from git checkout; http://offog.org/git/xpopple.git
+SITES=		https://spacehopper.org/mirrors/
 
-# GPLv2 only or GPLv3 only or both (at our choice)
+# GPLv2 only, GPLv3 only, or GPLv2/v3 (at our choice)
 PERMIT_PACKAGE=	Yes
 
-LIB_DEPENDS+=	x11/motif
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-multithreaded \
-		--without-Sgm-library \
-		--without-libpaper-library
+WANTLIB += ${COMPILER_LIBCXX} X11 Xm Xt c m paper poppler
 
-CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+COMPILER=	base-clang ports-gcc
+
+LIB_DEPENDS=	print/libpaper \
+		print/poppler \
+		x11/motif
 
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
 
-WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
-		c m pthread ${COMPILER_LIBCXX} z
-
-COMPILER =		base-clang ports-gcc base-gcc
+CONFIGURE_STYLE=  gnu
 
 NO_TEST=	Yes
-
-# others are already in xpdf>=4 and popper-utils
-ALL_TARGET=	xpdf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/xpdf ${PREFIX}/bin/xpdf3

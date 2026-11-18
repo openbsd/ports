@@ -1,16 +1,12 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -67,6 +67,12 @@ pdfdetach:
- 	cd @UP_DIR@splash; $(MAKE)
- 	cd @UP_DIR@xpdf; $(MAKE) pdfdetach$(EXE)
+@@ -541,7 +541,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ xpdf_xpdf_CPPFLAGS = \
+-	-DSYSTEM_XPDFRC=\"$(sysconfdir)/xpdf/xpdfrc\" \
++	-DSYSTEM_XPDFRC=\"$(sysconfdir)/xpdfrc3\" \
+ 	-I$(srcdir)/goo
  
-+pdftopng:
-+	cd goo; $(MAKE)
-+	cd @UP_DIR@fofi; $(MAKE)
-+	cd @UP_DIR@splash; $(MAKE)
-+	cd @UP_DIR@xpdf; $(MAKE) pdftopng$(EXE)
-+
- pdftoppm:
- 	cd goo; $(MAKE)
- 	cd @UP_DIR@fofi; $(MAKE)
+ xpdf_xpdf_SOURCES = \

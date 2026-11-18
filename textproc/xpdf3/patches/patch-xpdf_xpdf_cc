@@ -1,0 +1,12 @@
+Index: xpdf/xpdf.cc
+--- xpdf/xpdf.cc.orig
++++ xpdf/xpdf.cc
+@@ -103,7 +103,7 @@ static ArgDesc argDesc[] = {
+   {"-q",          argFlag,        &quiet,         0,
+    "don't print any messages or errors"},
+   {"-cfg",        argString,      cfgFileName,    sizeof(cfgFileName),
+-   "configuration file to use in place of .xpdfrc"},
++   "configuration file to use in place of .xpdfrc3"},
+   {"-v",          argFlag,        &printVersion,  0,
+    "print copyright and version info"},
+   {"-h",          argFlag,        &printHelp,     0,

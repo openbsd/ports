@@ -1,0 +1,25 @@
+Index: doc/xpdfrc.5
+--- doc/xpdfrc.5.orig
++++ doc/xpdfrc.5
+@@ -5,10 +5,10 @@
+ xpdfrc \- configuration file for xpdf (xpopple)
+ .SH DESCRIPTION
+ The xpdf program reads a single configuration file.  If you have a
+-.I .xpdfrc
++.I .xpdfrc3
+ file in your home directory, it will be read.  Otherwise, a
+ system-wide configuration file will be read from
+-.IR /etc/xpdf/xpdfrc ,
++.IR /etc/xpdfrc3 ,
+ if it exists.  (This is its default location; depending on build
+ options, it may be placed elsewhere.)
+ .PP
+@@ -454,7 +454,7 @@ urlCommand      "netscape \-remote 'openURL(%s)'"
+ This is the default location for the system-wide configuration file.
+ Depending on build options, it may be placed elsewhere.
+ .TP
+-.B $HOME/.xpdfrc
++.B $HOME/.xpdfrc3
+ This is the user's configuration file.  If it exists, it will be read
+ in place of the system-wide file.
+ .SH AUTHORS
