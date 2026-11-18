@@ -48,16 +48,12 @@ install the dll's into the wine prefix and update winecfg.
 Audio
 =====
 
-${PKGSTEM} uses pulseaudio. This requires pipewire-pulse, which can be
-installed with:
+Pulseaudio requires pipewire which doesn't autospawn. Therefore, you
+need to run the following before launching wine:
 
-	# pkg_add pipewire
+	$ ${LOCALBASE}/bin/pipewire &
 
-Pipewire doesn't autospawn, so before launching wine, you need to run:
-
-	$ /usr/local/bin/pipewire &
-
-if this isn't taken care of by the desktop manager or in the startup
+unless this is taken care of by the desktop manager or in the startup
 scripts like .xsession.
 
 Debugging

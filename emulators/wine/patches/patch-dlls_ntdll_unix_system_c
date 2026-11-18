@@ -1,4 +1,6 @@
 OpenBSD gives CPU and memory information differently.
+use arc4random instead of urandom
+https://github.com/NethIafin/wine/issues/37
 
 Index: dlls/ntdll/unix/system.c
 --- dlls/ntdll/unix/system.c.orig
@@ -95,7 +97,29 @@ Index: dlls/ntdll/unix/system.c
  #else
  
  static NTSTATUS create_logical_proc_info(void)
-@@ -2633,8 +2711,27 @@ static void get_performance_info( SYSTEM_PERFORMANCE_I
+@@ -1700,6 +1778,12 @@ static void init_logical_proc_info(void)
+     numa_info.HighestNodeNumber = numa_node_count - 1;
+ }
+ 
++#ifdef __OpenBSD__
++
++static void get_random( void *buf, ULONG len ) { arc4random_buf(buf, len); }
++
++#else
++
+ static void read_dev_urandom( void *buf, ULONG len )
+ {
+     int fd = open( "/dev/urandom", O_RDONLY );
+@@ -1732,6 +1816,8 @@ static void get_random( void *buf, ULONG len )
+ #endif
+ }
+ 
++#endif
++
+ /******************************************************************
+  *		init_cpu_info
+  *
+@@ -2633,8 +2719,27 @@ static void get_performance_info( SYSTEM_PERFORMANCE_I
              if (mem_available) freeram = mem_available;
          }
      }

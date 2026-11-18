@@ -3,6 +3,8 @@ pointer and holds TEB pointer plus two scratch slots for registers
 that are used in %gs patching.
 The slot has to be in the loader since ld.so refuses static TLS in
 dlopen() libraries like ntdll.so.
+use RTDL_NODELETE when opening ntdll.so
+https://github.com/NethIafin/wine/issues/38
 
 Index: loader/main.c
 --- loader/main.c.orig
@@ -20,7 +22,15 @@ Index: loader/main.c
  #elif defined (__FreeBSD__) || defined(__DragonFly__)
      static int pathname[] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
      size_t path_size = PATH_MAX;
-@@ -163,6 +169,34 @@ static void *try_dlopen( const char *argv0 )
+@@ -156,13 +162,41 @@ static void *try_dlopen( const char *argv0 )
+     else
+         path = build_path( dir, "ntdll.so" );
+ 
+-    handle = dlopen( path, RTLD_NOW );
++    handle = dlopen( path, RTLD_NOW | RTLD_NODELETE);
+     free( p );
+     free( dir );
+     free( path );
      return handle;
  }
  

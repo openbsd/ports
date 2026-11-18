@@ -1,0 +1,13 @@
+Search the generaluser-gs package's soundfont path first.
+
+Index: dlls/dmloader/loader.c
+--- dlls/dmloader/loader.c.orig
++++ dlls/dmloader/loader.c
+@@ -22,6 +22,7 @@ WINE_DEFAULT_DEBUG_CHANNEL(dmloader);
+ 
+ static const WCHAR *system_default_gm_paths[] =
+ {
++    L"${LOCALBASE}/share/generaluser-gs/GeneralUser-GS.sf2",
+     L"/usr/share/sounds/sf2/default-GM.sf2",
+     L"/usr/share/soundfonts/default.sf2",
+ };

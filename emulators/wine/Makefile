@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT =		compatibility layer to run Windows applications
 
 DISTNAME =		wine-11.20
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		emulators
 
@@ -36,10 +36,13 @@ MODULES =		lang/clang
 BUILD_DEPENDS =		devel/bison \
 			devel/nasm \
 			${_MODCLANG_BUILD_DEPENDS},headerextract:patch
-RUN_DEPENDS =		multimedia/gstreamer1/libav \
+
+RUN_DEPENDS =		audio/generaluser-gs-soundfont \
+			multimedia/gstreamer1/libav \
 			multimedia/gstreamer1/plugins-bad \
 			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-ugly \
+			multimedia/pipewire/pipewire \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/pulseaudio \
@@ -137,6 +140,14 @@ CONFIGURE_ENV+=		INOTIFY_LIBS="-L${LOCALBASE}/lib/inotify \
 # prevent linux/input.h detection: evdev keycodes don't match OpenBSD XFree86.
 CONFIGURE_ENV+=		ac_cv_header_linux_input_h=no
 
+# __st_birthtime is always zero; use Wine's mtime fallback.
+CONFIGURE_ENV+=		ac_cv_member_struct_stat___st_birthtime=no \
+			ac_cv_member_struct_stat___st_birthtim=no
+
+# dwz does not support the PE files included in the debug package.
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DWZ = :
+
 AUTOCONF_VERSION =	2.73
 AUTOMAKE_VERSION =	1.18
 
@@ -153,6 +164,9 @@ LLVM_PREFIX =		${LOCALBASE}/llvm${MODCLANG_VERSION}
 CLANG_RESOURCE =	${LLVM_PREFIX}/lib/clang/${MODCLANG_VERSION}
 SUBST_VARS+=		CLANG_PE_RESOURCE MODCLANG_VERSION
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/dlls/dmloader/loader.c
+
 pre-configure:
 	${INSTALL_DATA_DIR} ${CLANG_PE_RESOURCE}/include
 	cp ${WRKDIR}/devel/llvm/*/*/clang/lib/Headers/*.h \
@@ -165,5 +179,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${WRKSRC}/programs/winecfg/logo.svg \
 		${PREFIX}/share/icons/hicolor/scalable/apps/wine.svg
+
+# make(1), the .USE target's commands are appended
+wine-plist-markers: .USE
+	sed -i -e 's,^lib/wine/.*\.exe$$,@bin &,' \
+	    -e 's,^lib/wine/.*\.dll$$,@so &,' ${PKGDIR}/PLIST
+update-plist: wine-plist-markers
 
 .include <bsd.port.mk>
