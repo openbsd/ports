@@ -1,0 +1,54 @@
+Index: spa/plugins/support/cpu-arm.c
+--- spa/plugins/support/cpu-arm.c.orig
++++ spa/plugins/support/cpu-arm.c
+@@ -8,6 +8,14 @@
+ 
+ #include <spa/utils/string.h>
+ 
++#if defined(HAVE_SYS_AUXV_H) && (defined(__FreeBSD__) || defined(__OpenBSD__))
++#include <sys/auxv.h>
++#if defined(__FreeBSD__)
++#include <machine/elf.h>
++#endif
++#define HAVE_ELF_AUX_INFO 1
++#endif
++
+ #define MAX_BUFFER 4096
+ 
+ static char *get_cpuinfo_line(char *cpuinfo, const char *tag)
+@@ -35,6 +43,35 @@ arm_init(struct impl *impl)
+ 	uint32_t flags = 0;
+ 	char *cpuinfo, *line, buffer[MAX_BUFFER];
+ 	int arch;
++
++#ifdef HAVE_ELF_AUX_INFO
++	unsigned long hwcap = 0;
++
++	if (elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap)) == 0) {
++#if defined(__aarch64__)
++		flags |= SPA_CPU_FLAG_ARMV6 | SPA_CPU_FLAG_ARMV8;
++		if (hwcap & HWCAP_ASIMD)
++			flags |= SPA_CPU_FLAG_NEON;
++		if (hwcap & HWCAP_FP)
++			flags |= SPA_CPU_FLAG_VFPV3 | SPA_CPU_FLAG_VFP;
++#else
++#if __ARM_ARCH >= 6
++		flags |= SPA_CPU_FLAG_ARMV6;
++#endif
++#if __ARM_ARCH >= 8
++		flags |= SPA_CPU_FLAG_ARMV8;
++#endif
++		if (hwcap & HWCAP_VFP)
++			flags |= SPA_CPU_FLAG_VFP;
++		if (hwcap & HWCAP_NEON)
++			flags |= SPA_CPU_FLAG_NEON;
++		if (hwcap & HWCAP_VFPv3)
++			flags |= SPA_CPU_FLAG_VFPV3;
++#endif
++		impl->flags = flags;
++		return 0;
++	}
++#endif
+ 
+ 	if (!(cpuinfo = spa_cpu_read_file("/proc/cpuinfo", buffer, sizeof(buffer)))) {
+ 		spa_log_warn(impl->log, "%p: Can't read cpuinfo", impl);
