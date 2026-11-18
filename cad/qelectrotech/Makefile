@@ -1,37 +1,43 @@
 COMMENT =	electric diagrams drawing tool
 
-DISTNAME =	qet-0.9.1
-PKGNAME = 	qelectrotech-0.91
+DIST_TUPLE +=	github qelectrotech qelectrotech-source-mirror \
+		33a0b99aaaa68bd93dd580550cd1d66ed7e70449 .
+DIST_TUPLE +=	github qelectrotech qelectrotech-elements \
+		7832b798b678c8fe0a3f6927fdb003e62f467e1f  elements
+DIST_TUPLE +=	github itay-grudev SingleApplication \
+		a218603d76a55dddb65b84f2b49ecaa8efc074ea SingleApplication
+
+DISTNAME = 	qelectrotech-0.200.1pre0
+
 CATEGORIES =	cad graphics
-REVISION =	0
 
 HOMEPAGE =	https://qelectrotech.org/
-SITES =		https://git.tuxfamily.org/qet/qet.git/snapshot/
-EXTRACT_SUFX =	.tar.gz
 
 # GPLv2 / CC-BY 3.0 for the graphic elements
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5CoreAddons KF5WidgetsAddons
-WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml c m sqlite3
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Gui
+WANTLIB += Qt6Network Qt6Pdf Qt6PrintSupport Qt6Qml Qt6Sql Qt6Svg
+WANTLIB += Qt6Widgets Qt6Xml c execinfo m pugixml sqlite3 xkbcommon
 
-COMPILER =	base-clang ports-gcc
-MODULES =	devel/kf5 devel/qmake
+MODULES =	devel/cmake \
+		x11/qt6
 
-# XXX ../sources/ui/dynamicelementtextitemeditor.cpp:26:10:
-# error: '../ui_dynamicelementtextitemeditor.h' file not found, did you mean 'ui_dynamicelementtextitemeditor.h'?
-SEPARATE_BUILD =	No
-
-LIB_DEPENDS =	devel/kf5/kcoreaddons \
-		devel/kf5/kwidgetsaddons \
-		x11/qt5/qtsvg
+LIB_DEPENDS =	databases/sqlite3 \
+		textproc/pugixml \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg \
+		x11/qt6/qtwebengine \
+		x11/xkbcommon
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-CONFIGURE_STYLE =	qmake
-CONFIGURE_ENV =		QMAKEMODULES=${LOCALBASE}/share/kf5/mkspecs
+CONFIGURE_ARGS =	-DBUILD_PUGIXML=OFF \
+			-DBUILD_WITH_KF=OFF
+
+# Tests are depending on a build-in kf6/kcoreaddons version and catch2
+CONFIGURE_ARGS +=	-DPACKAGE_TESTS=OFF
 
 .include <bsd.port.mk>
