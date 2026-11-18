@@ -61,6 +61,7 @@ lib/rabbitmq/plugins/amqp10_common-${V}/ebin/serial_number.beam
 lib/rabbitmq/plugins/amqp10_common-${V}/include/
 lib/rabbitmq/plugins/amqp10_common-${V}/include/amqp10_filter.hrl
 lib/rabbitmq/plugins/amqp10_common-${V}/include/amqp10_framing.hrl
+lib/rabbitmq/plugins/amqp10_common-${V}/include/amqp10_sole_conn.hrl
 lib/rabbitmq/plugins/amqp10_common-${V}/include/amqp10_types.hrl
 lib/rabbitmq/plugins/amqp_client-${V}/
 lib/rabbitmq/plugins/amqp_client-${V}/ebin/
@@ -111,7 +112,6 @@ lib/rabbitmq/plugins/cowboy-${V}/ebin/
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy.app
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy.beam
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy_app.beam
-lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy_bstr.beam
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy_children.beam
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy_clear.beam
 lib/rabbitmq/plugins/cowboy-${V}/ebin/cowboy_clock.beam
@@ -333,6 +333,7 @@ lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/
 lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/horus.app
 lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/horus.beam
 lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/horus_cover.beam
+lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/horus_module_info.beam
 lib/rabbitmq/plugins/${RABBIT_HORUS}/ebin/horus_utils.beam
 lib/rabbitmq/plugins/${RABBIT_HORUS}/include/
 lib/rabbitmq/plugins/${RABBIT_HORUS}/include/horus.hrl
@@ -480,12 +481,15 @@ lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_adv.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_app.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_cluster.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_condition.beam
+lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_config.beam
+lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_config_v0.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_event_handler.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_evf.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_export_erlang.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_import_export.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_machine.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_machine_v0.beam
+lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_machine_v1.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_path.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_pattern_tree.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_payload.beam
@@ -672,7 +676,6 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit.app
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_access_control.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_alarm.beam
-lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqp1_0.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqp_filter.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqp_filter_prop.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqp_filter_sql.beam
@@ -690,6 +693,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqqueue_control.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqqueue_process.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqqueue_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_amqqueue_sup_sup.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_backend_authn_state.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_backend_dummy.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_backend_internal.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_auth_mechanism_amqplain.beam
@@ -739,6 +743,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_maintenance.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_maintenance_m2k_converter.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_msup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_msup_m2k_converter.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_node_metadata.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_policy.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_db_queue_m2k_converter.beam
@@ -793,6 +798,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v0.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v1.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v3.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v7.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_fifo_v8.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_file.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_global_counters.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_guid.beam
@@ -802,6 +808,8 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_limiter.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_log_tail.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_logger_exchange_h.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_maintenance.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_member_placement.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_member_placement_az.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_metrics.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_mirror_queue_misc.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_mnesia.beam
@@ -853,8 +861,10 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_release_series.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_restartable_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_router.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_runtime_parameters.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_sole_conn.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_ssl.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_coordinator.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_coordinator_v7.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_sac_coordinator.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_stream_sac_coordinator_v4.beam
@@ -889,6 +899,7 @@ lib/rabbitmq/plugins/rabbit-${V}/include/amqqueue.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/amqqueue_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/internal_user.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/mc.hrl
+lib/rabbitmq/plugins/rabbit-${V}/include/node_metadata.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_amqp.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_amqp_metrics.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_amqp_reader.hrl
@@ -896,6 +907,7 @@ lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_global_counters.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_khepri.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_memory.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_queue_type.hrl
+lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_stream_queue.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/priv/
@@ -944,6 +956,7 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_numerical.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_md5.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_pbkdf2_sha256.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_sha256.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_password_hashing_sha512.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_pbe.beam
@@ -959,6 +972,7 @@ lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_runtime.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_runtime_parameter.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_semver.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_semver_parser.beam
+lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_semver_range.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_ssl_options.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_term_decoding.beam
 lib/rabbitmq/plugins/rabbit_common-${V}/ebin/rabbit_types.beam
@@ -1224,6 +1238,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_r
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_ready_to_serve_clients.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_health_check_virtual_hosts.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_healthchecks.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_init.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_limit.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_limits.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_login.beam
@@ -1441,6 +1456,7 @@ lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_msg_interceptor_client_
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_packet.beam
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_processor.beam
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_qos0_queue.beam
+lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_qos0_queue_cleanup.beam
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_reader.beam
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_retained_msg_store.beam
 lib/rabbitmq/plugins/rabbitmq_mqtt-${V}/ebin/rabbit_mqtt_retained_msg_store_dets.beam
@@ -1646,7 +1662,6 @@ lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_frame.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_internal_event_handler.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_processor.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_reader.beam
-lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_routing_util.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_sup.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbit_stomp_util.beam
 lib/rabbitmq/plugins/rabbitmq_stomp-${V}/ebin/rabbitmq_stomp.app
@@ -1840,7 +1855,7 @@ lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/echo.html
 lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/index.html
 lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/main.css
 lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/pencil.cur
-lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/stomp.js
+lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/stomp.umd.min.js
 lib/rabbitmq/plugins/rabbitmq_web_stomp_examples-${V}/priv/temp-queue.html
 lib/rabbitmq/plugins/ranch-${V}/
 lib/rabbitmq/plugins/ranch-${V}/ebin/
@@ -1936,12 +1951,6 @@ lib/rabbitmq/plugins/${RABBIT_SYSTEMD}/ebin/systemd_sup.beam
 lib/rabbitmq/plugins/${RABBIT_SYSTEMD}/ebin/systemd_watchdog.beam
 lib/rabbitmq/plugins/${RABBIT_SYSTEMD}/include/
 lib/rabbitmq/plugins/${RABBIT_SYSTEMD}/include/systemd.hrl
-lib/rabbitmq/plugins/${RABBIT_THOAS}/
-lib/rabbitmq/plugins/${RABBIT_THOAS}/ebin/
-lib/rabbitmq/plugins/${RABBIT_THOAS}/ebin/thoas.app
-lib/rabbitmq/plugins/${RABBIT_THOAS}/ebin/thoas.beam
-lib/rabbitmq/plugins/${RABBIT_THOAS}/ebin/thoas_decode.beam
-lib/rabbitmq/plugins/${RABBIT_THOAS}/ebin/thoas_encode.beam
 lib/rabbitmq/sbin/
 lib/rabbitmq/sbin/rabbitmq-defaults
 lib/rabbitmq/sbin/rabbitmq-diagnostics
@@ -1971,7 +1980,7 @@ share/doc/rabbitmq/LICENSE
 share/doc/rabbitmq/LICENSE-APACHE2
 share/doc/rabbitmq/LICENSE-APACHE2-ExplorerCanvas
 share/doc/rabbitmq/LICENSE-APACHE2-excanvas
-share/doc/rabbitmq/LICENSE-APL2-Stomp-Websocket
+share/doc/rabbitmq/LICENSE-APL2-StompJS
 share/doc/rabbitmq/LICENSE-Apache-2.0
 share/doc/rabbitmq/LICENSE-BSD-base64js
 share/doc/rabbitmq/LICENSE-BSD-recon
