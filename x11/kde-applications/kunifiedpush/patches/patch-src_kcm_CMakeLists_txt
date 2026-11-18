@@ -1,0 +1,13 @@
+Index: src/kcm/CMakeLists.txt
+--- src/kcm/CMakeLists.txt.orig
++++ src/kcm/CMakeLists.txt
+@@ -21,5 +21,7 @@ target_link_libraries(kcm_push_notifications PRIVATE
+     KF6::Service
+     KF6::KCMUtilsQuick
+     Qt::DBus
++    Qt::Network
+     Qt::Gui
+-)
+\ No newline at end of file
++    Qt::Qml
++)
