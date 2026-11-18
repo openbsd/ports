@@ -1,7 +1,7 @@
 Index: plugins/persist-sqlite/migrate_to_persist_sqlite.py
 --- plugins/persist-sqlite/migrate_to_persist_sqlite.py.orig
 +++ plugins/persist-sqlite/migrate_to_persist_sqlite.py
-@@ -33,7 +33,7 @@ class SnapshotPersistence:
+@@ -34,7 +34,7 @@ class SnapshotPersistence:
  class SQLite3Persistence:
      def __init__(self):
          self.__store_id_topic_map: dict[int, str] = {}

@@ -1,6 +1,6 @@
 COMMENT=	opensource MQTT broker
 
-DISTNAME=	mosquitto-2.1.2
+DISTNAME=	mosquitto-2.1.4
 
 SHARED_LIBS +=  mosquitto                 3.0
 SHARED_LIBS +=  mosquittopp               3.0
