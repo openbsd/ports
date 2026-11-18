@@ -79,7 +79,6 @@ CONFIGURE_ARGS+=	--with-mysql-sock=${LOCALSTATEDIR}/run/mysql/mysql.sock
 # default included php extensions
 CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
-			--with-openssl \
 			--with-password-argon2=${LOCALBASE} \
 			--with-sodium=${LOCALBASE} \
 			--with-zlib \
@@ -96,6 +95,9 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--enable-sysvsem \
 			--enable-sysvshm \
 			--enable-xml
+.if ! ${CONFIGURE_ARGS:M--without-openssl}
+CONFIGURE_ARGS+=	--with-openssl
+.endif
 
 RUN_DEPENDS-main=	mail/femail,-chroot
 
