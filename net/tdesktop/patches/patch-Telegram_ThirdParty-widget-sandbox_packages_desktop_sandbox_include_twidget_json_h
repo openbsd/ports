@@ -1,0 +1,14 @@
+use strtod() on OpenBSD, strtod_l() is missing
+
+Index: Telegram/ThirdParty/widget-sandbox/packages/desktop/sandbox/include/twidget/json.h
+--- Telegram/ThirdParty/widget-sandbox/packages/desktop/sandbox/include/twidget/json.h.orig
++++ Telegram/ThirdParty/widget-sandbox/packages/desktop/sandbox/include/twidget/json.h
+@@ -172,6 +172,8 @@ class Json { (public)
+         return _strtod_l(text, nullptr, c);
+ #elif defined(__ANDROID__)
+         return std::strtod(text, nullptr); // bionic: LC_NUMERIC is always "C"
++#elif defined(__OpenBSD__)
++	return strtod(text, nullptr);
+ #else
+         static const locale_t c = newlocale(LC_NUMERIC_MASK, "C", (locale_t)0);
+         return strtod_l(text, nullptr, c);

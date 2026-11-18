@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			7.2.9
+V =			7.4.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -36,7 +36,7 @@ WANTLIB += ada avcodec avfilter avformat avutil c cairo crypto
 WANTLIB += dispatch fido2 fontconfig gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += hunspell-1.7 jpeg lz4 m minizip openal pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 qrcodegencpp rnnoise swresample swscale
-WANTLIB += tg_owt tlottie xxhash z
+WANTLIB += tg_owt tlottie wallet_engine xxhash z
 
 # dlopen()ed
 WANTLIB += webkitgtk-6.0 xcb xcb-keysyms xcb-record xcb-screensaver
@@ -68,6 +68,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/kf6/kcoreaddons \
 			devel/libdispatch \
 			devel/pango \
+			devel/wallet-engine \
 			graphics/ffmpeg>=8.1.1p0v1 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
@@ -103,7 +104,8 @@ CONFIGURE_ARGS +=	-DLINUX=true
 NO_TEST =		Yes
 
 # unported and required
-NEEDED_BUNDLES =	cld3 libprisma tgcalls MicroTeX cmark-gfm
+NEEDED_BUNDLES =	cld3 libprisma tgcalls MicroTeX cmark-gfm twidget \
+			widget-sandbox zxcvbn
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal

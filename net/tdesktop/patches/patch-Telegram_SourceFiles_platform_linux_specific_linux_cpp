@@ -3,7 +3,7 @@
 Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
 --- Telegram/SourceFiles/platform/linux/specific_linux.cpp.orig
 +++ Telegram/SourceFiles/platform/linux/specific_linux.cpp
-@@ -67,7 +67,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
+@@ -68,7 +68,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
  		Gio::DBusProxyFlags::NONE_,
  		base::Platform::XDP::kService,
  		base::Platform::XDP::kObjectPath,
@@ -12,7 +12,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  			auto proxy = XdpBackground::BackgroundProxy::new_for_bus_finish(
  				res);
  
-@@ -120,7 +120,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
+@@ -121,7 +121,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
  					+ '/'
  					+ handleToken,
  				nullptr,
@@ -21,7 +21,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  					auto requestProxy = XdpRequest::RequestProxy::new_finish(
  						res);
  
-@@ -195,7 +195,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
+@@ -196,7 +196,7 @@ void PortalAutostart(bool enabled, Fn<void(bool)> done
  								GLib::Variant::new_variant(
  									GLib::Variant::new_boolean(false))),
  						}),
@@ -30,7 +30,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  							auto &sandbox = Core::Sandbox::Instance();
  							sandbox.customEnterFromEventLoop([&] {
  								const auto result =
-@@ -450,7 +450,7 @@ bool GenerateServiceFile(bool silent = false) {
+@@ -451,7 +451,7 @@ bool GenerateServiceFile(bool silent = false) {
  		Gio::DBusProxyFlags::NONE_,
  		base::Platform::DBus::kService,
  		base::Platform::DBus::kObjectPath,
@@ -39,7 +39,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  			auto interface = XdgDBus::DBus(
  				XdgDBus::DBusProxy::new_for_bus_finish(res, nullptr));
  
-@@ -551,7 +551,7 @@ void PortalCheckScheme(
+@@ -552,7 +552,7 @@ void PortalCheckScheme(
  		Gio::DBusProxyFlags::NONE_,
  		base::Platform::XDP::kService,
  		base::Platform::XDP::kObjectPath,
@@ -48,7 +48,7 @@ Index: Telegram/SourceFiles/platform/linux/specific_linux.cpp
  			auto interface = XdpOpenURI::OpenURI(
  				XdpOpenURI::OpenURIProxy::new_for_bus_finish(res, nullptr));
  
-@@ -565,7 +565,7 @@ void PortalCheckScheme(
+@@ -566,7 +566,7 @@ void PortalCheckScheme(
  				GLib::Variant::new_array(
  					GLib::VariantType::new_("{sv}"),
  					{}),

@@ -1,0 +1,45 @@
+<openssl/core_names.h> and <openssl/params.h> are missing in LibreSSL.
+Also, we don't have built-in scrypt, stub it out.
+
+Index: Telegram/SourceFiles/storage/details/storage_file_utilities.cpp
+--- Telegram/SourceFiles/storage/details/storage_file_utilities.cpp.orig
++++ Telegram/SourceFiles/storage/details/storage_file_utilities.cpp
+@@ -14,10 +14,8 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
+ #include "base/random.h"
+ 
+ #include <crl/crl_object_on_thread.h>
+-#include <openssl/core_names.h>
+ #include <openssl/kdf.h>
+ #include <openssl/opensslv.h>
+-#include <openssl/params.h>
+ #include <QtCore/QtEndian>
+ #include <QtCore/QSaveFile>
+ 
+@@ -64,6 +62,8 @@ constexpr auto kPasscodeScryptR = quint32(8);
+ constexpr auto kPasscodeScryptP = quint32(1);
+ constexpr auto kPasscodeScryptMaxMem = quint64(192) * 1024 * 1024;
+ #if OPENSSL_VERSION_NUMBER >= 0x30200000L
++#include <openssl/core_names.h>
++#include <openssl/params.h>
+ constexpr auto kPasscodeArgon2Name = "ARGON2ID";
+ #endif // OPENSSL_VERSION_NUMBER >= 0x30200000L
+ 
+@@ -596,6 +596,10 @@ MTP::AuthKeyPtr CreatePasscodeKey(
+ 		LOG(("App Error: Argon2id is not available."));
+ 		return nullptr;
+ #endif // OPENSSL_VERSION_NUMBER < 0x30200000L
++#ifdef OPENSSL_NO_SCRYPT
++		LOG(("App Error: Scrypt is not available"));
++		return nullptr;
++#else
+ 	} else if (kdf.kind == kPasscodeKdfScrypt) {
+ 		if (!EVP_PBE_scrypt(
+ 			passcode.constData(),
+@@ -612,6 +616,7 @@ MTP::AuthKeyPtr CreatePasscodeKey(
+ 			return nullptr;
+ 		}
+ 	} else {
++#endif
+ 		LOG(("App Error: Unknown passcode KDF family."));
+ 		return nullptr;
+ 	}
