@@ -5,7 +5,7 @@ conf/modules.sample/
 conf/modules.sample/apache-nextcloud.conf.dist
 @sample conf/modules.sample/apache-nextcloud.conf
 nextcloud/
-nextcloud/.htaccess.dist
+nextcloud.htaccess.dist
 @sample nextcloud/.htaccess
 nextcloud/.user.ini
 nextcloud/3rdparty/

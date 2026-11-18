@@ -1,7 +1,7 @@
 NC_VERSION=	35.0.3
 
 # keep above 8.0-stable
-REVISION=	0
+REVISION=	1
 
 # override PORTROACH from ../Makefile.inc for the highest release branch only
 PORTROACH=

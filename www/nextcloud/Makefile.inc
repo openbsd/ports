@@ -63,14 +63,14 @@ RUN_DEPENDS +=		databases/pecl-redis${MODPHP_FLAVOR}
 # image processing
 RUN_DEPENDS +=		graphics/pecl-imagick${MODPHP_FLAVOR}
 
+# nextcloud has its own integrity checks; modifying installed files
+# or creating additional files in the core/app-owned directories
+# triggers warnings. try to avoid making any changes which trigger
+# this. (occ integrity:check-core, occ integrity:check-apps --all).
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
-	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
-	find ${INSTDIR} -name '*.orig' -delete
+	mv ${INSTDIR}/.htaccess ${INSTDIR}.htaccess.dist
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
-
-	perl -pi -e '$$. == 1 && s|^.*env php.*$$|\#!${MODPHP_BIN}|;' \
-		-e 'close ARGV if eof;' ${INSTDIR}/occ
 	chmod +x ${INSTDIR}/occ
 
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
