@@ -1,0 +1,14 @@
+Index: tests/elab/bv_decide_shift_symbolic.lean
+--- tests/elab/bv_decide_shift_symbolic.lean.orig
++++ tests/elab/bv_decide_shift_symbolic.lean
+@@ -92,8 +92,8 @@ error: The prover found a potentially spurious counter
+ - It abstracted the following unsupported expressions as opaque variables:
+   - BitVec.ofNatClamp 4 n
+ Consider the following assignment:
+-x = 255#8
+-BitVec.ofNatClamp 4 n = 15#4
++x = 130#8
++BitVec.ofNatClamp 4 n = 6#4
+ -/
+ #guard_msgs in
+ example (x : BitVec 8) (n : Nat) : x >>> n = x := by

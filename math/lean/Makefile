@@ -4,7 +4,7 @@ DPB_PROPERTIES =	parallel
 
 # keep it synced with math/mathlib
 V =			4.36.0
-REVISION =		1
+REVISION =		2
 GH_ACCOUNT =		leanprover
 GH_PROJECT =		lean4
 GH_TAGNAME =		v${V}
@@ -41,6 +41,7 @@ LIB_DEPENDS = 		devel/gmp,-main \
 TEST_DEPENDS =		lang/python/3 \
 			shells/bash \
 			textproc/gdiff \
+			textproc/gsed \
 			sysutils/coreutils \
 			sysutils/ggrep
 
@@ -66,6 +67,7 @@ CONFIGURE_ARGS +=	-DLLVM=OFF
 # Default stack is 1Gb per thread, limit it for compiling
 MAKE_ENV +=   		LEAN_STACK_SIZE_KB=65536
 
+# Some tests needs network access
 TEST_ENV +=		CTEST_PARALLEL_LEVEL=${MAKE_JOBS} \
 			LAKE=${WRKBUILD}/stage1/bin/lake \
 			LD_LIBRARY_PATH=${WRKBUILD}/stage1/lib/lean
