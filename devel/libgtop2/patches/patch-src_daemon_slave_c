@@ -1,47 +1,9 @@
-From ba9a67d4ae967dd8c7bd4aaec49197d5569ff717 Mon Sep 17 00:00:00 2001
-From: Adam Sampson <ats@offog.org>
-Date: Sun, 13 Jul 2025 03:35:48 +0100
-Subject: [PATCH] Use G_*_FORMAT when formatting 64-bit types
-
 XXX push upstream: g_free(3) takes a non-const pointer.
 
 Index: src/daemon/slave.c
 --- src/daemon/slave.c.orig
 +++ src/daemon/slave.c
-@@ -41,8 +41,9 @@ handle_slave_connection (int input, int output)
- 	glibtop_send_version (glibtop_global_server, output);
- 
- 	while (do_read (input, cmnd, sizeof (glibtop_command))) {
--		glibtop_debug ("Slave %d received command "
--			 "%lu from client.", getpid (), cmnd->command);
-+		glibtop_debug ("Slave %" G_GINT64_FORMAT " received command "
-+			 "%" G_GUINT64_FORMAT " from client.",
-+			 (gint64)getpid (), cmnd->command);
- 
- 		memset (resp, 0, sizeof (glibtop_response));
- 
-@@ -50,17 +51,17 @@ handle_slave_connection (int input, int output)
- 
- 		if (cmnd->data_size) {
- 			if (cmnd->data_size >= BUFSIZ)
--				glibtop_error ("Client sent %lu bytes, "
-+				glibtop_error ("Client sent %" G_GUINT64_FORMAT " bytes, "
- 					       "but buffer is %lu",
- 					       cmnd->data_size, (unsigned long)BUFSIZ);
- 
--			glibtop_debug ("Client has %lu bytes of data.",
-+			glibtop_debug ("Client has %" G_GUINT64_FORMAT " bytes of data.",
- 				 cmnd->data_size);
- 
- 			do_read (input, parameter, cmnd->data_size);
- 		} else if (cmnd->size) {
- 			if (cmnd->size >= BUFSIZ)
--				glibtop_error ("Client sent %lu bytes, "
-+				glibtop_error ("Client sent %" G_GUINT64_FORMAT " bytes, "
- 					       "but buffer is %lu",
- 					       cmnd->size, (unsigned long)BUFSIZ);
- 
-@@ -80,7 +81,7 @@ handle_slave_connection (int input, int output)
+@@ -81,7 +81,7 @@ handle_slave_connection (int input, int output)
  				 proc_which, proc_arg);
  			do_output (output, resp, _offset_data (proclist),
  				   resp->u.data.proclist.total, ptr);
@@ -50,7 +12,7 @@ Index: src/daemon/slave.c
  			break;
  #endif
  #if GLIBTOP_SUID_PROC_ARGS
-@@ -94,7 +95,7 @@ handle_slave_connection (int input, int output)
+@@ -95,7 +95,7 @@ handle_slave_connection (int input, int output)
  			do_output (output, resp, _offset_data (proc_args),
  				   ptr ? resp->u.data.proc_args.size+1 : 0,
  				   ptr);
@@ -59,7 +21,7 @@ Index: src/daemon/slave.c
  			break;
  #endif
  #if GLIBTOP_SUID_PROC_MAP
-@@ -105,7 +106,7 @@ handle_slave_connection (int input, int output)
+@@ -106,7 +106,7 @@ handle_slave_connection (int input, int output)
  						      pid);
  			do_output (output, resp, _offset_data (proc_map),
  				   resp->u.data.proc_map.total, ptr);
@@ -68,12 +30,3 @@ Index: src/daemon/slave.c
  			break;
  #endif
  		default:
-@@ -265,7 +266,7 @@ handle_slave_command (glibtop_command *cmnd, glibtop_r
- 		break;
- #endif
- 	default:
--		glibtop_error ("Child received unknown command %lu",
-+		glibtop_error ("Child received unknown command %" G_GUINT64_FORMAT,
- 			       cmnd->command);
- 		break;
- 	}
