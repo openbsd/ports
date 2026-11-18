@@ -505,7 +505,7 @@ phpvirtualbox/js/dialogs.js
 phpvirtualbox/js/eventlistener.js
 phpvirtualbox/js/jquery-4.0.0.min.js
 phpvirtualbox/js/jquery-ui-1.14.2.min.js
-phpvirtualbox/js/jquery.jec-1.4.0.js
+phpvirtualbox/js/jquery.jec-1.4.1.js
 phpvirtualbox/js/jquery.projectPlugins.js
 phpvirtualbox/js/jquery.scrollTo-2.1.3.js
 phpvirtualbox/js/jquery.tipped-2.2b.js
