@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 arm64 i386
 
 COMMENT =		statically typed systems programming language
 
-DISTNAME =		nim-2.2.12
+DISTNAME =		nim-2.4.2
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
@@ -12,11 +12,7 @@ SITES =			${HOMEPAGE}download/
 
 MAINTAINER =		Alfred Morgan <alfred@54.org>
 
-NIMBLE_CHRONOS_V =	536169b4ab6b7772f57993284331b7de716b6e99
-
 DIST_TUPLE =		github nim-lang atlas 0.16.3 .
-DIST_TUPLE +=		github nim-lang nimble v0.26.0 .
-DIST_TUPLE +=		github status-im nim-chronos ${NIMBLE_CHRONOS_V} .
 WRKDIST = ${WRKDIR}/${DISTNAME}
 
 # MIT, BSD, Apache 2.0
@@ -30,6 +26,10 @@ ATLAS_SSL_FLAGS =	-d:libressl --dynlibOverride:ssl \
 MODULES =		lang/python
 
 PORTHOME =		${WRKDIR}
+
+# nimgrep uses std/re and loads PCRE at runtime.
+RUN_DEPENDS =		devel/pcre
+
 TEST_DEPENDS =		archivers/7zip,-main \
 			archivers/unzip \
 			devel/boehm-gc \
@@ -40,24 +40,13 @@ TEST_DEPENDS =		archivers/7zip,-main \
 SUBST_VARS +=		CFLAGS
 
 post-extract:
-	# Reuse bundled dependencies except for Nimble's updated Chronos revision.
-	rm -R ${WRKDIR}/nimble-*/vendor
-	mv ${WRKDIST}/dist/nimble/vendor ${WRKDIR}/nimble-*/
-	rm -R ${WRKDIST}/dist/nimble
-	mv ${WRKDIR}/nimble-* ${WRKDIST}/dist/nimble
-	rm -R ${WRKDIST}/dist/nimble/vendor/chronos
-	mv ${WRKDIR}/nim-chronos-* ${WRKDIST}/dist/nimble/vendor/chronos
 	mv ${WRKDIR}/atlas-* ${WRKDIST}/dist/atlas
 	mkdir -p ${WRKDIST}/dist/atlas/dist
 	cp -R ${WRKDIST}/dist/nimble/vendor/sat ${WRKDIST}/dist/atlas/dist/sat
 
 post-patch:
 	mkdir -p ${WRKSRC}/nimcache-port
-	mkdir -p ${WRKSRC}/nimcache-port-test
 	mkdir -p ${WRKSRC}/nimcache-port-test-compiler
-	perl -i -pe "s#NIM_PORT_PATH#${PATH}#" ${WRKSRC}/koch.nim
-	perl -i -pe "s#NIM_PORT_CACHE#${WRKSRC}/nimcache-port-test#" \
-		${WRKSRC}/koch.nim
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/compiler/options.nim
@@ -78,6 +67,14 @@ do-build:
 		--listCmd --putenv:"PATH=${PATH}"
 .endfor
 
+.for t in nifler nifmake
+	cd ${WRKSRC} && bin/nim c -o:bin/$t -d:release \
+		--parallelBuild:${MAKE_JOBS} --lib:lib --noNimblePath \
+		--skipUserCfg --skipParentCfg --hints:off \
+		--nimcache:"${WRKSRC}/nimcache-port" \
+		dist/nimony/src/$t/$t.nim
+.endfor
+
 	cd ${WRKSRC} && ./koch atlas -d:release --parallelBuild:${MAKE_JOBS} \
 		--lib:lib --skipUserCfg --skipParentCfg --hints:off \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
@@ -88,11 +85,13 @@ do-build:
 		dist/atlas/src/atlasrun.nim
 
 do-install:
-.for b in atlas atlas-run nim nimble nimgrep nimpretty nimsuggest testament
+.for b in atlas atlas-run nifler nifmake nim nimble nimgrep nimpretty \
+		nimsuggest testament
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$b ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/nim
 	cp -R ${WRKSRC}/lib/* ${PREFIX}/lib/nim
+	find ${PREFIX}/lib/nim -type f -name '*.orig.port' -delete
 	${MODPY_COMPILEALL} ${PREFIX}/lib/nim/pure/unidecode/gen.py
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/nim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nim
@@ -100,8 +99,16 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nim
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
 
+# Embedded compiler tests also need the uninstalled standard library.
+pre-test:
+	mkdir -p ${WRKDIR}/bin
+	ln -sf ${WRKSRC}/bin/nim-test ${WRKDIR}/bin/nim
+	ln -sf ${WRKSRC}/bin/nimble ${WRKDIR}/bin/nimble
+	echo 'define:"nimPortLibpath:${WRKSRC}/lib"' > \
+		${WRKSRC}/tests/compilerapi/nim.cfg
+
 # note that for some tests an internet connection is required
-# Testament's all and pcat dispatch each consume one leading compiler option.
+# Global diagnostic and cache overrides break individual test expectations.
 do-test:
 	cd ${WRKSRC} && bin/nim c -o:${WRKSRC}/bin/nim-test \
 		-d:release -d:nimPortLibpath=${WRKSRC}/lib \
@@ -110,10 +117,6 @@ do-test:
 		--nimcache:"${WRKSRC}/nimcache-port-test-compiler" \
 		compiler/nim.nim
 	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./koch \
-		--nim:${WRKSRC}/bin/nim-test tests all \
-		--hints:off --hints:off -d:release --hints:off \
-		--parallelBuild:1 \
-		--nimcache:"${WRKSRC}/nimcache-port-test" \
-		--putenv:"PATH=${PATH}"
+		--nim:${WRKSRC}/bin/nim-test tests all
 
 .include <bsd.port.mk>

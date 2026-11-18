@@ -3,6 +3,8 @@
 @sample ${SYSCONFDIR}/nim/
 @bin bin/atlas
 @bin bin/atlas-run
+@bin bin/nifler
+@bin bin/nifmake
 @bin bin/nim
 @bin bin/nimble
 @bin bin/nimgrep
@@ -233,6 +235,8 @@ lib/nim/std/jsheaders.nim
 lib/nim/std/jsonutils.nim
 lib/nim/std/logic.nim
 lib/nim/std/monotimes.nim
+lib/nim/std/nre2.nim
+lib/nim/std/nre2.nims
 lib/nim/std/objectdollar.nim
 lib/nim/std/oserrors.nim
 lib/nim/std/outparams.nim
@@ -326,6 +330,7 @@ lib/nim/system/inclrtl.nim
 lib/nim/system/indexerrors.nim
 lib/nim/system/indices.nim
 lib/nim/system/integerops.nim
+lib/nim/system/integerprims.nim
 lib/nim/system/iterators.nim
 lib/nim/system/iterators_1.nim
 lib/nim/system/jssys.nim
@@ -349,6 +354,7 @@ lib/nim/system/repr.nim
 lib/nim/system/repr_impl.nim
 lib/nim/system/repr_v2.nim
 lib/nim/system/reprjs.nim
+lib/nim/system/rwlocks.nim
 lib/nim/system/seqs_v2.nim
 lib/nim/system/seqs_v2_reimpl.nim
 lib/nim/system/setops.nim
@@ -356,12 +362,18 @@ lib/nim/system/sets.nim
 lib/nim/system/stacktraces.nim
 lib/nim/system/strmantle.nim
 lib/nim/system/strs_v2.nim
+lib/nim/system/strs_v3.nim
 lib/nim/system/sysmem.nim
 lib/nim/system/sysstr.nim
 lib/nim/system/threadids.nim
 lib/nim/system/threadimpl.nim
 lib/nim/system/threadlocalstorage.nim
 lib/nim/system/timers.nim
+lib/nim/system/yrc.nim
+lib/nim/system/yrc_opt_proof.lean
+lib/nim/system/yrc_proof.lean
+lib/nim/system/yrc_proof.tla
+lib/nim/system/yrc_tarjan_proof.lean
 lib/nim/system_overview.rst
 lib/nim/windows/
 lib/nim/windows/registry.nim

@@ -43,7 +43,7 @@ Index: dist/nimble/vendor/chronos/chronos/streams/tlsstream.nim
        copyMem(pbytes, buf, n)
        sslEngineRecvappAck(engine[], n)
        return n.int
-@@ -387,12 +387,12 @@ proc write(
+@@ -384,12 +384,12 @@ proc write(
  
      if (state and SSL_SENDAPP) == SSL_SENDAPP:
        # Application data can be queued for encryption

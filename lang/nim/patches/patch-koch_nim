@@ -1,9 +1,9 @@
-Use the bundled dependencies when building the compiler and tools.
+Use bundled dependencies; build NIF tools separately and keep harness builds quiet.
 
 Index: koch.nim
 --- koch.nim.orig
 +++ koch.nim
-@@ -156,10 +156,6 @@ proc bundleC2nim(args: string) =
+@@ -174,10 +174,6 @@ proc bundleC2nim(args: string) =
               options = "--noNimblePath --path:. " & args)
  
  proc bundleNimbleExe(latest: bool, args: string) =
@@ -14,7 +14,7 @@ Index: koch.nim
    nimCompile("dist/nimble/src/nimble.nim",
               options = "-d:release --noNimblePath " & args)
    const zippyTests = "dist/nimble/vendor/zippy/tests"
-@@ -167,11 +163,6 @@ proc bundleNimbleExe(latest: bool, args: string) =
+@@ -185,11 +181,6 @@ proc bundleNimbleExe(latest: bool, args: string) =
      removeDir(zippyTests)
  
  proc bundleAtlasExe(latest: bool, args: string) =
@@ -26,20 +26,28 @@ Index: koch.nim
    # installer.ini expects it under $nim/bin
    nimCompile("dist/atlas/src/atlas.nim",
               options = "-d:release --noNimblePath -d:nimAtlasBootstrap " & args)
-@@ -181,7 +172,6 @@ proc bundleChecksums(latest: bool) =
-   cloneDependency(distDir, "https://github.com/nim-lang/checksums.git", commit, allowBundled = true)
+@@ -234,7 +225,6 @@ proc bundleChecksums(latest: bool) =
+   bundleNifTool("nifmake", "dist/nimony/src/nifmake/nifmake.nim")
  
  proc bundleNimsuggest(args: string) =
 -  bundleChecksums(false)
    nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
                   options = "-d:danger " & args)
  
-@@ -344,8 +334,6 @@ proc boot(args: string, skipIntegrityCheck: bool) =
-   let useCpp = doUseCpp()
+@@ -398,7 +388,6 @@ proc boot(args: string, skipIntegrityCheck: bool) =
    let smartNimcache = (if "release" in args or "danger" in args: "nimcache/r_" else: "nimcache/d_") &
                        hostOS & "_" & hostCPU
--
+ 
 -  bundleChecksums(false)
  
    let usingLibFFI = "nimHasLibFFI" in args
    if usingLibFFI and not dirExists("dist/libffi"):
+@@ -587,7 +576,7 @@ proc winRelease*() =
+ template `|`(a, b): string = (if a.len > 0: a else: b)
+ 
+ proc tests(args: string) =
+-  nimexec "cc --opt:speed testament/testament"
++  nimexec "cc --opt:speed --hints:off testament/testament"
+   var testCmd = quoteShell(getCurrentDir() / "testament/testament".exe)
+   testCmd.add " " & quoteShell("--nim:" & findNim())
+   testCmd.add " " & (args|"all")

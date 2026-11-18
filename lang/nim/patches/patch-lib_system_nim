@@ -1,7 +1,7 @@
 Index: lib/system.nim
 --- lib/system.nim.orig
 +++ lib/system.nim
-@@ -1108,7 +1108,7 @@ when defined(boehmgc):
+@@ -1116,7 +1116,7 @@ when defined(boehmgc):
    elif defined(macosx):
      const boehmLib = "libgc.dylib"
    elif defined(openbsd):

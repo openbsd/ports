@@ -3,7 +3,7 @@ don't exec git
 Index: dist/nimble/src/nimblepkg/options.nim
 --- dist/nimble/src/nimblepkg/options.nim.orig
 +++ dist/nimble/src/nimblepkg/options.nim
-@@ -377,15 +377,7 @@ const
+@@ -386,15 +386,7 @@ const
    ## sources outside the git tree of Nimble:
    git_revision_override* {.strdefine.} = ""
  

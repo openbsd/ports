@@ -1,7 +1,7 @@
 Index: lib/std/typedthreads.nim
 --- lib/std/typedthreads.nim.orig
 +++ lib/std/typedthreads.nim
-@@ -292,7 +292,7 @@ else:
+@@ -296,7 +296,7 @@ else:
      ##
      ## In other words sets a thread's `affinity`:idx:.
      ## If you don't know what this means, you shouldn't use this proc.
