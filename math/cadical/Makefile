@@ -2,10 +2,9 @@ COMMENT =		CaDiCaL SAT Solver
 
 GH_ACCOUNT =		arminbiere
 GH_PROJECT =		cadical
-GH_TAGNAME =		rel-3.0.1
-REVISION =		1
+GH_TAGNAME =		rel-3.1.0
 
-SHARED_LIBS =		cadical	0.0
+SHARED_LIBS =		cadical	1.0
 
 CATEGORIES =		math
 

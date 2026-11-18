@@ -1,7 +1,16 @@
 Index: src/mobical.cpp
 --- src/mobical.cpp.orig
 +++ src/mobical.cpp
-@@ -3595,6 +3595,7 @@ int Trace::fork_and_execute () {
+@@ -7361,7 +7361,7 @@ int Trace::fork_and_execute () {
+ 
+     // disable core dumps for faster delta-debugging.
+ #ifndef _WIN32
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+     rlimit limit;
+     limit.rlim_cur = 0;
+     limit.rlim_max = 0;
+@@ -7412,6 +7412,7 @@ int Trace::fork_and_execute () {
        }
      }
  
@@ -9,7 +18,7 @@ Index: src/mobical.cpp
      if (!mobical.donot.fork && mobical.space_limit) {
        struct rlimit rlim;
        if (!getrlimit (RLIMIT_AS, &rlim)) {
-@@ -3602,6 +3603,7 @@ int Trace::fork_and_execute () {
+@@ -7419,6 +7420,7 @@ int Trace::fork_and_execute () {
          setrlimit (RLIMIT_AS, &rlim);
        }
      }
