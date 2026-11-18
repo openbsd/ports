@@ -1,7 +1,7 @@
 Index: src/iodine.c
 --- src/iodine.c.orig
 +++ src/iodine.c
-@@ -151,11 +151,11 @@ int main(int argc, char **argv)
+@@ -152,11 +152,11 @@ int main(int argc, char **argv)
  	nameserv_host = NULL;
  	topdomain = NULL;
  	errormsg = NULL;

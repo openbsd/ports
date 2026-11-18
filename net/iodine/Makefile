@@ -1,6 +1,6 @@
 COMMENT=		tunnel IPv4 data through DNS
 
-DISTNAME=		iodine-0.9.0
+DISTNAME=		iodine-0.9.1
 CATEGORIES=		net
 
 HOMEPAGE=		https://code.kryo.se/iodine/

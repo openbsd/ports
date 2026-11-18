@@ -1,7 +1,7 @@
 Index: src/iodined.c
 --- src/iodined.c.orig
 +++ src/iodined.c
-@@ -2448,9 +2448,9 @@ main(int argc, char **argv)
+@@ -2449,9 +2449,9 @@ main(int argc, char **argv)
  #endif
  
  	errormsg = NULL;
