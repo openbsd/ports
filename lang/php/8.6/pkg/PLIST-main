@@ -45,6 +45,10 @@ share/php-${PV}/build/config.sub
 share/php-${PV}/build/gen_stub.php
 share/php-${PV}/build/libtool.m4
 share/php-${PV}/build/ltmain.sh
+share/php-${PV}/build/ltoptions.m4
+share/php-${PV}/build/ltsugar.m4
+share/php-${PV}/build/ltversion.m4
+share/php-${PV}/build/lt~obsolete.m4
 share/php-${PV}/build/php.m4
 share/php-${PV}/build/php_cxx_compile_stdcxx.m4
 share/php-${PV}/build/phpize.m4
@@ -77,6 +81,7 @@ share/php-${PV}/include/Zend/zend_ast.h
 share/php-${PV}/include/Zend/zend_atomic.h
 share/php-${PV}/include/Zend/zend_attributes.h
 share/php-${PV}/include/Zend/zend_attributes_arginfo.h
+share/php-${PV}/include/Zend/zend_autoload.h
 share/php-${PV}/include/Zend/zend_bitset.h
 share/php-${PV}/include/Zend/zend_build.h
 share/php-${PV}/include/Zend/zend_builtin_functions.h
@@ -137,6 +142,8 @@ share/php-${PV}/include/Zend/zend_objects.h
 share/php-${PV}/include/Zend/zend_objects_API.h
 share/php-${PV}/include/Zend/zend_observer.h
 share/php-${PV}/include/Zend/zend_operators.h
+share/php-${PV}/include/Zend/zend_partial.h
+share/php-${PV}/include/Zend/zend_perf_stat.h
 share/php-${PV}/include/Zend/zend_portability.h
 share/php-${PV}/include/Zend/zend_property_hooks.h
 share/php-${PV}/include/Zend/zend_ptr_stack.h
@@ -272,6 +279,7 @@ share/php-${PV}/include/ext/random/
 share/php-${PV}/include/ext/random/php_random.h
 share/php-${PV}/include/ext/random/php_random_csprng.h
 share/php-${PV}/include/ext/random/php_random_uint128.h
+share/php-${PV}/include/ext/random/random_decl.h
 share/php-${PV}/include/ext/session/
 share/php-${PV}/include/ext/session/mod_files.h
 share/php-${PV}/include/ext/session/mod_user.h
@@ -298,6 +306,7 @@ share/php-${PV}/include/ext/standard/
 share/php-${PV}/include/ext/standard/base64.h
 share/php-${PV}/include/ext/standard/basic_functions.h
 share/php-${PV}/include/ext/standard/basic_functions_arginfo.h
+share/php-${PV}/include/ext/standard/basic_functions_decl.h
 share/php-${PV}/include/ext/standard/crc32.h
 share/php-${PV}/include/ext/standard/crc32_x86.h
 share/php-${PV}/include/ext/standard/credits.h
@@ -318,6 +327,9 @@ share/php-${PV}/include/ext/standard/head.h
 share/php-${PV}/include/ext/standard/html.h
 share/php-${PV}/include/ext/standard/html_tables.h
 share/php-${PV}/include/ext/standard/info.h
+share/php-${PV}/include/ext/standard/io_poll.h
+share/php-${PV}/include/ext/standard/io_poll_arginfo.h
+share/php-${PV}/include/ext/standard/io_poll_decl.h
 share/php-${PV}/include/ext/standard/md5.h
 share/php-${PV}/include/ext/standard/pageinfo.h
 share/php-${PV}/include/ext/standard/password_arginfo.h
@@ -357,6 +369,7 @@ share/php-${PV}/include/ext/standard/winver.h
 share/php-${PV}/include/ext/uri/
 share/php-${PV}/include/ext/uri/php_uri.h
 share/php-${PV}/include/ext/uri/php_uri_common.h
+share/php-${PV}/include/ext/uri/php_uri_decl.h
 share/php-${PV}/include/ext/uri/uri_parser_php_parse_url.h
 share/php-${PV}/include/ext/uri/uri_parser_rfc3986.h
 share/php-${PV}/include/ext/uri/uri_parser_whatwg.h
@@ -380,12 +393,14 @@ share/php-${PV}/include/main/php_glob.h
 share/php-${PV}/include/main/php_globals.h
 share/php-${PV}/include/main/php_ini.h
 share/php-${PV}/include/main/php_ini_builder.h
+share/php-${PV}/include/main/php_io.h
 share/php-${PV}/include/main/php_main.h
 share/php-${PV}/include/main/php_memory_streams.h
 share/php-${PV}/include/main/php_network.h
 share/php-${PV}/include/main/php_odbc_utils.h
 share/php-${PV}/include/main/php_open_temporary_file.h
 share/php-${PV}/include/main/php_output.h
+share/php-${PV}/include/main/php_poll.h
 share/php-${PV}/include/main/php_reentrancy.h
 share/php-${PV}/include/main/php_scandir.h
 share/php-${PV}/include/main/php_streams.h
@@ -398,6 +413,7 @@ share/php-${PV}/include/main/snprintf.h
 share/php-${PV}/include/main/spprintf.h
 share/php-${PV}/include/main/streams/
 share/php-${PV}/include/main/streams/php_stream_context.h
+share/php-${PV}/include/main/streams/php_stream_errors.h
 share/php-${PV}/include/main/streams/php_stream_filter_api.h
 share/php-${PV}/include/main/streams/php_stream_glob_wrapper.h
 share/php-${PV}/include/main/streams/php_stream_mmap.h
@@ -405,6 +421,8 @@ share/php-${PV}/include/main/streams/php_stream_plain_wrapper.h
 share/php-${PV}/include/main/streams/php_stream_transport.h
 share/php-${PV}/include/main/streams/php_stream_userspace.h
 share/php-${PV}/include/main/streams/php_streams_int.h
+share/php-${PV}/include/main/streams/stream_errors_arginfo.h
+share/php-${PV}/include/main/streams/stream_errors_decl.h
 share/php-${PV}/include/main/streams/userspace_arginfo.h
 share/php-${PV}/include/sapi/
 share/php-${PV}/include/sapi/cli/

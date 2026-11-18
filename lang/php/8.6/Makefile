@@ -1,6 +1,6 @@
 UNLINKED=	wip
 
-PHP_VERSION=	8.6.0RC3
+PHP_VERSION=	8.6.0RC7
 SITES=		https://github.com/php/php-src/archive/refs/tags/
 WRKDIST=	${WRKDIR}/php-src-${DISTNAME}
 EXTRACT_SUFX=	.tar.gz
@@ -13,7 +13,8 @@ PORTROACH=
 PHP_PKGSPEC=	>=8.6,<8.7
 
 CONFIGURE_ARGS=	--enable-pic \
-		--with-external-uriparser
+		--with-external-uriparser \
+		--without-openssl
 LIB_DEPENDS=	devel/capstone/main \
 		www/uriparser>=1.0.3
 WANTLIB=	capstone uriparser

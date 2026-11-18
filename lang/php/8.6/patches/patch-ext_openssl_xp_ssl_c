@@ -10,9 +10,7 @@ Index: ext/openssl/xp_ssl.c
  #define HAVE_TLS13 1
  #endif
  
-@@ -87,10 +87,8 @@
- #ifndef OPENSSL_NO_TLSEXT
- #define HAVE_TLS_SNI 1
+@@ -89,9 +89,7 @@
  #define HAVE_TLS_ALPN 1
  #endif
  
@@ -21,3 +19,4 @@ Index: ext/openssl/xp_ssl.c
 -#endif
  
  #if OPENSSL_VERSION_NUMBER < 0x40000000L && !defined(OPENSSL_NO_SSL3)
+ #define HAVE_SSL3 1
