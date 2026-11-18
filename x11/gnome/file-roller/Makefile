@@ -1,9 +1,7 @@
 COMMENT-main=		create and modify archives
 COMMENT-nautilus=	file-roller extension for Nautilus
 
-GNOME_PROJECT=		file-roller
-GNOME_VERSION=		44.7
-REVISION-main=		0
+DIST_TUPLE=		gnome GNOME file-roller 44.8 .
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
