@@ -51,7 +51,7 @@ Index: llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  // Constant emission.
  //===----------------------------------------------------------------------===//
  
-@@ -4785,10 +4810,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
+@@ -4787,10 +4812,18 @@ void AsmPrinter::emitBasicBlockStart(const MachineBasi
    for (auto &Handler : Handlers)
      Handler->beginCodeAlignment(MBB);
  
