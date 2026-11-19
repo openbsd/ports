@@ -1,0 +1,12 @@
+Index: tools/event.cpp
+--- tools/event.cpp.orig
++++ tools/event.cpp
+@@ -122,7 +122,7 @@ static constexpr HXoption g_options_table[] = {
+ static constexpr cfg_directive event_cfg_defaults[] = {
+ 	{"config_file_path", PKGSYSCONFDIR "/event:" PKGSYSCONFDIR},
+ 	{"event_hosts_allow", ""}, /* default set added later during startup */
+-	{"event_listen", "unix:/run/gromox/event.sock"},
++	{"event_listen", "unix:/var/run/gromox/event.sock"},
+ 	{"event_log_file", "-"},
+ 	{"event_log_level", "4" /* LV_NOTICE */},
+ 	{"event_threads_num", "50", CFG_SIZE, "1", "1000"},

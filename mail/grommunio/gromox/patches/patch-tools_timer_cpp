@@ -1,0 +1,12 @@
+Index: tools/timer.cpp
+--- tools/timer.cpp.orig
++++ tools/timer.cpp
+@@ -101,7 +101,7 @@ static constexpr cfg_directive timer_cfg_defaults[] = 
+ 	{"running_identity", RUNNING_IDENTITY},
+ 	{"submit_command", "/usr/bin/php " PKGDATADIR "/submit.php"},
+ 	{"timer_hosts_allow", ""}, /* default set added later during startup */
+-	{"timer_listen", "unix:/run/gromox/timer.sock"},
++	{"timer_listen", "unix:/var/run/gromox/timer.sock"},
+ 	{"timer_log_file", "-"},
+ 	{"timer_log_level", "4" /* LV_NOTICE */},
+ 	{"timer_state_path", PKGSTATEDIR "/timer.txt"},

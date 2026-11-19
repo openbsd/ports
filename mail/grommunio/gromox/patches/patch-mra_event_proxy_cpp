@@ -1,0 +1,12 @@
+Index: mra/event_proxy.cpp
+--- mra/event_proxy.cpp.orig
++++ mra/event_proxy.cpp
+@@ -83,7 +83,7 @@ bool SVC_event_proxy(enum plugin_op reason, const stru
+ 		}
+ 
+ 		str_value = pfile->get_value("EVENT_HOST");
+-		gx_strlcpy(g_event_ip, str_value != nullptr ? str_value : "unix:/run/gromox/event.sock",
++		gx_strlcpy(g_event_ip, str_value != nullptr ? str_value : "unix:/var/run/gromox/event.sock",
+ 		           std::size(g_event_ip));
+ 		str_value = pfile->get_value("EVENT_PORT");
+ 		if (NULL == str_value) {
