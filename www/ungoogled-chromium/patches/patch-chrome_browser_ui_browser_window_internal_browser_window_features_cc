@@ -10,7 +10,7 @@ Index: chrome/browser/ui/browser_window/internal/browser_window_features.cc
  #include "chrome/browser/ui/views/session_restore_infobar/session_restore_infobar_controller.h"
  #endif
  
-@@ -501,7 +501,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
+@@ -485,7 +485,7 @@ void BrowserWindowFeatures::Init(BrowserWindowInterfac
                                                                   browser);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  

@@ -9,4 +9,4 @@ Index: chrome/browser/ui/views/tabs/hovercard/tab_hover_card_bubble_view.cc
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    set_accept_events(false);
  #endif
- 
+   set_accept_drag_drop(false);

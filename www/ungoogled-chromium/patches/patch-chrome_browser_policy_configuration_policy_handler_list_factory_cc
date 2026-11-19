@@ -1,7 +1,7 @@
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -274,7 +274,7 @@
+@@ -271,7 +271,7 @@
  #include "components/spellcheck/browser/pref_names.h"
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
@@ -148,16 +148,16 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kNTPFooterManagementNoticeEnabled,
      prefs::kNTPFooterManagementNoticeEnabled,
      base::Value::Type::BOOLEAN },
-@@ -2500,7 +2500,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
-   { key::kThirdPartyAiChatSettings,
+@@ -2501,7 +2501,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      omnibox::kThirdPartyAiChatSettings,
      base::Value::Type::INTEGER },
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    { key::kEnableProxyOverrideRulesForAllUsers,
      proxy_config::prefs::kEnableProxyOverrideRulesForAllUsers,
      base::Value::Type::INTEGER },
-@@ -2627,7 +2627,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -2629,7 +2629,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        std::make_unique<
            LocalNetworkAccessIpAddressSpaceOverridesPolicyHandler>());
    handlers->AddHandler(std::make_unique<DefaultSensorsSettingPolicyHandler>());
@@ -210,7 +210,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(std::make_unique<CloudUserOnlyPolicyChecker>(
        std::make_unique<SimplePolicyHandler>(
            key::kSecuritySignalsClientCertificatesSelectors,
-@@ -3483,7 +3483,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -3486,7 +3486,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif
  
  #if BUILDFLAG(ENABLE_SPELLCHECK)
@@ -219,7 +219,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(std::make_unique<SpellcheckLanguagePolicyHandler>());
    handlers->AddHandler(
        std::make_unique<SpellcheckLanguageBlocklistPolicyHandler>(
-@@ -3491,7 +3491,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -3494,7 +3494,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
  #endif  // BUILDFLAG(ENABLE_SPELLCHECK)
  
@@ -228,7 +228,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    handlers->AddHandler(std::make_unique<SimplePolicyHandler>(
        key::kAllowSystemNotifications, prefs::kAllowSystemNotifications,
        base::Value::Type::BOOLEAN));
-@@ -3530,7 +3530,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -3533,7 +3533,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
    std::vector<GenAiDefaultSettingsPolicyHandler::GenAiPolicyDetails>
        gen_ai_default_policies;
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -237,12 +237,12 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    gen_ai_default_policies.emplace_back(
        key::kHelpMeWriteSettings,
        optimization_guide::prefs::kComposeEnterprisePolicyAllowed);
-@@ -3672,7 +3672,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
+@@ -3675,7 +3675,7 @@ std::unique_ptr<ConfigurationPolicyHandlerList> BuildH
        glic::prefs::kGlicActuationOnWebBlockedForURLs));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   handlers->AddHandler(
-       std::make_unique<GeminiEnterpriseSettingsPolicyHandler>(chrome_schema));
    handlers->AddHandler(std::make_unique<GeminiEnterpriseUrlPolicyHandler>());
+ #endif
+ 

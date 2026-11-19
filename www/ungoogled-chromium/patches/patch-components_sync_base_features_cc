@@ -1,12 +1,12 @@
 Index: components/sync/base/features.cc
 --- components/sync/base/features.cc.orig
 +++ components/sync/base/features.cc
-@@ -80,7 +80,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
+@@ -68,7 +68,7 @@ BASE_FEATURE(kReplaceSyncPromosWithSignInPromos,
  );
  
- BASE_FEATURE(kReplaceSyncPromosWithSigninPromosNewSignin,
+ bool IsReplaceSyncPromosWithSignInPromosEnabled() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-              base::FEATURE_ENABLED_BY_DEFAULT
+   return true;
  #else
-              base::FEATURE_DISABLED_BY_DEFAULT
+   return base::FeatureList::IsEnabled(kReplaceSyncPromosWithSignInPromos);

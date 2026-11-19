@@ -1,6 +1,6 @@
-Index: third_party/speech-dispatcher/speechd_types.h
---- third_party/speech-dispatcher/speechd_types.h.orig
-+++ third_party/speech-dispatcher/speechd_types.h
+Index: third_party/speech-dispatcher/src/speechd_types.h
+--- third_party/speech-dispatcher/src/speechd_types.h.orig
++++ third_party/speech-dispatcher/src/speechd_types.h
 @@ -119,4 +119,139 @@ typedef struct {
  	SPDVoice voice;
  } SPDMsgSettings;

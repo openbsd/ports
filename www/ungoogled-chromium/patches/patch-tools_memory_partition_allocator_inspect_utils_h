@@ -1,7 +1,7 @@
 Index: tools/memory/partition_allocator/inspect_utils.h
 --- tools/memory/partition_allocator/inspect_utils.h.orig
 +++ tools/memory/partition_allocator/inspect_utils.h
-@@ -61,7 +61,7 @@ class RemoteProcessMemoryReader {
+@@ -55,7 +55,7 @@ class RemoteProcessMemoryReader {
    const pid_t pid_;
    bool is_valid_;
  

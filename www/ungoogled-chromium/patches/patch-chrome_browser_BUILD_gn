@@ -1,7 +1,7 @@
 Index: chrome/browser/BUILD.gn
 --- chrome/browser/BUILD.gn.orig
 +++ chrome/browser/BUILD.gn
-@@ -2183,6 +2183,10 @@ source_set("core") {
+@@ -2186,6 +2186,10 @@ source_set("core") {
  
    if (is_chrome_for_testing) {
      deps += [ "//chrome/browser/chrome_for_testing:browser" ]
@@ -12,14 +12,14 @@ Index: chrome/browser/BUILD.gn
    }
  
    if (safe_browsing_mode == 1) {
-@@ -3586,10 +3590,6 @@ source_set("browser") {
-       # ... get modularized.
-       "//chrome/browser/ui/extensions:impl",
+@@ -3402,10 +3406,6 @@ source_set("browser") {
+       "//chrome/browser/updates:update_metrics",
+       "//ui/views/window/vector_icons",
      ]
 -  } else if (!is_apple) {
 -    # This is already handled above in the CfT config and isn't needed on
 -    # Apple's platforms (which use a platform-specific hyphenation engine).
 -    deps += [ "//third_party/hyphenation-patterns:bundle_hyphen_data" ]
    }
- 
-   # TODO(https://crbug.com/356905053): Add more dependencies here and merge this
+   if (is_chromeos) {
+     assert(enable_extensions)

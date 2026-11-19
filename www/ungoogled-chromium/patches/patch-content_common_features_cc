@@ -39,7 +39,7 @@ Index: content/common/features.cc
    return base::FeatureList::IsEnabled(features::kFontDataServiceLinux);
  #elif BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(features::kFontDataServiceChromeOS);
-@@ -860,7 +860,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU, base::FEATURE_
+@@ -876,7 +876,7 @@ BASE_FEATURE(kStrictHighRankProcessLRU, base::FEATURE_
  // is handled at a different level and not through the interpretation of scroll
  // events.
  BASE_FEATURE(kTouchpadOverscrollHistoryNavigation,
