@@ -1,6 +1,6 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.218 2026/10/09 07:25:07 sthen Exp $
-# Copyright (c) 2018 Marc Espie <espie@openbsd.org>
+# $OpenBSD: update-plist,v 1.219 2026/11/19 18:47:33 edd Exp $
+# Copyright (c) 2018-2026 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -303,6 +303,10 @@ sub write_conflict_info($self, $fh)
 
 sub is_part_of_conflict_info($)
 { 0 }
+
+sub exclude_files($, $, $)
+{
+}
 
 package OpenBSD::PackingElement::State;
 
@@ -661,6 +665,11 @@ sub locate_files($self, $locator, $exact)
 	}
 }
 
+sub exclude_files($self, $state, $base)
+{
+	$state->{ignored}{$base.$self->fullname} = 1;
+}
+
 package OpenBSD::PackingElement::Shell;
 # we have no way to figure out @shell
 sub rebless_okay($) { 0 }
@@ -855,13 +864,15 @@ sub handle_options($state)
 		'V' => sub($var) {
 			push(@{$state->{no_version}}, $var);
 		    },
-
+		't' => sub($pkgpath) {
+			$state->exclude_pkgpath($pkgpath);
+		    },
 	};
-	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:P:w:e:E:H:', 
-	    '[-FfmnOrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-H hints]',
-	    '[-i var] [-I ignored] [-j jobs] [-L logfile] [-P pkgdir]',
-	    '[-S var] [-s var] [-V var] [-w suffix] [-X path]',
-	    '-- pkg_create_args ...');
+	$state->SUPER::handle_options('OrvI:c:qV:fFC:i:j:L:s:S:X:t:P:w:e:E:H:', 
+	    '[-FfmnOrvx] [-C dir] [-c comment] [-E ext] [-e ext]',
+	    '[-H hints] [-i var] [-I ignored] [-j jobs]',
+	    '[-L logfile] [-P pkgdir] [-S var] [-s var] [-t pkgpath]'.
+	    '[-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
@@ -882,6 +893,19 @@ sub handle_options($state)
 	}
 }
 
+sub exclude_pkgpath($state, $pkgpath)
+{
+	my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree($state,
+	    $pkgpath, $ENV{'PORTSDIR'}, \&OpenBSD::PackingList::FilesOnly,
+	    'print-plist');
+	if (!defined $plist) {
+		$state->fatal("Can't read plist for #1", $pkgpath);
+	}
+	# XXX this is delayed because we need to know WORKINST, and we
+	# only get this from subpackage options
+	$state->{excluded_plists}{$pkgpath} = $plist;
+}
+
 sub parse_hints_file($state, $fname)
 {
 	open(my $f, '<', $fname) or 
@@ -890,11 +914,22 @@ sub parse_hints_file($state, $fname)
 		chomp;
 		if (m/^\#(\S+)\s+(\-\S+)$/) {
 			my ($filename, $subpackage) = ($1, $2);
+			$state->{ignored_hints}{$filename} = $subpackage;
+		} elsif (m/^(\S+)\s+(\-\S+)$/) {
+			my ($filename, $subpackage) = ($1, $2);
+			$state->{hints}{$filename} = $subpackage;
 		} else {
 			$state->fatal("Bad hints file at line #1: #2",
 			    $., $_);
 		}
 	}
+	# XXX edd's script mentions the same files several times
+	# we assume that each hints file is independent, so far we only have 1 !
+	for my $filename (keys %{$state->{hints}}) {
+		delete $state->{ignored_hints}{$filename};
+	}
+	# Comments that are left are always ignored as ignore happens
+	# during scan_fake_dir.
 }
 
 package UpdatePlist;
@@ -1057,6 +1092,24 @@ sub walk_up_directory($self, $path, $c)
 	return 0;
 }
 
+sub copy_hints($self, $path, $c)
+{
+	return unless exists $self->{hints}{$path};
+	my $s = $self->{hints}{$path};
+	my $p2 = $s->strip_prefix($path);
+	if ($p2 =~ m/^\// && !$c->absolute_okay) {
+		# this will get caught as new element
+		# TODO list of data to build inside
+		# its own cwd
+		last;
+	}
+	$self->{state}->say("Adding #1 to #2", $p2, 
+	    $s->olist->fullpkgpath2->{subpackage});
+	my $a = $c->add($s->nlist, $p2);
+	$a->notice_new_file($self);
+	$a->{file} = $s->{file};
+}
+
 sub last_resort($self, $path, $c)
 {
 	# try all lists in order, until we find one with 
@@ -1092,7 +1145,9 @@ sub copy_object($self, $path)
 	my $o = $self->{objects}{$path};
 
 	return if $self->copy_existing($path, $o);
+
 	my $c = $o->element_class;
+	return if $self->copy_hints($path, $c);
 
 	return if $self->walk_up_directory($path, $c);
 	return if $self->last_resort($path, $c);
@@ -1373,8 +1428,53 @@ sub try_pkglocate($self)
 	}
 }
 
+sub ignore_excluded_plists($self, $base)
+{
+	my $state = $self->{state};
+	while (my ($pkgpath, $plist) = each %{$state->{excluded_plists}}) {
+		$state->say("Stripping files from #1", $pkgpath);
+		$plist->exclude_files($state, $base);
+	}
+	delete $state->{excluded_plists};
+}
+
+sub post_process_hints($self, $base)
+{
+	my $state = $self->{state};
+	# first make a hash of subpackages
+	my $h = {};
+	for my $p (@{$self->{lists}}) {
+		my $subpackage = $p->olist->fullpkgpath2->{subpackage};
+		$h->{$subpackage // ''} = $p;
+	}
+	# now we can match the entries to the plist
+	while (my ($filename, $sub) = each %{$state->{ignored_hints}}) {
+		if (!exists $h->{$sub}) {
+			$state->fatal("Error: bad subpackage #1", $sub);
+		}
+		my $fullname = $base.$h->{$sub}{state}{prefix}.'/'.$filename;
+		if ($state->{ignored}{$fullname}) {
+			$state->errsay("Warning: #1 was already ignored",
+			    $fullname);
+		}
+		$state->{ignored}{$fullname} = 1;
+	}
+	delete $state->{ignored_hints};
+	
+	while (my ($filename, $sub) = each %{$state->{hints}}) {
+		if (!exists $h->{$sub}) {
+			$state->fatal("Error: bad subpackage #1", $sub);
+		}
+		my $full = $h->{$sub}{state}{prefix}.'/'.$filename;
+		$self->{hints}{$full} = $h->{$sub};
+	}
+	delete $state->{hints};
+}
+
 my $self = UpdatePlist->new;
 my $base = OpenBSD::UpdatePlistFactory->parse_args($self);
+$self->ignore_excluded_plists($base);
+$self->post_process_hints($base);
 $self->known_objects;
 $self->scan_fake_dir($base);
 $self->zap_debug_files;
