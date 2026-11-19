@@ -1,5 +1,5 @@
 COMMENT=	virus scanner
-V=		1.5.4
+V=		1.5.5
 DISTNAME=	clamav-$V
 PKGNAME=	clamav-${V:S/-rc/rc/}
 
@@ -49,10 +49,10 @@ CONFIGURE_ARGS=	-D CLAMAV_USER=_clamav \
 CONFIGURE_ARGS += -D BYTECODE_RUNTIME=interpreter
 
 # for tests
-MODULES+=	lang/python
 MODPY_RUNDEP=	No
-BUILD_DEPENDS+=	devel/check
-CONFIGURE_ARGS+= -D ENABLE_TESTS=on
+BUILD_DEPENDS=	devel/check \
+		lang/python/3
+CONFIGURE_ARGS += -D ENABLE_TESTS=on
 
 pre-build:
 	@echo note, some build steps use rustc and are run silently, build may appear to hang
