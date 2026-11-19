@@ -10,7 +10,7 @@ PORTROACH=
 PHP_PKGSPEC=	>=8.6,<8.7
 
 CONFIGURE_ARGS += --enable-pic \
-		--with-external-uriparser \
+		--with-external-uriparser
 LIB_DEPENDS=	devel/capstone/main \
 		www/uriparser>=1.0.3
 WANTLIB=	capstone uriparser
