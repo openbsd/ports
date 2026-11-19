@@ -7,6 +7,7 @@ lib/rsyslog/
 @so lib/rsyslog/imfile.so
 @so lib/rsyslog/imklog.so
 @so lib/rsyslog/immark.so
+@so lib/rsyslog/impstats.so
 @so lib/rsyslog/imrelp.so
 @so lib/rsyslog/imtcp.so
 @so lib/rsyslog/imudp.so
@@ -22,6 +23,8 @@ lib/rsyslog/
 @so lib/rsyslog/lmtcpsrv.so
 @so lib/rsyslog/lmzlibw.so
 @so lib/rsyslog/mmexternal.so
+@so lib/rsyslog/mmleefparse.so
+@so lib/rsyslog/omkinesis.so
 @so lib/rsyslog/ommail.so
 @so lib/rsyslog/omrelp.so
 @so lib/rsyslog/omtesting.so

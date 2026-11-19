@@ -6,18 +6,18 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2404.0
-DISTNAME =		rsyslog-$V
-PKGNAME-main =		rsyslog-$V
-PKGNAME-mysql =		rsyslog-mysql-$V
-PKGNAME-normalize =	rsyslog-normalize-$V
-PKGNAME-pgsql =		rsyslog-pgsql-$V
-PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
-REVISION =		1
+V =			8.2610.0pl20261118
+GH_ACCOUNT =		rsyslog
+GH_PROJECT =		rsyslog
+GH_COMMIT =		a073c65ebb105e466d8de52edac3810e6ae0a0ad
+
+DISTNAME =		rsyslog-${V}
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.rsyslog.com/
+
+#SITES =		https://www.rsyslog.com/files/download/rsyslog/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -29,6 +29,7 @@ WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl m nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
 WANTLIB-main +=		execinfo nghttp3 ngtcp2 ngtcp2_crypto_libressl
+WANTLIB-main +=		yaml protobuf-c snappy
 
 WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
@@ -39,8 +40,11 @@ WANTLIB-pgsql +=	crypto m pq pthread ssl
 WANTLIB-elasticsearch +=	crypto curl m nghttp2 pthread ssl z
 WANTLIB-elasticsearch +=	nghttp3 ngtcp2 ngtcp2_crypto_libressl
 
-LIB_DEPENDS-main =	devel/libfastjson \
+LIB_DEPENDS-main =	archivers/snappy \
+			devel/libfastjson \
 			devel/libestr \
+			devel/libyaml \
+			devel/protobuf-c \
 			net/curl \
 			security/libgcrypt \
 			security/gnutls \
@@ -55,9 +59,14 @@ LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
 RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 
-SITES =			https://www.rsyslog.com/files/download/rsyslog/
+BUILD_DEPENDS +=	devel/autoconf-archive
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE =	autoreconf
+
+USE_GMAKE=		Yes
+
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mysql \
@@ -68,7 +77,8 @@ CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-relp \
 			--enable-elasticsearch \
 			--enable-imfile
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	rm ${PREFIX}/lib/rsyslog/*.la
