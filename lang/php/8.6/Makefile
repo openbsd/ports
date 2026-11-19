@@ -1,10 +1,7 @@
-UNLINKED=	wip
+UNLINKED=	wip, openssl extension broken with libressl
+CONFIGURE_ARGS=	--without-openssl
 
-PHP_VERSION=	8.6.0RC7
-SITES=		https://github.com/php/php-src/archive/refs/tags/
-WRKDIST=	${WRKDIR}/php-src-${DISTNAME}
-EXTRACT_SUFX=	.tar.gz
-
+PHP_VERSION=	8.6.0
 AUTOCONF_VERSION= 2.73
 
 # override PORTROACH from ../Makefile.inc; no marker wanted for the highest
@@ -12,9 +9,8 @@ AUTOCONF_VERSION= 2.73
 PORTROACH=
 PHP_PKGSPEC=	>=8.6,<8.7
 
-CONFIGURE_ARGS=	--enable-pic \
+CONFIGURE_ARGS += --enable-pic \
 		--with-external-uriparser \
-		--without-openssl
 LIB_DEPENDS=	devel/capstone/main \
 		www/uriparser>=1.0.3
 WANTLIB=	capstone uriparser
