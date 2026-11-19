@@ -1,7 +1,6 @@
 COMMENT=	generate access/prefix lists for BGP config
 
-DIST_TUPLE=	github bgp bgpq4 1.15 .
-REVISION=	0
+DIST_TUPLE=	github bgp bgpq4 1.17 .
 
 CATEGORIES=	net
 
