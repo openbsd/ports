@@ -46,18 +46,12 @@ bin/mtxrun.lua
 @man man/man1/mtxrun.1
 @man man/man1/texexec.1
 @man man/man1/texmfstart.1
-share/texmf-dist/
-share/texmf-dist/bibtex/
-share/texmf-dist/bibtex/bst/
 share/texmf-dist/bibtex/bst/context/
 share/texmf-dist/bibtex/bst/context/mkii/
 share/texmf-dist/bibtex/bst/context/mkii/cont-ab.bst
 share/texmf-dist/bibtex/bst/context/mkii/cont-au.bst
 share/texmf-dist/bibtex/bst/context/mkii/cont-no.bst
 share/texmf-dist/bibtex/bst/context/mkii/cont-ti.bst
-share/texmf-dist/fonts/
-share/texmf-dist/fonts/afm/
-share/texmf-dist/fonts/afm/public/
 share/texmf-dist/fonts/afm/public/context/
 share/texmf-dist/fonts/afm/public/context/contnav.afm
 share/texmf-dist/fonts/cid/
@@ -69,8 +63,6 @@ share/texmf-dist/fonts/cid/context/Adobe-Japan1-5.cidmap
 share/texmf-dist/fonts/cid/context/Adobe-Japan1-6.cidmap
 share/texmf-dist/fonts/cid/context/Adobe-Japan2-0.cidmap
 share/texmf-dist/fonts/cid/context/Adobe-Korea1-2.cidmap
-share/texmf-dist/fonts/enc/
-share/texmf-dist/fonts/enc/dvips/
 share/texmf-dist/fonts/enc/dvips/context/
 share/texmf-dist/fonts/enc/dvips/context/cmin.enc
 share/texmf-dist/fonts/enc/dvips/context/cmit.enc
@@ -80,11 +72,8 @@ share/texmf-dist/fonts/enc/dvips/context/cmsc.enc
 share/texmf-dist/fonts/enc/dvips/context/cmtt.enc
 share/texmf-dist/fonts/enc/dvips/context/ec-2004.enc
 share/texmf-dist/fonts/enc/dvips/context/q-8r.enc
-share/texmf-dist/fonts/map/
-share/texmf-dist/fonts/map/dvips/
 share/texmf-dist/fonts/map/dvips/context/
 share/texmf-dist/fonts/map/dvips/context/contnav.map
-share/texmf-dist/fonts/map/pdftex/
 share/texmf-dist/fonts/map/pdftex/context/
 share/texmf-dist/fonts/map/pdftex/context/8r-base.map
 share/texmf-dist/fonts/map/pdftex/context/ec-base.map
@@ -115,14 +104,9 @@ share/texmf-dist/fonts/map/pdftex/context/t5-base.map
 share/texmf-dist/fonts/map/pdftex/context/t5-os-public-lm.map
 share/texmf-dist/fonts/map/pdftex/context/texnansi-base.map
 share/texmf-dist/fonts/map/pdftex/context/texnansi-os-public-lm.map
-share/texmf-dist/fonts/misc/
-share/texmf-dist/fonts/misc/xetex/
-share/texmf-dist/fonts/misc/xetex/fontmapping/
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/tlig.map
 share/texmf-dist/fonts/misc/xetex/fontmapping/context/tlig.tec
-share/texmf-dist/fonts/opentype/
-share/texmf-dist/fonts/opentype/public/
 share/texmf-dist/fonts/opentype/public/context/
 share/texmf-dist/fonts/opentype/public/context/LatinModernMathCompanion-Regular.otf
 share/texmf-dist/fonts/opentype/public/context/RalphSmithsFormalScriptCompanion-Regular.otf
@@ -130,21 +114,14 @@ share/texmf-dist/fonts/opentype/public/context/TeXGyreBonumMathCompanion-Regular
 share/texmf-dist/fonts/opentype/public/context/TeXGyrePagellaMathCompanion-Regular.otf
 share/texmf-dist/fonts/opentype/public/context/TeXGyreTermesMathCompanion-Regular.otf
 share/texmf-dist/fonts/opentype/public/context/XITSMathCompanion-Regular.otf
-share/texmf-dist/fonts/tfm/
-share/texmf-dist/fonts/tfm/public/
 share/texmf-dist/fonts/tfm/public/context/
 share/texmf-dist/fonts/tfm/public/context/contnav.tfm
-share/texmf-dist/fonts/truetype/
-share/texmf-dist/fonts/truetype/public/
 share/texmf-dist/fonts/truetype/public/context/
 share/texmf-dist/fonts/truetype/public/context/cc-icons.ttf
 share/texmf-dist/fonts/truetype/public/context/lmtypewriter10-regular.ttf
-share/texmf-dist/fonts/type1/
-share/texmf-dist/fonts/type1/public/
 share/texmf-dist/fonts/type1/public/context/
 share/texmf-dist/fonts/type1/public/context/contnav.pfb
 share/texmf-dist/fonts/type1/public/context/contnav.pfm
-share/texmf-dist/metapost/
 share/texmf-dist/metapost/context/
 share/texmf-dist/metapost/context/base/
 share/texmf-dist/metapost/context/base/common/
@@ -251,9 +228,6 @@ share/texmf-dist/metapost/context/fonts/mpiv/punkfont.mp
 share/texmf-dist/metapost/context/third/
 share/texmf-dist/metapost/context/third/gnuplot/
 share/texmf-dist/metapost/context/third/gnuplot/mp-gnuplot.mp
-share/texmf-dist/scripts/
-share/texmf-dist/scripts/context/
-share/texmf-dist/scripts/context/lua/
 share/texmf-dist/scripts/context/lua/context.lua
 share/texmf-dist/scripts/context/lua/mtx-babel.lua
 share/texmf-dist/scripts/context/lua/mtx-bibtex.lua
@@ -306,12 +280,10 @@ share/texmf-dist/scripts/context/lua/mtx-youless.lua
 share/texmf-dist/scripts/context/lua/mtxlibs.lua
 share/texmf-dist/scripts/context/lua/mtxrun.lua
 share/texmf-dist/scripts/context/lua/texlua.lua
-share/texmf-dist/scripts/context/lua/third/
 share/texmf-dist/scripts/context/lua/third/simpleslides/
 share/texmf-dist/scripts/context/lua/third/simpleslides/mtx-simpleslides.lua
 share/texmf-dist/scripts/context/lua/third/transliterator/
 share/texmf-dist/scripts/context/lua/third/transliterator/mtx-t-transliterate.lua
-share/texmf-dist/scripts/context/perl/
 share/texmf-dist/scripts/context/perl/makempy.pl
 share/texmf-dist/scripts/context/perl/path_tre.pm
 share/texmf-dist/scripts/context/perl/pdftrimwhite.pl
@@ -322,8 +294,8 @@ share/texmf-dist/scripts/context/ruby/base/
 share/texmf-dist/scripts/context/ruby/base/ctx.rb
 share/texmf-dist/scripts/context/ruby/base/exa.rb
 share/texmf-dist/scripts/context/ruby/base/file.rb
-share/texmf-dist/scripts/context/ruby/base/kpse.rb
 share/texmf-dist/scripts/context/ruby/base/kpse/
+share/texmf-dist/scripts/context/ruby/base/kpse.rb
 share/texmf-dist/scripts/context/ruby/base/kpse/drb.rb
 share/texmf-dist/scripts/context/ruby/base/kpse/soap.rb
 share/texmf-dist/scripts/context/ruby/base/kpse/trees.rb
@@ -371,12 +343,9 @@ share/texmf-dist/scripts/context/stubs/unix/texmfstart
 share/texmf-dist/scripts/context/stubs/win64/
 share/texmf-dist/scripts/context/stubs/win64/texexec.cmd
 share/texmf-dist/scripts/context/stubs/win64/texmfstart.cmd
-share/texmf-dist/tex/
-share/texmf-dist/tex/context/
-share/texmf-dist/tex/context/base/
+share/texmf-dist/source/latex/makegobbler/doc/
 share/texmf-dist/tex/context/base/context-version.pdf
 share/texmf-dist/tex/context/base/context-version.png
-share/texmf-dist/tex/context/base/mkii/
 share/texmf-dist/tex/context/base/mkii/anch-bar.mkii
 share/texmf-dist/tex/context/base/mkii/anch-pgr.mkii
 share/texmf-dist/tex/context/base/mkii/anch-pos.mkii
@@ -806,7 +775,6 @@ share/texmf-dist/tex/context/base/mkii/xtag-stk.mkii
 share/texmf-dist/tex/context/base/mkii/xtag-utf.mkii
 share/texmf-dist/tex/context/base/mkii/xtag-xsd.mkii
 share/texmf-dist/tex/context/base/mkii/xtag-xsl.mkii
-share/texmf-dist/tex/context/base/mkiv/
 share/texmf-dist/tex/context/base/mkiv/anch-bar.mkiv
 share/texmf-dist/tex/context/base/mkiv/anch-bck.mkvi
 share/texmf-dist/tex/context/base/mkiv/anch-pgr.lua
@@ -3985,7 +3953,6 @@ share/texmf-dist/tex/context/test/mkiv/pdf-x4p.mkiv
 share/texmf-dist/tex/context/texlive/
 share/texmf-dist/tex/context/texlive/cont-sys.mkiv
 share/texmf-dist/tex/context/texlive/cont-sys.mkxl
-share/texmf-dist/tex/context/third/
 share/texmf-dist/tex/context/third/animation/
 share/texmf-dist/tex/context/third/animation/t-animation.mkvi
 share/texmf-dist/tex/context/third/calendar-examples/
@@ -4168,14 +4135,11 @@ share/texmf-dist/tex/context/third/visualcounter/t-visualcounter.mkvi
 share/texmf-dist/tex/context/user/
 share/texmf-dist/tex/context/user/mkii/
 share/texmf-dist/tex/context/user/mkii/cont-sys.mkii
-share/texmf-dist/tex/generic/
-share/texmf-dist/tex/generic/context/
 share/texmf-dist/tex/generic/context/ppchtex/
 share/texmf-dist/tex/generic/context/ppchtex/m-ch-de.tex
 share/texmf-dist/tex/generic/context/ppchtex/m-ch-en.tex
 share/texmf-dist/tex/generic/context/ppchtex/m-ch-nl.tex
 share/texmf-dist/tex/generic/context/ppchtex/ppchtex.noc
-share/texmf-dist/tex/luatex/
 share/texmf-dist/tex/luatex/context/
 share/texmf-dist/tex/luatex/context/luatex-basics-chr.lua
 share/texmf-dist/tex/luatex/context/luatex-basics-gen.lua
@@ -4216,7 +4180,6 @@ share/texmf-dist/tex/luatex/context/luatex-swiglib-test.tex
 share/texmf-dist/tex/luatex/context/luatex-swiglib.lua
 share/texmf-dist/tex/luatex/context/luatex-swiglib.tex
 share/texmf-dist/tex/luatex/context/luatex-test.tex
-share/texmf-dist/web2c/
 share/texmf-dist/web2c/texmfcnf.lua
 @exec %D/bin/mtxrun --generate > /dev/null 2>&1
 @tag mktexlsr

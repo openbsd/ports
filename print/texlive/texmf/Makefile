@@ -4,7 +4,11 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
-REVISION-full =		0
+REVISION-context =	0
+REVISION-docs =		0
+REVISION-full =		1
+REVISION-main =		0
+REVISION-buildset =	0
 
 # Please do not directly edit the PLIST files. They are auto-generated.
 #
@@ -196,19 +200,24 @@ post-install:
 	# https://github.com/pdfjam/pdfjam/issues/99
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/scripts/pdfjam/pdfjam
 
+# Exclude files that other ports already package elsewhere and that can't be
+# filtered out by excluding a whole tex package in update_plist_hints.py. It's
+# more robust to exclude whole tex packages if possible, as their files will
+# never be installed, regardless of where other ports may install them.
+#
+# ps2eps is included in a larger tex package called pstools, so we cannot
+# exclude just ps2eps at the tex package level. We also disable building
+# binaries for this in texlive_base (at ./configure time).
+UPDATE_PLIST_ARGS += -t print/ps2eps
+# We have a psutils port, but tex live's version includes some other stuff
+# (perl scripts).
+UPDATE_PLIST_ARGS += -t print/psutils
+
+UPDATE_PLIST_ARGS += -i MODLUA_DEP_VERSION
+UPDATE_PLIST_ARGS += -i MODRUBY_LIBREV
+UPDATE_PLIST_ARGS += -i MODPY_PY_PREFIX
 
 # The following targets are for development only and require Python3.
-
-# Generating PLISTs is special for TeX Live.
-update-plist: plist
-	@true
-
-plist: fake
-	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
-		python${MODPY_DEFAULT_VERSION_3} \
-		${FILESDIR}/update_plist_hints.py \
-		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb | \
-		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
 # Regenerate adj.mk.
 adj: patch
@@ -221,3 +230,13 @@ man_symlinks: patch
 		${WRKSRC}/texmf-dist/doc/man > man_symlinks.mk
 
 .include <bsd.port.mk>
+
+UPDATE_PLIST_ARGS += -H ${WRKDIR}/hints
+${WRKDIR}/hints: ${_FAKE_COOKIE} ${FILESDIR}/update_plist_hints.py
+	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
+		python${MODPY_DEFAULT_VERSION_3} \
+		${FILESDIR}/update_plist_hints.py \
+		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb \
+		|${_PBUILD} tee $@ >/dev/null
+
+update-plist plist: ${WRKDIR}/hints

@@ -36,31 +36,6 @@ except KeyError:
     fatal("This requires WRKINST and TRUEPREFIX environment vars set")
 
 
-# Individual files that conflict with other ports.
-CONFLICT_FILES = set([
-    # Comes from print/ps2eps.
-    # ps2eps is included in a larger texlive package called pstools, so it
-    # cannot be excluded by package. We disable this in the base build at
-    # configure time.
-    "man/man1/bbox.1",
-    "man/man1/disdvi.1",
-    # We have a psutils port, but tex live's version includes some other
-    # stuff (perl scripts). Best package those up.
-    # a bunch of perl scripts.
-    "man/man1/epsffit.1",
-    "man/man1/extractres.1",
-    "man/man1/psutils.1",
-    "man/man1/psjoin.1",
-    "man/man1/includeres.1",
-    "man/man1/ps2eps.1",
-    "man/man1/psbook.1",
-    "man/man1/psnup.1",
-    "man/man1/psresize.1",
-    "man/man1/psselect.1",
-    "man/man1/pstops.1",
-])
-
-
 def move_mans_and_infos(file_set):
     return set([re.sub(MOVE_MANS_INFOS_RE, r'\g<1>/', i)
                 for i in file_set])
@@ -103,7 +78,8 @@ def build_subset_file_lists(tlpdb):
     sys.stderr.write("making plist map...\n")
 
     # CONFLICTING PACKAGES
-    # Whole packages that are ported elsewhere.
+    # Whole packages that are ported elsewhere, that we wish to exclude
+    # wholesale.
     conflict_pkgs = ["asymptote", "latexmk", "texworks", "t1utils",
                      "dvi2tty", "detex", "texinfo", "lcdftypetools"]
     conflict_pkg_files, conflict_symlinks = \
@@ -230,7 +206,7 @@ def build_subset_file_lists(tlpdb):
         TargetPlist.DOCS: docs_files
     }
 
-    comment_files = CONFLICT_FILES | conflict_pkg_files | commented_docs_files
+    comment_files = conflict_pkg_files | commented_docs_files
     return plist_map, comment_files, symlink_map
 
 
