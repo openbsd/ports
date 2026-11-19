@@ -1,7 +1,7 @@
 Index: src/tc-string.c
 --- src/tc-string.c.orig
 +++ src/tc-string.c
-@@ -84,14 +84,19 @@ static void t_strncat(void)
+@@ -87,14 +87,19 @@ static void t_strncat(void)
  {
  	char data[5] = "DATA";
  
