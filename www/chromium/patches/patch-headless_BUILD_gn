@@ -1,7 +1,7 @@
 Index: headless/BUILD.gn
 --- headless/BUILD.gn.orig
 +++ headless/BUILD.gn
-@@ -810,7 +810,7 @@ component("headless_shell_lib") {
+@@ -808,7 +808,7 @@ component("headless_shell_lib") {
      "//v8",
    ]
  

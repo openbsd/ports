@@ -15,8 +15,8 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 -#include <sys/types.h>
  
  #include <algorithm>
- 
-@@ -21,7 +22,7 @@
+ #include <optional>
+@@ -24,7 +25,7 @@
  #include "chrome/browser/media/router/discovery/discovery_network_list_wifi.h"
  #endif
  
@@ -25,7 +25,7 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -30,7 +31,7 @@
+@@ -33,7 +34,7 @@
  namespace media_router {
  namespace {
  
@@ -34,16 +34,3 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
  using sll = struct sockaddr_ll;
  #define SOCKET_ARP_TYPE(s) ((s)->sll_hatype)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sll_halen)
-@@ -41,6 +42,12 @@ using sll = struct sockaddr_dl;
- #define SOCKET_ARP_TYPE(s) ((s)->sdl_type)
- #define SOCKET_ADDRESS_LEN(s) ((s)->sdl_alen)
- #define SOCKET_ADDRESS(s) (LLADDR(s))
-+#endif
-+
-+#if BUILDFLAG(IS_BSD)
-+bool MaybeGetWifiSSID(const std::string& if_name, std::string* ssid_out) {
-+  return false;
-+}
- #endif
- 
- base::span<const uint8_t> SocketAddressAsByteSpan(const sll* ll_addr) {

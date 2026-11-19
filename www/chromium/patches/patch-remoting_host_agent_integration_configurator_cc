@@ -1,0 +1,12 @@
+Index: remoting/host/agent_integration_configurator.cc
+--- remoting/host/agent_integration_configurator.cc.orig
++++ remoting/host/agent_integration_configurator.cc
+@@ -16,7 +16,7 @@ AgentIntegrationConfigurator::AgentIntegrationConfigur
+ 
+ AgentIntegrationConfigurator::~AgentIntegrationConfigurator() = default;
+ 
+-#if !BUILDFLAG(IS_LINUX)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
+ 
+ // static
+ void AgentIntegrationConfigurator::IsSupported(IsSupportedCallback callback) {

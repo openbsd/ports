@@ -19,7 +19,7 @@ Index: services/device/usb/usb_device_handle_usbfs.cc
  // Outcome of detaching a kernel driver before ClaimInterface().
  // These values are persisted to logs. Entries should not be renumbered and
  // numeric values should never be reused.
-@@ -302,7 +302,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
+@@ -318,7 +318,7 @@ bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::R
    return true;
  }
  
@@ -28,7 +28,7 @@ Index: services/device/usb/usb_device_handle_usbfs.cc
  bool UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper::DetachInterface(
      int interface_number,
      const CombinedInterfaceInfo& interface_info) {
-@@ -656,7 +656,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
+@@ -672,7 +672,7 @@ void UsbDeviceHandleUsbfs::ClaimInterface(int interfac
      return;
    }
  #endif
@@ -37,7 +37,7 @@ Index: services/device/usb/usb_device_handle_usbfs.cc
    if (base::FeatureList::IsEnabled(features::kAutomaticUsbDetach)) {
      const mojom::UsbConfigurationInfo* config =
          device_->GetActiveConfiguration();
-@@ -1016,7 +1016,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
+@@ -1063,7 +1063,7 @@ void UsbDeviceHandleUsbfs::ReleaseInterfaceComplete(in
      return;
    }
  #endif

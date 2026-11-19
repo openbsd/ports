@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			157.0.8103.78
+V=			158.0.8127.36
 
 DISTNAME=		chromium-${V}
 

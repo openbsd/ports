@@ -24,8 +24,8 @@ Index: services/network/public/mojom/BUILD.gn
      cpp_typemaps += [
        {
          types = [
-@@ -2046,7 +2046,7 @@ mojom("mojom") {
-     }
+@@ -2052,7 +2052,7 @@ mojom("mojom") {
+     enabled_features += [ "enable_reporting" ]
    }
  
 -  if (is_linux) {
