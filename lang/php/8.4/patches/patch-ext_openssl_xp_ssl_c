@@ -1,9 +1,10 @@
-libressl added this in 3.6.0
+libressl added seclevel api in 3.6.0
+libressl doesn't have OPENSSL_strndup memory allocation API
 
 Index: ext/openssl/xp_ssl.c
 --- ext/openssl/xp_ssl.c.orig
 +++ ext/openssl/xp_ssl.c
-@@ -89,9 +89,7 @@
+@@ -91,9 +91,7 @@
  #define HAVE_TLS_ALPN 1
  #endif
  
@@ -11,5 +12,23 @@ Index: ext/openssl/xp_ssl.c
  #define HAVE_SEC_LEVEL 1
 -#endif
  
- #ifndef OPENSSL_NO_SSL3
+ #if OPENSSL_VERSION_NUMBER < 0x40000000L && !defined(OPENSSL_NO_SSL3)
  #define HAVE_SSL3 1
+@@ -569,7 +567,7 @@ static bool php_openssl_matches_common_name(X509 *peer
+ 
+ 	name_asn1 = X509_NAME_ENTRY_get_data(name_entry);
+ 	cert_name_len = ASN1_STRING_get_length(name_asn1);
+-	cert_name = (unsigned char *) OPENSSL_strndup((const char *) ASN1_STRING_get0_data(name_asn1), cert_name_len);
++	cert_name = (unsigned char *) strndup((const char *) ASN1_STRING_get0_data(name_asn1), cert_name_len);
+ 	if (cert_name == NULL) {
+ 		php_error_docref(NULL, E_WARNING, "Unable to locate peer certificate CN");
+ 		return false;
+@@ -577,7 +575,7 @@ static bool php_openssl_matches_common_name(X509 *peer
+ 
+ 	if ((size_t)cert_name_len != strlen((const char *)cert_name)) {
+ 		php_error_docref(NULL, E_WARNING, "Peer certificate CN=`%.*s' is malformed", cert_name_len, (const char *)cert_name);
+-		OPENSSL_free(cert_name);
++		free(cert_name);
+ 		return false;
+ 	} else if (php_openssl_matches_wildcard_name(subject_name, (const char *)cert_name)) {
+ 		is_match = 1;

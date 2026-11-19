@@ -12,7 +12,7 @@ Index: ext/hash/hash_xxhash.c
  		return SUCCESS;
  	} else {
  		return r != SUCCESS ? r : -2000;
-@@ -241,7 +241,7 @@ static int php_hash_xxh64_unserialize(
+@@ -243,7 +243,7 @@ static int php_hash_xxh64_unserialize(
  	int r = FAILURE;
  	if (magic == PHP_HASH_SERIALIZE_MAGIC_SPEC
  		&& (r = php_hash_unserialize_spec(hash, zv, PHP_XXH64_SPEC)) == SUCCESS

@@ -1,7 +1,7 @@
 Index: main/php_ini.c
 --- main/php_ini.c.orig
 +++ main/php_ini.c
-@@ -583,7 +583,7 @@ int php_init_config(void)
+@@ -589,7 +589,7 @@ int php_init_config(void)
  
  		/* If still no ini file found, search for php.ini file in search path */
  		if (!fp) {
