@@ -1751,7 +1751,7 @@ lib/ruby/gems/${REV}/gems/irb-1.16.0/lib/irb/ws-for-case-2.rb
 lib/ruby/gems/${REV}/gems/irb-1.16.0/lib/irb/xmp.rb
 lib/ruby/gems/${REV}/gems/irb-1.16.0/man/
 lib/ruby/gems/${REV}/gems/irb-1.16.0/man/irb.1
-lib/ruby/gems/${REV}/gems/json-2.18.0/
+lib/ruby/gems/${REV}/gems/json-2.18.3/
 lib/ruby/gems/${REV}/gems/logger-1.7.0/
 lib/ruby/gems/${REV}/gems/logger-1.7.0/BSDL
 lib/ruby/gems/${REV}/gems/logger-1.7.0/COPYING
@@ -3486,7 +3486,7 @@ lib/ruby/gems/${REV}/specifications/default/io-console-0.8.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/io-nonblock-0.3.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/io-wait-0.4.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/ipaddr-1.2.8.gemspec
-lib/ruby/gems/${REV}/specifications/default/json-2.18.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/json-2.18.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/net-http-0.9.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/net-protocol-0.2.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/open-uri-0.5.0.gemspec
