@@ -10,7 +10,7 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11057,7 +11057,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+@@ -11283,7 +11283,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
          if test "x$rb_cv_libunwind_broken_ra_signing" = "xno"
  then :
  
@@ -19,7 +19,7 @@ Index: configure
  do :
  
                  # Try these flags in the _prepended_ position - i.e. we want to try building a program
-@@ -31726,7 +31726,7 @@ main (void)
+@@ -32518,7 +32518,7 @@ main (void)
  _ACEOF
  if ac_fn_c_try_link "$LINENO"
  then :
@@ -28,7 +28,7 @@ Index: configure
  then :
  
              { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: -A -n" >&5
-@@ -32275,7 +32275,7 @@ fi
+@@ -33080,7 +33080,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -37,12 +37,12 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34470,7 +34470,7 @@ then :
+@@ -35343,7 +35343,7 @@ then :
  
- else $as_nop
- 
+ else case e in #(
+   e)
 -        arch="${target_cpu}-${target_os}"
 +        arch="${target_cpu}-openbsd"
- 
+      ;;
+ esac
  fi
-     printf "%s\n" "#define RUBY_PLATFORM \"$arch\"" >>confdefs.h
