@@ -2,8 +2,7 @@ COMMENT=	minimalistic C client for Redis
 
 GH_ACCOUNT=	redis
 GH_PROJECT=	hiredis
-GH_TAGNAME=	v1.5.0
-REVISION=	0
+GH_TAGNAME=	v1.5.1
 PKGNAME=	lib${DISTNAME}
 
 # upstream just uses the full version number, see hiredis.h
