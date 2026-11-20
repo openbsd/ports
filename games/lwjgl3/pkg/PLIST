@@ -57,6 +57,7 @@ share/lwjgl3/lwjgl-remotery.jar
 share/lwjgl3/lwjgl-renderdoc.jar
 share/lwjgl3/lwjgl-rpmalloc-natives-openbsd.jar
 share/lwjgl3/lwjgl-rpmalloc.jar
+share/lwjgl3/lwjgl-sdl-natives-openbsd.jar
 share/lwjgl3/lwjgl-sdl.jar
 share/lwjgl3/lwjgl-shaderc-natives-openbsd.jar
 share/lwjgl3/lwjgl-shaderc.jar
