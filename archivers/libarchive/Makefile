@@ -1,7 +1,7 @@
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.8.10
-SHARED_LIBS=	archive		13.4	# 21.10
+DISTNAME=	libarchive-3.8.11
+SHARED_LIBS=	archive		13.4	# 21.11
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--without-nettle	# prefer OpenSSL
-CONFIGURE_ARGS+=--without-xml2		# expat suffices
+CONFIGURE_ARGS+=--without-xml2		# expat for xar read, no write support
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 # Do not pick up headers from e2fsprogs
