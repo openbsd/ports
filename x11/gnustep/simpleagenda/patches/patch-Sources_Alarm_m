@@ -1,9 +1,8 @@
-Fix for libical >= 4
-
-Index: Alarm.m
---- Alarm.m.orig
-+++ Alarm.m
-@@ -129,7 +129,7 @@
+libical 4 compat fixes
+Index: Sources/Alarm.m
+--- Sources/Alarm.m.orig
++++ Sources/Alarm.m
+@@ -131,7 +131,7 @@
      return -1;
    }
    trigger = icalproperty_get_trigger(prop);
@@ -12,7 +11,7 @@ Index: Alarm.m
  }
  
  - (void)setRelativeTrigger:(NSTimeInterval)duration
-@@ -138,7 +138,7 @@
+@@ -140,7 +140,7 @@
  
    [self deleteProperty:ICAL_TRIGGER_PROPERTY fromComponent:_ic];
    memset(&trigger, 0, sizeof(trigger));
@@ -21,7 +20,7 @@ Index: Alarm.m
    icalcomponent_add_property(_ic, icalproperty_new_trigger(trigger));
  }
  
-@@ -226,7 +226,7 @@
+@@ -228,7 +228,7 @@
    icalproperty *prop = icalcomponent_get_first_property(_ic, ICAL_DURATION_PROPERTY);
  
    if (prop)
@@ -30,7 +29,7 @@ Index: Alarm.m
    return 0;
  }
  
-@@ -234,7 +234,7 @@
+@@ -236,7 +236,7 @@
  {
    [self deleteProperty:ICAL_DURATION_PROPERTY fromComponent:_ic];
    if (interval > 0)
@@ -39,7 +38,7 @@ Index: Alarm.m
  }
  
  - (Element *)element
-@@ -282,7 +282,7 @@
+@@ -284,7 +284,7 @@
  {
    if ((self = [super init])) {
      _element = nil;
@@ -48,7 +47,7 @@ Index: Alarm.m
      if (!_ic) {
        NSLog(@"Error creating Alarm from iCal component");
        NSLog(@"\n\n%s", icalcomponent_as_ical_string(ic));
-@@ -294,7 +294,7 @@
+@@ -296,7 +296,7 @@
  
  - (icalcomponent *)asICalComponent
  {

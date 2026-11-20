@@ -1,0 +1,40 @@
+libical 4.0 fixes
+Index: Sources/Event.m
+--- Sources/Event.m.orig
++++ Sources/Event.m
+@@ -303,12 +303,12 @@ static BOOL intersectsDay(Date *start, NSTimeInterval 
+       end = icaltimeWithTZID(pend, icalproperty_get_dtend(pend));
+       /* icaltime_subtract() ignores timezones : subtract UTC times */
+       if (start.zone && end.zone)
+-	diff = icaltime_subtract(icaltime_convert_to_zone(end, icaltimezone_get_utc_timezone()),
++	diff = icalduration_from_times(icaltime_convert_to_zone(end, icaltimezone_get_utc_timezone()),
+ 				 icaltime_convert_to_zone(start, icaltimezone_get_utc_timezone()));
+       else
+-	diff = icaltime_subtract(end, start);
++	diff = icalduration_from_times(end, start);
+     }
+-    [self setDuration:icaldurationtype_as_int(diff) / 60];
++    [self setDuration:icaldurationtype_as_utc_seconds(diff) / 60];
+   }
+   prop = icalcomponent_get_first_property(ic, ICAL_RRULE_PROPERTY);
+   if (prop)
+@@ -350,7 +350,7 @@ static BOOL intersectsDay(Date *start, NSTimeInterval 
+   [self deleteProperty:ICAL_DURATION_PROPERTY fromComponent:ic];
+   /* Without DTEND nor DURATION, an event ends at its start (RFC 5545 3.6.1) */
+   if (![self allDay] && _duration != 0)
+-    icalcomponent_add_property(ic, icalproperty_new_dtend(icaltime_add([_startDate UTCICalTime], icaldurationtype_from_int(_duration * 60))));
++    icalcomponent_add_property(ic, icalproperty_new_dtend(icalduration_extend([_startDate UTCICalTime], icaldurationtype_from_seconds(_duration * 60))));
+   else if ([self allDay]) {
+     end = [_startDate copy];
+     [end incrementDay];
+@@ -385,8 +385,9 @@ static BOOL intersectsDay(Date *start, NSTimeInterval 
+   }
+ 
+   [self deleteProperty:ICAL_RRULE_PROPERTY fromComponent:ic];
+-  if (_rrule)
++  if (_rrule) {
+     icalcomponent_add_property(ic, icalproperty_new_rrule([_rrule iCalRRule]));
++  }
+   return YES;
+ }
+ 

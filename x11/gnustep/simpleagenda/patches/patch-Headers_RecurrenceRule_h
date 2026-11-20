@@ -1,8 +1,6 @@
-Fix for libical >= 4
-
-Index: RecurrenceRule.h
---- RecurrenceRule.h.orig
-+++ RecurrenceRule.h
+Index: Headers/RecurrenceRule.h
+--- Headers/RecurrenceRule.h.orig
++++ Headers/RecurrenceRule.h
 @@ -17,7 +17,7 @@ typedef enum
  
  @interface RecurrenceRule : NSObject
@@ -12,12 +10,17 @@ Index: RecurrenceRule.h
  }
  
  - (id)initWithFrequency:(recurrenceFrequency)frequency;
-@@ -31,6 +31,6 @@ typedef enum
+@@ -38,10 +38,9 @@ typedef enum
  @end
  
  @interface RecurrenceRule(iCalendar)
 -- (id)initWithICalRRule:(struct icalrecurrencetype)rrule;
--- (struct icalrecurrencetype)iCalRRule;
+-/*
+- * The rscale of the returned rule belongs to the receiver : it is only
 +- (id)initWithICalRRule:(struct icalrecurrencetype*)rrule;
++ /* The rscale of the returned rule belongs to the receiver : it is only
+  * valid as long as the receiver is
+  */
+-- (struct icalrecurrencetype)iCalRRule;
 +- (struct icalrecurrencetype*)iCalRRule;
  @end
