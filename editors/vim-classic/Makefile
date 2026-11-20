@@ -1,11 +1,9 @@
 COMMENT=	vi clone with many additional features
 
-#V=		8.3.0
-#DIST_TUPLE=	srht sircmpwn vim-classic v$V .
-#WRKDIST=	${WRKDIR}/vim-classic-v$V
+V=		8.3.1
+DIST_TUPLE=	srht sircmpwn vim-classic v$V .
+WRKDIST=	${WRKDIR}/vim-classic-v$V
 
-DIST_TUPLE=	srht sircmpwn vim-classic 4cdb8aa34c7dfcc65bbfcef55541d2bb9abf1d38 .
-PKGNAME=	vim-classic-8.3.0pl20260916
 CATEGORIES=	editors
 
 # https://sr.ht/~sircmpwn/vim-classic/
@@ -19,9 +17,10 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # Uganda, see runtime/doc/uganda.txt / https://www.kuwasha.net/
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c curses iconv intl m perl
+WANTLIB +=	c curses iconv intl m perl sodium
 
-LIB_DEPENDS=	devel/gettext,-runtime
+LIB_DEPENDS=	devel/gettext,-runtime \
+		security/libsodium
 
 # UI flavours (pick none or one)
 FLAVORS=	gtk3
