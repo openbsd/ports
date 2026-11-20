@@ -1,0 +1,17 @@
+Skip xattr tests and unprivileged sticky-bit tests on regular files on OpenBSD.
+
+Index: github.com/restic/restic@v0.20.0/internal/fs/node_test.go
+--- github.com/restic/restic@v0.20.0/internal/fs/node_test.go.orig
++++ github.com/restic/restic@v0.20.0/internal/fs/node_test.go
+@@ -190,6 +190,11 @@ func TestNodeRestoreAt(t *testing.T) {
+ 
+ 		for _, test := range nodeTests {
+ 			t.Run("", func(t *testing.T) {
++				if runtime.GOOS == "openbsd" && (len(test.ExtendedAttributes) != 0 ||
++					(test.Type == data.NodeTypeFile && test.Mode&os.ModeSticky != 0 &&
++						os.Geteuid() != 0)) {
++					t.Skip("unsupported metadata on OpenBSD")
++				}
+ 				var nodePath string
+ 				if test.ExtendedAttributes != nil {
+ 					if runtime.GOOS == "windows" {

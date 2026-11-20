@@ -2,6 +2,7 @@ COMMENT=	fast, efficient and secure backup program
 
 MODGO_MODNAME=	github.com/restic/restic
 MODGO_VERSION=	v0.20.0
+REVISION=	0
 
 DISTNAME=	restic-${MODGO_VERSION}
 
@@ -17,9 +18,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
-TEST_DEPENDS=	lang/python/3
+TEST_DEPENDS=	archivers/gtar \
+		lang/python/3
+
+WRKDIST=	${WRKDIR}
 
 do-test:
+	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 	ln -fs ${LOCALBASE}/bin/python3 ${WRKDIR}/bin/python
 	cd ${WRKSRC}; ${MODGO_CMD} test ${MODGO_FLAGS:N-v} -count 1 ./...
 
