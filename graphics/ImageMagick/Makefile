@@ -2,7 +2,7 @@ COMMENT=	image processing tools
 
 GH_ACCOUNT=	ImageMagick
 GH_PROJECT=	ImageMagick6
-GH_TAGNAME=	6.9.13-60
+GH_TAGNAME=	6.9.13-61
 # move to ${GH_TAGNAME:S/-/pl/} with 6.9.14+?
 PKGNAME=	ImageMagick-${GH_TAGNAME:S/-/./}
 
@@ -49,7 +49,7 @@ ALL_TARGET=	all perl-build
 
 CONFIGURE_STYLE= autoconf
 LIBTOOL_FLAGS=	--tag=disable-static
-AUTOCONF_VERSION= 2.72
+AUTOCONF_VERSION= 2.73
 USE_GMAKE=	Yes
 CONFIGURE_ARGS=	--without-gcc-arch \
 		--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
