@@ -36,6 +36,8 @@ include/ada/url_pattern.h
 include/ada/url_pattern_helpers-inl.h
 include/ada/url_pattern_helpers.h
 include/ada/url_pattern_init.h
+include/ada/url_pattern_list-inl.h
+include/ada/url_pattern_list.h
 include/ada/url_pattern_regex.h
 include/ada/url_search_params-inl.h
 include/ada/url_search_params.h
