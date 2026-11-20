@@ -375,6 +375,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/server/nginx.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/hydra.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/response.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/typhoeus/response_size_cap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/vulnerability.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/vulnerability_filter.rb

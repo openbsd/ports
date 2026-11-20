@@ -1,6 +1,6 @@
 COMMENT =	WordPress security scanner
 
-DISTNAME =	wpscan-4.1.0
+DISTNAME =	wpscan-4.2.1
 CATEGORIES =	security
 
 HOMEPAGE =	https://wpscan.org/
@@ -18,7 +18,7 @@ RUN_DEPENDS +=          devel/ruby-activesupport,${MODRUBY_FLAVOR},>=7.1,<8.2 \
                         net/ruby-public_suffix,${MODRUBY_FLAVOR},>=4.0.3,<7.1.0 \
                         textproc/ruby-nokogiri,${MODRUBY_FLAVOR},>=1.16,<2 \
 			www/ruby-addressable,${MODRUBY_FLAVOR}>=2.9,<3 \
-                        www/ruby-ethon,${MODRUBY_FLAVOR},>=0.14,<0.19 \
+                        www/ruby-ethon,${MODRUBY_FLAVOR},>=0.14,<0.20 \
                         www/ruby-ferrum,${MODRUBY_FLAVOR},>=0.8,<1 \
                         www/ruby-typhoeus,${MODRUBY_FLAVOR},>=1.3,<1.7 \
                         www/ruby-xmlrpc,${MODRUBY_FLAVOR},>=0.3,<1
