@@ -1,0 +1,12 @@
+Index: src/libkcups/KCupsRequest.cpp
+--- src/libkcups/KCupsRequest.cpp.orig
++++ src/libkcups/KCupsRequest.cpp
+@@ -13,7 +13,7 @@
+ #include <cups/adminutil.h>
+ #include <cups/ppd.h>
+ 
+-#define CUPS_DATADIR QLatin1String("/usr/share/cups")
++#define CUPS_DATADIR QLatin1String("${LOCALBASE}/share/cups")
+ 
+ KCupsRequest::KCupsRequest(KCupsConnection *connection)
+     : m_connection(connection)

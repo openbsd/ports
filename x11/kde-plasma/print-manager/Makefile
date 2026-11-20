@@ -1,5 +1,6 @@
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
+REVISION =	0
 
 # From KDE Gear 23.08.4 to KDE Plasma 6.0
 EPOCH =		0
@@ -47,5 +48,9 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		print/cups,-libs \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/qt6/qtdeclarative
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/libkcups/KCupsRequest.cpp
+
 
 .include <bsd.port.mk>
