@@ -4,6 +4,7 @@ PKGNAME =	vkquake-${GH_TAGNAME}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
 GH_TAGNAME =	1.37.0
+REVISION =	0
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -30,6 +31,7 @@ MAKE_FLAGS =	bindir=${PREFIX}/share/vkquake \
 		X11BASE=${X11BASE}
 
 USE_GMAKE =	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 NO_TEST =	Yes
 WRKSRC =	${WRKDIST}/Quake
 ALL_TARGET =	vkquake
