@@ -862,6 +862,7 @@ share/vim/${P}/ftplugin/apache.vim
 share/vim/${P}/ftplugin/arch.vim
 share/vim/${P}/ftplugin/arduino.vim
 share/vim/${P}/ftplugin/art.vim
+share/vim/${P}/ftplugin/ascendc.vim
 share/vim/${P}/ftplugin/asciidoc.vim
 share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
@@ -873,6 +874,7 @@ share/vim/${P}/ftplugin/autopkgtest.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
+share/vim/${P}/ftplugin/bats.vim
 share/vim/${P}/ftplugin/bazelrc.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/beancount.vim
@@ -1304,11 +1306,13 @@ share/vim/${P}/indent/aap.vim
 share/vim/${P}/indent/ada.vim
 share/vim/${P}/indent/ant.vim
 share/vim/${P}/indent/arduino.vim
+share/vim/${P}/indent/ascendc.vim
 share/vim/${P}/indent/astro.vim
 share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bash.vim
 share/vim/${P}/indent/basic.vim
+share/vim/${P}/indent/bats.vim
 share/vim/${P}/indent/beancount.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bitbake.vim
@@ -1419,6 +1423,7 @@ share/vim/${P}/indent/odin.vim
 share/vim/${P}/indent/pascal.vim
 share/vim/${P}/indent/perl.vim
 share/vim/${P}/indent/php.vim
+share/vim/${P}/indent/pkl.vim
 share/vim/${P}/indent/postscr.vim
 share/vim/${P}/indent/pov.vim
 share/vim/${P}/indent/prolog.vim
@@ -2102,6 +2107,7 @@ share/vim/${P}/syntax/aptconf.vim
 share/vim/${P}/syntax/arch.vim
 share/vim/${P}/syntax/arduino.vim
 share/vim/${P}/syntax/art.vim
+share/vim/${P}/syntax/ascendc.vim
 share/vim/${P}/syntax/asciidoc.vim
 share/vim/${P}/syntax/asm.vim
 share/vim/${P}/syntax/asm68k.vim
@@ -2127,6 +2133,7 @@ share/vim/${P}/syntax/b.vim
 share/vim/${P}/syntax/baan.vim
 share/vim/${P}/syntax/bash.vim
 share/vim/${P}/syntax/basic.vim
+share/vim/${P}/syntax/bats.vim
 share/vim/${P}/syntax/bazelrc.vim
 share/vim/${P}/syntax/bc.vim
 share/vim/${P}/syntax/bdf.vim
