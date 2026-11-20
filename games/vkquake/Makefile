@@ -4,12 +4,12 @@ PKGNAME =	vkquake-${GH_TAGNAME}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
 GH_TAGNAME =	1.37.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL3 c execinfo m mpg123 ogg pthread vorbis vorbisfile vulkan

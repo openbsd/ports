@@ -23,6 +23,9 @@ ${PREFIX}/share/vkquake/id1/
 Note that the filename must be all lower case (e.g. 'pak0.pak') to work with
 vkquake.
 
+Alternatively, you can specify a location of the quake data (the directory that
+*contains* the id1/ subdir) via -basedir argument.
+
 Optional - Music / Soundtrack
 -----------------------------
 The original quake had a great soundtrack by Nine Inch Nails. Unfortunately, the
