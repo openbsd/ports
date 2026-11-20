@@ -35,11 +35,11 @@ Index: Telegram/SourceFiles/storage/details/storage_file_utilities.cpp
  	} else if (kdf.kind == kPasscodeKdfScrypt) {
  		if (!EVP_PBE_scrypt(
  			passcode.constData(),
-@@ -612,6 +616,7 @@ MTP::AuthKeyPtr CreatePasscodeKey(
+@@ -611,6 +615,7 @@ MTP::AuthKeyPtr CreatePasscodeKey(
+ 			LOG(("App Error: Scrypt derivation failed."));
  			return nullptr;
  		}
- 	} else {
 +#endif
+ 	} else {
  		LOG(("App Error: Unknown passcode KDF family."));
  		return nullptr;
- 	}
