@@ -1,7 +1,7 @@
 Index: src/config/pool_config_variables.c
 --- src/config/pool_config_variables.c.orig
 +++ src/config/pool_config_variables.c
-@@ -3880,9 +3880,9 @@ setConfigOptionVar(struct config_generic *record, cons
+@@ -4012,9 +4012,9 @@ setConfigOptionVar(struct config_generic *record, cons
  				if (newval < conf->min || newval > conf->max)
  				{
  					ereport(elevel,
