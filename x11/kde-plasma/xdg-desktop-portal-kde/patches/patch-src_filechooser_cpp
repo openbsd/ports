@@ -1,0 +1,43 @@
+Fix the file dialog ignoring current_folder when the document portal is
+not available.
+
+If org.freedesktop.portal.Documents cannot be reached,
+kioUrlFromSandboxPath() did not return early and called Info().
+KFileWidget resolved it against the portals working directory, so the dialog
+opened in "/" or $HOME instead of the requested folder.
+
+Return the path unchanged if the document portal is unavailable, and ignore
+error replies from Info().
+Index: src/filechooser.cpp
+--- src/filechooser.cpp.orig
++++ src/filechooser.cpp
+@@ -281,6 +281,7 @@ static QUrl kioUrlFromSandboxPath(const QString &path,
+         reply.waitForFinished();
+         if (reply.isError()) {
+             qCWarning(XdgDesktopPortalKdeFileChooser) << "Failed to get documents mount point:" << reply.error();
++            return QUrl::fromLocalFile(path);
+         } else {
+             mountPoint = QString::fromUtf8(reply);
+             if (!path.startsWith(mountPoint)) {
+@@ -289,15 +290,18 @@ static QUrl kioUrlFromSandboxPath(const QString &path,
+         }
+     }
+ 
+-    QByteArray localFilePath;
++    QDBusPendingReply<QByteArray> infoReply;
+     switch (entity) {
+     case Entity::File: // basename of dirpath (= id of the shared document on the portal)
+-        localFilePath = documents_iface.Info(QFileInfo(QFileInfo(path).path()).fileName());
++        infoReply = documents_iface.Info(QFileInfo(QFileInfo(path).path()).fileName());
+         break;
+     case Entity::Folder: // basename of path
+-        localFilePath = documents_iface.Info(QFileInfo(path).fileName());
++        infoReply = documents_iface.Info(QFileInfo(path).fileName());
+         break;
+     }
++    infoReply.waitForFinished();
++    // On error, QDBusPendingReply::value() returns the error *message text*, not an empty value.
++    const QByteArray localFilePath = infoReply.isError() ? QByteArray() : infoReply.value();
+     if (localFilePath.isEmpty()) {
+         return QUrl::fromLocalFile(path);
+     }

@@ -1,5 +1,6 @@
 COMMENT=	KDE backend implementation for xdg-desktop-portal
 DISTNAME =	xdg-desktop-portal-kde-${VERSION}
+REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 
