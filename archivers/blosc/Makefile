@@ -1,4 +1,4 @@
-V =		1.21.6
+V =		1.21.7
 COMMENT =	blocking, shuffling, fast and lossless compression library
 PKGNAME =	blosc-${V}
 CATEGORIES =	archivers
@@ -8,7 +8,6 @@ SHARED_LIBS +=	blosc                     2.0 # 0.0
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc
 GH_TAGNAME =	v${V}
-REVISION =	0
 
 HOMEPAGE =	https://blosc.org/
 MAINTAINER =	Martin Reindl <martin@catai.org>
