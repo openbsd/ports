@@ -1,6 +1,6 @@
 COMMENT =		fast implementation of gettext
 
-DISTNAME =		fast_gettext-4.1.1
+DISTNAME =		fast_gettext-4.2.0
 CATEGORIES =		devel
 HOMEPAGE =	https://github.com/grosser/fast_gettext
 MAINTAINER =    Sebastian Reitenbach <sebastia@openbsd.org>
