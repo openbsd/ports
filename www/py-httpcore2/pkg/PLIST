@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_synchronizat
 lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_synchronization.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_trace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_trace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/httpcore2/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/httpcore2/_api.py
@@ -104,5 +106,6 @@ lib/python${MODPY_VERSION}/site-packages/httpcore2/_sync/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/httpcore2/_sync/socks_proxy.py
 lib/python${MODPY_VERSION}/site-packages/httpcore2/_synchronization.py
 lib/python${MODPY_VERSION}/site-packages/httpcore2/_trace.py
+lib/python${MODPY_VERSION}/site-packages/httpcore2/_types.py
 lib/python${MODPY_VERSION}/site-packages/httpcore2/_utils.py
 lib/python${MODPY_VERSION}/site-packages/httpcore2/py.typed
