@@ -1,6 +1,6 @@
 COMMENT =	control headless Chrome browser
 
-DISTNAME = 	ferrum-0.18.0
+DISTNAME = 	ferrum-0.20.2
 CATEGORIES =	www
 
 HOMEPAGE =	https://ferrum.rubycdp.com/
