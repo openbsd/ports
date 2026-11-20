@@ -1,29 +1,28 @@
-COMMENT =	simple CalDAV calendar server
+COMMENT=	simple CalDAV calendar server
 
-MODPY_DISTV =	3.8.3
-REVISION =	0
-GH_ACCOUNT =	Kozea
-GH_PROJECT =	Radicale
-GH_TAGNAME =	v${MODPY_DISTV}
-PKGNAME =	radicale-${MODPY_DISTV}
+MODPY_DISTV=	3.9.2
+GH_ACCOUNT=	Kozea
+GH_PROJECT=	Radicale
+GH_TAGNAME=	v${MODPY_DISTV}
+PKGNAME=	radicale-${MODPY_DISTV}
 
-CATEGORIES =	productivity net
+CATEGORIES=	productivity net
 
-HOMEPAGE =	https://radicale.org/
+HOMEPAGE=	https://radicale.org/
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =	textproc/py-defusedxml \
+RUN_DEPENDS=	textproc/py-defusedxml \
 		security/py-passlib \
 		textproc/py-vobject \
 		net/py-pika \
 		www/py-requests \
 
-TEST_DEPENDS =	www/py-waitress \
+TEST_DEPENDS=	www/py-waitress \
 		security/py-bcrypt \
 		security/py-argon2-cffi \
 		databases/py-ldap3

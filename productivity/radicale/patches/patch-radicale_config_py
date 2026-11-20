@@ -10,7 +10,7 @@ Index: radicale/config.py
      "?~/.config/radicale/config"])
  
  PROFILING: Sequence[str] = ("per_request", "per_request_method", "none")
-@@ -277,12 +277,12 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+@@ -315,12 +315,12 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
              "help": "SSL/TLS Cipher Suite (OpenSSL cipher list format)",
              "type": str}),
          ("certificate", {
@@ -25,7 +25,7 @@ Index: radicale/config.py
              "help": "set private key file",
              "aliases": ("-k", "--key",),
              "type": filepath}),
-@@ -335,7 +335,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+@@ -373,7 +373,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
              "help": "expiration time for caching failed logins in seconds",
              "type": int}),
          ("htpasswd_filename", {
@@ -34,7 +34,7 @@ Index: radicale/config.py
              "help": "htpasswd filename",
              "type": filepath}),
          ("htpasswd_encryption", {
-@@ -352,7 +352,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+@@ -390,7 +390,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
              "type": str_or_callable,
              "internal": auth.AUTH_SOCKET_FAMILY}),
          ("dovecot_socket", {
@@ -43,7 +43,7 @@ Index: radicale/config.py
              "help": "dovecot auth AF_UNIX socket",
              "type": str}),
          ("dovecot_host", {
-@@ -518,7 +518,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+@@ -556,7 +556,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
              "help": "permit overwrite of a collection",
              "type": bool}),
          ("file", {
@@ -52,7 +52,7 @@ Index: radicale/config.py
              "help": "file for rights management from_file",
              "type": filepath})])),
      ("storage", OrderedDict([
-@@ -528,7 +528,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
+@@ -566,7 +566,7 @@ DEFAULT_CONFIG_SCHEMA: types.CONFIG_SCHEMA = OrderedDi
              "type": str_or_callable,
              "internal": storage.INTERNAL_TYPES}),
          ("filesystem_folder", {

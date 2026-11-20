@@ -10,7 +10,7 @@ Index: config
  # or ~/.config/radicale/config (user)
  #
  # The current values are the default ones
-@@ -43,10 +43,10 @@
+@@ -48,10 +48,10 @@
  #ssl = False
  
  # SSL certificate path
@@ -23,7 +23,7 @@ Index: config
  
  # CA certificate for validating clients. This can be used to secure
  # TCP traffic between Radicale and a reverse proxy
-@@ -184,7 +184,7 @@
+@@ -189,7 +189,7 @@
  #pam_group_membership =
  
  # Htpasswd filename
@@ -32,7 +32,7 @@ Index: config
  
  # Htpasswd encryption method
  # Value: plain | bcrypt | md5 | sha256 | sha512 | argon2 | autodetect
-@@ -234,7 +234,7 @@ type = none
+@@ -239,7 +239,7 @@ type = none
  #type = owner_only
  
  # File for rights management from_file
@@ -41,7 +41,7 @@ Index: config
  
  # Permit delete of a collection (global)
  #permit_delete_collection = True
-@@ -250,7 +250,7 @@ type = none
+@@ -255,7 +255,7 @@ type = none
  #type = multifilesystem
  
  # Folder for storing local collections, created if not present

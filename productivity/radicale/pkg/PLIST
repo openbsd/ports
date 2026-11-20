@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}pathutils.${MO
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}pathutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}server_cheroot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}server_cheroot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -144,6 +146,9 @@ lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/${MODPY_PYCACHE}scheduling.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/${MODPY_PYCACHE}scheduling.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/hook/email/scheduling.py
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/none.py
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/rabbitmq/
 lib/python${MODPY_VERSION}/site-packages/radicale/hook/rabbitmq/__init__.py
@@ -180,6 +185,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/rights/from_file.py
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_only.py
 lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_write.py
 lib/python${MODPY_VERSION}/site-packages/radicale/server.py
+lib/python${MODPY_VERSION}/site-packages/radicale/server_cheroot.py
 lib/python${MODPY_VERSION}/site-packages/radicale/sharing/
 lib/python${MODPY_VERSION}/site-packages/radicale/sharing/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/sharing/${MODPY_PYCACHE}/
@@ -283,11 +289,13 @@ lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icon.png
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/
+lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/check-circle.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/delete.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/download.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/edit.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/eye.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/key.svg
+lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/minus-circle.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/new.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/repeat.svg
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/css/icons/share.svg
@@ -311,7 +319,6 @@ lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/Co
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/CreateEditCollectionScene.js
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/CreateEditShareScene.js
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/DeleteConfirmationScene.js
-lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/IncomingSharingScene.js
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/LoadingScene.js
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/LoginScene.js
 lib/python${MODPY_VERSION}/site-packages/radicale/web/internal_data/js/scenes/ShareCollectionScene.js
@@ -329,7 +336,9 @@ lib/python${MODPY_VERSION}/site-packages/radicale/web/none.py
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/radicale/
+share/doc/radicale/AGENTS.md
 share/doc/radicale/CHANGELOG.md
+share/doc/radicale/CONTRIBUTING.md
 share/doc/radicale/COPYING.md
 share/doc/radicale/DOCUMENTATION.md
 share/doc/radicale/README.md
