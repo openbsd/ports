@@ -1,6 +1,6 @@
 COMMENT=	Python bindings for the ammonia html sanitizer
 
-MODPY_DISTV=	0.3.7
+MODPY_DISTV=	0.3.8
 DISTNAME=	nh3-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
