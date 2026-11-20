@@ -1,10 +1,10 @@
 COMMENT=	tool to measure maximum achievable bandwidth on IP networks
 
-V=		3.22
+V=		3.22.1
 DISTNAME=	iperf-${V}
 PKGNAME=	iperf3-${V}
 
-SHARED_LIBS +=	iperf                7.0      # unknown
+SHARED_LIBS +=	iperf                8.0      # unknown
 
 CATEGORIES=	net
 
