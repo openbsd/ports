@@ -2,7 +2,7 @@ COMMENT-main=	helper library for networking and security applications
 COMMENT-gtk3=	gwenhywfar GTK+3 support library
 COMMENT-qt6=	gwenhywfar Qt6 support library
 
-V=		5.14.3
+V=		5.14.4
 DISTNAME=	gwenhywfar-${V}
 
 PKGNAME-gtk3=	gwenhywfar-gtk3-${V}
@@ -60,7 +60,7 @@ WANTLIB-qt6 += Qt6SerialPort
 WANTLIB-qt6 += drm_amdgpu drm_intel
 .endif
 
-SITES=			https://www.aquamaniac.de/rdm/attachments/download/662/
+SITES=			https://www.aquamaniac.de/rdm/attachments/download/664/
 
 MODULES=		x11/qt6
 
@@ -85,10 +85,7 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-guis="gtk3 qt6 cpp" \
-			--with-moc="${MODQT6_MOC}" \
-			--with-qmake="${MODQT6_QMAKE}" \
-			--with-uic="${MODQT6_UIC}" \
-			--enable-ssl
+			--with-qmake="${MODQT6_QMAKE}"
 
 CONFIGURE_ENV=		QT_LRELEASE="${MODQT6_LRELEASE}" \
 			QT_LUPDATE="${LOCALBASE}/bin/lupdate-qt6" \
