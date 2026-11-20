@@ -1,6 +1,6 @@
 COMMENT=	MySQL driver in pure Python
 
-MODPY_DISTV=	1.2.3
+MODPY_DISTV=	1.2.4
 DISTNAME=	pymysql-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
