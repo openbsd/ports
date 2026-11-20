@@ -1,6 +1,6 @@
 COMMENT=	streamlined Cython bindings for the HarfBuzz shaping engine
 
-MODPY_DISTV=	0.56.2
+MODPY_DISTV=	0.57.0
 DISTNAME=	uharfbuzz-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
