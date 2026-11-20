@@ -1,6 +1,6 @@
 COMMENT=	typing stubs for Python dateutil
 
-MODPY_DISTV=	2.9.0.20260807
+MODPY_DISTV=	2.9.0.20261116
 DISTNAME=	types_python_dateutil-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
