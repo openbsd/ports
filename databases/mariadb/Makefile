@@ -4,14 +4,14 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	12.3.3
+VERSION=	12.3.4
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION=	3
 EPOCH=		1
 
 CATEGORIES=	databases
-SITES=		https://archive.mariadb.org/${DISTNAME}/source/ \
+SITES=		https://mirror.rackspace.com/mariadb/mariadb-${VERSION}/source/ \
+		https://archive.mariadb.org/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
 FMT_V=		12.2.0
@@ -30,10 +30,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c crypto execinfo m pthread ssl z
-WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2 zstd
-WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
+WANTLIB=	${COMPILER_LIBCXX} c crypto execinfo m pcre2-8 pthread ssl z
+WANTLIB-main=	${WANTLIB} curses pcre2-posix readline
+WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 snappy xml2 zstd
+WANTLIB-tests=	${WANTLIB} pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -48,7 +48,8 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-LIB_DEPENDS-main=	${LIB_DEPENDS}
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			devel/pcre2
 RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=12.3v1,<12.4v1 \
 			databases/p5-DBD-MariaDB \
 			misc/findutils \

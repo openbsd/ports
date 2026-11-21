@@ -1,7 +1,7 @@
 Index: scripts/mysqld_safe.sh
 --- scripts/mysqld_safe.sh.orig
 +++ scripts/mysqld_safe.sh
-@@ -28,8 +28,8 @@ defaults_group_suffix=
+@@ -33,8 +33,8 @@ defaults_group_suffix=
  logging=init
  want_syslog=0
  syslog_tag=
@@ -12,7 +12,7 @@ Index: scripts/mysqld_safe.sh
  pid_file=
  err_log=
  err_log_base=
-@@ -740,7 +740,7 @@ then
+@@ -743,7 +743,7 @@ then
      [ "$user" ] && chown $user $mysql_unix_port_dir
      [ "$group" ] && chgrp $group $mysql_unix_port_dir
    fi

@@ -11,7 +11,7 @@ Index: libmariadb/libmariadb/secure/openssl.c
  
        for (i=0; i < CRYPTO_num_locks(); i++)
          pthread_mutex_destroy(&LOCK_crypto[i]);
-@@ -905,7 +904,7 @@ int ma_tls_verify_server_cert(MARIADB_TLS *ctls, unsig
+@@ -910,7 +909,7 @@ int ma_tls_verify_server_cert(MARIADB_TLS *ctls, unsig
        goto error;
      }
  

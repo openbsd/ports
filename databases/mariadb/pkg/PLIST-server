@@ -52,14 +52,12 @@ bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
 bin/wsrep_sst_rsync_wan
 include/mysql/server/
-include/mysql/server/big_endian.h
 include/mysql/server/decimal.h
 include/mysql/server/errmsg.h
 include/mysql/server/handler_ername.h
 include/mysql/server/handler_state.h
 include/mysql/server/json_lib.h
 include/mysql/server/keycache.h
-include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
@@ -164,7 +162,6 @@ include/mysql/server/private/char_buffer.h
 include/mysql/server/private/charset_collations.h
 include/mysql/server/private/client_settings.h
 include/mysql/server/private/compat56.h
-include/mysql/server/private/config.h
 include/mysql/server/private/contributors.h
 include/mysql/server/private/create_options.h
 include/mysql/server/private/create_tmp_table.h
@@ -506,8 +503,47 @@ include/mysql/server/private/waiting_threads.h
 include/mysql/server/private/welcome_copyright_notice.h
 include/mysql/server/private/winservice.h
 include/mysql/server/private/wqueue.h
+include/mysql/server/private/wsrep/
 include/mysql/server/private/wsrep.h
+include/mysql/server/private/wsrep/allowlist_service.hpp
+include/mysql/server/private/wsrep/atomic.hpp
+include/mysql/server/private/wsrep/buffer.hpp
+include/mysql/server/private/wsrep/chrono.hpp
+include/mysql/server/private/wsrep/client_id.hpp
+include/mysql/server/private/wsrep/client_service.hpp
+include/mysql/server/private/wsrep/client_state.hpp
+include/mysql/server/private/wsrep/compiler.hpp
+include/mysql/server/private/wsrep/condition_variable.hpp
+include/mysql/server/private/wsrep/connection_monitor_service.hpp
+include/mysql/server/private/wsrep/encryption_service.hpp
+include/mysql/server/private/wsrep/event_service.hpp
+include/mysql/server/private/wsrep/exception.hpp
+include/mysql/server/private/wsrep/gtid.hpp
+include/mysql/server/private/wsrep/high_priority_service.hpp
+include/mysql/server/private/wsrep/id.hpp
+include/mysql/server/private/wsrep/key.hpp
+include/mysql/server/private/wsrep/lock.hpp
+include/mysql/server/private/wsrep/logger.hpp
+include/mysql/server/private/wsrep/mutex.hpp
+include/mysql/server/private/wsrep/provider.hpp
+include/mysql/server/private/wsrep/provider_options.hpp
+include/mysql/server/private/wsrep/reporter.hpp
+include/mysql/server/private/wsrep/seqno.hpp
+include/mysql/server/private/wsrep/server_service.hpp
+include/mysql/server/private/wsrep/server_state.hpp
+include/mysql/server/private/wsrep/sr_key_set.hpp
+include/mysql/server/private/wsrep/storage_service.hpp
+include/mysql/server/private/wsrep/streaming_context.hpp
+include/mysql/server/private/wsrep/thread.hpp
+include/mysql/server/private/wsrep/thread_service.hpp
+include/mysql/server/private/wsrep/tls_service.hpp
+include/mysql/server/private/wsrep/transaction.hpp
+include/mysql/server/private/wsrep/transaction_id.hpp
+include/mysql/server/private/wsrep/version.hpp
+include/mysql/server/private/wsrep/view.hpp
+include/mysql/server/private/wsrep/xid.hpp
 include/mysql/server/private/wsrep_allowlist_service.h
+include/mysql/server/private/wsrep_api.h
 include/mysql/server/private/wsrep_applier.h
 include/mysql/server/private/wsrep_binlog.h
 include/mysql/server/private/wsrep_client_service.h
@@ -576,6 +612,8 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/mysql_clear_password.so
 @so lib/mysql/plugin/parsec.so
 @so lib/mysql/plugin/password_reuse_check.so
+@so lib/mysql/plugin/plugin_name_ascii.so
+@so lib/mysql/plugin/plugin_name_non_ascii.so
 @so lib/mysql/plugin/provider_bzip2.so
 @so lib/mysql/plugin/provider_lz4.so
 @so lib/mysql/plugin/provider_lzma.so
@@ -642,6 +680,12 @@ libexec/mysqld
 @man man/man1/wsrep_sst_rsync_wan.1
 @man man/man8/mariadbd.8
 @man man/man8/mysqld.8
+share/cmake/
+share/cmake/mariadb-plugin/
+share/cmake/mariadb-plugin/mariadb-plugin-config.cmake
+share/cmake/mariadb-plugin/mariadb-plugin-defines.cmake
+share/cmake/mariadb-plugin/mariadb-plugin-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/mariadb-plugin/mariadb-plugin-targets.cmake
 share/doc/mysql/
 share/doc/mysql/COPYING
 share/doc/mysql/CREDITS
