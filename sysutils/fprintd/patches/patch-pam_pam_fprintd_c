@@ -4,7 +4,7 @@
 Index: pam/pam_fprintd.c
 --- pam/pam_fprintd.c.orig
 +++ pam/pam_fprintd.c
-@@ -116,7 +116,7 @@ send_msg (pam_handle_t *pamh, const char
+@@ -116,7 +116,7 @@ send_msg (pam_handle_t *pamh, const char *msg, int sty
  {
    const struct pam_message mymsg = {
      .msg_style = style,

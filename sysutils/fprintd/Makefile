@@ -4,6 +4,7 @@ COMMENT-pam=		PAM module for fprintd
 V=			1.94.5
 DISTNAME=		fprintd-v${V}
 PKGNAME=		fprintd-${V}
+REVISION=		0
 
 CATEGORIES=    		sysutils
 
