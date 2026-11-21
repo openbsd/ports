@@ -1,6 +1,6 @@
 COMMENT=		syntax checks for Puppet manifests and templates
 
-DISTNAME=		puppet-syntax-7.2.0
+DISTNAME=		puppet-syntax-7.3.0
 CATEGORIES=		sysutils
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
