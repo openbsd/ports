@@ -1,5 +1,7 @@
-libusb_close() doesn't release claimed interfaces: close the ugen(4)
-endpoint nodes in obsd_close(), or the next handle gets EBUSY.
+- libusb_close() doesn't release claimed interfaces: close the ugen(4)
+  endpoint nodes in obsd_close(), or the next handle gets EBUSY.
+- Interrupt IN transfers without timeout: poll with a short timeout,
+  ugen(4) would end the read after one tick (and log it).
 
 Index: libusb/os/openbsd_usb.c
 --- libusb/os/openbsd_usb.c.orig
@@ -36,3 +38,31 @@ Index: libusb/os/openbsd_usb.c
  
  	return LIBUSB_SUCCESS;
  }
+@@ -656,6 +664,7 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
+ 	struct libusb_transfer *transfer;
+ 	struct device_priv *dpriv;
+ 	int fd, nr = 1;
++	unsigned int timeout;
+ 
+ 	transfer = USBI_TRANSFER_TO_LIBUSB_TRANSFER(itransfer);
+ 	dpriv = usbi_get_device_priv(transfer->dev_handle->dev);
+@@ -670,7 +679,18 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
+ 	if ((fd = _access_endpoint(transfer)) < 0)
+ 		return _errno_to_libusb(errno);
+ 
+-	if (ioctl(fd, USB_SET_TIMEOUT, &transfer->timeout) < 0)
++	/*
++	 * Transfers are synchronous and ugen(4) cannot block forever on an
++	 * interrupt endpoint: without a timeout the read ends after one tick.
++	 * Poll with a short timeout instead; * the caller gets an empty
++	 * transfer and resubmits.
++	 */
++	timeout = transfer->timeout;
++	if (timeout == 0 && IS_XFERIN(transfer) &&
++	    transfer->type == LIBUSB_TRANSFER_TYPE_INTERRUPT)
++		timeout = 100;
++
++	if (ioctl(fd, USB_SET_TIMEOUT, &timeout) < 0)
+ 		return _errno_to_libusb(errno);
+ 
+ 	if (IS_XFERIN(transfer)) {
