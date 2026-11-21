@@ -1,6 +1,6 @@
 COMMENT =		parser/generator of iCalendar files
 
-MODPY_DISTV =		7.3.0
+MODPY_DISTV =		7.3.2
 DISTNAME =		icalendar-${MODPY_DISTV}
 PKGNAME =		py-icalendar-${MODPY_DISTV}
 
