@@ -1,29 +1,27 @@
-calcurse uses long for times all over the place
+fixes for systems where time_t is not long (i.e. 32-bit machines, where
+it is long long).
 
 Index: src/utils.c
 --- src/utils.c.orig
 +++ src/utils.c
-@@ -1102,8 +1102,10 @@ int parse_date_increment(const char *string, unsigned 
- 		long p;
- 		if (overflow_mul(incr, DAYINSEC, &p))
- 			return 0;
--		if (overflow_add(start, p, &start))
-+		long start_l = start;
-+		if (overflow_add(start, p, &start_l))
- 			return 0;
-+		start = start_l;
- 		if (!check_sec(&start))
- 			return 0;
- 	}
-@@ -1325,8 +1327,10 @@ int parse_datetime(const char *string, time_t *ts, tim
- 	if (dur) {
- 		/* want: sec = *ts + dur */
- 		time_t sec;
--		if (overflow_add(*ts, dur, &sec))
-+		long sec_l;
-+		if (overflow_add(*ts, dur, &sec_l))
- 			return 0;
-+		sec = sec_l;
- 		if (!check_sec(&sec))
- 			return 0;
- 	}
+@@ -358,9 +358,9 @@ int is_all_digit(const char *string)
+ }
+ 
+ /* Given an item date expressed in seconds, return its start time in seconds. */
+-long get_item_time(time_t date)
++time_t get_item_time(time_t date)
+ {
+-	return (long)(get_item_hour(date) * HOURINSEC +
++	return (time_t)(get_item_hour(date) * HOURINSEC +
+ 		      get_item_min(date) * MININSEC);
+ }
+ 
+@@ -619,7 +619,7 @@ time_t get_sec_date(struct date date)
+ 	return date2sec(date, 0, 0);
+ }
+ 
+-long min2sec(unsigned minutes)
++time_t min2sec(unsigned minutes)
+ {
+ 	return minutes * MININSEC;
+ }

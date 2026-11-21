@@ -1,19 +1,38 @@
-calcurse uses long for times all over the place; dirty fix for 32-bit
-arch with 64-bit time_t
+fixes for systems where time_t is not long (i.e. 32-bit machines, where
+it is long long).
 
 Index: src/args.c
 --- src/args.c.orig
 +++ src/args.c
-@@ -251,10 +251,11 @@ static void next_arg(void)
+@@ -224,7 +224,7 @@ static int todo_arg(const char *format, int *limit, st
+ static void next_arg(void)
+ {
+ 	struct notify_app next_app;
+-	const long current_time = now();
++	const time_t current_time = now();
+ 	int time_left, hours_left, min_left;
+ 
+ 	next_app.time = date_sec_change(current_time, 0, 1);
+@@ -251,7 +251,7 @@ static void next_arg(void)
  /*
   * Print the date on stdout.
   */
 -static void arg_print_date(long date)
-+static void arg_print_date(long date_l)
++static void arg_print_date(time_t date)
  {
  	char date_str[BUFSIZ];
  	struct tm lt;
-+	time_t date = date_l;
+@@ -268,11 +268,11 @@ static void arg_print_date(long date)
+  * If no end date is given (-1), a range of 1 day is considered.
+  */
+ static void
+-date_arg_from_to(long from, long to, int add_line, const char *fmt_apt,
++date_arg_from_to(time_t from, time_t to, int add_line, const char *fmt_apt,
+ 		 const char *fmt_rapt, const char *fmt_ev, const char *fmt_rev,
+ 		 int *limit)
+ {
+-	long date;
++	time_t date;
  
- 	localtime_r((time_t *) & date, &lt);
- 	strftime(date_str, BUFSIZ, conf.output_datefmt, &lt);
+ 	for (date = from; date <= to; date = date_sec_change(date, 0, 1)) {
+ 		day_store_items(date, 0, 1);

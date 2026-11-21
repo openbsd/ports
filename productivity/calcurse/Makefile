@@ -1,11 +1,11 @@
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-4.8.2
-REVISION=	1
+DISTNAME=	calcurse-4.9.1
 
 CATEGORIES=	productivity
 
 HOMEPAGE=	https://calcurse.org/
+SITES=		https://calcurse.org/files/
 
 EPOCH=		0
 
@@ -13,8 +13,6 @@ EPOCH=		0
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl m pthread
-
-SITES=		${HOMEPAGE}files/
 
 RUN_DEPENDS=	www/py-httplib2
 
