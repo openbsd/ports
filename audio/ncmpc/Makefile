@@ -1,6 +1,6 @@
 COMMENT=		curses based frontend for mpd
 
-VER=			0.54
+VER=			0.55
 DISTNAME=		ncmpc-${VER}
 CATEGORIES=		audio
 
@@ -13,7 +13,7 @@ EPOCH=			0
 PERMIT_PACKAGE=	Yes
 
 # make sure to regen WANTLIB on ld.lld arches (-Wl,--as-needed)
-WANTLIB +=	${COMPILER_LIBCXX} c curses iconv intl m mpdclient>=1
+WANTLIB +=	${COMPILER_LIBCXX} c curses intl m mpdclient>=1
 WANTLIB +=	pcre2-8 fmt
 
 SITES=			https://www.musicpd.org/download/ncmpc/${VER:R}/
@@ -36,6 +36,8 @@ LIB_DEPENDS=		audio/libmpdclient>=2.20 \
 
 CONFIGURE_ARGS=		-Dlirc=disabled \
 			-Dhtml_manual=false \
+			-Dcharset=disabled \
+			-Dzeroconf=disabled \
 			-Dlocale=enabled \
 			-Dmouse=enabled
 
