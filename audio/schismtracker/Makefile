@@ -3,6 +3,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 V =		20261102
 DISTNAME =	schismtracker-${V}.source
 PKGNAME =	${DISTNAME:S/.source//}
+REVISION =	0
 
 CATEGORIES =	audio x11
 
@@ -38,7 +39,8 @@ CONFIGURE_ARGS =	--enable-sdl2-linking \
 			--without-sdl12 \
 			--without-sdl3 \
 			--without-avformat \
-			--without-flac
+			--without-flac \
+			--without-gstreamer
 
 CFLAGS +=		-I${LOCALBASE}/include/libutf8proc
 
