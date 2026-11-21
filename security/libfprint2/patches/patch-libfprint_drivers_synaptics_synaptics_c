@@ -1,12 +1,160 @@
-- libusb cannot reset a device on OpenBSD; don't fail the probe on that
-- Ignore zero-length interrupt completions
+- libusb cannot reset a device on OpenBSD; don't fail the probe on that.
+- Ignore zero-length interrupt completions (see comment).
 - Resubmit the interrupt wait with the interrupt cancellable, so that
   cancel() can still end it.
+- Without the reset the sensor may not be ready right after boot: until it
+  has reported a finger once, restart verify/identify transparently (see
+  comment).
 
 Index: libfprint/drivers/synaptics/synaptics.c
 --- libfprint/drivers/synaptics/synaptics.c.orig
 +++ libfprint/drivers/synaptics/synaptics.c
-@@ -233,11 +233,12 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+@@ -27,6 +27,132 @@
+ 
+ G_DEFINE_TYPE (FpiDeviceSynaptics, fpi_device_synaptics, FP_TYPE_DEVICE)
+ 
++/*
++ * Without the USB reset done at probe time (unsupported on e.g. OpenBSD), the
++ * sensor may not be usable yet when fprintd starts right after boot: verify
++ * and identify fail with BMKT_GENERAL_ERROR or never report a finger, while
++ * GET_FPS_MODE says idle. An operation started in that state stays broken,
++ * one started once the sensor has settled works.
++ *
++ * So until the sensor has reported a finger once, restart the operation
++ * transparently: after a general error, and whenever no finger was reported
++ * for a while after it asked for one.
++ */
++#define SETTLE_WATCHDOG_MS	3000	/* no finger report: restart */
++#define SETTLE_RETRY_MS		2000	/* general error: retry */
++
++static void verify (FpDevice *device);
++static void identify (FpDevice *device);
++static void cancel (FpDevice *dev);
++
++static gboolean
++settle_guard (FpiDeviceSynaptics *self)
++{
++  return self->reset_unsupported && !self->finger_seen;
++}
++
++static void
++settle_clear (FpiDeviceSynaptics *self)
++{
++  if (self->settle_source)
++    {
++      g_source_destroy (self->settle_source);
++      self->settle_source = NULL;
++    }
++}
++
++static void
++settle_complete (FpDevice *device, GError *error)
++{
++  if (fpi_device_get_current_action (device) == FPI_DEVICE_ACTION_IDENTIFY)
++    fpi_device_identify_complete (device, error);
++  else
++    fpi_device_verify_complete (device, error);
++}
++
++/* Start the current verify/identify again, unless it was cancelled. */
++static void
++settle_restart (FpDevice *device)
++{
++  FpiDeviceAction action = fpi_device_get_current_action (device);
++
++  if (g_cancellable_is_cancelled (fpi_device_get_cancellable (device)))
++    {
++      settle_complete (device, g_error_new_literal (G_IO_ERROR, G_IO_ERROR_CANCELLED,
++                                                    "Operation was cancelled"));
++      return;
++    }
++
++  if (action == FPI_DEVICE_ACTION_IDENTIFY)
++    identify (device);
++  else
++    verify (device);
++}
++
++static void
++settle_retry_cb (FpDevice *device, gpointer user_data)
++{
++  FPI_DEVICE_SYNAPTICS (device)->settle_source = NULL;
++  settle_restart (device);
++}
++
++static void
++settle_watchdog_cb (FpDevice *device, gpointer user_data)
++{
++  FpiDeviceSynaptics *self = FPI_DEVICE_SYNAPTICS (device);
++
++  self->settle_source = NULL;
++
++  /* Only while waiting for a finger that never came */
++  if (!settle_guard (self) || self->finger_on_sensor || self->cmd_suspended ||
++      self->cmd_ssm == NULL ||
++      fpi_ssm_get_cur_state (self->cmd_ssm) != SYNAPTICS_CMD_WAIT_INTERRUPT)
++    return;
++
++  g_message ("No finger reported yet, restarting operation (sensor may not be ready)");
++  self->restarting = TRUE;
++  cancel (device);
++}
++
++static void
++settle_arm_watchdog (FpiDeviceSynaptics *self)
++{
++  settle_clear (self);
++  if (settle_guard (self))
++    self->settle_source = fpi_device_add_timeout (FP_DEVICE (self), SETTLE_WATCHDOG_MS,
++                                                  settle_watchdog_cb, NULL, NULL);
++}
++
++/* General error while unsettled: retry later instead of failing. */
++static gboolean
++settle_retry_on_error (FpiDeviceSynaptics *self, gint result)
++{
++  if (result != BMKT_GENERAL_ERROR || !settle_guard (self))
++    return FALSE;
++
++  g_message ("General error from the sensor, retrying (sensor may not be ready)");
++  settle_clear (self);
++  self->settle_source = fpi_device_add_timeout (FP_DEVICE (self), SETTLE_RETRY_MS,
++                                                settle_retry_cb, NULL, NULL);
++  return TRUE;
++}
++
++/* The cancellation we asked for: restart instead of completing. */
++static gboolean
++settle_restart_on_cancel (FpiDeviceSynaptics *self, GError *error)
++{
++  if (!self->restarting)
++    return FALSE;
++
++  self->restarting = FALSE;
++  if (!g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
++    return FALSE;
++
++  g_error_free (error);
++  settle_restart (FP_DEVICE (self));
++  return TRUE;
++}
++
+ static void init_identify_msg (FpDevice *device);
+ static void compose_and_send_identify_msg (FpDevice *device);
+ 
+@@ -112,6 +238,11 @@ cmd_receive_cb (FpiUsbTransfer *transfer,
+       if (msg_resp.payload[0] == 0x01)
+         {
+           self->finger_on_sensor = TRUE;
++          if (!self->finger_seen)
++            {
++              self->finger_seen = TRUE;
++              settle_clear (self);
++            }
+           fpi_device_report_finger_status_changes (device,
+                                                    FP_FINGER_STATUS_PRESENT,
+                                                    FP_FINGER_STATUS_NONE);
+@@ -233,11 +364,12 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
                    gpointer        user_data,
                    GError         *error)
  {
@@ -20,7 +168,7 @@ Index: libfprint/drivers/synaptics/synaptics.c
        if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_CANCELLED))
          {
            g_error_free (error);
-@@ -252,6 +253,22 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+@@ -252,6 +384,22 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
        return;
      }
  
@@ -43,7 +191,7 @@ Index: libfprint/drivers/synaptics/synaptics.c
    if (transfer->buffer[0] & USB_ASYNC_MESSAGE_PENDING)
      {
        fpi_ssm_next_state (transfer->ssm);
-@@ -261,7 +278,7 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
+@@ -261,7 +409,7 @@ cmd_interrupt_cb (FpiUsbTransfer *transfer,
        fpi_device_critical_leave (device);
        fpi_usb_transfer_submit (fpi_usb_transfer_ref (transfer),
                                 0,
@@ -52,7 +200,62 @@ Index: libfprint/drivers/synaptics/synaptics.c
                                 cmd_interrupt_cb,
                                 NULL);
      }
-@@ -1273,8 +1290,14 @@ dev_probe (FpDevice *device)
+@@ -576,6 +724,9 @@ verify_msg_cb (FpiDeviceSynaptics *self,
+ 
+   if (error)
+     {
++      if (settle_restart_on_cancel (self, error))
++        return;
++      settle_clear (self);
+       fpi_device_verify_complete (device, error);
+       return;
+     }
+@@ -597,6 +748,7 @@ verify_msg_cb (FpiDeviceSynaptics *self,
+                                                FP_FINGER_STATUS_NEEDED,
+                                                FP_FINGER_STATUS_NONE);
+       fp_info ("Place Finger on the Sensor!");
++      settle_arm_watchdog (self);
+       break;
+ 
+     case BMKT_RSP_CAPTURE_COMPLETE:
+@@ -604,6 +756,9 @@ verify_msg_cb (FpiDeviceSynaptics *self,
+       break;
+ 
+     case BMKT_RSP_VERIFY_FAIL:
++      if (settle_retry_on_error (self, resp->result))
++        break;
++
+       if (resp->result == BMKT_SENSOR_STIMULUS_ERROR)
+         {
+           fp_info ("Match error occurred");
+@@ -706,6 +861,9 @@ identify_msg_cb (FpiDeviceSynaptics *self,
+ 
+   if (error)
+     {
++      if (settle_restart_on_cancel (self, error))
++        return;
++      settle_clear (self);
+       fpi_device_identify_complete (device, error);
+       return;
+     }
+@@ -722,6 +880,7 @@ identify_msg_cb (FpiDeviceSynaptics *self,
+     {
+     case BMKT_RSP_ID_READY:
+       fp_info ("Place Finger on the Sensor!");
++      settle_arm_watchdog (self);
+       break;
+ 
+     case BMKT_RSP_SEND_NEXT_USER_ID:
+@@ -731,6 +890,8 @@ identify_msg_cb (FpiDeviceSynaptics *self,
+       }
+ 
+     case BMKT_RSP_ID_FAIL:
++      if (settle_retry_on_error (self, resp->result))
++        break;
+       if (resp->result == BMKT_SENSOR_STIMULUS_ERROR)
+         {
+           fp_info ("Match error occurred");
+@@ -1273,8 +1434,15 @@ dev_probe (FpDevice *device)
  
    if (!g_usb_device_reset (usb_dev, &error))
      {
@@ -66,6 +269,33 @@ Index: libfprint/drivers/synaptics/synaptics.c
 +        }
 +      fp_dbg ("%s g_usb_device_reset not supported, continuing", G_STRFUNC);
 +      g_clear_error (&error);
++      self->reset_unsupported = TRUE;
      }
  
    if (!g_usb_device_claim_interface (usb_dev, 0, 0, &error))
+@@ -1450,6 +1618,9 @@ dev_exit (FpDevice *device)
+ 
+   G_DEBUG_HERE ();
+ 
++  settle_clear (self);
++  self->restarting = FALSE;
++
+   synaptics_sensor_cmd (self, 0, BMKT_CMD_POWER_DOWN_NOTIFY, NULL, 0, fps_deinit_cb);
+ }
+ 
+@@ -1457,6 +1628,15 @@ static void
+ cancel (FpDevice *dev)
+ {
+   FpiDeviceSynaptics *self = FPI_DEVICE_SYNAPTICS (dev);
++
++  /* Waiting to retry after a general error: no command is running. */
++  if (self->settle_source && self->cmd_ssm == NULL)
++    {
++      settle_clear (self);
++      settle_complete (dev, g_error_new_literal (G_IO_ERROR, G_IO_ERROR_CANCELLED,
++                                                 "Operation was cancelled"));
++      return;
++    }
+ 
+   /* We just send out a cancel command and hope for the best. */
+   synaptics_sensor_cmd (self, -1, BMKT_CMD_CANCEL_OP, NULL, 0, NULL);

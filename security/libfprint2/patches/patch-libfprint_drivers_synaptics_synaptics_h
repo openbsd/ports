@@ -1,0 +1,16 @@
+State for the settle handling (see synaptics.c).
+
+Index: libfprint/drivers/synaptics/synaptics.h
+--- libfprint/drivers/synaptics/synaptics.h.orig
++++ libfprint/drivers/synaptics/synaptics.h
+@@ -122,6 +122,10 @@ struct _FpiDeviceSynaptics
+ 
+   gint                  enroll_stage;
+   gboolean              finger_on_sensor;
++  gboolean              reset_unsupported;
++  gboolean              finger_seen;
++  gboolean              restarting;
++  GSource              *settle_source;
+   GPtrArray            *list_result;
+ 
+ 

@@ -3,6 +3,7 @@ COMMENT=		library for fingerprint reader devices
 V=			1.94.100
 DISTNAME=		libfprint-v${V}
 PKGNAME=		libfprint2-${V}
+REVISION=		0
 
 CATEGORIES=    		security
 
