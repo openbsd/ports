@@ -1,8 +1,8 @@
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.133
+VERSION=		3.134
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
-NSPR_VERSION=		4.39
+NSPR_VERSION=		4.41
 DISTNAME=		nss-${VERSION}
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -53,7 +53,7 @@ ALL_TARGET=		nss_build_all
 SUBST_VARS +=		VERSION NSPR_VERSION
 
 # Don't forget to sync these with http://wiki.mozilla.org/NSS:ToolsToShip
-MAIN_TOOLS=		certutil modutil pk12util signtool ssltap crlutil \
+MAIN_TOOLS=		certutil modutil pk12util ssltap crlutil \
 			cmsutil signver
 
 do-install:

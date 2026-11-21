@@ -4,7 +4,6 @@
 @bin bin/modutil
 bin/nss-config
 @bin bin/pk12util
-@bin bin/signtool
 @bin bin/signver
 @bin bin/ssltap
 include/nss/
@@ -22,9 +21,6 @@ include/nss/cryptoht.h
 include/nss/eccutil.h
 include/nss/ecl-exp.h
 include/nss/hasht.h
-include/nss/jar-ds.h
-include/nss/jar.h
-include/nss/jarfile.h
 include/nss/key.h
 include/nss/keyhi.h
 include/nss/keyt.h
@@ -126,6 +122,5 @@ lib/pkgconfig/nss.pc
 @man man/man1/crlutil.1
 @man man/man1/modutil.1
 @man man/man1/pk12util.1
-@man man/man1/signtool.1
 @man man/man1/signver.1
 @man man/man1/ssltap.1
