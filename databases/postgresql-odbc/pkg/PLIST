@@ -1,6 +1,6 @@
-lib/psqlodbca.a
-lib/psqlodbca.la
-@so lib/psqlodbca.so
-lib/psqlodbcw.a
-lib/psqlodbcw.la
-@so lib/psqlodbcw.so
+lib/postgresql/psqlodbca.a
+lib/postgresql/psqlodbca.la
+@so lib/postgresql/psqlodbca.so
+lib/postgresql/psqlodbcw.a
+lib/postgresql/psqlodbcw.la
+@so lib/postgresql/psqlodbcw.so

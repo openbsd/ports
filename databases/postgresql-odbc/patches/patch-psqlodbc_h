@@ -1,4 +1,4 @@
-Fix build on PostgreSQL 16, needed for va_list in a PostgreSQL header.
+Fix build on PostgreSQL >=16, needed for va_list in a PostgreSQL header.
 
 Index: psqlodbc.h
 --- psqlodbc.h.orig
