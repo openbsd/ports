@@ -1,6 +1,6 @@
 COMMENT=	search, filter and sort icalendar data
 
-MODPY_DISTV=	1.2.0
+MODPY_DISTV=	1.3.0
 DISTNAME=	icalendar_searcher-${MODPY_DISTV}
 PKGNAME=	py-icalendar-searcher-${MODPY_DISTV}
 

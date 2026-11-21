@@ -26,5 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/_version.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/collation.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/comma_list.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/filters.py
+lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/py.typed
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/searcher.py
 lib/python${MODPY_VERSION}/site-packages/icalendar_searcher/utils.py
