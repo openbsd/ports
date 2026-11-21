@@ -1,11 +1,10 @@
 COMMENT =	fast compression/decompression library
 
-GH_TAGNAME =	1.1.10
+GH_TAGNAME =	1.3.1
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
-REVISION =	3
 
-SHARED_LIBS =	snappy	3.0
+SHARED_LIBS =	snappy	3.1
 
 CATEGORIES =	archivers
 
