@@ -86,7 +86,6 @@ SUBDIR += khtml
 SUBDIR += kmediaplayer
 SUBDIR += kdesignerplugin
 SUBDIR += kross
-SUBDIR += kdelibs4support
 
 # tier 4
 SUBDIR += frameworkintegration
