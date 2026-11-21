@@ -2,7 +2,7 @@ COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	7.1.2
+GH_TAGNAME =	8.0.0
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
@@ -12,7 +12,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += 	c curl z
+WANTLIB += 	c pthread curl z
 WANTLIB +=	lib/eopenssl35/crypto lib/eopenssl35/ssl
 LIB_DEPENDS +=	net/curl \
 		security/openssl/3.5
