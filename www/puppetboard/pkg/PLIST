@@ -22,6 +22,10 @@ puppetboard/puppetboard/static/css/fonts.css
 puppetboard/puppetboard/static/css/puppetboard.css
 puppetboard/puppetboard/static/css/radiator.css
 puppetboard/puppetboard/static/custom-natural/
+puppetboard/puppetboard/static/custom-natural-ip/
+puppetboard/puppetboard/static/custom-natural-ip/natural-ip.js
+puppetboard/puppetboard/static/custom-natural-size/
+puppetboard/puppetboard/static/custom-natural-size/natural-size.js
 puppetboard/puppetboard/static/custom-natural-time-delta/
 puppetboard/puppetboard/static/custom-natural-time-delta/natural-time-delta.js
 puppetboard/puppetboard/static/custom-natural/natural.js

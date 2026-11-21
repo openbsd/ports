@@ -1,7 +1,6 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_DISTV=		7.0.2
-REVISION=		0
+MODPY_DISTV=		8.1.0
 DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
 
