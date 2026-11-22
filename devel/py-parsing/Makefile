@@ -1,9 +1,8 @@
 COMMENT=	classes and methods to define and execute parsing grammars
 
-MODPY_DISTV=	3.2.3
+MODPY_DISTV=	3.3.3
 DISTNAME=	pyparsing-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -19,6 +18,7 @@ MODPY_PI=	Yes
 
 # test_diagram needs railroad (some others want it too, but test_diagram
 # makes test collection fail)
+# 1 failed, 1982 passed, 6 skipped
 MODPY_PYTEST_ARGS= --ignore tests/test_diagram.py tests
 TEST_DEPENDS=	graphics/py-matplotlib
 
