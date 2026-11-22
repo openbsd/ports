@@ -1,0 +1,12 @@
+Index: capture_freaklabs_zigbee_v2/capture_freaklabs_zigbee_v2.c
+--- capture_freaklabs_zigbee_v2/capture_freaklabs_zigbee_v2.c.orig
++++ capture_freaklabs_zigbee_v2/capture_freaklabs_zigbee_v2.c
+@@ -17,6 +17,8 @@
+ #define BUFFER_SIZE 256
+ 
+ #if defined(SYS_OPENBSD)
++#include <sys/stat.h>
++mode_t _permit_setugid = S_ISUID;
+ #define MODEMDEVICE "/dev/cuaU0"
+ #else
+ #define MODEMDEVICE "/dev/ttyUSB0"

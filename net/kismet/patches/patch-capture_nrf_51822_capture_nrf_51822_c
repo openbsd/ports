@@ -1,0 +1,12 @@
+Index: capture_nrf_51822/capture_nrf_51822.c
+--- capture_nrf_51822/capture_nrf_51822.c.orig
++++ capture_nrf_51822/capture_nrf_51822.c
+@@ -17,6 +17,8 @@
+ #define BUFFER_SIZE 256
+ 
+ #if defined(SYS_OPENBSD)
++#include <sys/stat.h>
++mode_t _permit_setugid = S_ISUID;
+ #define MODEMDEVICE "/dev/cuaU0"
+ #else
+ #define MODEMDEVICE "/dev/ttyUSB0"

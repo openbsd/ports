@@ -1,0 +1,16 @@
+Index: capture_wch_ble_analyzer_pro/wch_ble_analyzer.c
+--- capture_wch_ble_analyzer_pro/wch_ble_analyzer.c.orig
++++ capture_wch_ble_analyzer_pro/wch_ble_analyzer.c
+@@ -33,6 +33,12 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++#if defined (SYS_OPENBSD)
++#include <sys/stat.h>
++mode_t _permit_setugid = S_ISUID;
++#endif
++
+ 
+ /* ── Protocol constants ─────────────────────────────────────────────────── */
+ 

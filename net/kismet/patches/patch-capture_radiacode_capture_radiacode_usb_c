@@ -1,0 +1,15 @@
+Index: capture_radiacode/capture_radiacode_usb.c
+--- capture_radiacode/capture_radiacode_usb.c.orig
++++ capture_radiacode/capture_radiacode_usb.c
+@@ -44,6 +44,11 @@
+ 
+ #include <libusb-1.0/libusb.h>
+ 
++#if defined (SYS_OPENBSD)
++#include <sys/stat.h>
++mode_t _permit_setugid = S_ISUID;
++#endif
++
+ #define BUFFER_SIZE 2048
+ 
+ typedef struct {

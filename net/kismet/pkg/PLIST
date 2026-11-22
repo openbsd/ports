@@ -5,15 +5,19 @@
 @newgroup _kismet:547
 @newuser _kismet:547:_kismet::Kismet Wireless detector:/nonexistent:/sbin/nologin
 @bin bin/kismet
-@bin bin/kismet_cap_antsdr_droneid
 @mode 4550
 @group _kismet
+@bin bin/kismet_cap_antsdr_droneid
+@bin bin/kismet_cap_catsniffer_zigbee
+@bin bin/kismet_cap_cell_at
+@bin bin/kismet_cap_cell_diag
 @bin bin/kismet_cap_freaklabs_zigbee
 @mode
 @group
 @bin bin/kismet_cap_kismetdb
 @mode 4550
 @group _kismet
+@bin bin/kismet_cap_lorapipe
 @bin bin/kismet_cap_nrf_51822
 @bin bin/kismet_cap_nrf_52840
 @bin bin/kismet_cap_nrf_mousejack
@@ -28,22 +32,26 @@
 @bin bin/kismet_cap_rz_killerbee
 @bin bin/kismet_cap_sdr_rtl433
 @bin bin/kismet_cap_sdr_rtladsb
-@mode
-@group
+@bin bin/kismet_cap_sdr_rtlaisadsb
 @bin bin/kismet_cap_serial_radview
-@mode 4550
-@group _kismet
+@bin bin/kismet_cap_sniffle_ble
 @bin bin/kismet_cap_ti_cc_2531
 @bin bin/kismet_cap_ti_cc_2540
+@bin bin/kismet_cap_wch_ble_analyzer_pro
 @mode
 @group
 @bin bin/kismet_discovery
 bin/kismet_server
+@bin bin/kismet_usbserial
 @bin bin/kismetdb_clean
 @bin bin/kismetdb_dump_devices
 @bin bin/kismetdb_statistics
 @bin bin/kismetdb_strip_packets
+@bin bin/kismetdb_to_atlog
+@bin bin/kismetdb_to_celllog
+@bin bin/kismetdb_to_cellndjson
 @bin bin/kismetdb_to_gpx
+@bin bin/kismetdb_to_hdlc
 @bin bin/kismetdb_to_kml
 @bin bin/kismetdb_to_pcap
 @bin bin/kismetdb_to_wiglecsv
@@ -69,10 +77,17 @@ share/examples/kismet/kismet_logging.conf
 @sample ${SYSCONFDIR}/kismet_logging.conf
 share/examples/kismet/kismet_memory.conf
 @sample ${SYSCONFDIR}/kismet_memory.conf
+share/examples/kismet/kismet_meshcore.conf
+@sample ${SYSCONFDIR}/kismet_meshcore.conf
+share/examples/kismet/kismet_meshtastic.conf
+@sample ${SYSCONFDIR}/kismet_meshtastic.conf
+share/examples/kismet/kismet_site.d/
 share/examples/kismet/kismet_uav.conf
 @sample ${SYSCONFDIR}/kismet_uav.conf
 share/examples/kismet/kismet_wardrive.conf
 @sample ${SYSCONFDIR}/kismet_wardrive.conf
+share/examples/kismet/kismet_zigbee.conf
+@sample ${SYSCONFDIR}/kismet_zigbee.conf
 share/kismet/
 @mode 770
 @owner _kismet
@@ -196,16 +211,23 @@ share/kismet/httpd/js/jqueryui-editable.min.js
 share/kismet/httpd/js/js.storage.min.js
 share/kismet/httpd/js/kismet.ui.802_15_4.js
 share/kismet/httpd/js/kismet.ui.adsb.js
+share/kismet/httpd/js/kismet.ui.ais.js
 share/kismet/httpd/js/kismet.ui.alerts.js
+share/kismet/httpd/js/kismet.ui.ant.js
 share/kismet/httpd/js/kismet.ui.base.js
 share/kismet/httpd/js/kismet.ui.bluetooth.js
+share/kismet/httpd/js/kismet.ui.btadv.js
 share/kismet/httpd/js/kismet.ui.btle.js
+share/kismet/httpd/js/kismet.ui.cell.js
 share/kismet/httpd/js/kismet.ui.datasources.js
 share/kismet/httpd/js/kismet.ui.dot11.js
 share/kismet/httpd/js/kismet.ui.gadgets.js
 share/kismet/httpd/js/kismet.ui.iconbar.js
 share/kismet/httpd/js/kismet.ui.js
+share/kismet/httpd/js/kismet.ui.meshcore.js
+share/kismet/httpd/js/kismet.ui.meshtastic.js
 share/kismet/httpd/js/kismet.ui.meter.js
+share/kismet/httpd/js/kismet.ui.nrf_mousejack.js
 share/kismet/httpd/js/kismet.ui.radiation.js
 share/kismet/httpd/js/kismet.ui.sensor.js
 share/kismet/httpd/js/kismet.ui.settings.js
@@ -233,4 +255,6 @@ share/kismet/httpd/webfonts/fa-solid-900.woff2
 share/kismet/httpd/webfonts/fa-v4compatibility.ttf
 share/kismet/httpd/webfonts/fa-v4compatibility.woff2
 share/kismet/kismet_adsb_icao.txt.gz
+share/kismet/kismet_bluetooth_ids.txt.gz
+share/kismet/kismet_bluetooth_manuf.txt.gz
 share/kismet/kismet_manuf.txt.gz

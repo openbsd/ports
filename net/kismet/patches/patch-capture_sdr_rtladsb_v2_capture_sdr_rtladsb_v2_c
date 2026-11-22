@@ -1,43 +1,23 @@
-https://github.com/kismetwireless/kismet/pull/591
-
 Index: capture_sdr_rtladsb_v2/capture_sdr_rtladsb_v2.c
 --- capture_sdr_rtladsb_v2/capture_sdr_rtladsb_v2.c.orig
 +++ capture_sdr_rtladsb_v2/capture_sdr_rtladsb_v2.c
-@@ -453,13 +453,12 @@ static void rtlsdr_callback(unsigned char *buf, uint32
-     kis_capture_handler_t *caph = (kis_capture_handler_t *) ctx;
-     local_adsb_t *adsb = (local_adsb_t *) caph->userdata;
+@@ -89,6 +89,11 @@
+ /* Magnitude of a full scale sample, (128^2) */
+ #define FULL_SCALE   16384.0f
  
--    if (caph->spindown || adsb->do_exit) {
--        return;
--    }
-+    if (caph->spindown || adsb->do_exit) return;
- 
-+    pthread_mutex_lock(&adsb->ready_mutex);
-     memcpy(adsb->buffer, buf, len);
--
--    wrap_cond_signal(&adsb->ready, &adsb->ready_mutex);
-+    pthread_cond_signal(&adsb->ready);
-+    pthread_mutex_unlock(&adsb->ready_mutex);
- }
- 
- static void *rtlsdr_demod_thread(void *arg) {
-@@ -467,15 +466,16 @@ static void *rtlsdr_demod_thread(void *arg) {
-     local_adsb_t *adsb = (local_adsb_t *) caph->userdata;
- 
-     int len;
--
-     while (!caph->spindown && !adsb->do_exit) {
--        wrap_cond_wait(&adsb->ready, &adsb->ready_mutex);
-+        pthread_mutex_lock(&adsb->ready_mutex);
-+        pthread_cond_wait(&adsb->ready, &adsb->ready_mutex);
++#if defined(SYS_OPENBSD)
++mode_t _permit_setugid = S_ISUID;
++#endif
 +
-         len = magnitude(caph, adsb->buffer, DEFAULT_BUF_LENGTH);
-         manchester(caph, (uint16_t *) adsb->buffer, len);
-         messages(caph, (uint16_t *) adsb->buffer, len);
 +
-         pthread_mutex_unlock(&adsb->ready_mutex);
-     }
+ typedef struct {
+     pthread_t demod_thread;
+ 
+@@ -982,7 +987,6 @@ int main(int argc, char *argv[]) {
+         .bias_tee = 0,
+         .bias_tee_gpio = 0,
+     };
 -
-     rtlsdr_cancel_async(adsb->dev);
-     return NULL;
- }
+ 
+     local_adsb.power = (uint32_t *) calloc((DEFAULT_BUF_LENGTH / 2) + 1, sizeof(uint32_t));
+     if (local_adsb.power == NULL) {

@@ -2,10 +2,9 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
-V=		2025-09-R1
+V=		2026-10-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
-REVISION=	2
 
 CATEGORIES=	net security
 
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
 		--disable-wifi-coconut
 
 LDFLAGS_ports-gcc= -latomic
-LDFLAGS=	-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS_${CHOSEN_COMPILER}}
+LDFLAGS=	-lutil -L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS_${CHOSEN_COMPILER}}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
