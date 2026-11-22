@@ -14,7 +14,7 @@ DPB_PROPERTIES = parallel
 # - turn -Wimplicit-function-declaration and -Wincompatible-pointer-types
 #   into simple warnings.
 V = 16.2.0
-REVISION = 14
+REVISION = 15
 GCC_PKGSPEC = >=16,<17
 
 BOOTSTRAP-aarch64 = gcc-bootstrap-aarch64-16.2.0-0.tar.xz
@@ -111,7 +111,6 @@ LANGS := ${LANGS},d
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
-EXTRA_ENV += am_cv_func_iconv=no
 EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
 EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
@@ -230,14 +229,14 @@ RUN_DEPENDS-bootstrap =
 
 WANTLIB-main =		${WANTLIB}
 WANTLIB-ada =		${WANTLIB} pthread util
-WANTLIB-libs =		m pthread
+WANTLIB-libs =		iconv m pthread
 WANTLIB-dlang =		${WANTLIB} pthread
 WANTLIB-bootstrap =
 
 LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/mpfr \
 			devel/libmpc
-LIB_DEPENDS-libs =
+LIB_DEPENDS-libs =	converters/libiconv
 LIB_DEPENDS-bootstrap =
 
 # Modula2's m2rte.so is dynamically linked against stdc++
