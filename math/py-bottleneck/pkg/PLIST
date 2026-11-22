@@ -7,6 +7,11 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/REC
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSES/NUMPY_LICENSE
+lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSES/PANDAS_LICENSE
+lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSES/SCIPY_LICENSE
+lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/licenses/LICENSES/SETUPTOOLS_LICENSE
 lib/python${MODPY_VERSION}/site-packages/bottleneck-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bottleneck/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/${MODPY_PYCACHE}/

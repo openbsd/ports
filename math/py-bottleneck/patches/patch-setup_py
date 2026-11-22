@@ -1,37 +1,37 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -111,7 +111,7 @@ def prepare_modules():
-             "bottleneck.reduce",
+@@ -115,7 +115,7 @@ def prepare_modules():
              sources=["bottleneck/src/reduce.c"],
              depends=base_includes,
+             define_macros=define_macros,
 -            extra_compile_args=["-O2"],
 +            extra_compile_args=[],
          )
      ]
      ext += [
-@@ -122,7 +122,7 @@ def prepare_modules():
-                 "bottleneck/src/move_median/move_median.c",
+@@ -127,7 +127,7 @@ def prepare_modules():
              ],
              depends=base_includes + ["bottleneck/src/move_median/move_median.h"],
+             define_macros=define_macros,
 -            extra_compile_args=["-O2"],
 +            extra_compile_args=[],
          )
      ]
      ext += [
-@@ -130,7 +130,7 @@ def prepare_modules():
-             "bottleneck.nonreduce",
+@@ -136,7 +136,7 @@ def prepare_modules():
              sources=["bottleneck/src/nonreduce.c"],
              depends=base_includes,
+             define_macros=define_macros,
 -            extra_compile_args=["-O2"],
 +            extra_compile_args=[],
          )
      ]
      ext += [
-@@ -138,7 +138,7 @@ def prepare_modules():
-             "bottleneck.nonreduce_axis",
+@@ -145,7 +145,7 @@ def prepare_modules():
              sources=["bottleneck/src/nonreduce_axis.c"],
              depends=base_includes,
+             define_macros=define_macros,
 -            extra_compile_args=["-O2"],
 +            extra_compile_args=[],
          )
