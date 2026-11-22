@@ -1,6 +1,6 @@
 COMMENT =	Digital Forensics date and time
 
-MODPY_DISTV =	20260730
+MODPY_DISTV =	20261027
 DISTNAME =	dfdatetime-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
