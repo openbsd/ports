@@ -1,8 +1,0 @@
---- bin/msgfmt.py.orig	Sun Sep 21 21:29:51 2003
-+++ bin/msgfmt.py	Wed Jul  9 13:13:53 2008
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- # -*- coding: iso-8859-1 -*-
- # Written by Martin v. Löwis <loewis@informatik.hu-berlin.de>
- 

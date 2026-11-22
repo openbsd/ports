@@ -66,7 +66,6 @@
      SUBDIR += maildrop,postfix
      SUBDIR += mailest
      SUBDIR += mailgraph
-     SUBDIR += mailman
      SUBDIR += mailparser
      SUBDIR += mailscanner
      SUBDIR += mairix

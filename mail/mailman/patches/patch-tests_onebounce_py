@@ -1,9 +1,0 @@
-Index: tests/onebounce.py
---- tests/onebounce.py.orig
-+++ tests/onebounce.py
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#!${MODPY_BIN}
- 
- # Copyright (C) 2002-2018 by the Free Software Foundation, Inc.
- #
