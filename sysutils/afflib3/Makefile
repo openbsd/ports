@@ -1,6 +1,6 @@
 COMMENT =	advanced forensic format library and tools
 
-VERSION =	3.7.22
+VERSION =	3.7.23
 GH_ACCOUNT =	sshock
 GH_PROJECT =	AFFLIBv3
 GH_TAGNAME =	v${VERSION}
