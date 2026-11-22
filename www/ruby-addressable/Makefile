@@ -1,6 +1,6 @@
 COMMENT =	replacement for Ruby's URI implementation
 
-DISTNAME = 	addressable-2.9.0
+DISTNAME = 	addressable-2.9.2
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/sporkmonger/addressable
