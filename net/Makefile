@@ -665,7 +665,6 @@
      SUBDIR += py-yandexcloud
      SUBDIR += py-zeroconf
      SUBDIR += py-zmq
-     SUBDIR += py2-dnspython
      SUBDIR += qbittorrent
      SUBDIR += quagga
      SUBDIR += queryperf

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1874 2026/11/22 21:05:40 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1875 2026/11/22 21:09:05 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -691,6 +691,7 @@ setup_obsolete_reason(
 	5 => 'kdelibs4support',
 	8 => 'dma',
 	8 => 'mailman',
+	5 => 'py-dnspython',
 );
 # beware, if ports with an RDEP on Python 3 are removed in a release where
 # the Python major version has changed (e.g. 3.13->3.14 between 7.9 and 8.0)
