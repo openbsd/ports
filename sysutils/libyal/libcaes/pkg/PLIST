@@ -10,6 +10,6 @@ lib/libcaes.la
 @lib lib/libcaes.so.${LIBcaes_VERSION}
 lib/pkgconfig/libcaes.pc
 lib/python${MODPY_VERSION}/site-packages/pycaes.a
+@so lib/python${MODPY_VERSION}/site-packages/pycaes.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pycaes.la
-@so lib/python${MODPY_VERSION}/site-packages/pycaes.so
 @man man/man3/libcaes.3

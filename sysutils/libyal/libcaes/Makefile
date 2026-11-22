@@ -1,6 +1,6 @@
 COMMENT =		library to support cross-platform AES encryption
 
-VERSION =		20251121
+VERSION =		20261028
 BASENAME =		libcaes
 DISTNAME =		${BASENAME}-alpha-${VERSION}
 PKGNAME =		${DISTNAME:S/-alpha//}
