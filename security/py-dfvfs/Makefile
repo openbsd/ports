@@ -1,6 +1,6 @@
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_DISTV =	20260731
+MODPY_DISTV =	20260924
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
