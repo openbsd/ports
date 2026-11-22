@@ -16,6 +16,8 @@ lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}dynamodb.${MOD
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}dynamodb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}googlecloudstorage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}googlecloudstorage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}memcached.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}memcached.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}mongodb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/cachelib/${MODPY_PYCACHE}valkey.${MODPY
 lib/python${MODPY_VERSION}/site-packages/cachelib/base.py
 lib/python${MODPY_VERSION}/site-packages/cachelib/dynamodb.py
 lib/python${MODPY_VERSION}/site-packages/cachelib/file.py
+lib/python${MODPY_VERSION}/site-packages/cachelib/googlecloudstorage.py
 lib/python${MODPY_VERSION}/site-packages/cachelib/memcached.py
 lib/python${MODPY_VERSION}/site-packages/cachelib/mongodb.py
 lib/python${MODPY_VERSION}/site-packages/cachelib/py.typed
