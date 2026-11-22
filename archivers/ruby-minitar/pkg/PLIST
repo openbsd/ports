@@ -11,9 +11,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/SECURITY.md
-${GEM_LIB}/gems/${DISTNAME}/docs/
-${GEM_LIB}/gems/${DISTNAME}/docs/bsdl.txt
-${GEM_LIB}/gems/${DISTNAME}/docs/ruby.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitar/
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitar.rb
@@ -50,6 +47,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_pack_unpack_cycle.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_issue_46.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_issue_62.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_minitar.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_path_normalization.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pax_header.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pax_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tar_header.rb
@@ -57,4 +55,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_tar_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tar_output.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tar_reader.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tar_writer.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_windows_extraction.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

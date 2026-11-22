@@ -1,6 +1,6 @@
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
-DISTNAME =	minitar-1.1.0
+DISTNAME =	minitar-1.2.0
 CATEGORIES =	archivers
 
 HOMEPAGE =	http://www.github.com/atoulme/minitar
