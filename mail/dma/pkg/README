@@ -1,8 +1,0 @@
-+-----------------------------------------------------------------------
-| Running ${PKGSTEM} on OpenBSD
-+-----------------------------------------------------------------------
-
-dma
-===
-Retry is handled via cron, for example this crontab entry.
-*/30	*	*	*	*	${PREFIX}/sbin/dma -q

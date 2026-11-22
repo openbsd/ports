@@ -29,7 +29,6 @@
      SUBDIR += cyrus-imapd,clamav
      SUBDIR += dcc
      SUBDIR += dkimproxy
-     SUBDIR += dma
      SUBDIR += dovecot
      SUBDIR += dovecot,gssapi
      SUBDIR += dovecot-fts-flatcurve
