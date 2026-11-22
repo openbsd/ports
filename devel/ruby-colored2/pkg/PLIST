@@ -1,8 +1,14 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/docs/
+${GEM_LIB}/gems/${DISTNAME}/docs/badges/
+${GEM_LIB}/gems/${DISTNAME}/docs/badges/coverage_badge.svg
+${GEM_LIB}/gems/${DISTNAME}/docs/img/
+${GEM_LIB}/gems/${DISTNAME}/docs/img/colored2-session1.avif
+${GEM_LIB}/gems/${DISTNAME}/docs/img/colored2-session2.avif
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/colored2/
 ${GEM_LIB}/gems/${DISTNAME}/lib/colored2.rb

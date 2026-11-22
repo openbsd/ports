@@ -1,6 +1,6 @@
 COMMENT =		color methods for String class
 
-DISTNAME =		colored2-4.0.3
+DISTNAME =		colored2-4.1.0
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
