@@ -62,6 +62,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/client-pass.key
 ${GEM_LIB}/gems/${DISTNAME}/test/client.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/client.key
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/emudhra-dv-g3b.pem
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.alt.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.foo.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.key
@@ -70,7 +71,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/htdigest
 ${GEM_LIB}/gems/${DISTNAME}/test/htpasswd
 ${GEM_LIB}/gems/${DISTNAME}/test/jruby_ssl_socket/
+${GEM_LIB}/gems/${DISTNAME}/test/jruby_ssl_socket/test_mutable_buffers.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jruby_ssl_socket/test_pemutils.rb
+${GEM_LIB}/gems/${DISTNAME}/test/jruby_ssl_socket/test_socket_timeout.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/server.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/server.key
@@ -79,12 +82,16 @@ ${GEM_LIB}/gems/${DISTNAME}/test/subca.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/subca.key
 ${GEM_LIB}/gems/${DISTNAME}/test/subca.srl
 ${GEM_LIB}/gems/${DISTNAME}/test/test_auth.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_auth_fixture.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_cookie.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper_lifecycle.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hexdump.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_http-access2.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_httpclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_include_client.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_jsonclient.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_proxy_auth_scope.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_ssl.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_ssl_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_webagent-cookie.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

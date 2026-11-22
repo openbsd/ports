@@ -1,6 +1,6 @@
 COMMENT =		libwww-perl for Ruby
 
-DISTNAME =		httpclient-2.9.0
+DISTNAME =		httpclient-2.11.0
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/nahi/httpclient
