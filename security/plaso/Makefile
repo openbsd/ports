@@ -1,6 +1,6 @@
 COMMENT =	engine and tools to automate creation of super timeline
 
-MODPY_DISTV =	20260720
+MODPY_DISTV =	20261027
 DISTNAME =	plaso-${MODPY_DISTV}
 
 CATEGORIES =	security
@@ -81,9 +81,8 @@ RUN_DEPENDS +=	archivers/py-lz4 \
 TEST_DEPENDS +=	devel/py-test \
 		devel/py-mock
 
-# Ran 1542 tests in 535.668s
-# FAILED (errors=1, skipped=21)
-# testGetAttributeNames: Unsupported UUID version
+#Ran 1668 tests in 644.109s
+#OK (skipped=23)
 pre-test:
 	touch ${WRKSRC}/utils/__init__.py
 	sed -i "s/python3-yara >= 3.4.0/python3-yara >= 3.11.0/" ${WRKSRC}/setup.cfg

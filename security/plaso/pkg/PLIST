@@ -1257,6 +1257,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}cri.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}dpkg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}dpkg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}esxi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}esxi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}gdrive_synclog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}gdrive_synclog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}google_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1311,6 +1313,8 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}vsftpd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}winfirewall.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}winfirewall.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}winhttp_api_error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}winhttp_api_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}xchatlog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}xchatlog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/${MODPY_PYCACHE}xchatscrollback.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1330,6 +1334,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/bitbucket_au
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/confluence_access.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/cri.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/dpkg.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/esxi.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/gdrive_synclog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/google_logging.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/iis.py
@@ -1357,6 +1362,7 @@ lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/teamviewer.p
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/viminfo.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/vsftpd.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/winfirewall.py
+lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/winhttp_api_error.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/xchatlog.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/xchatscrollback.py
 lib/python${MODPY_VERSION}/site-packages/plaso/parsers/text_plugins/zsh_extended_history.py
