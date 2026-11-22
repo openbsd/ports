@@ -1,6 +1,5 @@
 COMMENT=	DNS toolkit for Python
 
-# see net/py2-dnspython for py2 version
 MODPY_DISTV=	2.9.2
 DISTNAME=	dnspython-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
