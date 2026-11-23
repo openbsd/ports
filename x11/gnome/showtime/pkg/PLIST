@@ -17,6 +17,17 @@ lib/python${MODPY_VERSION}/site-packages/showtime/${MODPY_PYCACHE}utils.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/showtime/main.py
 lib/python${MODPY_VERSION}/site-packages/showtime/mpris.py
 lib/python${MODPY_VERSION}/site-packages/showtime/play.py
+lib/python${MODPY_VERSION}/site-packages/showtime/util/
+lib/python${MODPY_VERSION}/site-packages/showtime/util/__init__.py
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}connection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}source.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/showtime/util/${MODPY_PYCACHE}source.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/showtime/util/connection.py
+lib/python${MODPY_VERSION}/site-packages/showtime/util/source.py
 lib/python${MODPY_VERSION}/site-packages/showtime/utils.py
 lib/python${MODPY_VERSION}/site-packages/showtime/widgets/
 lib/python${MODPY_VERSION}/site-packages/showtime/widgets/__init__.py
@@ -41,6 +52,7 @@ share/glib-2.0/schemas/org.gnome.Showtime.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.Showtime.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Showtime-symbolic.svg
 share/locale/ar/LC_MESSAGES/showtime.mo
+share/locale/az/LC_MESSAGES/showtime.mo
 share/locale/be/LC_MESSAGES/showtime.mo
 share/locale/bg/LC_MESSAGES/showtime.mo
 share/locale/ca/LC_MESSAGES/showtime.mo
@@ -69,7 +81,11 @@ share/locale/kab/LC_MESSAGES/showtime.mo
 share/locale/kk/LC_MESSAGES/showtime.mo
 share/locale/ko/LC_MESSAGES/showtime.mo
 share/locale/kw/LC_MESSAGES/showtime.mo
+share/locale/lo/LC_MESSAGES/showtime.mo
 share/locale/lt/LC_MESSAGES/showtime.mo
+share/locale/mi/LC_MESSAGES/showtime.mo
+share/locale/mjw/LC_MESSAGES/showtime.mo
+share/locale/my/LC_MESSAGES/showtime.mo
 share/locale/nb/LC_MESSAGES/showtime.mo
 share/locale/ne/LC_MESSAGES/showtime.mo
 share/locale/nl/LC_MESSAGES/showtime.mo
@@ -91,6 +107,7 @@ share/locale/tr/LC_MESSAGES/showtime.mo
 share/locale/ug/LC_MESSAGES/showtime.mo
 share/locale/uk/LC_MESSAGES/showtime.mo
 share/locale/uz/LC_MESSAGES/showtime.mo
+share/locale/vi/LC_MESSAGES/showtime.mo
 share/locale/zh_CN/LC_MESSAGES/showtime.mo
 share/locale/zh_TW/LC_MESSAGES/showtime.mo
 share/metainfo/org.gnome.Showtime.metainfo.xml
