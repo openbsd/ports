@@ -2,7 +2,7 @@ Minimal patches to avoid showing confusing path to users in the welcome
 screen (PHP is normally run chroot'ed on OpenBSD), and use group "_icingaweb2"
 as per OpenBSD standard naming for groups from packages.
 
-We don't have head -c / base64, use an alternative.
+We don't have base64, use an alternative.
 
 Index: modules/setup/application/views/scripts/form/setup-welcome.phtml
 --- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig
