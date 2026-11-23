@@ -107,6 +107,30 @@ MODMOZ_WANTLIB +=	dbus-1
 CONFIGURE_ARGS +=	--enable-dbus
 .endif
 
+# mach woes
+# 2026497
+CONFIGURE_ENV +=	MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
+.if defined(MOZILLA_USE_MACH)
+# 2038789
+CONFIGURE_ENV +=	MOZBUILD_STATE_PATH=${WRKDIR}
+MAKE_ENV +=		MOZBUILD_STATE_PATH=${WRKDIR}
+MAKE_ENV +=		MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
+
+do-configure:
+	@cd ${WRKBUILD} && exec ${_PBUILD} ${SETENV} ${CONFIGURE_ENV} \
+		${WRKSRC}/mach ${MACH_FLAGS} configure ${CONFIGURE_ARGS}
+do-build:
+	@cd ${WRKBUILD} && exec ${_PBUILD} ${SETENV} ${MAKE_ENV} \
+		${WRKSRC}/mach ${MACH_FLAGS} build ${PARALLEL_MAKE_FLAGS}
+do-install:
+	@cd ${WRKBUILD} && umask 022 && exec ${_PBUILD} \
+		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
+		${WRKSRC}/mach ${MACH_FLAGS} install ${PARALLEL_MAKE_FLAGS}
+.else
+CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT ?=	${MODPY_BIN} ${WRKSRC}/configure.py
+.endif
+
 # bug #736961
 SEPARATE_BUILD =	Yes
 
