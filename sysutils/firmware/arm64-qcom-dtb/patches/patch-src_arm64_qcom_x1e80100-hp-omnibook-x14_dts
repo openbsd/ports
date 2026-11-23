@@ -1,0 +1,21 @@
+Index: src/arm64/qcom/x1e80100-hp-omnibook-x14.dts
+--- src/arm64/qcom/x1e80100-hp-omnibook-x14.dts.orig
++++ src/arm64/qcom/x1e80100-hp-omnibook-x14.dts
+@@ -1001,6 +1001,17 @@
+ 	};
+ };
+ 
++&i2c9 {
++	clock-frequency = <400000>;
++
++	status = "okay";
++
++	embedded-controller@28 {
++		compatible = "hp,omnibook-x14-ec";
++		reg = <0x28>;
++	};
++};
++
+ &lpass_tlmm {
+ 	spkr_01_sd_n_active: spkr-01-sd-n-active-state {
+ 		pins = "gpio12";
