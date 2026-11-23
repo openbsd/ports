@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	4.3.0
+GH_TAGNAME=	4.3.1
 
 CATEGORIES=	mail
 
@@ -121,7 +121,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rspamd/{,local.d,override.d}
 	mv ${WRKINST}${SYSCONFDIR}/rspamd/* ${PREFIX}/share/examples/rspamd
-	rm ${PREFIX}/share/rspamd/www/README.md{.beforesubst,${PATCHORIG}}
 	[ -r ${PREFIX}/share/examples/rspamd/local.d/redis.conf ] || \
 	    echo 'servers = "127.0.0.1";' > \
 	    ${PREFIX}/share/examples/rspamd/local.d/redis.conf

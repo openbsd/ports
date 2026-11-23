@@ -3,7 +3,7 @@ Avoid conflict with includes from simdutf installed system-wide
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -137,6 +137,7 @@ include_directories(
+@@ -143,6 +143,7 @@ include_directories(
          "${CMAKE_SOURCE_DIR}/contrib/lua-lpeg"
          "${CMAKE_SOURCE_DIR}/contrib/frozen/include"
          "${CMAKE_SOURCE_DIR}/contrib/fu2/include"
