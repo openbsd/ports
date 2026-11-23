@@ -1,7 +1,7 @@
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
-DISTNAME=	mod_perl-2.0.13
-PKGNAME=	ap2-${DISTNAME:S/-rc/rc/}
+DISTNAME=	mod_perl-2.0.14
+PKGNAME=	ap2-${DISTNAME}
 CATEGORIES=	www net
 
 MODULES=	cpan
