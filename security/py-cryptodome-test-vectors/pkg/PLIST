@@ -8,6 +8,9 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors-${MODPY_DISTV
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AEGIS/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AEGIS/aegis128l_test.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AEGIS/aegis256_test.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/CBCGFSbox128.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/CBCGFSbox192.rsp
@@ -131,6 +134,8 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/T
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/README.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aead_aes_siv_cmac_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aegis128L_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aegis256_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_ccm_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_eax_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/wycheproof/aes_gcm_siv_test.json

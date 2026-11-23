@@ -1,6 +1,6 @@
 COMMENT=	test vectors for pycryptodome
 
-MODPY_DISTV=	1.0.33
+MODPY_DISTV=	1.0.34
 DISTNAME=	pycryptodome_test_vectors-${MODPY_DISTV}
 PKGNAME=	py-cryptodome-test-vectors-${MODPY_DISTV}
 
