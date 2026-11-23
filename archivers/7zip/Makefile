@@ -1,7 +1,7 @@
 COMMENT-main =		file archiver with a high compression ratio
 COMMENT-rar =		RAR decompression for 7-Zip
 
-V =			26.03
+V =			26.06
 DISTNAME =		7z${V:S/.//}-src
 PKGNAME =		7zip-${V}
 DISTFILES =		${DISTNAME}.tar.xz \

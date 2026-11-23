@@ -10,7 +10,13 @@ Index: CPP/7zip/7zip_gcc.mak
  endif
  
  # for object file
-@@ -50,7 +50,7 @@ endif
+@@ -45,12 +45,12 @@ CFLAGS_DEBUG = -g
+ else
+ CFLAGS_DEBUG = -DNDEBUG
+ ifneq ($(CC), $(CROSS_COMPILE)clang)
+-LFLAGS_STRIP = -s
++# LFLAGS_STRIP = -s
+ endif
  endif
  
  # CFLAGS_BASE_LIST = -S
@@ -19,7 +25,7 @@ Index: CPP/7zip/7zip_gcc.mak
   $(CFLAGS_DEBUG) -D_REENTRANT -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE \
   -fPIC
  
-@@ -162,14 +162,14 @@ DEL_OBJ_EXE = -$(RM) $(PROGPATH) $(PROGPATH_STATIC) $(
+@@ -161,14 +161,14 @@ DEL_OBJ_EXE = -$(RM) $(PROGPATH) $(PROGPATH_STATIC) $(
  # LOCAL_LIBS=-lpthread
  # LOCAL_LIBS_DLL=$(LOCAL_LIBS) -ldl
  LIB2 = -lpthread
@@ -36,7 +42,7 @@ Index: CPP/7zip/7zip_gcc.mak
  
  
  ifdef IS_MINGW
-@@ -210,7 +210,7 @@ CXX_WARN_FLAGS =
+@@ -209,7 +209,7 @@ CXX_WARN_FLAGS =
  #-Wno-invalid-offsetof
  #-Wno-reorder
  
