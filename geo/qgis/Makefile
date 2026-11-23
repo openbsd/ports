@@ -6,20 +6,20 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-4.2.3
+DISTNAME =	qgis-4.4.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 SUBST_VARS +=	PKGNAME
 
-SHARED_LIBS =	qgis_core	90.0 \
-		qgis_app	58.0 \
-		qgis_gui	65.0 \
-		qgis_analysis	32.0 \
-		qgis_server	23.1 \
+SHARED_LIBS =	qgis_core	91.0 \
+		qgis_app	59.0 \
+		qgis_gui	66.0 \
+		qgis_analysis	33.0 \
+		qgis_server	23.2 \
 		qgispython	6.0 \
-		qgis_3d		26.0 \
-		qgis_native	0.3
+		qgis_3d		27.0 \
+		qgis_native	0.4
 
 HOMEPAGE =	https://www.qgis.org/
 
@@ -78,7 +78,6 @@ LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
 		geo/spatialindex \
 		geo/spatialite/libspatialite \
 		graphics/exiv2 \
-		print/pdf4qt \
 		security/qca-${QTVER} \
 		security/qtkeychain,${QTVER} \
 		www/fcgi \
@@ -97,12 +96,14 @@ WANTLIB += ${UQTV}Test ${UQTV}Widgets ${UQTV}Xml
 WANTLIB += ${UQTV}Core5Compat ${UQTV}OpenGL ${UQTV}OpenGLWidgets ${UQTV}SvgWidgets
 WANTLIB += ${UQTV}UiTools ${UQTV}WebChannel ${UQTV}WebEngineCore qwt-${QTVER}
 WANTLIB += ${UQTV}WebEngineWidgets ${UQTV}QuickControls2
+WANTLIB += ${UQTV}WaylandClient
+
 
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
 WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z zstd GeographicLib GL SFCGAL
-WANTLIB += Pdf4QtLibCore
+WANTLIB += wayland-client wayland-cursor
 
 # absl wantlibs
 WANTLIB += absl_base absl_base_cpu_detect absl_city absl_civil_time
@@ -142,7 +143,6 @@ CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
-		-DWITH_PDF4QT=TRUE \
 		-DWITH_SFCGAL=TRUE \
 		-DWITH_GEOGRAPHICLIB=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
