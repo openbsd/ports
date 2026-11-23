@@ -1,7 +1,7 @@
 COMMENT=		map widget
 
 GNOME_PROJECT=		libshumate
-GNOME_VERSION=		1.7.0
+GNOME_VERSION=		1.7.1
 
 SHARED_LIBS += shumate-1.0               0.3 # 1.0
 
