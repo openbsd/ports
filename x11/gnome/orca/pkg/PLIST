@@ -42,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_monitor.${
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}braille_rolenames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}brltablenames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}bypass_mode_manager.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,12 +52,15 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}caret_navigator_co
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chat_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chat_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chat_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}clipboard_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}chat_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}clipboard_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}clipboard_presenter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}clipboard_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}cmdnames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}colornames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}command_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}command_manager_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}command_manager_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}dbus_service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
@@ -65,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}debugging_tools_ma
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}document_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}document_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}document_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}event_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}extension_loader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,10 +82,13 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}flat_review_finder
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}flat_review_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}flat_review_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}flat_review_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}flat_review_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}focus_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}generator_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}gsettings_registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}guilabels.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}help_metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}input_event.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}input_event_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}keybindings.${MODPY_PYC_MAGIC_TAG}pyc
@@ -95,10 +103,12 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}math_navigator.${M
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}math_navigator_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}math_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}math_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}math_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mouse_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mouse_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mouse_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}mouse_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}notification_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}notification_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}object_navigator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -121,9 +131,11 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}profile_manager_co
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}profile_manager_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}pronunciation_dictionary_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}pronunciation_dictionary_manager_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}remote_controller_bridge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}say_all_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}say_all_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}say_all_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}say_all_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}screen_reader_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}screen_reader_manager_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
@@ -136,6 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound_generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}sound_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speech_manager_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -148,6 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speechdispatcherfa
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}speechserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}spellcheck_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}spellcheck_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}spellcheck_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}spiel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}ssml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}structural_navigator.${MODPY_PYC_MAGIC_TAG}pyc
@@ -155,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}structural_navigat
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}system_information_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}system_information_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}system_information_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}system_information_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}systemd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}table_navigator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}table_navigator_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -166,6 +181,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}text_selection_pre
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}typing_echo_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}typing_echo_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}typing_echo_presenter_preferences_grid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}typing_echo_presenter_settings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_i_presenter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}where_am_i_presenter_command_definitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/acss.py
@@ -207,6 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/braille_monitor.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/braille_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/braille_rolenames.py
 lib/python${MODPY_VERSION}/site-packages/orca/brltablenames.py
 lib/python${MODPY_VERSION}/site-packages/orca/bypass_mode_manager.py
@@ -216,12 +233,15 @@ lib/python${MODPY_VERSION}/site-packages/orca/caret_navigator_command_definition
 lib/python${MODPY_VERSION}/site-packages/orca/chat_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/chat_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/chat_presenter_preferences_grid.py
-lib/python${MODPY_VERSION}/site-packages/orca/clipboard.py
-lib/python${MODPY_VERSION}/site-packages/orca/clipboard_command_definitions.py
+lib/python${MODPY_VERSION}/site-packages/orca/chat_presenter_settings.py
+lib/python${MODPY_VERSION}/site-packages/orca/clipboard_manager.py
+lib/python${MODPY_VERSION}/site-packages/orca/clipboard_presenter.py
+lib/python${MODPY_VERSION}/site-packages/orca/clipboard_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/cmdnames.py
 lib/python${MODPY_VERSION}/site-packages/orca/colornames.py
 lib/python${MODPY_VERSION}/site-packages/orca/command.py
 lib/python${MODPY_VERSION}/site-packages/orca/command_manager.py
+lib/python${MODPY_VERSION}/site-packages/orca/command_manager_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/command_manager_preferences_grid.py
 lib/python${MODPY_VERSION}/site-packages/orca/dbus_service.py
 lib/python${MODPY_VERSION}/site-packages/orca/debug.py
@@ -230,6 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/debugging_tools_manager_command_de
 lib/python${MODPY_VERSION}/site-packages/orca/document_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/document_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/document_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/enums.py
 lib/python${MODPY_VERSION}/site-packages/orca/event_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/extension.py
 lib/python${MODPY_VERSION}/site-packages/orca/extension_loader.py
@@ -242,10 +263,13 @@ lib/python${MODPY_VERSION}/site-packages/orca/flat_review_finder_command_definit
 lib/python${MODPY_VERSION}/site-packages/orca/flat_review_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/flat_review_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/flat_review_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/flat_review_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/focus_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/generator.py
+lib/python${MODPY_VERSION}/site-packages/orca/generator_context.py
 lib/python${MODPY_VERSION}/site-packages/orca/gsettings_registry.py
 lib/python${MODPY_VERSION}/site-packages/orca/guilabels.py
+lib/python${MODPY_VERSION}/site-packages/orca/help_metadata.py
 lib/python${MODPY_VERSION}/site-packages/orca/input_event.py
 lib/python${MODPY_VERSION}/site-packages/orca/input_event_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/keybindings.py
@@ -261,10 +285,12 @@ lib/python${MODPY_VERSION}/site-packages/orca/math_navigator.py
 lib/python${MODPY_VERSION}/site-packages/orca/math_navigator_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/math_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/math_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/math_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/messages.py
 lib/python${MODPY_VERSION}/site-packages/orca/mouse_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/mouse_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/mouse_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/mouse_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/notification_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/notification_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/object_navigator.py
@@ -287,9 +313,11 @@ lib/python${MODPY_VERSION}/site-packages/orca/profile_manager_command_definition
 lib/python${MODPY_VERSION}/site-packages/orca/profile_manager_preferences_grid.py
 lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dictionary_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dictionary_manager_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/remote_controller_bridge.py
 lib/python${MODPY_VERSION}/site-packages/orca/say_all_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/say_all_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/say_all_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/say_all_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/screen_reader_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/screen_reader_manager_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/script.py
@@ -470,6 +498,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/sound.py
 lib/python${MODPY_VERSION}/site-packages/orca/sound_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/sound_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/sound_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/sound_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech_manager.py
 lib/python${MODPY_VERSION}/site-packages/orca/speech_manager_command_definitions.py
@@ -482,6 +511,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/speechdispatcherfactory.py
 lib/python${MODPY_VERSION}/site-packages/orca/speechserver.py
 lib/python${MODPY_VERSION}/site-packages/orca/spellcheck_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/spellcheck_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/spellcheck_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/spiel.py
 lib/python${MODPY_VERSION}/site-packages/orca/ssml.py
 lib/python${MODPY_VERSION}/site-packages/orca/structural_navigator.py
@@ -489,6 +519,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/structural_navigator_command_defin
 lib/python${MODPY_VERSION}/site-packages/orca/system_information_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/system_information_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/system_information_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/system_information_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/systemd.py
 lib/python${MODPY_VERSION}/site-packages/orca/table_navigator.py
 lib/python${MODPY_VERSION}/site-packages/orca/table_navigator_command_definitions.py
@@ -500,6 +531,7 @@ lib/python${MODPY_VERSION}/site-packages/orca/text_selection_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/typing_echo_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/typing_echo_presenter_command_definitions.py
 lib/python${MODPY_VERSION}/site-packages/orca/typing_echo_presenter_preferences_grid.py
+lib/python${MODPY_VERSION}/site-packages/orca/typing_echo_presenter_settings.py
 lib/python${MODPY_VERSION}/site-packages/orca/where_am_i_presenter.py
 lib/python${MODPY_VERSION}/site-packages/orca/where_am_i_presenter_command_definitions.py
 lib/systemd/user/orca.service
@@ -1970,6 +2002,7 @@ share/locale/ko/LC_MESSAGES/orca.mo
 share/locale/lt/LC_MESSAGES/orca.mo
 share/locale/lv/LC_MESSAGES/orca.mo
 share/locale/mai/LC_MESSAGES/orca.mo
+share/locale/mi/LC_MESSAGES/orca.mo
 share/locale/mjw/LC_MESSAGES/orca.mo
 share/locale/mk/LC_MESSAGES/orca.mo
 share/locale/ml/LC_MESSAGES/orca.mo
