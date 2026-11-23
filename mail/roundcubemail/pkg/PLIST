@@ -3573,6 +3573,7 @@ roundcubemail/vendor/pear/net_ldap2/package.xml
 roundcubemail/vendor/pear/net_sieve/
 roundcubemail/vendor/pear/net_sieve/Sieve.php
 roundcubemail/vendor/pear/net_sieve/composer.json
+roundcubemail/vendor/pear/net_sieve/phpstan.neon
 roundcubemail/vendor/pear/net_smtp/
 roundcubemail/vendor/pear/net_smtp/LICENSE
 roundcubemail/vendor/pear/net_smtp/Net/
