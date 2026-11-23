@@ -1,0 +1,40 @@
+Index: m4lcommon/include/kopano/CommonUtil.h
+--- m4lcommon/include/kopano/CommonUtil.h.orig
++++ m4lcommon/include/kopano/CommonUtil.h
+@@ -14,6 +14,8 @@
+ #include <kopano/memory.hpp>
+ #include <kopano/ustringutil.h>
+ 
++#include <libHX/option.h>
++
+ // Version of GetClientVersion
+ #define CLIENT_VERSION_OLK2000			9
+ #define CLIENT_VERSION_OLK2002			10
+@@ -35,6 +37,27 @@ enum DGMessageType {
+ /* darn, no sane place because of depend include on mapidefs.h */
+ extern KC_EXPORT bool operator==(const SBinary &, const SBinary &) noexcept;
+ extern KC_EXPORT bool operator<(const SBinary &, const SBinary &) noexcept;
++
++inline int HX_getopt(const struct HXoption *table, int *argc,
++                     const char ***argv, unsigned int flags = 0)
++{
++    // no longer exist in 5.x, drop them
++    flags &= ~0x3U;
++
++    struct HXopt6_result res = {};
++    int ret = HX_getopt6(table, *argc, const_cast<char **>(*argv), &res,
++                         flags | HXOPT_DUP_ARGS | HXOPT_CONST_INPUT);
++    if (ret <= 0) {
++        HX_getopt6_clean(&res);
++        return ret;
++    }
++
++    *argc = res.dup_argc;
++    *argv = const_cast<const char **>(res.dup_argv);
++    res.dup_argv = nullptr;
++    HX_getopt6_clean(&res);
++    return ret;
++}
+ 
+ namespace KC {
+ 
