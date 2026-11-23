@@ -4,7 +4,7 @@ GH_ACCOUNT=	sudar
 GH_PROJECT=	Arduino-Makefile
 GH_TAGNAME=	1.6.0
 PKGNAME=	arduino-makefile-${GH_TAGNAME}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	devel
 
