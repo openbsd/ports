@@ -1,6 +1,8 @@
 COMMENT =		pure Unix shell script implementing ACME client protocol
 
-DIST_TUPLE +=		github acmesh-official acme.sh 3.1.6 .
+GH_ACCOUNT =		acmesh-official
+GH_PROJECT =		acme.sh
+GH_TAGNAME =		3.1.7
 
 CATEGORIES =		security
 
