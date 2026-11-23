@@ -2,11 +2,13 @@ COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0
 
-DISTNAME=		libytnef-2.1.2
+V=			2.1.3
+
+DISTNAME=		libytnef-${V}
 
 GH_ACCOUNT=		Yeraze
 GH_PROJECT=		ytnef
-GH_COMMIT=		d9f089144414d3b0912c29ab96f8f1c591d00319
+GH_TAGNAME=		v${V}
 
 CATEGORIES=		converters mail
 
