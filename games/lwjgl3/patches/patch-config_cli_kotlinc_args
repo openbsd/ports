@@ -1,0 +1,14 @@
+Work around race condition in kotlinc build
+
+Index: config/cli/kotlinc.args
+--- config/cli/kotlinc.args.orig
++++ config/cli/kotlinc.args
+@@ -7,5 +7,5 @@
+ -Xno-param-assertions
+ -Xno-receiver-assertions
+ -Xreport-perf
+--Xbackend-threads=0
+--verbose
+\ No newline at end of file
++-Xbackend-threads=1
++-verbose

@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS= amd64 aarch64
 
 V =		3.4.1.2
 DISTNAME =	lwjgl3-${V}
+REVISION =	0
 
 KOTLIN_V =	2.3.0
 MAVEN_V =	20260901
@@ -37,10 +38,10 @@ SITES.m = https://kurt.mosiejcz.uk/pub/distfiles/
 PERMIT_PACKAGE =	Yes
 
 # Many of these are needed based upon .jar files
-WANTLIB=	${COMPILER_LIBCXX} GL GLESv2 assimp c dbus-1 freetype gdk-3 \
-		glfw glib-2.0 gobject-2.0 gtk-3 harfbuzz lmdb lz4 m openal \
-		opus shaderc_shared spirv-cross-c-shared vulkan xxhash zstd
-
+WANTLIB=	${COMPILER_LIBCXX} GL GLESv2 SDL3 assimp c dbus-1 freetype \
+		gdk-3 glfw glib-2.0 gobject-2.0 gtk-3 harfbuzz lmdb lz4 m \
+		openal opus shaderc_shared spirv-cross-c-shared vulkan \
+		xxhash zstd
 
 MODULES =	java
 MODJAVA_VER =	25
@@ -48,6 +49,7 @@ MODJAVA_BUILD =	ant
 
 BUILD_DEPENDS =	archivers/unzip \
 		graphics/vulkan-headers
+
 LIB_DEPENDS =	archivers/lz4 \
 		archivers/zstd \
 		audio/openal \
