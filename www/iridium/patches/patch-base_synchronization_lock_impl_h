@@ -1,7 +1,7 @@
 Index: base/synchronization/lock_impl.h
 --- base/synchronization/lock_impl.h.orig
 +++ base/synchronization/lock_impl.h
-@@ -129,6 +129,10 @@ void LockImpl::Unlock() {
+@@ -130,6 +130,10 @@ void LockImpl::Unlock() {
  }
  
  #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
@@ -11,8 +11,8 @@ Index: base/synchronization/lock_impl.h
 +#endif
  
  #if DCHECK_IS_ON()
- BASE_EXPORT void dcheck_trylock_result(int rv);
-@@ -149,6 +153,9 @@ void LockImpl::Unlock() {
+ BASE_EXPORT void LogTryLockFailure(int rv);
+@@ -162,6 +166,9 @@ void LockImpl::Unlock() {
    dcheck_unlock_result(rv);
  #endif
  }

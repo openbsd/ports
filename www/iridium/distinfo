@@ -94,7 +94,7 @@ SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
 SHA256 (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = iZqIcUOSXdR4gLARaXScCT1TDom3XFmBkh21WawNuuU=
-SHA256 (iridium-browser-2026.11.157.2.tar.xz) = UBpRxZ0m95isXYwF3qiFd8MUgVp74Sfh5ABsbmIoXrQ=
+SHA256 (iridium-browser-2026.11.158.tar.xz) = WKwMVDqQVtnqe9mPf1m9T3YaCdsKjzev65GFvuxvXIU=
 SHA256 (microsoft-TypeScript-v7.0.2.tar.gz) = hHLyhLFGX1xIJqZMiIU+zLpmdEbzGkNe0dCyjTc9vAs=
 SIZE (TypeScript-7.0.2-vendor.tar.gz) = 3166777
 SIZE (cargo/aho-corasick-1.1.5.tar.gz) = 184315
@@ -192,5 +192,5 @@ SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
 SIZE (google-crubit-dcf92a1baf2c8a6561ed0361502cfec20e2f65f5.tar.gz) = 4449463
-SIZE (iridium-browser-2026.11.157.2.tar.xz) = 1738595712
+SIZE (iridium-browser-2026.11.158.tar.xz) = 951140868
 SIZE (microsoft-TypeScript-v7.0.2.tar.gz) = 49788068

@@ -19,7 +19,7 @@ Index: gpu/command_buffer/service/shared_context_state.cc
        external_semaphore_pool_ = std::make_unique<ExternalSemaphorePool>(this);
  #endif
      }
-@@ -347,7 +347,7 @@ SharedContextState::~SharedContextState() {
+@@ -349,7 +349,7 @@ SharedContextState::~SharedContextState() {
      UnbindCacheFromCurrentOpenGLContext();
    }
  

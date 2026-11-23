@@ -9,8 +9,8 @@ Index: chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    const std::vector<WebAppShortcutsMenuItemInfo>& shortcuts_menu_item_infos =
        CreateShortcutsMenuItemInfos(state.shortcut_menus());
-   DCHECK_LE(shortcuts_menu_item_infos.size(), kMaxApplicationDockMenuItems);
-@@ -404,7 +404,7 @@ base::span<const int> GetDesiredIconSizesForShortcut()
+   CHECK_LE(shortcuts_menu_item_infos.size(), kMaxApplicationDockMenuItems,
+@@ -405,7 +405,7 @@ base::span<const int> GetDesiredIconSizesForShortcut()
  #if BUILDFLAG(IS_MAC)
    static constexpr int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};
    return kDesiredIconSizesForShortcut;

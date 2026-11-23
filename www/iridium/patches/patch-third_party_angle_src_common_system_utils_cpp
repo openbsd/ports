@@ -1,7 +1,7 @@
 Index: third_party/angle/src/common/system_utils.cpp
 --- third_party/angle/src/common/system_utils.cpp.orig
 +++ third_party/angle/src/common/system_utils.cpp
-@@ -25,7 +25,7 @@ namespace angle
+@@ -22,7 +22,7 @@ namespace angle
  {
  std::string GetExecutableName()
  {

@@ -19,7 +19,7 @@ Index: services/network/url_request_context_builder_mojo.h
    void SetMojoSystemProxyResolver(
        mojo::PendingRemote<proxy_resolver::mojom::SystemProxyResolver>
            mojo_system_proxy_resolver);
-@@ -92,7 +92,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) URLRequestCont
+@@ -101,7 +101,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) URLRequestCont
    mojo::PendingRemote<proxy_resolver::mojom::ProxyResolverFactory>
        mojo_proxy_resolver_factory_;
  

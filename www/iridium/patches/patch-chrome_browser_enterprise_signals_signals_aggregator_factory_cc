@@ -34,6 +34,6 @@ Index: chrome/browser/enterprise/signals/signals_aggregator_factory.cc
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (enterprise_signals::features::IsCertificateCollectionEnabled()) {
-     auto* profile_network_service =
-         ProfileNetworkContextServiceFactory::GetForContext(profile);
+   if (enterprise_signals::features::IsCertificateCollectionEnabled() &&
+       ProfileNetworkContextServiceFactory::GetForContext(profile)) {
+     // The client certificate store is only created when certificates are

@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
 --- chrome/browser/ui/views/user_education/browser_user_education_service.cc.orig
 +++ chrome/browser/ui/views/user_education/browser_user_education_service.cc
-@@ -388,7 +388,7 @@ CreateNavigationAction(GURL target) {
+@@ -402,7 +402,7 @@ CreateNavigationAction(GURL target) {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
  void NavigateToSettingsPage(ContextPtr ctx,
                              user_education::FeaturePromoHandle promo_handle) {
    BrowserWindowInterface* const browser = GetBrowser(ctx);
-@@ -1632,7 +1632,7 @@ void MaybeRegisterChromeFeaturePromos(
+@@ -1649,7 +1649,7 @@ void MaybeRegisterChromeFeaturePromos(
                  "Triggered when a shared tab becomes the active tab.")));
    }
  
@@ -19,8 +19,8 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
    // kIPHSupervisedUserProfileSigninFeature:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -1961,7 +1961,7 @@ void MaybeRegisterChromeFeaturePromos(
-               "Omnibox Everywhere.")));
+@@ -2019,7 +2019,7 @@ void MaybeRegisterChromeFeaturePromos(
+               Metadata::FeatureSet{&omnibox::kWebUIOmniboxAskGAboutThisPage})));
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_CHROMEOS)
@@ -28,9 +28,9 @@ Index: chrome/browser/ui/views/user_education/browser_user_education_service.cc
    // kIPHDesktopPWAsLinkCapturingLaunch:
    registry.RegisterFeature(std::move(
        FeaturePromoSpecification::CreateForCustomAction(
-@@ -2876,7 +2876,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
-           157, "nguyenbryan@google.com",
-           "Shown on Ask Google about this page in context and app menus.")));
+@@ -3005,7 +3005,7 @@ void MaybeRegisterChromeNewBadges(user_education::NewB
+                                "Shown on the Focus on group item in the "
+                                "tab context menu.")));
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

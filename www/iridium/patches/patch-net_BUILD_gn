@@ -3,8 +3,8 @@ iridium ninja build order fix
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
-@@ -105,7 +105,7 @@ net_configs = [
-   "//build/config/compiler:wexit_time_destructors",
+@@ -104,7 +104,7 @@ net_configs = [
+   "//build/config:precompiled_headers",
  ]
  
 -if (is_linux || is_chromeos) {
@@ -12,15 +12,15 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1269,6 +1269,7 @@ component("net") {
-     ":cronet_buildflags",
+@@ -1274,6 +1274,7 @@ component("net") {
+     ":http_chunked_decoder_rust",
      ":net_deps",
      "//components/network_time/time_tracker",
 +    "//content/public/common:buildflags",
      "//components/unexportable_keys",
      "//net/http:transport_security_state_generated_files",
      "//third_party/rust/sfv/v0_15/wrapper",
-@@ -1464,7 +1465,7 @@ component("net") {
+@@ -1469,7 +1470,7 @@ component("net") {
        "proxy_resolution/proxy_config_service_linux.h",
      ]
      deps += [ "//build/config/linux/dbus:buildflags" ]
@@ -29,7 +29,7 @@ Index: net/BUILD.gn
        sources += [ "base/network_change_notifier_linux_portal.cc" ]
        deps += [
          "//components/dbus",
-@@ -1495,6 +1496,19 @@ component("net") {
+@@ -1500,6 +1501,19 @@ component("net") {
      ]
    }
  
@@ -49,7 +49,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1669,7 +1683,7 @@ component("net") {
+@@ -1674,7 +1688,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -58,7 +58,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2454,7 +2468,7 @@ static_library("test_support") {
+@@ -2468,7 +2482,7 @@ static_library("test_support") {
      ]
    }
  
@@ -67,7 +67,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3311,7 +3325,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3335,7 +3349,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -76,7 +76,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_change_notifier_linux_unittest.cc",
        "proxy_resolution/linux/linux_system_proxy_resolution_service_unittest.cc",
-@@ -3319,7 +3333,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3343,7 +3357,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -85,7 +85,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3462,6 +3476,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3490,6 +3504,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -96,7 +96,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3520,7 +3538,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3548,7 +3566,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -105,7 +105,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3656,7 +3674,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3684,7 +3702,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
