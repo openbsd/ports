@@ -45,8 +45,6 @@ TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
           	RGBDEF="${WRKINST}${PREFIX}/share/netpbm/rgb.txt"
 
 pre-test:
-# head -c
-	${CC} ${CFLAGS} -o ${WRKDIR}/bin/head ${FILESDIR}/head.c
 	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \
 	    ${WRKSRC}/test/Available-Testprog \
 	    ${WRKSRC}/test/Execute-Tests \

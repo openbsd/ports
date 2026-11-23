@@ -62,7 +62,6 @@ CONFIGURE_STYLE =	cmake
 PORTHOME =		${WRKDIR}
 
 TEST_DEPENDS =		devel/py-pexpect \
-			sysutils/coreutils \
 			${PKGPATH}=${V}
 
 TEST_TARGET =		fish_run_tests
@@ -78,9 +77,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
 	${INSTALL_DATA} ${WRKSRC}/etc/config.fish ${PREFIX}/share/examples/fish/
 	rm -rf ${PREFIX}/etc
-
-pre-test:
-	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 
 do-test:
 	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}

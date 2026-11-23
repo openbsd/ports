@@ -17,8 +17,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 
-TEST_DEPENDS=	sysutils/coreutils
-
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -DLZ4_FORCE_MEMORY_ACCESS=1" \
 		MANDIR="${PREFIX}/man" \
@@ -38,8 +36,5 @@ TEST_TARGET=	check
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gmake ${WRKDIR}/bin/make
-
-pre-test:
-	ln -sf ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 
 .include <bsd.port.mk>

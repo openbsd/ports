@@ -50,11 +50,9 @@ PORTHOME =		${WRKDIR}
 # Test #96: check-completions.fish fails on systems without synaptics
 # driver loaded.
 
-TEST_DEPENDS =		sysutils/coreutils \
-			${PKGPATH}=${V}
+TEST_DEPENDS =		${PKGPATH}=${V}
 
 do-test:
-	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
 
 post-install:
