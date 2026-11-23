@@ -371,6 +371,7 @@
      SUBDIR += py-watchfiles
      SUBDIR += py-xxhash
      SUBDIR += py-zabbix-api
+     SUBDIR += qobsd
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
