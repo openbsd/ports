@@ -1,9 +1,8 @@
 COMMENT=	Python module providing a password hashing framework
 
-MODPY_DISTV=	1.9.4
-DISTNAME=	libpass-${MODPY_DISTV}
-# libpass is a maintained fork of passlib, providing the same namespace
-PKGNAME=	py-passlib-${MODPY_DISTV}
+MODPY_DISTV=	1.9.5
+DISTNAME=	passlib-${MODPY_DISTV}
+PKGNAME=	py-passlib-${MODPY_DISTV:S/.post/pl/}
 
 CATEGORIES=	security
 
