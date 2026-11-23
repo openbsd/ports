@@ -1,0 +1,72 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Running a guest with SSH forwarding
+===================================
+
+The package provides a qobsd_<arch> service and login class for each
+supported guest architecture. This example installs an HPPA snapshot
+in /var/vm/hppa.qcow2.
+
+    # su -c qobsd_hppa -s /bin/sh _vmd ${LOCALBASE}/bin/qobsd \
+        -d /var/vm -m -s hppa
+
+After installation, enable and start qobsd_hppa with SSH forwarded
+from 127.0.0.1:2201 to the guest.
+
+    # rcctl enable qobsd_hppa
+    # rcctl set qobsd_hppa flags -p 2201 hppa
+    # rcctl start qobsd_hppa
+
+Connect using an account on the guest.
+
+    $ ssh -p 2201 user@127.0.0.1
+
+On the host, attach to the guest's console with tmux.
+
+    $ doas -u _vmd tmux -N -S /var/vm/qobsd_hppa.sock attach-session
+
+To connect through somehost.home.arpa, add these entries to
+~/.ssh/config on the client. The qobsd account in the guest must
+authorize the bundled public key.
+
+    Host qobsd-hppa.somehost.home.arpa
+      HostKeyAlias qobsd-hppa.somehost.home.arpa
+      Port 2201
+
+    Host qobsd-*.somehost.home.arpa
+      ProxyJump somehost.home.arpa
+      HostName 127.0.0.1
+      User qobsd
+      IdentityFile /usr/local/share/examples/qobsd/qobsd_ed25519.pem
+
+Connect using the host alias.
+
+    $ ssh qobsd-hppa.somehost.home.arpa
+
+Running three HPPA guests
+=========================
+
+Run the installer with -f hppa_2.qcow2 -H qobsd-hppa-2 and then with
+-f hppa_3.qcow2 -H qobsd-hppa-3, placing both options before hppa.
+Use the same names if the installer asks for a hostname. Each service
+needs a link and a matching login class. To add an SSH port, set the
+full argument list, including the disk and hostname.
+
+    # ln -s ${RCDIR}/qobsd ${RCDIR}/qobsd_hppa_2
+    # ln -s ${RCDIR}/qobsd ${RCDIR}/qobsd_hppa_3
+    # sed 's/^qobsd_hppa:/qobsd_hppa_2:/' \
+        ${LOCALBASE}/share/examples/login.conf.d/qobsd_hppa \
+        > ${SYSCONFDIR}/login.conf.d/qobsd_hppa_2
+    # sed 's/^qobsd_hppa:/qobsd_hppa_3:/' \
+        ${LOCALBASE}/share/examples/login.conf.d/qobsd_hppa \
+        > ${SYSCONFDIR}/login.conf.d/qobsd_hppa_3
+    # rcctl enable qobsd_hppa_2 qobsd_hppa_3
+    # rcctl set qobsd_hppa_2 flags -f hppa_2.qcow2 \
+        -H qobsd-hppa-2 -p 2202 hppa
+    # rcctl set qobsd_hppa_3 flags -f hppa_3.qcow2 \
+        -H qobsd-hppa-3 -p 2203 hppa
+    # rcctl start qobsd_hppa_2 qobsd_hppa_3
+
+Connect to 127.0.0.1 on ports 2201, 2202, and 2203.

@@ -1,0 +1,57 @@
+@rcscript ${RCDIR}/qobsd
+@rcscript ${RCDIR}/qobsd_amd64
+@rcscript ${RCDIR}/qobsd_arm64
+@rcscript ${RCDIR}/qobsd_armv7
+@rcscript ${RCDIR}/qobsd_hppa
+@rcscript ${RCDIR}/qobsd_i386
+@rcscript ${RCDIR}/qobsd_macppc
+@rcscript ${RCDIR}/qobsd_octeon
+@rcscript ${RCDIR}/qobsd_powerpc64
+@rcscript ${RCDIR}/qobsd_riscv64
+@rcscript ${RCDIR}/qobsd_sparc64
+bin/qobsd
+@man man/man1/qobsd.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/qobsd
+@sample ${SYSCONFDIR}/login.conf.d/qobsd
+share/examples/login.conf.d/qobsd_amd64
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_amd64
+share/examples/login.conf.d/qobsd_arm64
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_arm64
+share/examples/login.conf.d/qobsd_armv7
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_armv7
+share/examples/login.conf.d/qobsd_hppa
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_hppa
+share/examples/login.conf.d/qobsd_i386
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_i386
+share/examples/login.conf.d/qobsd_macppc
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_macppc
+share/examples/login.conf.d/qobsd_octeon
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_octeon
+share/examples/login.conf.d/qobsd_powerpc64
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_powerpc64
+share/examples/login.conf.d/qobsd_riscv64
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_riscv64
+share/examples/login.conf.d/qobsd_sparc64
+@sample ${SYSCONFDIR}/login.conf.d/qobsd_sparc64
+share/examples/qobsd/
+share/examples/qobsd/disklabel
+share/examples/qobsd/install.conf
+share/examples/qobsd/qobsd_ed25519.pem
+share/examples/qobsd/qobsd_ed25519.pub
+share/examples/qobsd/site/
+share/examples/qobsd/site.perms
+share/examples/qobsd/site/etc/
+share/examples/qobsd/site/etc/doas.conf
+share/examples/qobsd/site/etc/mk.conf
+share/examples/qobsd/site/install.site
+share/examples/qobsd/u-boot-octeon3-qobsd-boot.pflash
+share/examples/qobsd/u-boot-octeon3-qobsd-install.pflash
+share/qobsd/
+share/qobsd/dummy-httpd.sh
+share/qobsd/openbios-ppc-qobsd-ba2f9b9.elf
+share/qobsd/openbios-sparc64-qobsd-daa1b25.elf
+@mode 0755
+@owner _vmd
+@group _vmd
+@sample /var/vm/
