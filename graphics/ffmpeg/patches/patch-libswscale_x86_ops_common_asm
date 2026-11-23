@@ -1,0 +1,16 @@
+DECL_OP already declares the function with cglobal, so RW_SHUFFLE must
+only set up its prologue. Declaring it twice gives a duplicate label,
+which breaks once x86inc emits endbr64 at function entry.
+
+Index: libswscale/x86/ops_common.asm
+--- libswscale/x86/ops_common.asm.orig
++++ libswscale/x86/ops_common.asm
+@@ -169,7 +169,7 @@ process_fn 4
+ %assign READ_SIZE    (READ_SIZE * GROUPS)
+ %assign WRITE_SIZE   (WRITE_SIZE * GROUPS)
+ 
+-cglobal NAME, 6, 10, 3, exec, shuffle, bx, y, bxend, yend, src, dst, src_stride, dst_stride
++PROLOGUE 6, 10, 3, exec, shuffle, bx, y, bxend, yend, src, dst, src_stride, dst_stride
+ %if mmsize > 16 && !LANE_ALIGNED && !cpuflag(avx512icl)
+             ud2 ; runtime checks should prevent this variant from being called
+ %else

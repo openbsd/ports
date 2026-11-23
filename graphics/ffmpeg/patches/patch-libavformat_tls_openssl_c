@@ -58,7 +58,7 @@ Index: libavformat/tls_openssl.c
  done:
      BIO_free(mem);
      if (out && out_sz)
-@@ -847,7 +861,9 @@ static int tls_open(URLContext *h, const char *uri, in
+@@ -858,7 +872,9 @@ static int tls_open(URLContext *h, const char *uri, in
              s->mtu = 1096;
          SSL_set_options(c->ssl, SSL_OP_NO_QUERY_MTU);
          SSL_set_mtu(c->ssl, s->mtu);
@@ -68,7 +68,7 @@ Index: libavformat/tls_openssl.c
      }
  
      init_bio_method(h);
-@@ -960,10 +976,12 @@ static int tls_write(URLContext *h, const uint8_t *buf
+@@ -974,10 +990,12 @@ static int tls_write(URLContext *h, const uint8_t *buf
      uc->flags &= ~AVIO_FLAG_NONBLOCK;
      uc->flags |= h->flags & AVIO_FLAG_NONBLOCK;
  
@@ -79,5 +79,5 @@ Index: libavformat/tls_openssl.c
      }
 +#endif
  
+     ERR_clear_error();
      ret = SSL_write(c->ssl, buf, size);
-     if (ret > 0)

@@ -7,12 +7,12 @@ Index: libavcodec/aarch64/h26x/sao_neon.S
  
 +.section .rodata
 +
- .Lhevc_sao_edge_pos:
+ .Lhevc_sao_edge_pos_8:
  .word 1 // horizontal
  .word HEVC_SAO_STRIDE // vertical
-@@ -112,8 +114,11 @@ endfunc
- .word VVC_SAO_STRIDE + 1 // 45 degree
- .word VVC_SAO_STRIDE - 1 // 135 degree
+@@ -124,8 +126,11 @@ endfunc
+ .word VVC_SAO_STRIDE + 2 // 135 degree
+ .word VVC_SAO_STRIDE - 2 // 45 degree
  
 +.previous
 +
@@ -23,17 +23,37 @@ Index: libavcodec/aarch64/h26x/sao_neon.S
          mov             x15, #VVC_SAO_STRIDE
          b               1f
  endfunc
-@@ -121,7 +126,8 @@ endfunc
+@@ -133,7 +138,8 @@ endfunc
  // ff_hevc_sao_edge_filter_16x16_8_neon(char *dst, char *src, ptrdiff stride_dst,
  //                                      int16 *sao_offset_val, int eo, int width, int height)
  function ff_hevc_sao_edge_filter_16x16_8_neon, export=1
--        adr             x7, .Lhevc_sao_edge_pos
-+        adrp            x7, .Lhevc_sao_edge_pos
-+        add             x7, x7, :lo12:.Lhevc_sao_edge_pos
+-        adr             x7, .Lhevc_sao_edge_pos_8
++        adrp            x7, .Lhevc_sao_edge_pos_8
++        add             x7, x7, :lo12:.Lhevc_sao_edge_pos_8
          mov             x15, #HEVC_SAO_STRIDE
  1:
          ld1             {v3.8h}, [x3]              // load sao_offset_val
-@@ -180,7 +186,8 @@ function ff_hevc_sao_edge_filter_16x16_8_neon, export=
+@@ -241,7 +247,8 @@ endfunc
+ function ff_vvc_sao_edge_filter_16x16_10_neon, export=1
+         mvni            v31.8h, #0xfc, lsl #8       // 1023
+ .Lvvc_sao_edge_16x16_16bit:
+-        adr             x7, .Lvvc_sao_edge_pos_16bit
++        adrp            x7, .Lvvc_sao_edge_pos_16bit
++        add             x7, x7, :lo12:.Lvvc_sao_edge_pos_16bit
+         mov             x15, #VVC_SAO_STRIDE
+         b               .Lh26x_sao_edge_16x16_16bit
+ endfunc
+@@ -258,7 +265,8 @@ endfunc
+ function ff_hevc_sao_edge_filter_16x16_10_neon, export=1
+         mvni            v31.8h, #0xfc, lsl #8       // 1023
+ .Lhevc_sao_edge_16bit:
+-        adr             x7, .Lhevc_sao_edge_pos_16bit
++        adrp            x7, .Lhevc_sao_edge_pos_16bit
++        add             x7, x7, :lo12:.Lhevc_sao_edge_pos_16bit
+         mov             x15, #HEVC_SAO_STRIDE
+ .Lh26x_sao_edge_16x16_16bit:
+         add             w5, w5, #7
+@@ -288,7 +296,8 @@ function ff_hevc_sao_edge_filter_16x16_10_neon, export
  endfunc
  
  function ff_vvc_sao_edge_filter_8x8_8_neon, export=1
@@ -43,13 +63,33 @@ Index: libavcodec/aarch64/h26x/sao_neon.S
          mov             x15, #VVC_SAO_STRIDE
          b               1f
  endfunc
-@@ -188,7 +195,8 @@ endfunc
+@@ -296,7 +305,8 @@ endfunc
  // ff_hevc_sao_edge_filter_8x8_8_neon(char *dst, char *src, ptrdiff stride_dst,
  //                                    int16 *sao_offset_val, int eo, int width, int height)
  function ff_hevc_sao_edge_filter_8x8_8_neon, export=1
--        adr             x7, .Lhevc_sao_edge_pos
-+        adrp            x7, .Lhevc_sao_edge_pos
-+        add             x7, x7, :lo12:.Lhevc_sao_edge_pos
+-        adr             x7, .Lhevc_sao_edge_pos_8
++        adrp            x7, .Lhevc_sao_edge_pos_8
++        add             x7, x7, :lo12:.Lhevc_sao_edge_pos_8
          mov             x15, #HEVC_SAO_STRIDE
  1:
          ldr             w4, [x7, w4, uxtw #2]
+@@ -356,7 +366,8 @@ endfunc
+ function ff_vvc_sao_edge_filter_8x8_10_neon, export=1
+         mvni            v31.8h, #0xfc, lsl #8       // 1023
+ .Lvvc_sao_edge_8x8_16bit:
+-        adr             x7, .Lvvc_sao_edge_pos_16bit
++        adrp            x7, .Lvvc_sao_edge_pos_16bit
++        add             x7, x7, :lo12:.Lvvc_sao_edge_pos_16bit
+         mov             x15, #VVC_SAO_STRIDE
+         b               .Lh26x_sao_edge_8x8_16bit
+ endfunc
+@@ -373,7 +384,8 @@ endfunc
+ function ff_hevc_sao_edge_filter_8x8_10_neon, export=1
+         mvni            v31.8h, #0xfc, lsl #8     // 1023
+ .Lhevc_sao_edge_8x8_16bit:
+-        adr             x7, .Lhevc_sao_edge_pos_16bit
++        adrp            x7, .Lhevc_sao_edge_pos_16bit
++        add             x7, x7, :lo12:.Lhevc_sao_edge_pos_16bit
+         mov             x15, #HEVC_SAO_STRIDE
+ .Lh26x_sao_edge_8x8_16bit:
+         ldr             w4, [x7, w4, uxtw #2]      // a/b offsets in bytes

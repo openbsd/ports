@@ -47,7 +47,7 @@ Index: libavcodec/aarch64/vc1dsp_neon.S
  
 +.section .rodata
 +
- .align  5
+ .align  4
  .Lcoeffs_it8:
  .quad   0x000F00090003
 @@ -704,6 +710,8 @@ endfunc

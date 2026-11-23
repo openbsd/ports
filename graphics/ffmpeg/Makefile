@@ -1,7 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
 # keep it synced with x11/mplayer
-V=		9.0.2
+V=		9.1
 DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
@@ -22,12 +22,12 @@ USE_NOBTCFI-amd64=	Yes
 
 EPOCH=		1
 
-SHARED_LIBS=	avcodec		28.0 \
+SHARED_LIBS=	avcodec		28.1 \
 		avdevice	16.0 \
-		avfilter	14.0 \
-		avformat	25.0 \
-		avutil		18.0 \
-		swresample	7.0 \
+		avfilter	14.1 \
+		avformat	25.1 \
+		avutil		18.1 \
+		swresample	7.1 \
 		swscale		10.0
 
 HOMEPAGE=	https://ffmpeg.org/
@@ -120,6 +120,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--cc=${CC} \
 		--cxx=${CXX} \
 		--enable-debug \
+		--disable-libcurl \
 		--disable-stripping \
 		--disable-indev=jack \
 		--disable-vulkan \
