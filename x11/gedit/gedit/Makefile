@@ -1,7 +1,6 @@
 COMMENT=		text editor
 
-DIST_TUPLE=		gnome World/gedit gedit 51.0 .
-DIST_TUPLE +=		gnome GNOME libgd c7c7ff4e05d3fe82854219091cf116cce6b19de0 subprojects/libgd
+DIST_TUPLE=		gnome World/gedit gedit 51.1 .
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 glib-2.0
