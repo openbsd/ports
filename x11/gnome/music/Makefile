@@ -1,7 +1,7 @@
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		50.0
+GNOME_VERSION=		51.0
 
 HOMEPAGE=		https://apps.gnome.org/Music/
 
@@ -22,6 +22,8 @@ BUILD_DEPENDS=		devel/appstream \
 			devel/py-gobject3 \
 			devel/libsoup3 \
 			graphics/py-cairo \
+			x11/blueprint-compiler \
+			x11/gnome/glycin \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
 			x11/gnome/libmediaart \
@@ -30,6 +32,7 @@ BUILD_DEPENDS=		devel/appstream \
 RUN_DEPENDS=		devel/py-gobject3 \
 			devel/libsoup3 \
 			graphics/py-cairo \
+			x11/gnome/glycin \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
 			x11/gnome/libmediaart \
