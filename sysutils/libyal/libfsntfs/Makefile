@@ -1,6 +1,6 @@
 COMMENT =	library and tools to access NTFS
 
-VERSION =	20260727
+VERSION =	20260827
 BASENAME =	libfsntfs
 DISTNAME =	${BASENAME}-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
