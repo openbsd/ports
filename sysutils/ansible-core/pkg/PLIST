@@ -38,6 +38,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_lock
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_locking.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_rpc_host.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_rpc_host.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_secret_input.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_secret_input.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_task.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_task.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/${MODPY_PYCACHE}_testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,6 +151,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_powershell/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_powershell/_clixml.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_powershell/_script.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_rpc_host.py
+lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_secret_input.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_ssh/
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_ssh/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/_internal/_ssh/${MODPY_PYCACHE}/
@@ -638,6 +641,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}er
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}json_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}json_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}secrets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}secrets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/${MODPY_PYCACHE}splitter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -665,6 +670,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_ambient_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_dataclass_validation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_dataclass_validation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_debugging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_debugging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_deprecator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -673,12 +680,18 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_event_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_event_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_messages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_no_six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_no_six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_plugin_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_plugin_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_secrets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_secrets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_secrets_object.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_secrets_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/${MODPY_PYCACHE}_testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -725,9 +738,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurr
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_daemon_threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_daemon_threading.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_fork_safe_lock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_fork_safe_lock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_futures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/${MODPY_PYCACHE}_futures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/_daemon_threading.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/_fork_safe_lock.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_concurrent/_futures.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_dataclass_validation.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_datatag/
@@ -738,6 +754,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_datatag
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_datatag/${MODPY_PYCACHE}_tags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_datatag/${MODPY_PYCACHE}_tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_datatag/_tags.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_debug.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_debugging.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_deprecator.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_errors.py
@@ -773,6 +790,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_p
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_profiles/_module_modern_c2m.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_profiles/_module_modern_m2c.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_json/_profiles/_tagless.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_logging.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_messages.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_no_six.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/
@@ -790,6 +808,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/_socket_patch.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_patches/_sys_intern_patch.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_plugin_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_secrets.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_secrets_object.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_stack.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_testing.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/_internal/_text_utils.py
@@ -887,6 +907,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible.Bas
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible.Become.cs
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible.Privilege.cs
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible.Process.cs
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible.Secrets.cs
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/Ansible._Async.cs
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/csharp/${MODPY_PYCACHE}/
@@ -1156,6 +1177,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/powershell/__init_
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/powershell/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/powershell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/powershell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/secrets.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/service.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/six/
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/six/__init__.py
@@ -1796,6 +1818,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/intersect.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/items2dict.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/log.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/mandatory.yml
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/mask_secrets.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/mathstuff.py
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/md5.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/normpath.yml
@@ -1811,6 +1834,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/regex_escape.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/regex_findall.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/regex_replace.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/regex_search.yml
+lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/register_secret.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/rekey_on_member.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/relpath.yml
 lib/python${MODPY_VERSION}/site-packages/ansible/plugins/filter/root.yml
@@ -3036,5 +3060,5 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/config/config.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.networking.template
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.winrm.template
 share/doc/ansible/
-share/doc/ansible/CHANGELOG-v2.21.rst
+share/doc/ansible/CHANGELOG-v2.22.rst
 share/doc/ansible/COPYING

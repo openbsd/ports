@@ -15,13 +15,13 @@ Index: test/units/module_utils/basic/test_set_mode_if_different.py
  
 +@pytest.mark.skipif(sys.platform.startswith('openbsd'), reason='lchmod tests fail on OpenBSD')
  @pytest.mark.parametrize('check_mode, stdin',
-                          product((True, False), ({},)),
+                          list(product((True, False), ({},))),
                           indirect=['stdin'])
 @@ -151,6 +153,7 @@ def test_missing_lchmod_is_link(am, mock_stats, mocker
      mocker.stopall()
  
  
 +@pytest.mark.skipif(sys.platform.startswith('openbsd'), reason='lchmod tests fail on OpenBSD')
- @pytest.mark.parametrize('stdin,',
+ @pytest.mark.parametrize('stdin',
                           ({},),
                           indirect=['stdin'])
