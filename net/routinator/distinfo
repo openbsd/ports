@@ -253,7 +253,7 @@ SHA256 (cargo/zerovec-0.11.9.tar.gz) = 9Yonmc/poWcMfqjtvVLvjtuTyzen+DvzG6njXZ2ua
 SHA256 (cargo/zerovec-derive-0.11.7.tar.gz) = w3Q92/R3ONkpzRri4ZnUDQFil53+Ma74rmRtK/AL+Xo=
 SHA256 (cargo/zlib-rs-0.6.8.tar.gz) = smjljnxpPXwnH5P/xLo7OAQSVUIxyFv2HKevkQQqQRI=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
-SHA256 (routinator-0.16.1.tar.gz) = mcAchSQ4Aut48qfzo2+rTCIbfTu339jgWF0U/TDMrYM=
+SHA256 (routinator-0.16.2.tar.gz) = c43tJ/2+P58ozeghM2yRYjNeCE/+QM58cLqtbT3Vh10=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/android_system_properties-0.1.6.tar.gz) = 5625
 SIZE (cargo/anstream-1.0.0.tar.gz) = 28916
@@ -509,4 +509,4 @@ SIZE (cargo/zerovec-0.11.9.tar.gz) = 132005
 SIZE (cargo/zerovec-derive-0.11.7.tar.gz) = 23232
 SIZE (cargo/zlib-rs-0.6.8.tar.gz) = 215857
 SIZE (cargo/zmij-1.0.23.tar.gz) = 28612
-SIZE (routinator-0.16.1.tar.gz) = 6121854
+SIZE (routinator-0.16.2.tar.gz) = 6121091
