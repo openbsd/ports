@@ -2,7 +2,7 @@ COMMENT=	small and simple TCP VPN with modern crypto
 
 GH_ACCOUNT=	jedisct1
 GH_PROJECT=	dsvpn
-GH_TAGNAME=	0.1.5
+GH_TAGNAME=	1.0.0
 
 CATEGORIES=	net
 
