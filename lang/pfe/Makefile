@@ -1,5 +1,6 @@
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 BROKEN-powerpc64=	does not build, error: lvalue required as increment operand
+BROKEN-sparc64= ../../pfe/debug-ext.c:351:12: error: incompatible pointer types returning 'p4code *'
 # missing assembly for arch
 NOT_FOR_ARCHS=	arm aarch64 riscv64
 
