@@ -1,7 +1,7 @@
 COMMENT =	Mode-S/ADSB/TIS decoder
 CATEGORIES =	comms
 
-VERSION = 	3.16.16
+VERSION = 	3.16.21
 GH_ACCOUNT =	wiedehopf
 GH_PROJECT =	readsb
 GH_TAGNAME =	v${VERSION}
