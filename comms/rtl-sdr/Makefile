@@ -1,9 +1,8 @@
 COMMENT=	software to turn RTL2832U into an SDR
 
-REVISION =	0
 GH_ACCOUNT =	osmocom
 GH_PROJECT =	rtl-sdr
-GH_TAGNAME =	v2.0.2
+GH_TAGNAME =	v2.0.3
 
 SHARED_LIBS=	rtlsdr 0.2
 
