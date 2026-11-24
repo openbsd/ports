@@ -110,7 +110,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Either "Trace", "Debug", "Info", "Warn", "Error" or "None", default is "Info"
  LEVEL = Info
-@@ -838,7 +838,7 @@ LEVEL = Info
+@@ -839,7 +839,7 @@ LEVEL = Info
  ;EMAIL_DOMAIN_BLOCKLIST =
  ;;
  ;; Disallow registration, only allow admins to create accounts.
@@ -119,7 +119,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Allow registration only using gitea itself, it works only when DISABLE_REGISTRATION is false
  ;ALLOW_ONLY_INTERNAL_REGISTRATION = false
-@@ -850,7 +850,7 @@ LEVEL = Info
+@@ -851,7 +851,7 @@ LEVEL = Info
  ;; It could be set to "expensive" to block anonymous users accessing some pages which consume a lot of resources,
  ;; for example: block anonymous AI crawlers from accessing repo code pages.
  ;; The "expensive" mode is experimental and subject to change.
@@ -128,7 +128,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail notification
  ;ENABLE_NOTIFY_MAIL = false
-@@ -909,11 +909,11 @@ LEVEL = Info
+@@ -910,11 +910,11 @@ LEVEL = Info
  ;;
  ;; Default value for KeepEmailPrivate
  ;; Each new user will get the value of this setting copied into their profile
@@ -142,7 +142,7 @@ Index: custom/conf/app.example.ini
  ;; Default value for IsRestricted
  ;; Every new user will have restricted permissions depending on this setting
  ;DEFAULT_USER_IS_RESTRICTED = false
-@@ -922,7 +922,7 @@ LEVEL = Info
+@@ -923,7 +923,7 @@ LEVEL = Info
  ;; Limited is for users visible only to signed users
  ;; Private is for users visible only to members of their organizations
  ;; Public is for users visible for everyone
@@ -151,7 +151,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set which visibility modes a user can have
  ;ALLOWED_USER_VISIBILITY_MODES = public,limited,private
-@@ -931,7 +931,7 @@ LEVEL = Info
+@@ -932,7 +932,7 @@ LEVEL = Info
  ;; Limited is for organizations visible only to signed users
  ;; Private is for organizations visible only to members of the organization
  ;; Public is for organizations visible to everyone
@@ -160,7 +160,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default value for DefaultOrgMemberVisible
  ;; True will make the membership of the users visible when added to the organisation
-@@ -1045,14 +1045,14 @@ LEVEL = Info
+@@ -1046,14 +1046,14 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -178,7 +178,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; DETECTED_CHARSETS_ORDER tie-break order for detected charsets.
  ;; If the charsets have equal confidence, tie-breaking will be done by order in this list
-@@ -1067,7 +1067,7 @@ LEVEL = Info
+@@ -1068,7 +1068,7 @@ LEVEL = Info
  ;FORCE_PRIVATE = false
  ;;
  ;; Default privacy setting when creating a new repository, allowed values: last, private, public. Default is last which means the last setting used.
@@ -187,7 +187,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default private when using push-to-create
  ;DEFAULT_PUSH_CREATE_PRIVATE = true
-@@ -1086,7 +1086,7 @@ LEVEL = Info
+@@ -1087,7 +1087,7 @@ LEVEL = Info
  ;;
  ;; Preferred Licenses to place at the top of the List
  ;; The name here must match the filename in options/license or custom/options/license
@@ -196,7 +196,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable the ability to interact with repositories using the HTTP protocol
  ;DISABLE_HTTP_GIT = false
-@@ -1389,7 +1389,7 @@ LEVEL = Info
+@@ -1390,7 +1390,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -205,7 +205,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1421,7 +1421,7 @@ LEVEL = Info
+@@ -1422,7 +1422,7 @@ LEVEL = Info
  ;AMBIGUOUS_UNICODE_DETECTION = true
  ;;
  ;; Whether the email of the user should be shown in the Explore Users page
@@ -214,7 +214,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set the default theme for the Gitea install
  ;DEFAULT_THEME = gitea-auto
-@@ -1590,7 +1590,7 @@ LEVEL = Info
+@@ -1591,7 +1591,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -223,7 +223,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1598,7 +1598,7 @@ LEVEL = Info
+@@ -1599,7 +1599,7 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
  ;; Issue indexer type, currently support: bleve, db, elasticsearch (also compatible with OpenSearch) or meilisearch default is bleve
@@ -232,7 +232,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Issue indexer storage path, available when ISSUE_INDEXER_TYPE is bleve
  ;ISSUE_INDEXER_PATH = indexers/issues.bleve ; Relative paths will be made absolute against _`AppWorkPath`_.
-@@ -1628,7 +1628,7 @@ LEVEL = Info
+@@ -1629,7 +1629,7 @@ LEVEL = Info
  ;REPO_INDEXER_TYPE = bleve
  ;;
  ;; Index file used for code search. available when `REPO_INDEXER_TYPE` is bleve
@@ -241,7 +241,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Code indexer connection string, available when `REPO_INDEXER_TYPE` is elasticsearch. i.e. http://elastic:changeme@localhost:9200
  ;REPO_INDEXER_CONN_STR =
-@@ -1703,12 +1703,12 @@ LEVEL = Info
+@@ -1704,12 +1704,12 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -256,7 +256,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Default configuration for email notifications for users (user configurable). Options: enabled, onmention, disabled
  ;DEFAULT_EMAIL_NOTIFICATIONS = enabled
-@@ -1731,7 +1731,7 @@ LEVEL = Info
+@@ -1732,7 +1732,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -265,7 +265,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1837,7 +1837,7 @@ LEVEL = Info
+@@ -1838,7 +1838,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -274,7 +274,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1860,7 +1860,7 @@ LEVEL = Info
+@@ -1861,7 +1861,7 @@ LEVEL = Info
  ;; If your provider does not explicitly say which protocol it uses but does provide a port,
  ;; you can set SMTP_PORT instead and this will be inferred.
  ;; (Before 1.18, see the notice, this was controlled via MAILER_TYPE and IS_TLS_ENABLED.)
@@ -283,7 +283,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail server address, e.g. smtp.gmail.com.
  ;; For smtp+unix, this should be a path to a unix socket instead.
-@@ -1888,11 +1888,11 @@ LEVEL = Info
+@@ -1889,11 +1889,11 @@ LEVEL = Info
  ;;
  ;; Use client certificate in connection.
  ;USE_CLIENT_CERT = false
@@ -298,7 +298,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Sometimes it is helpful to use a different address on the envelope. Set this to use ENVELOPE_FROM as the from on the envelope. Set to `<>` to send an empty address.
  ;ENVELOPE_FROM =
-@@ -1908,10 +1908,10 @@ LEVEL = Info
+@@ -1909,10 +1909,10 @@ LEVEL = Info
  ;PASSWD =
  ;;
  ;; Send mails only in plain text, without HTML alternative
@@ -311,7 +311,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;; WARNING: if your sendmail program interprets options you should set this to "--" or terminate these args with "--"
-@@ -2013,7 +2013,7 @@ LEVEL = Info
+@@ -2014,7 +2014,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -320,7 +320,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2026,7 +2026,7 @@ LEVEL = Info
+@@ -2027,7 +2027,7 @@ LEVEL = Info
  ;; file: session file path, e.g. `data/sessions`, relative paths will be made absolute against _`AppWorkPath`_.
  ;; redis: default to [redis] CONN_STR
  ;; mysql: go-sql-driver/mysql dsn config string, e.g. `root:password@/session_table`
@@ -329,7 +329,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -2045,12 +2045,12 @@ LEVEL = Info
+@@ -2046,12 +2046,12 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -345,7 +345,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -2077,7 +2077,7 @@ LEVEL = Info
+@@ -2078,7 +2078,7 @@ LEVEL = Info
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; Deprecated, see Web UI Admin Panel -> Config -> Settings
@@ -354,7 +354,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -2086,7 +2086,7 @@ LEVEL = Info
+@@ -2087,7 +2087,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -363,7 +363,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2114,7 +2114,7 @@ LEVEL = Info
+@@ -2115,7 +2115,7 @@ LEVEL = Info
  ;;
  ;; Path for attachments. Defaults to `attachments`. Only available when STORAGE_TYPE is `local`
  ;; Relative paths will be resolved to `${AppDataPath}/${attachment.PATH}`
@@ -372,7 +372,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -2559,10 +2559,10 @@ LEVEL = Info
+@@ -2560,10 +2560,10 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Check for new Gitea versions
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -385,7 +385,7 @@ Index: custom/conf/app.example.ini
  ;RUN_AT_START = false
  ;NOTICE_ON_SUCCESS = false
  ;SCHEDULE = @every 168h
-@@ -2722,13 +2722,13 @@ LEVEL = Info
+@@ -2723,13 +2723,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -402,7 +402,7 @@ Index: custom/conf/app.example.ini
  ;; Show the "powered by" text in the footer
  ;SHOW_FOOTER_POWERED_BY = true
  ;; Generate sitemap. Defaults to `true`.
-@@ -2859,7 +2859,7 @@ LEVEL = Info
+@@ -2860,7 +2860,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -411,7 +411,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2968,7 +2968,7 @@ LEVEL = Info
+@@ -2969,7 +2969,7 @@ LEVEL = Info
  ;STORAGE_TYPE = local
  ;;
  ;; Where your lfs files reside, default is data/lfs.
@@ -420,7 +420,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Allows the storage driver to redirect to authenticated URLs to serve files directly
  ;; Currently, only `minio` and `azureblob` is supported.
-@@ -3067,9 +3067,9 @@ LEVEL = Info
+@@ -3068,9 +3068,9 @@ LEVEL = Info
  ;; When a proxy is configured, Gitea does not enforce the egress lists ([security], [migrations]) on the proxied
  ;; target, the proxy server is expected to restrict it
  
