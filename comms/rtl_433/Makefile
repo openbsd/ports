@@ -2,7 +2,7 @@ COMMENT=	data receiver for rtl-sdr devices
 
 GH_ACCOUNT =	merbanan
 GH_PROJECT =	rtl_433
-GH_TAGNAME =	25.12
+GH_TAGNAME =	26.07
 
 CATEGORIES =	comms
 
