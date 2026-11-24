@@ -1,10 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.22.0
-REVISION=	0
+V=		1.23.7
 DISTNAME=	libheif-$V
 
-SHARED_LIBS +=  heif 3.1
+SHARED_LIBS +=  heif 3.2
 
 CATEGORIES=	multimedia graphics
 
