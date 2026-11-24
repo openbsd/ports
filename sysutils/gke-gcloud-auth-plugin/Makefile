@@ -1,6 +1,6 @@
 COMMENT=		kubectl authentication plugin for GKE
 
-V=			37.2.9
+V=			37.2.10
 DISTNAME=		gke-gcloud-auth-plugin-${V}
 DISTFILES=		${DISTNAME}{v${V}}.tar.gz
 WRKDIST=		${WRKDIR}/cloud-provider-gcp-gke-gcloud-auth-plugin-v${V}
