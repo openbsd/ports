@@ -556,6 +556,15 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/syspathcontext.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tempdir.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/terminal.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/text.py
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/gruvbox-dark.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/lightbg.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/linux.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/neutral-nt.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/neutral-posix.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/nocolor.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/pride-l.json
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/themes/pride.json
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/timing.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/tokenutil.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
