@@ -1,3 +1,2 @@
-@pkgpath mail/claws-mail,-pdfviewer,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/pdf_viewer.la
 @so lib/claws-mail/plugins/pdf_viewer.so

@@ -1,4 +1,2 @@
-@pkgpath mail/sylpheed-claws,-bogofilter[,compface][,pgpmime][,jpilot][,ldap]
-@pkgpath mail/claws-mail,-bogofilter,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/bogofilter.la
 @so lib/claws-mail/plugins/bogofilter.so

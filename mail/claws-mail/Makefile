@@ -4,9 +4,8 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 
 V=			4.4.0
+REVISION=		2
 DISTNAME=		claws-mail-${V}
-
-REVISION=		1
 
 CATEGORIES=		mail news
 
@@ -22,9 +21,6 @@ COMPILER =		base-clang ports-gcc
 MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer
 FLAVORS=		ldap
 FLAVOR?=
-
-FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS=		FLAVOR_STRING
 
 RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
 			mail/bogofilter

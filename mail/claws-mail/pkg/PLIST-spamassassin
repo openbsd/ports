@@ -1,4 +1,2 @@
-@pkgpath mail/sylpheed-claws,-spamassassin[,compface][,pgpmime][,jpilot][,ldap]
-@pkgpath mail/claws-mail,-spamassassin,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/spamassassin.la
 @so lib/claws-mail/plugins/spamassassin.so

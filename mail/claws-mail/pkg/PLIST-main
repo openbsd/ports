@@ -1,16 +1,3 @@
-@conflict claws-mail-attremover-*
-@conflict claws-mail-notification-*
-@conflict claws-mail-rssyl-*
-@conflict claws-mail-vcalendar-*
-@conflict claws-mail-gdata-*
-@pkgpath mail/claws-mail,-gdata[,compface]${FLAVOR_STRING}
-@pkgpath mail/claws-mail-attremover
-@pkgpath mail/claws-mail-notification
-@pkgpath mail/claws-mail-rssyl
-@pkgpath mail/claws-mail-vcalendar
-@pkgpath mail/claws-mail,-main,compface${FLAVOR_STRING}
-@pkgpath mail/sylpheed-claws,-main[,compface][,pgpmime][,jpilot][,ldap]
-@pkgpath mail/sylpheed-claws[,compface][,pgpmime][,jpilot][,ldap]
 @bin bin/claws-mail
 @comment bin/sylpheed-claws
 include/claws-mail/
