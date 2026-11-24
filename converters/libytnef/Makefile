@@ -2,7 +2,7 @@ COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0
 
-V=			2.1.3
+V=			2.1.5
 
 DISTNAME=		libytnef-${V}
 

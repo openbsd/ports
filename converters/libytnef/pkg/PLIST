@@ -11,3 +11,6 @@ include/ytnef.h
 lib/libytnef.la
 @lib lib/libytnef.so.${LIBytnef_VERSION}
 lib/pkgconfig/libytnef.pc
+@man man/man1/ytnef.1
+@man man/man1/ytnefprint.1
+@man man/man1/ytnefprocess.1
