@@ -1,12 +1,12 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-MOZILLA_VERSION =	153.7.0esr
+MOZILLA_VERSION =	153.8.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
-MOZILLA_PROFDATA_TASKID = dKl7bc7xTIWdHuEAcMekBQ
+MOZILLA_PROFDATA_TASKID = F3WwD6HHQTisbR1rRlQXZw
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -65,8 +65,6 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 .endif
 
-# 2026497
-CONFIGURE_ENV +=	MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 
