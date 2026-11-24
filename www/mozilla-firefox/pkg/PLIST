@@ -33,8 +33,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.main
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.rdd
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.rdd
-lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.socket
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.socket
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.utility
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
@@ -45,8 +43,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.main
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.main
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.rdd
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.rdd
-lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.socket
-@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.socket
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility
 lib/${MOZILLA_PROJECT}/browser/omni.ja
