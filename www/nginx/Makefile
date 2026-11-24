@@ -22,6 +22,7 @@ COMMENT-xslt=		nginx XSLT filter module
 VERSION=	1.30.8
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
+REVISION-ldap_auth=	0
 
 PKGNAME-main=		${DISTNAME}
 
@@ -33,7 +34,7 @@ DIST_TUPLE=	\
 	github FRiCKLE ngx_cache_purge 2.3 ngx_cache_purge \
 	github leev ngx_http_geoip2_module 3.4 ngx_http_geoip2_module \
 	github openresty headers-more-nginx-module v0.40 headers-more-nginx-module \
-	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
+	github kvspb nginx-auth-ldap v1.4.0 nginx-auth-ldap \
 	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
 	github vision5 ngx_devel_kit v0.3.4 ngx_devel_kit \
 	github wargio naxsi 7e867e20e282bd8cf6bbe99ff6207139422988f5 naxsi \
@@ -93,7 +94,7 @@ WANTLIB-cache_purge=
 WANTLIB-geoip2=		maxminddb
 WANTLIB-headers_more=
 WANTLIB-image_filter=	gd
-WANTLIB-ldap_auth=	ldap
+WANTLIB-ldap_auth=	ldap lber
 WANTLIB-lua=		${MODLUA_WANTLIB} m pcre
 WANTLIB-mailproxy=
 WANTLIB-modsecurity=	modsecurity
