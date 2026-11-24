@@ -2,6 +2,7 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
+REVISION =	0
 V=		2026-10-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
