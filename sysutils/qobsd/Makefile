@@ -10,7 +10,7 @@ CATEGORIES =		sysutils emulators
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
-# ISC
+# ISC, GPL2
 PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =		*
