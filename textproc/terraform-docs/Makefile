@@ -1,7 +1,7 @@
 COMMENT =		documentation generator for Terraform
 
 MODGO_MODNAME =		github.com/terraform-docs/terraform-docs
-MODGO_VERSION =		v0.24.0
+MODGO_VERSION =		v0.25.1
 
 DISTNAME =		terraform-docs-${MODGO_VERSION}
 
