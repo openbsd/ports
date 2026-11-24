@@ -1,10 +1,9 @@
 COMMENT=	advanced music player
 
-VERSION=	2.0
+VERSION=	2.1
 DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
 CATEGORIES=	audio
-REVISION=	1
 
 HOMEPAGE=	https://github.com/jeremyevans/aqualung
 
@@ -86,9 +85,9 @@ CONFIGURE_ARGS=	--with-cddb \
 		--with-vorbisenc \
 		--with-wavpack \
 		--without-alsa \
-		--without-ifp \
 		--without-jack \
 		--without-oss \
+		--without-pipewire \
 		--without-pulse \
 		--without-winmm
 
