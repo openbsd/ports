@@ -1,23 +1,23 @@
 MODGO_MODULES =	\
 	github.com/alecthomas/kingpin/v2	 v2.4.0 \
-	github.com/alecthomas/units		 v0.0.0-20211218093645-b94a6e3cc137 \
+	github.com/alecthomas/units		 v0.0.0-20240927000941-0f3dac36c52b \
 	github.com/beorn7/perks			 v1.0.1 \
 	github.com/cespare/xxhash/v2		 v2.3.0 \
-	github.com/coreos/go-systemd/v22	 v22.5.0 \
+	github.com/coreos/go-systemd/v22	 v22.7.0 \
 	github.com/cpuguy83/go-md2man/v2	 v2.0.6 \
-	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/felixge/httpsnoop		 v1.0.4 \
-	github.com/godbus/dbus/v5		 v5.0.4 \
+	github.com/godbus/dbus/v5		 v5.1.0 \
+	github.com/golang-jwt/jwt/v5		 v5.3.1 \
 	github.com/golang/protobuf		 v1.5.0 \
 	github.com/google/go-cmp		 v0.7.0 \
+	github.com/google/uuid			 v1.6.0 \
 	github.com/gorilla/handlers		 v1.5.2 \
 	github.com/inconshreveable/mousetrap	 v1.1.0 \
 	github.com/jpillora/backoff		 v1.0.0 \
 	github.com/json-iterator/go		 v1.1.12 \
 	github.com/julienschmidt/httprouter	 v1.3.0 \
-	github.com/klauspost/compress		 v1.18.0 \
+	github.com/klauspost/compress		 v1.20.1 \
 	github.com/klauspost/cpuid/v2		 v2.2.9 \
-	github.com/kr/pretty			 v0.3.1 \
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/minio/sha256-simd		 v1.0.1 \
 	github.com/miolini/datacounter		 v1.0.3 \
@@ -25,44 +25,39 @@ MODGO_MODULES =	\
 	github.com/modern-go/reflect2		 v1.0.2 \
 	github.com/munnerz/goautoneg		 v0.0.0-20191010083416-a7dc8b61c822 \
 	github.com/mwitkow/go-conntrack		 v0.0.0-20190716064945-2f068394615f \
-	github.com/pmezard/go-difflib		 v1.0.0 \
-	github.com/prometheus/client_golang	 v1.22.0 \
-	github.com/prometheus/client_model	 v0.6.1 \
-	github.com/prometheus/common		 v0.62.0 \
-	github.com/prometheus/procfs		 v0.15.1 \
-	github.com/rogpeppe/go-internal		 v1.10.0 \
+	github.com/prometheus/client_golang	 v1.25.0 \
+	github.com/prometheus/client_model	 v0.6.3 \
+	github.com/prometheus/common		 v0.72.0 \
+	github.com/prometheus/procfs		 v0.22.0 \
 	github.com/russross/blackfriday/v2	 v2.1.0 \
-	github.com/spf13/cobra			 v1.9.1 \
-	github.com/spf13/pflag			 v1.0.6 \
-	github.com/stretchr/testify		 v1.10.0 \
+	github.com/spf13/cobra			 v1.10.2 \
+	github.com/spf13/pflag			 v1.0.9 \
+	github.com/stretchr/testify		 v1.12.1 \
 	github.com/xhit/go-str2duration/v2	 v2.1.0 \
-	golang.org/x/crypto			 v0.38.0 \
-	golang.org/x/net			 v0.33.0 \
-	golang.org/x/oauth2			 v0.24.0 \
-	golang.org/x/sync			 v0.7.0 \
-	golang.org/x/sys			 v0.33.0 \
-	golang.org/x/term			 v0.32.0 \
-	golang.org/x/text			 v0.25.0 \
-	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
-	google.golang.org/protobuf		 v1.36.5 \
-	gopkg.in/check.v1			 v1.0.0-20201130134442-10cb98267c6c \
-	gopkg.in/yaml.v2			 v2.4.0 \
-	gopkg.in/yaml.v3			 v3.0.1
+	go.uber.org/goleak			 v1.3.0 \
+	go.yaml.in/yaml/v2			 v2.4.4 \
+	go.yaml.in/yaml/v3			 v3.0.5 \
+	golang.org/x/crypto			 v0.59.0 \
+	golang.org/x/net			 v0.62.0 \
+	golang.org/x/oauth2			 v0.37.0 \
+	golang.org/x/sync			 v0.22.0 \
+	golang.org/x/sys			 v0.50.0 \
+	golang.org/x/term			 v0.48.0 \
+	golang.org/x/text			 v0.44.0 \
+	google.golang.org/protobuf		 v1.36.12 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405
 
 MODGO_MODFILES =	\
 	github.com/felixge/httpsnoop		 v1.0.3 \
-	github.com/google/go-cmp		 v0.5.5 \
-	github.com/google/go-cmp		 v0.6.0 \
 	github.com/klauspost/cpuid/v2		 v2.2.3 \
-	github.com/prometheus/client_golang	 v1.20.4 \
-	golang.org/x/net			 v0.21.0 \
+	github.com/prometheus/client_golang	 v1.23.2 \
+	github.com/prometheus/procfs		 v0.21.0 \
+	go.yaml.in/yaml/v3			 v3.0.4 \
+	golang.org/x/net			 v0.59.0 \
 	golang.org/x/sys			 v0.0.0-20220704084225-05e143d24a9e \
-	golang.org/x/sys			 v0.20.0 \
+	golang.org/x/sys			 v0.1.0 \
 	golang.org/x/sys			 v0.22.0 \
-	golang.org/x/sys			 v0.28.0 \
-	golang.org/x/sys			 v0.30.0 \
-	golang.org/x/text			 v0.21.0 \
-	google.golang.org/protobuf		 v1.33.0 \
-	google.golang.org/protobuf		 v1.36.1 \
-	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405
+	golang.org/x/sys			 v0.47.0 \
+	golang.org/x/sys			 v0.48.0 \
+	golang.org/x/text			 v0.42.0
 
