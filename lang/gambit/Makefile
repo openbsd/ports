@@ -1,4 +1,5 @@
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
+BROKEN-sparc64=	Floating point exception (core dumped)
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
