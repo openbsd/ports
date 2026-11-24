@@ -125,7 +125,7 @@ do-build:
 do-install:
 	@cd ${WRKBUILD} && umask 022 && exec ${_PBUILD} \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
-		${WRKSRC}/mach ${MACH_FLAGS} install ${PARALLEL_MAKE_FLAGS}
+		${WRKSRC}/mach ${MACH_FLAGS} install
 .else
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT ?=	${MODPY_BIN} ${WRKSRC}/configure.py
