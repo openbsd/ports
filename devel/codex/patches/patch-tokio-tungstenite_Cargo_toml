@@ -6,7 +6,7 @@ Index: tokio-tungstenite/Cargo.toml
  
  [dependencies.tungstenite]
 -git = "https://github.com/openai-oss-forks/tungstenite-rs"
--rev = "bc589d684755a8c02da0fc7e58d0861cbfc306f1"
+-rev = "e19950ef7828cb311e6d51a6bedcebf0192e055c"
 +path = "../tungstenite"
  default-features = false
  
