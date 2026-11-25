@@ -339,6 +339,7 @@
      SUBDIR += libofx
      SUBDIR += liboop
      SUBDIR += libopensync
+     SUBDIR += libosdp
      SUBDIR += libotf
      SUBDIR += libowfat
      SUBDIR += libpeas
