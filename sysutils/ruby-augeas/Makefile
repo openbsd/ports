@@ -10,7 +10,11 @@ HOMEPAGE=	https://augeas.net/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c++abi augeas pthread xml2
+WANTLIB=	augeas pthread xml2
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+WANTLIB +=	c++abi
+.endif
 
 SITES=		https://github.com/hercules-team/ruby-augeas/releases/download/release-${V}/
 EXTRACT_SUFX=	.tgz
