@@ -45,6 +45,7 @@ BUILD_DEPENDS =	devel/bison>=2.4 \
 		devel/py-six \
 		editors/py-qscintilla,${QTVER} \
 		geo/gdal,-python \
+		wayland/wayland-protocols \
 		x11/py-${QTVER}
 
 RUN_DEPENDS =	databases/py-psycopg2 \
