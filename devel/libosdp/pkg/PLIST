@@ -1,0 +1,12 @@
+include/libosdp/
+include/libosdp/osdp.h
+include/libosdp/osdp.hpp
+include/libosdp/osdp_export.h
+lib/cmake/
+lib/cmake/libosdp/
+lib/cmake/libosdp/LibOSDPConfig.cmake
+lib/cmake/libosdp/LibOSDPConfigVersion.cmake
+lib/cmake/libosdp/LibOSDPTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libosdp/LibOSDPTargets.cmake
+@lib lib/libosdp.so.${LIBosdp_VERSION}
+lib/pkgconfig/libosdp.pc
