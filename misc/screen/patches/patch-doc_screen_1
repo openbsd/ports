@@ -37,7 +37,7 @@ Index: doc/screen.1
  The option \*Q\-n\*U may be used to suppress the line feed.
  See also \*Qsleep\*U.
  Echo is also useful for online checking of environment variables.
-@@ -5199,12 +5199,12 @@ Examples in the 
+@@ -5200,12 +5200,12 @@ Examples in the 
  .I screen
  distribution package for private and global initialization files.
  .IP $SYSSCREENRC
@@ -52,7 +52,7 @@ Index: doc/screen.1
  .IP $SCREENDIR/S\-<login>
  .IP $HOME/.screen
  Socket directories (default)
-@@ -5225,7 +5225,7 @@ Output log files created by the log function
+@@ -5226,7 +5226,7 @@ Output log files created by the log function
  or
  .IP /etc/termcap
  Terminal capability databases
@@ -61,7 +61,7 @@ Index: doc/screen.1
  Login records
  .IP $LOCKPRG
  Program that locks a terminal.
-@@ -5343,9 +5343,9 @@ does not make use of hardware tabs.
+@@ -5344,9 +5344,9 @@ does not make use of hardware tabs.
  must be installed as set-uid with owner root on most systems in order
  to be able to correctly change the owner of the tty device file for
  each window.

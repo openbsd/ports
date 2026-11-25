@@ -1,6 +1,6 @@
 COMMENT=	multi-screen window manager
 
-DISTNAME=	screen-5.0.2
+DISTNAME=	screen-5.0.3
 CATEGORIES=	misc
 SITES=		${SITE_GNU:=screen/}
 
@@ -32,6 +32,9 @@ ALL_TARGET=	screen screen.info
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	print/texinfo
+
+# malloc wrapper doesn't support OpenBSD
+NO_TEST=	Yes
 
 pre-build:
 	ln -s ${LOCALBASE}/bin/gmakeinfo ${WRKDIR}/bin/makeinfo
