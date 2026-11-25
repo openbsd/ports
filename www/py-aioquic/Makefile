@@ -1,10 +1,11 @@
 COMMENT=	QUIC and HTTP/3 implementation in Python
 
 MODPY_DISTV=	1.6.1
+REVISION=	0
 DISTNAME=	aioquic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
-HOMEPAGE=	https://github.com/python-hyper/h2
+HOMEPAGE=	https://github.com/aiortc/aioquic
 
 CATEGORIES=	www
 
