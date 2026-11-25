@@ -8,7 +8,6 @@
 @rcscript ${RCDIR}/gromox_imap
 @rcscript ${RCDIR}/gromox_midb
 @rcscript ${RCDIR}/gromox_pop3
-@rcscript ${RCDIR}/gromox_timer
 @rcscript ${RCDIR}/gromox_zcore
 @extraunexec rm -rf /var/db/gromox/*
 @extraunexec rm -rf /var/log/gromox/*
@@ -84,9 +83,6 @@ lib/libgxs_mysql_adaptor.la
 @static-lib lib/libgxs_ruleproc.a
 lib/libgxs_ruleproc.la
 @lib lib/libgxs_ruleproc.so.${LIBgxs_ruleproc_VERSION}
-@static-lib lib/libgxs_timer_agent.a
-lib/libgxs_timer_agent.la
-@lib lib/libgxs_timer_agent.so.${LIBgxs_timer_agent_VERSION}
 lib/systemd/
 lib/systemd/system/
 lib/systemd/system/gromox-cleaner.service
@@ -101,7 +97,6 @@ lib/systemd/system/gromox-midb.service
 lib/systemd/system/gromox-pop3.service
 lib/systemd/system/gromox-snapshot.service
 lib/systemd/system/gromox-snapshot.timer
-lib/systemd/system/gromox-timer.service
 lib/systemd/system/gromox-zcore.service
 lib/sysusers.d/
 lib/sysusers.d/sysusers-gromox.conf
@@ -125,7 +120,6 @@ libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/oxdisco
 @bin libexec/gromox/pop3
 @bin libexec/gromox/shmget
-@bin libexec/gromox/timer
 @bin libexec/gromox/zcore
 man/man1/ddbg.1gx
 man/man4/alias_resolve.4gx
@@ -151,7 +145,6 @@ man/man4/mod_rewrite.4gx
 man/man4/mysql_adaptor.4gx
 man/man4/oab.4gx
 man/man4/pam_gromox.4gx
-man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
 @man man/man5/gromox-selinux.5
 @man man/man5/gromox.cfg.5
@@ -203,7 +196,6 @@ man/man8/istore.8gx
 @man man/man8/kdb-uidextract.8
 man/man8/midb.8gx
 man/man8/pop3.8gx
-man/man8/timer.8gx
 man/man8/zcore.8gx
 @bin sbin/gromox-abktconv
 sbin/gromox-abktpull
@@ -252,9 +244,7 @@ share/gromox/Messages.xsd
 share/gromox/Services.wsdl
 share/gromox/Types.xsd
 share/gromox/abkt.pak
-share/gromox/conf.php
 share/gromox/cpid.txt
-share/gromox/db.php
 share/gromox/folder_names.txt
 share/gromox/fpm-gromox.conf.sample
 share/gromox/gdbinit
@@ -313,9 +303,10 @@ share/gromox/mail_bounce/gb2312/BOUNCE_GENERIC_ERROR
 share/gromox/mail_bounce/gb2312/BOUNCE_MAIL_TOO_LARGE
 share/gromox/mail_bounce/gbk/
 share/gromox/mail_bounce/gbk/BOUNCE_AUTO_RESPONSE
+share/gromox/mail_bounce/gbk/BOUNCE_CANNOT_DISPLAY
 share/gromox/mail_bounce/gbk/BOUNCE_GENERIC_ERROR
-share/gromox/mail_bounce/gbk/BOUNCE_MAIL_CANNOT_DISPLAY
 share/gromox/mail_bounce/gbk/BOUNCE_MAIL_TOO_LARGE
+share/gromox/meeting_prefixes.txt
 share/gromox/mime_extension.txt
 share/gromox/mlist_bounce/
 share/gromox/mlist_bounce/ascii/
@@ -357,5 +348,4 @@ share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_NON_READ
 share/gromox/notify_bounce/gbk/BOUNCE_NOTIFY_READ
 share/gromox/propnames.txt
 share/gromox/sqliterc
-share/gromox/submit.php
 share/gromox/timezone.pak

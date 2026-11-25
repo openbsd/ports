@@ -1,7 +1,7 @@
 Index: lib/textmaps.cpp
 --- lib/textmaps.cpp.orig
 +++ lib/textmaps.cpp
-@@ -335,7 +335,7 @@ void textmaps_init(const char *datapath)
+@@ -467,7 +467,7 @@ void textmaps_init(const char *datapath)
  		 * Only the first two columns are read from mime.types, so not
  		 * all extensions are used.
  		 */

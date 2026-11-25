@@ -2,7 +2,7 @@
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that "daemon_*" variables are not passed to the child scripts.
-_pkg_scripts="gromox_event gromox_timer gromox_http gromox_midb gromox_zcore gromox_imap gromox_pop3 gromox_delivery gromox_delivery_queue"
+_pkg_scripts="gromox_event gromox_http gromox_midb gromox_zcore gromox_imap gromox_pop3 gromox_delivery gromox_delivery_queue"
 
 if [[ $1 == restart ]]; then
 	$0 stop && $0 start
