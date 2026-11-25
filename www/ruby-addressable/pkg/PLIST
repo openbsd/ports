@@ -11,6 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/idna.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/idna/native.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/idna/pure.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/template.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/addressable/unicode_normalization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/uri.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/addressable/version.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
