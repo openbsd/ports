@@ -31,6 +31,8 @@ lib/rsyslog/
 @man man/man5/rsyslog.conf.5
 @man man/man8/rsyslogd.8
 @bin sbin/rsyslogd
+share/doc/rsyslog/
+share/doc/rsyslog/COPYING.BSD-3-Clause
 share/examples/rsyslog/
 share/examples/rsyslog/rsyslog.conf
 @sample ${SYSCONFDIR}/rsyslog.conf

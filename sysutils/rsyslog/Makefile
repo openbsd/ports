@@ -6,10 +6,10 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2610.0pl20261118
+V =			8.2610.0pl20261124
 GH_ACCOUNT =		rsyslog
 GH_PROJECT =		rsyslog
-GH_COMMIT =		a073c65ebb105e466d8de52edac3810e6ae0a0ad
+GH_COMMIT =		9d3904c30b3d90edb9f66c188d889a5f36fc2594
 
 DISTNAME =		rsyslog-${V}
 
@@ -59,13 +59,15 @@ LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
 RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 
-BUILD_DEPENDS +=	devel/autoconf-archive
+BUILD_DEPENDS +=	devel/autoconf-archive \
+			devel/bison
 
 AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 CONFIGURE_STYLE =	autoreconf
 
 USE_GMAKE=		Yes
+YACC=			bison -y
 
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_ARGS +=	--enable-pgsql \
