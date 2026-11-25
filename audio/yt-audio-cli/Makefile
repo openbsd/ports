@@ -1,9 +1,11 @@
 COMMENT=	yt-dlp wrapper to manage youtube audio
 
-MODPY_DISTV=	0.2.2
+MODPY_DISTV=	0.2.3
 DISTNAME=	yt_audio_cli-${MODPY_DISTV}
 PKGNAME=	yt-audio-cli-${MODPY_DISTV}
 CATEGORIES=	audio
+
+HOMEPAGE=	https://github.com/pyyupsk/yt-audio-cli
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -17,6 +19,7 @@ RUN_DEPENDS=	devel/py-rich \
 		www/yt-dlp \
 		graphics/ffmpeg
 
+# not in sdist
 NO_TEST=	Yes
 
 post-install:
