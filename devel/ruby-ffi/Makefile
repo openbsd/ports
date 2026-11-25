@@ -12,7 +12,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 
-WANTLIB =	c++abi ffi
+WANTLIB =	ffi
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+WANTLIB +=      c++abi
+.endif
 
 LIB_DEPENDS =	devel/libffi
 
