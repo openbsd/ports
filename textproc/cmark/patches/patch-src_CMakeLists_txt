@@ -1,0 +1,39 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -5,7 +5,7 @@ configure_file(libcmark.pc.in
+   ${CMAKE_CURRENT_BINARY_DIR}/libcmark.pc
+   @ONLY)
+ 
+-add_library(cmark
++set(LIBRARY_SOURCES
+   blocks.c
+   buffer.c
+   cmark.c
+@@ -26,6 +26,8 @@ add_library(cmark
+   scanners.re
+   utf8.c
+   xml.c)
++
++add_library(cmark ${LIBRARY_SOURCES})
+ cmark_add_compile_options(cmark)
+ set_target_properties(cmark PROPERTIES
+   OUTPUT_NAME "cmark"
+@@ -47,9 +49,14 @@ target_include_directories(cmark INTERFACE
+ generate_export_header(cmark
+   BASE_NAME ${PROJECT_NAME})
+ 
+-# FIXME(compnerd) this should be removed, but exists solely to allow a migration
+-# path for OSS Fuzz.
+-add_custom_target(cmark_static DEPENDS cmark)
++add_library(cmark_static STATIC ${LIBRARY_SOURCES})
++cmark_add_compile_options(cmark_static)
++set_target_properties(cmark_static PROPERTIES
++  OUTPUT_NAME "cmark")
++target_compile_definitions(cmark_static PRIVATE
++  CMARK_STATIC_DEFINE)
++install(TARGETS cmark_static
++  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+ add_executable(cmark_exe
+   main.c)
