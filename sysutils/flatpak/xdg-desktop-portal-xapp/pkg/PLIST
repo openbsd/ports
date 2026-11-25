@@ -9,6 +9,9 @@ share/locale/cy/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/da/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/de/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/el/LC_MESSAGES/xdg-desktop-portal-xapp.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/en_GB/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/eo/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/es/LC_MESSAGES/xdg-desktop-portal-xapp.mo
@@ -28,6 +31,7 @@ share/locale/is/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/it/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/ja/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/kk/LC_MESSAGES/xdg-desktop-portal-xapp.mo
+share/locale/ko/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/lt/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/lv/LC_MESSAGES/xdg-desktop-portal-xapp.mo
 share/locale/ms/LC_MESSAGES/xdg-desktop-portal-xapp.mo
