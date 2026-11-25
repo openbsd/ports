@@ -117,13 +117,13 @@ MAKE_ENV +=		MOZBUILD_STATE_PATH=${WRKDIR}
 MAKE_ENV +=		MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
 
 do-configure:
-	@cd ${WRKBUILD} && exec ${_PBUILD} ${SETENV} ${CONFIGURE_ENV} \
+	@cd ${WRKBUILD} && ${SETENV} ${CONFIGURE_ENV} \
 		${WRKSRC}/mach ${MACH_FLAGS} configure ${CONFIGURE_ARGS}
 do-build:
-	@cd ${WRKBUILD} && exec ${_PBUILD} ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		${WRKSRC}/mach ${MACH_FLAGS} build ${PARALLEL_MAKE_FLAGS}
 do-install:
-	@cd ${WRKBUILD} && umask 022 && exec ${_PBUILD} \
+	@cd ${WRKBUILD} && umask 022 && \
 		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${WRKSRC}/mach ${MACH_FLAGS} install
 .else
