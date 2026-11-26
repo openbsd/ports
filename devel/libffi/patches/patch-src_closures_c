@@ -6,7 +6,7 @@ already an improvement (RWX memory is unavailable by default).
 Index: src/closures.c
 --- src/closures.c.orig
 +++ src/closures.c
-@@ -933,6 +933,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -938,6 +938,7 @@ dlmmap (void *start, size_t length, int prot,
        return ptr;
      }
  
@@ -14,7 +14,7 @@ Index: src/closures.c
    /* -1 != execfd hints that we already decided to use dlmmap_locked
       last time.  */
    if (execfd == -1 && is_mprotect_enabled ())
-@@ -961,6 +962,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -966,6 +967,7 @@ dlmmap (void *start, size_t length, int prot,
  	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
  	 MREMAP_DUP and prot at this point.  */
      }
