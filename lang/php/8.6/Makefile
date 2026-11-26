@@ -1,3 +1,6 @@
+UNLINKED=      wip, openssl extension broken with libressl
+CONFIGURE_ARGS=        --without-openssl
+
 PHP_VERSION=	8.6.0
 AUTOCONF_VERSION= 2.72
 
