@@ -10,3 +10,12 @@ Index: suricata-update/suricata/update/config.py
  
  # Cache directory - relative to the data directory.
  CACHE_DIRECTORY = os.path.join("update", "cache")
+@@ -218,7 +218,7 @@ def init(args):
+         # found in the build-info.
+         if not DATA_DIRECTORY_KEY in _config and "localstatedir" in build_info:
+             data_directory = os.path.join(
+-                build_info["localstatedir"], "lib/suricata")
++                build_info["localstatedir"], "suricata")
+             logger.info("Using data-directory %s.", data_directory)
+             _config[DATA_DIRECTORY_KEY] = data_directory
+ 

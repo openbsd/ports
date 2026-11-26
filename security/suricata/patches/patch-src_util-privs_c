@@ -1,16 +1,26 @@
-Use setresuid/gid() directly to change user and group.  Otherwise
-Suricata uses libcap-ng on Linux and runs as root elsewhere.
+Use setgroups() and setresgid/uid() directly to change user and group,
+dropping root's supplementary groups.  Otherwise Suricata uses libcap-ng
+on Linux and runs as root elsewhere.
 
 Index: src/util-privs.c
 --- src/util-privs.c.orig
 +++ src/util-privs.c
-@@ -244,6 +244,27 @@ void SCGetGroupID(const char *group_name, uint32_t *gi
+@@ -237,6 +237,36 @@ void SCGetGroupID(const char *group_name, uint32_t *gi
      *gid = grpid;
  }
  
 +int SCSetUserID(const uint32_t uid, const uint32_t gid)
 +{
-+    int ret = setresgid(gid, gid, gid);
++    const gid_t groups[1] = { gid };
++    int ret = setgroups(1, groups);
++
++    if (ret != 0) {
++        SCLogError("unable to set the supplementary group IDs,"
++                " check permissions!! gid=%u ret=%i errno=%i", gid, ret, errno);
++        exit(EXIT_FAILURE);
++    }
++
++    ret = setresgid(gid, gid, gid);
 +
 +    if (ret != 0) {
 +        SCLogError("unable to set the group ID,"

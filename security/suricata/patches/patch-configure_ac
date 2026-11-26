@@ -1,9 +1,12 @@
 To remove the pid file, its directory must be writable by suricata user.
+The hyperscan cache (sgh-mpm-caching-path) and the dataset data directory
+(default-data-dir) are written after the privilege drop, so they live in
+/var/suricata (owned by _suricata).
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2599,7 +2599,7 @@ if test "$WINDOWS_PATH" = "yes"; then
+@@ -2519,14 +2519,14 @@ if test "$WINDOWS_PATH" = "yes"; then
      fi
  else
      EXPAND_VARIABLE(localstatedir, e_logdir, "/log/suricata/")
@@ -12,3 +15,12 @@ Index: configure.ac
      EXPAND_VARIABLE(localstatedir, e_logfilesdir, "/log/suricata/files")
      EXPAND_VARIABLE(localstatedir, e_logcertsdir, "/log/suricata/certs")
      EXPAND_VARIABLE(sysconfdir, e_sysconfdir, "/suricata/")
+     EXPAND_VARIABLE(localstatedir, e_localstatedir, "/run/suricata")
+     EXPAND_VARIABLE(datadir, e_datarulesdir, "/suricata/rules")
+-    EXPAND_VARIABLE(localstatedir, e_sghcachedir, "/lib/suricata/cache/sgh")
+-    EXPAND_VARIABLE(localstatedir, e_datadir, "/lib/suricata/data")
++    EXPAND_VARIABLE(localstatedir, e_sghcachedir, "/suricata/cache/sgh")
++    EXPAND_VARIABLE(localstatedir, e_datadir, "/suricata/data")
+     EXPAND_VARIABLE(localstatedir, e_defaultruledir, "/lib/suricata/rules")
+ 
+     e_abs_srcdir=$(cd $srcdir && pwd)

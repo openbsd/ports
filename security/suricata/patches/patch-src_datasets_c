@@ -1,0 +1,56 @@
+Save datasets through a temporary file renamed over the target, and log
+failures.  A "state" file is created by root when it is loaded at startup,
+before the privilege drop, so the dropped process could not reopen it for
+writing and the save was silently lost.
+
+Index: src/datasets.c
+--- src/datasets.c.orig
++++ src/datasets.c
+@@ -858,9 +858,25 @@ void DatasetsSave(void)
+         if (strlen(set->save) == 0)
+             goto next;
+ 
+-        FILE *fp = fopen(set->save, "w");
+-        if (fp == NULL)
++        /* Write a temporary file next to the target and rename it over the
++         * target: the file may have been created by root before the
++         * privilege drop (state files are opened "a+" at load), and the
++         * rename only needs the directory to be writable. Fall back to
++         * writing in place if the temporary file can't be created. */
++        char tmp[PATH_MAX];
++        bool in_place = false;
++        FILE *fp = NULL;
++        if (snprintf(tmp, sizeof(tmp), "%s.tmp", set->save) < (int)sizeof(tmp))
++            fp = fopen(tmp, "w");
++        if (fp == NULL) {
++            in_place = true;
++            fp = fopen(set->save, "w");
++        }
++        if (fp == NULL) {
++            SCLogWarning("dataset %s: unable to save to %s: %s", set->name, set->save,
++                    strerror(errno));
+             goto next;
++        }
+ 
+         SCLogDebug("dumping %s to %s", set->name, set->save);
+ 
+@@ -882,7 +898,18 @@ void DatasetsSave(void)
+                 break;
+         }
+ 
+-        fclose(fp);
++        if (fclose(fp) != 0) {
++            SCLogWarning("dataset %s: unable to save to %s: %s", set->name,
++                    in_place ? set->save : tmp, strerror(errno));
++            if (!in_place)
++                unlink(tmp);
++            goto next;
++        }
++        if (!in_place && rename(tmp, set->save) != 0) {
++            SCLogWarning("dataset %s: unable to rename %s to %s: %s", set->name, tmp, set->save,
++                    strerror(errno));
++            unlink(tmp);
++        }
+ 
+     next:
+         set = set->next;
