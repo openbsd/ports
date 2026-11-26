@@ -1,10 +1,9 @@
 COMMENT =		zstandard fast real-time compression algorithm
 
-V =			1.5.7
-REVISION =		0
+V =			1.6.0
 DISTNAME =		zstd-${V}
 
-SHARED_LIBS =		zstd	7.0	# 1.5.7
+SHARED_LIBS =		zstd	8.0	# 1.6.0
 
 CATEGORIES =		archivers
 
