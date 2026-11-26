@@ -23,6 +23,7 @@ VERSION=	1.30.8
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 REVISION-ldap_auth=	0
+REVISION-stream=	0
 
 PKGNAME-main=		${DISTNAME}
 
@@ -74,9 +75,8 @@ MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
 			-modsecurity -njs -rtmp \
 			-securelink -stream -xslt
 
-# subpackages aren't flavoured, so overwrite the default name/path except
-# for the debug flavor, which applies to all subpackages
-.for _S in ${MULTI_PACKAGES:N-main}
+# Most subpackages are not OpenSSL-flavoured; stream must match nginx.
+.for _S in ${MULTI_PACKAGES:N-main:N-stream}
 FULLPKGNAME${_S}?=	${PKGNAME${_S}}${FLAVOR_EXT:S/-openssl//}
 FULLPKGPATH${_S}?=	${PKGPATH},${_S}${FLAVOR_EXT:S/-openssl//:S/-/,/g}
 .endfor
@@ -129,6 +129,7 @@ LIB_DEPENDS-xslt=	textproc/libxml \
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
 RUN_DEPENDS-main=	# blank (override default)
+RUN_DEPENDS-stream=	${FULLPKGNAME-main}${NO_OPENSSL}${NO_DEBUG}:${BASE_PKGPATH},-main
 RUN_DEPENDS-lua=	${RUN_DEPENDS} \
 			${_MODLUA_RUN_DEPENDS} \
 			devel/pcre
@@ -155,6 +156,8 @@ MODULES+=		perl
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=	--with-debug
+.else
+NO_DEBUG=		-!debug
 .endif
 
 .if ${FLAVOR:Mopenssl}
@@ -168,6 +171,7 @@ WANTLIB-main+=		lib/${EOPENSSL_VSN}/crypto lib/${EOPENSSL_VSN}/ssl
 SUBST_VARS+=		EOPENSSL_LIB EOPENSSL_INC
 .else
 WANTLIB-main+=		crypto ssl
+NO_OPENSSL=		-!openssl
 .endif
 
 .if ${BUILD_PACKAGES:M-lua}
