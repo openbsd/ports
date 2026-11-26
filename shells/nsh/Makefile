@@ -3,7 +3,7 @@ COMMENT =	network switch style shell
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
 V =		1.2.3
-REVISION =	1
+REVISION =	2
 DISTNAME =	nsh-${V}
 SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
 
