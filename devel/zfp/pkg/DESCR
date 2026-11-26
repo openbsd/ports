@@ -1,0 +1,5 @@
+zfp is a compressed number format for multi-dimensional arrays. zfp
+provides compressed-array classes (e.g., for in-memory storage) and
+high-speed, parallel data compression (e.g., for offline storage).
+zfp supports both lossy and lossless compression and fine-grained
+user control over accuracy and storage size.
