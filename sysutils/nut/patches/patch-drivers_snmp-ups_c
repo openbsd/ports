@@ -1,0 +1,12 @@
+Index: drivers/snmp-ups.c
+--- drivers/snmp-ups.c.orig
++++ drivers/snmp-ups.c
+@@ -1803,7 +1803,7 @@ net-snmp/types.h:    long            errstat;
+ 		upslogx(LOG_ERR, "[%s] %s: Timeout: no response from %s",
+ 			upsname?upsname:device_name, buf, sess->peername);
+ 	} else {
+-		snmp_sess_error(sess, &cliberr, &snmperr, &snmperrstr);
++		snmp_error(sess, &cliberr, &snmperr, &snmperrstr);
+ 		upslogx(LOG_ERR, "[%s] %s: %s",
+ 			upsname?upsname:device_name, buf, snmperrstr);
+ 		free(snmperrstr);

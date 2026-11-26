@@ -5,6 +5,7 @@ COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
 V=		2.8.5
+REVISION-snmp=	0
 DISTNAME=	nut-${V:C/-rc.*//}
 PKGNAME=	nut-${V:S/-rc/rc/}
 SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
@@ -120,7 +121,7 @@ LIB_DEPENDS-cgi=	devel/gettext,-runtime \
 			sysutils/nut
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		gnu# -all-static
+USE_LIBTOOL=		gnu# for -all-static
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nut \
 			conf_examplesdir=${PREFIX}/share/examples/nut
 NO_TEST=		Yes
