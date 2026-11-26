@@ -1,3 +1,5 @@
+BROKEN-sparc64 = BezierTest.testLinear2D:90 expected:<0.5> but was:<0.0>
+
 VERSION =	1.9.11
 REVISION =	7
 PKGSPEC =       libgdx->=${VERSION},<1.9.12
