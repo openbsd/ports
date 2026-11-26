@@ -2102,6 +2102,7 @@
      SUBDIR += yyjson
      SUBDIR += z80ex
      SUBDIR += zeal
+     SUBDIR += zfp
      SUBDIR += zizmor
      SUBDIR += zls
      SUBDIR += zmac
