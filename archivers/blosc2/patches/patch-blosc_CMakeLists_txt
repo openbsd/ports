@@ -1,7 +1,7 @@
 Index: blosc/CMakeLists.txt
 --- blosc/CMakeLists.txt.orig
 +++ blosc/CMakeLists.txt
-@@ -234,7 +234,9 @@ if(HAVE_IPP)
+@@ -172,7 +172,9 @@ if(BUILD_PLUGINS AND TARGET zfp)
  endif()
  
  if(UNIX AND NOT APPLE)

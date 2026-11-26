@@ -1,9 +1,11 @@
-V =		2.23.1
 COMMENT =	fast, compressed, persistent binary data store library for C
+
+V =		3.9.0
 PKGNAME =	blosc2-${V}
+
 CATEGORIES =	archivers
 
-SHARED_LIBS +=	blosc2                     6.0 # 0.0
+SHARED_LIBS +=	blosc2                     7.0 # 0.0
 
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc2
@@ -15,7 +17,7 @@ MAINTAINER =	Martin Reindl <martin@catai.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	m lz4 pthread z zstd
+WANTLIB +=	m lz4 pthread z zfp zstd
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
@@ -23,10 +25,9 @@ COMPILER_LANGS = c
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	archivers/lz4 \
-		archivers/zstd
+		archivers/zstd \
+		devel/zfp
 
-CONFIGURE_ARGS =	-DPREFER_EXTERNAL_LZ4=ON \
-			-DPREFER_EXTERNAL_ZLIB=ON \
-			-DPREFER_EXTERNAL_ZSTD=ON
+CONFIGURE_ARGS =	-DBLOSC_DEPENDENCY_MODE=EXTERNAL
 
 .include <bsd.port.mk>

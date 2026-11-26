@@ -1,0 +1,22 @@
+Index: blosc/prefetch.c
+--- blosc/prefetch.c.orig
++++ blosc/prefetch.c
+@@ -578,6 +578,7 @@ static void cache_query_destroy(cache_query *q) {
+    cross a multiple of CHECK_NBYTES.  Only the pages to be read are asked about: the kernel looks at each of them, and
+    the chunks of one slice can lie far apart. */
+ static bool is_cached(const cache_query *q, int64_t start, int64_t stop) {
++#if defined(__linux__)
+   int64_t first = (start - q->lo) / q->page * q->page;  // start of the first page, relative to lo
+   int64_t npages = (stop - q->lo - first + q->page - 1) / q->page;
+ #if defined(SYS_cachestat)
+@@ -597,7 +598,9 @@ static bool is_cached(const cache_query *q, int64_t st
+       return false;
+     }
+   }
+-  return true;
++#endif
++  /* return false - we don't know what is in the page cache */
++  return false;
+ }
+ 
+ 

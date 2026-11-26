@@ -14,11 +14,12 @@ lib/cmake/Blosc2/Blosc2ConfigVersion.cmake
 lib/cmake/Blosc2/Blosc2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Blosc2/Blosc2Targets.cmake
 lib/cmake/Blosc2/Modules/
-lib/cmake/Blosc2/Modules/FindIPP.cmake
 lib/cmake/Blosc2/Modules/FindLZ4.cmake
 lib/cmake/Blosc2/Modules/FindSIMD.cmake
+lib/cmake/Blosc2/Modules/FindZFP.cmake
 lib/cmake/Blosc2/Modules/FindZLIB_NG.cmake
 lib/cmake/Blosc2/Modules/FindZSTD.cmake
+lib/cmake/Blosc2/Modules/merge_static_libs.cmake
 lib/cmake/Blosc2/Modules/toolchain-aarch64.cmake
 lib/cmake/Blosc2/Modules/toolchain-armhf.cmake
 lib/cmake/Blosc2/Modules/toolchain-armsf.cmake
