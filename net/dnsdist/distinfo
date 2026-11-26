@@ -34,7 +34,7 @@ SHA256 (cargo/unsafe-libyaml-0.2.11.tar.gz) = ZzqsWfrLq4qQB8f2EI0R9jtgP3yr/5n6v2
 SHA256 (cargo/winapi-util-0.1.11.tar.gz) = wqexwDyHYSKqQ/MCDmw8PuXAUIHJoAc5+vdQOuuhDSI=
 SHA256 (cargo/windows-link-0.2.1.tar.gz) = 8IBSIuV/dSHWpi42+pFjvIkazUIvlx3v6X1k5w0KT+U=
 SHA256 (cargo/windows-sys-0.61.2.tar.gz) = rhNyKby9bN8Pe4CjHfYXZhRQd930lBanKLAss5If8/w=
-SHA256 (dnsdist-2.1.2.tar.xz) = n8tGnXobURZgbyVjdhND0cWVUjwf1ngIg1+k7cA8JM4=
+SHA256 (dnsdist-2.1.4.tar.xz) = mp0wiHFkaKiFvPJV7l2vF2c88BrWfW+kvhu6sUtNogE=
 SIZE (cargo/anstyle-1.0.14.tar.gz) = 17787
 SIZE (cargo/cc-1.2.66.tar.gz) = 95653
 SIZE (cargo/clap-4.6.1.tar.gz) = 61836
@@ -71,4 +71,4 @@ SIZE (cargo/unsafe-libyaml-0.2.11.tar.gz) = 62101
 SIZE (cargo/winapi-util-0.1.11.tar.gz) = 13368
 SIZE (cargo/windows-link-0.2.1.tar.gz) = 6133
 SIZE (cargo/windows-sys-0.61.2.tar.gz) = 2517186
-SIZE (dnsdist-2.1.2.tar.xz) = 2371820
+SIZE (dnsdist-2.1.4.tar.xz) = 2376012

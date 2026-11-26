@@ -1,7 +1,6 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-2.1.2
-REVISION=		1
+DISTNAME=		dnsdist-2.1.4
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -37,7 +36,7 @@ CONFIGURE_ARGS=		-Dyaml=disabled
 _MODCARGO_DIST_SUBDIR=	cargo/
 .endif
 
-WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} c cdb crypto edit \
+WANTLIB +=		${COMPILER_LIBCXX} c cdb crypto edit \
 			lmdb fstrm nghttp2 pthread re2 sodium 
 
 .if ${PROPERTIES:Mluajit}
