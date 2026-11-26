@@ -1,6 +1,6 @@
 COMMENT=	mailfilter to identify and mark spam
 
-V=		3.7.2
+V=		3.8.1
 DISTNAME=	Mail-MIMEDefang-${V}
 PKGNAME=	mimedefang-${V}
 
@@ -50,6 +50,12 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/mimedefang-filter-openbsd-ports \
+		${PREFIX}/share/examples/mimedefang/
+	${INSTALL_DATA} ${WRKSRC}/examples/stream-by-domain-filter \
+		${PREFIX}/share/examples/mimedefang/
+	${INSTALL_DATA} ${WRKSRC}/examples/example-filter-with-async-checks \
+		${PREFIX}/share/examples/mimedefang/
+	${INSTALL_DATA} ${WRKSRC}/examples/example-filter-with-ml \
 		${PREFIX}/share/examples/mimedefang/
 	${INSTALL_DATA_DIR} ${WRKSRC}/contrib \
 		${PREFIX}/share/examples/mimedefang/contrib
