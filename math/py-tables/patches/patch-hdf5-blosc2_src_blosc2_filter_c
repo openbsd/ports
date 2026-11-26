@@ -1,0 +1,15 @@
+Index: hdf5-blosc2/src/blosc2_filter.c
+--- hdf5-blosc2/src/blosc2_filter.c.orig
++++ hdf5-blosc2/src/blosc2_filter.c
+@@ -17,6 +17,11 @@
+ #include "blosc2_filter.h"
+ #include "b2nd.h"
+ 
++/* c-blosc2 >= 3.0 renamed BLOSC2_MAX_DIM to B2ND_MAX_DIM */
++#ifndef BLOSC2_MAX_DIM
++#define BLOSC2_MAX_DIM B2ND_MAX_DIM
++#endif
++
+ #if defined(__GNUC__)
+ #define PUSH_ERR(func, minor, str, ...) H5Epush(H5E_DEFAULT, __FILE__, func, __LINE__, H5E_ERR_CLS, H5E_PLINE, minor, str, ##__VA_ARGS__)
+ #elif defined(_MSC_VER)

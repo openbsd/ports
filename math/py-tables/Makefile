@@ -1,7 +1,6 @@
 COMMENT=	Python package to manage extremely large amounts of data
 
-MODPY_DISTV=	3.10.2
-REVISION=	2
+MODPY_DISTV=	3.11.1
 DISTNAME=	tables-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
@@ -36,6 +35,7 @@ LIB_DEPENDS=	archivers/lzo2 \
 		math/hdf5
 
 RUN_DEPENDS+=	math/netcdf \
+		math/py-numexpr \
 		sysutils/py-packaging
 
 TEST_DEPENDS=	math/py-numexpr \
