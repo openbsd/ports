@@ -60,6 +60,7 @@ grommunio-sync/lib/core/topcollector.php
 grommunio-sync/lib/core/userstoreinfo.php
 grommunio-sync/lib/exceptions/
 grommunio-sync/lib/exceptions/authenticationrequiredexception.php
+grommunio-sync/lib/exceptions/deviceblockedexception.php
 grommunio-sync/lib/exceptions/fatalexception.php
 grommunio-sync/lib/exceptions/fatalmisconfigurationexception.php
 grommunio-sync/lib/exceptions/fatalnotimplementedexception.php
@@ -136,6 +137,7 @@ grommunio-sync/lib/syncobjects/syncdevicepassword.php
 grommunio-sync/lib/syncobjects/syncemailaddresses.php
 grommunio-sync/lib/syncobjects/syncfindproperties.php
 grommunio-sync/lib/syncobjects/syncfolder.php
+grommunio-sync/lib/syncobjects/syncforwardee.php
 grommunio-sync/lib/syncobjects/syncitemoperationsattachment.php
 grommunio-sync/lib/syncobjects/synclocation.php
 grommunio-sync/lib/syncobjects/syncmail.php
@@ -168,7 +170,6 @@ grommunio-sync/lib/utils/
 grommunio-sync/lib/utils/compat.php
 grommunio-sync/lib/utils/g_RFC822.php
 grommunio-sync/lib/utils/stringstreamwrapper.php
-grommunio-sync/lib/utils/timezoneutil.php
 grommunio-sync/lib/utils/utils.php
 grommunio-sync/lib/wbxml/
 grommunio-sync/lib/wbxml/replacenullcharfilter.php

@@ -1,12 +1,11 @@
 COMMENT=	EAS (Exchange ActiveSync) interface for grommunio
 
-V=		2.5
-REVISION=	0
+V=		2.7
 DISTNAME=	grommunio-sync-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-sync
-GH_COMMIT=	d77dc7c4062c0d324123ea25f6615c301acee5b0
+GH_COMMIT=	d493c82431dc8ab5282bb0aeb6bf8b8bd3b872ad
 
 DISTFILES=	${GH_DISTFILE}
 DISTFILES.a= 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz
@@ -47,7 +46,7 @@ do-install:
 COMPOSER=	${MODPHP_BIN} \
 		-d memory_limit=-1 -d allow_url_fopen=1 \
 		-d suhosin.executor.include.whitelist=phar \
-		/usr/local/libexec/composer.phar
+		/usr/local/bin/composer
 
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
