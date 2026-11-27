@@ -7,6 +7,9 @@ share/icons/hicolor/256x256/apps/otter-browser.png
 share/icons/hicolor/32x32/apps/otter-browser.png
 share/icons/hicolor/48x48/apps/otter-browser.png
 share/icons/hicolor/64x64/apps/otter-browser.png
+share/icons/hicolor/scalable/apps/otter-browser.svg
+share/metainfo/
+share/metainfo/otter-browser.appdata.xml
 share/otter-browser/
 share/otter-browser/locale/
 share/otter-browser/locale/otter-browser_ar.qm

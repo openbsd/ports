@@ -1,2 +1,4 @@
-SHA256 (otter-browser-1.0.03.tar.bz2) = GgRGaDHgtzm3dGK+f9of3ylffDoLP3PQWKtBNH0wxus=
-SIZE (otter-browser-1.0.03.tar.bz2) = 3377150
+SHA256 (otter-browser-1.0.81pre20261125-0d71a947.tar.gz) = UJEwMGnRosjmVF5YZxd8M8omv90HFYpyf0Wp9TFn3Oc=
+SHA256 (otter-qt6-20260520.diff) = 8CwQoiV/MH0VDyZDcCb5bdHf5MUmsk5kqsnJc4D0vLY=
+SIZE (otter-browser-1.0.81pre20261125-0d71a947.tar.gz) = 5217304
+SIZE (otter-qt6-20260520.diff) = 45514
