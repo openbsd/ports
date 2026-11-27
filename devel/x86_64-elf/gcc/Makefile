@@ -14,10 +14,6 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 SITES=		${SITE_GCC:=releases/gcc-$(VERSION)/}
 
-.if ${MACHINE_ARCH} == "powerpc64"
-PATCH_LIST =	patch-* vecstep-*
-.endif
-
 BUILD_DEPENDS+=	devel/bison		\
 		${RUN_DEPENDS}
 LIB_DEPENDS=	devel/mpfr devel/libmpc

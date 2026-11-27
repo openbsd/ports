@@ -5,9 +5,9 @@ renaming suggested at https://gcc.gnu.org/legacy-ml/gcc/2019-07/msg00131.html
 Index: gcc/tree-vect-loop.c
 --- gcc/tree-vect-loop.c.orig
 +++ gcc/tree-vect-loop.c
-@@ -55,6 +55,8 @@ along with GCC; see the file COPYING3.  If not see
- #include "vec-perm-indices.h"
- #include "tree-eh.h"
+@@ -43,6 +43,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include "tree-vectorizer.h"
+ #include "target.h"
  
 +#define vec_step vec_step_
 +

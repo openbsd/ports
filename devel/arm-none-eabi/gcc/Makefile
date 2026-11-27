@@ -1,5 +1,3 @@
-BROKEN-powerpc64 = fails to apply patches/vecstep-*
-
 COMMENT=	gcc for ${CONFIG} cross-development
 
 VERSION=	12.2.0
