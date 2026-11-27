@@ -1,4 +1,5 @@
 @bin bin/sngrep
+@man man/man5/sngreprc.5
 @man man/man8/sngrep.8
 share/examples/sngrep/
 share/examples/sngrep/sngreprc
