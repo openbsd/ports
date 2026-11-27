@@ -1,12 +1,11 @@
 COMMENT=	CalDAV and CardDAV interface for grommunio
 
-V=		1.7
-REVISION=	0
+V=		1.9
 DISTNAME=	grommunio-dav-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-dav
-GH_COMMIT=	91421ef953c331f2cad863d7a0a725bbcf4b5fc3
+GH_COMMIT=	5220793d117b50e6638e5428909379122b48edbd
 
 DISTFILES=	${GH_DISTFILE}
 DISTFILES.a = 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz
@@ -47,7 +46,7 @@ do-install:
 COMPOSER=	${MODPHP_BIN} \
 		-d memory_limit=-1 -d allow_url_fopen=1 \
 		-d suhosin.executor.include.whitelist=phar \
-		/usr/local/libexec/composer.phar
+		/usr/local/bin/composer
 
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}

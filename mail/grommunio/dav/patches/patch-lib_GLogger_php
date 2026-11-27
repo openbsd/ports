@@ -1,7 +1,7 @@
 Index: lib/GLogger.php
 --- lib/GLogger.php.orig
 +++ lib/GLogger.php
-@@ -358,7 +358,7 @@ class GLogger {
+@@ -360,7 +360,7 @@ class GLogger {
  
  			case E_NOTICE:
  			case E_WARNING:

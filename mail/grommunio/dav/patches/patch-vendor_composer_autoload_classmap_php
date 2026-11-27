@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -6,24 +6,24 @@ $vendorDir = dirname(__DIR__);
+@@ -6,31 +6,31 @@ $vendorDir = dirname(__DIR__);
  $baseDir = dirname($vendorDir);
  
  return array(
@@ -19,11 +19,18 @@ Index: vendor/composer/autoload_classmap.php
 -    'KeyCloakTest' => '/var/www/grommunio-mapi-header-php/tests/KeyCloakTest.php',
 -    'MAPIException' => '/var/www/grommunio-mapi-header-php/class.mapiexception.php',
 -    'MAPIExceptionTest' => '/var/www/grommunio-mapi-header-php/tests/MAPIExceptionTest.php',
+-    'MeetingRequestTest' => '/var/www/grommunio-mapi-header-php/tests/MeetingRequestTest.php',
 -    'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
 -    'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
 -    'RecurrenceException' => '/var/www/grommunio-mapi-header-php/class.recurrenceexception.php',
+-    'RecurrenceExceptionDateTest' => '/var/www/grommunio-mapi-header-php/tests/RecurrenceExceptionDateTest.php',
+-    'RecurrenceExpansionTest' => '/var/www/grommunio-mapi-header-php/tests/RecurrenceExpansionTest.php',
+-    'RecurrenceStandaloneTest' => '/var/www/grommunio-mapi-header-php/tests/RecurrenceStandaloneTest.php',
 -    'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
+-    'TaskRecurrenceRegenerationTest' => '/var/www/grommunio-mapi-header-php/tests/TaskRecurrenceRegenerationTest.php',
 -    'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
+-    'TimezoneUtil' => '/var/www/grommunio-mapi-header-php/class.timezoneutil.php',
+-    'TimezoneUtilTest' => '/var/www/grommunio-mapi-header-php/tests/TimezoneUtilTest.php',
 -    'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
 -    'TokenTest' => '/var/www/grommunio-mapi-header-php/tests/TokenTest.php',
 -    'UtilityFunctionsTest' => '/var/www/grommunio-mapi-header-php/tests/UtilityFunctionsTest.php',
@@ -35,11 +42,18 @@ Index: vendor/composer/autoload_classmap.php
 +    'KeyCloakTest' => UMAPI_PATH . '/tests/KeyCloakTest.php',
 +    'MAPIException' => UMAPI_PATH . '/class.mapiexception.php',
 +    'MAPIExceptionTest' => UMAPI_PATH . '/tests/MAPIExceptionTest.php',
++    'MeetingRequestTest' => UMAPI_PATH . '/tests/MeetingRequestTest.php',
 +    'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
 +    'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
 +    'RecurrenceException' => UMAPI_PATH . '/class.recurrenceexception.php',
++    'RecurrenceExceptionDateTest' => UMAPI_PATH . '/tests/RecurrenceExceptionDateTest.php',
++    'RecurrenceExpansionTest' => UMAPI_PATH . '/tests/RecurrenceExpansionTest.php',
++    'RecurrenceStandaloneTest' => UMAPI_PATH . '/tests/RecurrenceStandaloneTest.php',
 +    'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
++    'TaskRecurrenceRegenerationTest' => UMAPI_PATH . '/tests/TaskRecurrenceRegenerationTest.php',
 +    'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
++    'TimezoneUtil' => UMAPI_PATH . '/class.timezoneutil.php',
++    'TimezoneUtilTest' => UMAPI_PATH . '/tests/TimezoneUtilTest.php',
 +    'Token' => UMAPI_PATH . '/class.token.php',
 +    'TokenTest' => UMAPI_PATH . '/tests/TokenTest.php',
 +    'UtilityFunctionsTest' => UMAPI_PATH . '/tests/UtilityFunctionsTest.php',
