@@ -71,14 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/_legacy.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/compat_utils.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/imghdr.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/shutil.py
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/__init__.py
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/${MODPY_PYCACHE}request.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/compat/urllib/request.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/cookies.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/dependencies/Cryptodome.py
@@ -1288,8 +1280,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}peloto
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}peloton.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}performgroup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}performgroup.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}periscope.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}periscope.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}pgatour.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}pgatour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}philharmoniedeparis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2597,7 +2587,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/peertube.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/peertv.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/peloton.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/performgroup.py
-lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/periscope.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/pgatour.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/philharmoniedeparis.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/phoenix.py
