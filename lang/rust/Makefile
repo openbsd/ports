@@ -15,8 +15,8 @@ COMMENT-dev =		Rust dev component
 
 V =			1.99.1
 DISTNAME =		rustc-${V}-src
-REVISION =		0
-REVISION-dev =		1
+REVISION =		1
+REVISION-dev =		2
 
 # always keep REVISION-bootstrap in sync with REVISION-main (if defined)
 # (setting only REVISION is also properly managed)
@@ -174,6 +174,13 @@ USE_GMAKE =		Yes
 
 TEST_DEPENDS +=		devel/git \
 			sysutils/ggrep
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64" || \
+    ${MACHINE_ARCH} == "i386"
+PKG_ARGS +=	-Dcpufeatures=1
+.else
+PKG_ARGS +=	-Dcpufeatures=0
+.endif
 
 # - disable vendor checksum checks
 # - patch openssl-sys using sed

@@ -1,0 +1,1 @@
+lib/rustlib/${TRIPLE_ARCH}/lib/libcpufeatures-${LIBRUST_HASH}115.rmeta

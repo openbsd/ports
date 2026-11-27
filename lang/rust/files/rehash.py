@@ -5,6 +5,10 @@ import os
 
 RE_splitlib = re.compile(r'lib(.+)-([0-9a-fA-F]+)\.(so|rlib|rmeta)')
 
+# libraries present only on some archs. they get their new hashes after
+# all the other libraries, so they don't shift the other filenames.
+deferred_libnames = ["cpufeatures"]
+
 oldhashes = {}    # list of old hashes already assigned to new value
 newhashes = {}    # list of libname associated to a (list of) new hashes
 bash_hash = "?"
@@ -50,19 +54,38 @@ def walk_directory(dirname, proc):
         proc(name, libname, hash)
 
 
-# register old hashes from walk a directory to assign a new hash
-def register_oldhashes_directory(dirname):
-    def register_oldhashes_file(filename, libname, oldhash):
-        # construct the fullpath
-        fullpath = dirname + '/' + filename
+# register old hashes from all directories to assign a new hash.
+#
+# the directory order and the old hashes differ between archs, so the new
+# hashes are given in an order that only depends on the library names:
+# sorted by libname, a library with a rlib (std) before one with only a
+# rmeta (dev), and arch specific libraries at the end.
+def register_oldhashes(dirlist):
+    libs = {}    # oldhash -> [libname, set of extensions, list of paths]
+
+    for dirname in dirlist:
+        def register_oldhashes_file(filename, libname, oldhash):
+            ext = filename.rsplit('.', 1)[1]
+            lib = libs.setdefault(oldhash, [libname, set(), []])
+            lib[1].add(ext)
+            lib[2].append(dirname + '/' + filename)
+
+        walk_directory(dirname, register_oldhashes_file)
+
+    def sortkey(oldhash):
+        libname, exts, paths = libs[oldhash]
+        return (libname in deferred_libnames, libname,
+            'rlib' not in exts, sorted(exts))
+
+    for oldhash in sorted(libs, key=sortkey):
+        libname, exts, paths = libs[oldhash]
 
         # get newhash for libname
         newhash = getnewhash(libname, oldhash)
 
         # debug information
-        print("{:s}: {:s}".format(newhash, fullpath))
-
-    walk_directory(dirname, register_oldhashes_file)
+        for fullpath in paths:
+            print("{:s}: {:s}".format(newhash, fullpath))
 
 
 # rehash a directory
@@ -126,8 +149,7 @@ if __name__ == '__main__':
     ]
 
     # register oldhashes by walking directories
-    for dirname in dirlist:
-        register_oldhashes_directory(dirname)
+    register_oldhashes(dirlist)
 
     # check that all new hashes are assigned
     for libname, hashes in newhashes.items():
