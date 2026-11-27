@@ -1,13 +1,11 @@
 COMMENT =	Quake 3 statistics program
 
 DISTNAME =	fragistics-1.7.0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	textproc games
 
 HOMEPAGE =	https://fragistics.sourceforge.net/
-
-MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # License GPL + Perl
 PERMIT_PACKAGE =	Yes

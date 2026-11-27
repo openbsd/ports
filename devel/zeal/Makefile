@@ -3,13 +3,12 @@ USE_NOBTCFI =	Yes
 COMMENT =	simple offline API documentation browser
 
 V =		0.9.1
+REVISION =	0
 DISTNAME =	zeal-${V}
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://zealdocs.org/
-
-MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

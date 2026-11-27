@@ -3,7 +3,7 @@ COMMENT =		convert images to cross stitch patterns
 GH_ACCOUNT =		kleintom
 GH_PROJECT =		Cstitch
 GH_TAGNAME =		0.9.8
-REVISION =		7
+REVISION =		8
 PKGNAME =		${DISTNAME:L}
 
 DISTFILES.icons =	${DISTNAME:L}-icons{icons}.zip
@@ -22,8 +22,6 @@ MODPY_RUNDEP =		No
 CATEGORIES =		graphics
 
 HOMEPAGE =		https://cstitch.sourceforge.net/
-
-MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

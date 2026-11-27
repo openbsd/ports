@@ -3,15 +3,13 @@ COMMENT =		lightweight C library for fast bi-directional websockets
 GH_ACCOUNT =		warmcat
 GH_PROJECT =		libwebsockets
 GH_TAGNAME =		v4.3.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		websockets 10.0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://libwebsockets.org
-
-MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

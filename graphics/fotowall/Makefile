@@ -3,13 +3,11 @@ COMMENT =	Pictures collage & creativity tool
 V =		1.0
 DISTNAME =	Fotowall-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.enricoros.com/opensource/fotowall/
-
-MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 PERMIT_PACKAGE =	Yes
 

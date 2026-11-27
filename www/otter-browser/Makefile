@@ -3,13 +3,11 @@ USE_WXNEEDED =	Yes
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-1.0.03
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://otter-browser.org/
-
-MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 SITES =		${SITE_SOURCEFORGE:=otter-browser/}
 EXTRACT_SUFX =	.tar.bz2

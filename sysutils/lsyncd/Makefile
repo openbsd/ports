@@ -3,9 +3,8 @@ GH_PROJECT =	lsyncd
 GH_ACCOUNT =	axkibe
 GH_TAGNAME =	release-2.2.2
 DISTNAME =	lsyncd-2.2.2
+REVISION =	0
 CATEGORIES =	sysutils
-
-MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

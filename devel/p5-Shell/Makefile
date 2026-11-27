@@ -5,9 +5,7 @@ PKG_ARCH=	*
 
 DISTNAME=	Shell-0.73
 PKGNAME=	p5-Shell-0.73
-REVISION=	0
-
-MAINTAINER =    Adam Wolk <awolk@openbsd.org>
+REVISION=	1
 
 CATEGORIES=	devel
 
