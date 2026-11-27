@@ -5,15 +5,17 @@ GH_PROJECT =		wallet-engine
 GH_TAGNAME =		v0.0.7
 
 # keep in sync with net/tdesktop
-TD_TAG =		v7.4.4
+TD_TAG =		v7.4.6
 TD_SNAP_YAML =		https://github.com/telegramdesktop/tdesktop/raw/refs/tags/${TD_TAG}/snap/snapcraft.yaml
 # see get-patch-commit target
-TD_PATCH_COMMIT =	23d349a3ff09dbc1fa8127ce39ba9223de0edf21
+TD_PATCH_COMMIT =	8a28b8433af70771c3d101c776ad837a94bd47ec
 PATCHFILES.td =		${TD_PATCH_COMMIT}{wallet-engine}.patch
 SITES.td =		https://github.com/desktop-app/patches/raw/${TD_PATCH_COMMIT}/
 PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =		devel
+
+REVISION =		0
 
 SHARED_LIBS =		wallet_engine  0.0
 

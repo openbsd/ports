@@ -1,4 +1,4 @@
-SHA256 (23d349a3ff09dbc1fa8127ce39ba9223de0edf21.patch) = Z6L8eQllRL/t/7utFHmLbtrEPPV1e0G4/B7eXW+OXNY=
+SHA256 (8a28b8433af70771c3d101c776ad837a94bd47ec.patch) = R9zeNHfgVt6GuhPIz1Xq30sTCdDpBLvgarBZLw++LP4=
 SHA256 (cargo/aead-0.5.2.tar.gz) = 0SJBPyhM8tYvsbfbl+Au24zaltdpsW5EOk9hleNWYrA=
 SHA256 (cargo/aes-0.8.4.tar.gz) = sWn3ptR0IjagoAxUG4RZkdCsQ+VGgxrxJJdTq0w6o6A=
 SHA256 (cargo/android_system_properties-0.1.6.tar.gz) = riIWScmXam9sVq4frPQQ892zPMZhxLe2ECCpEtQjf7w=
@@ -320,7 +320,7 @@ SHA256 (cargo/zerovec-0.11.6.tar.gz) = kPkRy8NZq2rxc3fSQiJfTXURmuyH6nEaiAmHsYzXs
 SHA256 (cargo/zerovec-derive-0.11.3.tar.gz) = Yl3EJcqw3KbcPDMZUG5lk9ywip84fqOyhNvVKpLEBVU=
 SHA256 (cargo/zmij-1.0.23.tar.gz) = KWZtCrv60ePcTc9hRHMN06OrIlu72sgzGTRbG0TM/Bs=
 SHA256 (wallet-engine-0.0.7.tar.gz) = lmAKbzk6J6D4SkGtHW1p+WAU7cKeTZB8BellZmsKZs8=
-SIZE (23d349a3ff09dbc1fa8127ce39ba9223de0edf21.patch) = 135057
+SIZE (8a28b8433af70771c3d101c776ad837a94bd47ec.patch) = 483058
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/android_system_properties-0.1.6.tar.gz) = 5625
