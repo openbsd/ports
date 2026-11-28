@@ -67,6 +67,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/drone-ci.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-actions.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-discussion.json
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-funding.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-config.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-issue-forms.json
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/github-workflows.json
@@ -105,6 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/drone-ci.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-actions.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-discussion.sha256
+lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-funding.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-issue-config.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-issue-forms.sha256
 lib/python${MODPY_VERSION}/site-packages/check_jsonschema/builtin_schemas/vendor/sha256/github-workflows.sha256
