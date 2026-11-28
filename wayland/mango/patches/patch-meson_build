@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -74,7 +74,6 @@ c_args = [
+@@ -75,7 +75,6 @@ c_args = [
    '-Wno-unused-parameter',
    '-Wno-unused-result',
    '-DWLR_USE_UNSTABLE',

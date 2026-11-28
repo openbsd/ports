@@ -1,6 +1,6 @@
 COMMENT =		lightweight, high-performance Wayland compositor
 
-V =			0.18.6
+V =			0.19.4
 DIST_TUPLE =		github mangowm mango ${V} .
 
 CATEGORIES =		wayland
@@ -12,7 +12,7 @@ MAINTAINER =		Volker Schlecht <volker@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c cairo cjson glib-2.0 gobject-2.0 input m pango-1.0
+WANTLIB += GLESv2 c cairo cjson glib-2.0 gobject-2.0 input m pango-1.0
 WANTLIB += pangocairo-1.0 pcre2-8 pixman-1 scenefx-0.5 wayland-client
 WANTLIB += wayland-server xcb xcb-icccm xcb-randr xkbcommon
 
