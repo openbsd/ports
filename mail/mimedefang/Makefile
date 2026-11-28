@@ -3,6 +3,7 @@ COMMENT=	mailfilter to identify and mark spam
 V=		3.8.1
 DISTNAME=	Mail-MIMEDefang-${V}
 PKGNAME=	mimedefang-${V}
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -19,6 +20,7 @@ WANTLIB += c m milter perl pthread
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mail/p5-Mail-Tools \
 		mail/p5-MIME-tools \
+		net/p5-Net-DNS \
 		security/p5-Crypt-OpenSSL-Random \
 		security/p5-IO-Socket-SSL \
 		sysutils/p5-Unix-Syslog
