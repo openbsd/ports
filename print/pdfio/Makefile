@@ -1,6 +1,6 @@
 COMMENT=		C library for reading and writing PDF files
 
-V=			1.6.6
+V=			1.6.7
 DISTNAME=		pdfio-${V}
 
 SHARED_LIBS=		pdfio 0.0 # 1
