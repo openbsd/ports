@@ -1,7 +1,7 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.62.1
+GNOME_VERSION=		3.62.2
 
 CATEGORIES=		databases productivity
 
@@ -35,7 +35,6 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/cmake \
 			devel/dconf \
-			textproc/intltool \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gperf
