@@ -143,7 +143,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.35.0.mod) = MQSDbVyS8EbmQUnd0cQt8jeF
 SHA256 (go_modules/golang.org/x/tools/@v/v0.51.0.mod) = mx1UM0nJNG+FkAxlalZtF4DVn/R5zw2Ii5UW0h7H33s=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.52.0.mod) = tCcryyyZkBsYeOBKVsilhKwdzp1YRKPBzGimJ1Rv5v4=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.52.0.zip) = kLKpQapfL+h1ZLjjjD8DeW3i41l7f0xSqaalMgGzLEg=
-SHA256 (jjui-v0.10.13.zip) = qUlHpla9ORYbPf+Z4pyPvMGgJkOix0KhBofDegsMqMA=
+SHA256 (jjui-v0.10.14.zip) = xzjPoR1U+6WUoKZUoM6wvZcrGbS0rG++KyPxgfyZqsQ=
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.2.1.mod) = 1225
 SIZE (go_modules/charm.land/bubbles/v2/@v/v2.2.1.zip) = 159166
 SIZE (go_modules/charm.land/bubbletea/v2/@v/v2.0.8.mod) = 1006
@@ -289,4 +289,4 @@ SIZE (go_modules/golang.org/x/tools/@v/v0.35.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.51.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.52.0.mod) = 301
 SIZE (go_modules/golang.org/x/tools/@v/v0.52.0.zip) = 2874579
-SIZE (jjui-v0.10.13.zip) = 529993
+SIZE (jjui-v0.10.14.zip) = 532238
