@@ -3,6 +3,7 @@ COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 V=		3.2.1
 DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
+REVISION=	1
 
 SHARED_LIBS+=	jpeg		72.0
 SHARED_LIBS+=	turbojpeg	3.0
@@ -25,10 +26,6 @@ MODULES=	devel/cmake
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
-.endif
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-CFLAGS+=	-msse2
 .endif
 
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
