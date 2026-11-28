@@ -7,7 +7,7 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		27.3.4.19
+V=		27.3.4.20
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-27\.
 PKGNAME=	erlang-${V}
@@ -64,41 +64,41 @@ ERL_VERSIONS=	\
 ASN1_VSN        5.3.4.3 \
 COMMON_TEST_VSN 1.27.7.1 \
 COMPILER_VSN    8.6.1.8 \
-CRYPTO_VSN      5.5.3.5 \
+CRYPTO_VSN      5.5.3.6 \
 DEBUGGER_VSN    5.5.0.1 \
 DIALYZER_VSN    5.3.1.1 \
 DIAMETER_VSN    2.4.1.3 \
 EDOC_VSN        1.3.2 \
-EI_VSN          5.5.2.2 \
+EI_VSN          5.5.2.3 \
 ELDAP_VSN       1.2.14.2 \
 EMACS_VSN       2.7.0 \
 ERL_DOCGEN_VSN  1.5.2 \
 ET_VSN          1.7.1 \
 EUNIT_VSN       2.9.1 \
 FTP_VSN         1.2.3.1 \
-INETS_VSN       9.3.2.8 \
+INETS_VSN       9.3.2.9 \
 JINTERFACE_VSN  1.14 \
 KERNEL_VSN      10.2.7.5 \
 MEGACO_VSN      4.7.2.3 \
-MNESIA_VSN      4.23.5.6 \
+MNESIA_VSN      4.23.5.7 \
 OBSERVER_VSN    2.17 \
-ODBC_VSN        2.15.1 \
-OS_MON_VSN      2.10.1 \
+ODBC_VSN        2.15.2 \
+OS_MON_VSN      2.10.1.1 \
 PARSETOOLS_VSN  2.6 \
 PUBLIC_KEY_VSN  1.17.1.7 \
 RELTOOL_VSN     1.0.1 \
 RUNTIME_TOOLS_VSN       2.1.1 \
 SASL_VSN        4.2.2.1 \
-SNMP_VSN        5.18.2.2 \
-SSH_VSN         5.2.11.14 \
-SSL_VSN         11.2.12.14 \
-STDLIB_VSN      6.2.2.5 \
+SNMP_VSN        5.18.2.3 \
+SSH_VSN         5.2.11.15 \
+SSL_VSN         11.2.12.15 \
+STDLIB_VSN      6.2.2.6 \
 SYNTAX_TOOLS_VSN        3.2.2.2 \
 TFTP_VSN        1.2.2.1 \
 TOOLS_VSN       4.1.1.1 \
 WX_VSN          2.4.3.1 \
-XMERL_VSN       2.1.3.3 \
-ERTS_VSN        15.2.7.14
+XMERL_VSN       2.1.3.4 \
+ERTS_VSN        15.2.7.15
 
 .include <bsd.port.arch.mk>
 
