@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -421,10 +421,6 @@ if( VVDEC_ENABLE_ITT )
+@@ -453,10 +453,6 @@ if( VVDEC_ENABLE_ITT )
    endif()
  endif()
  

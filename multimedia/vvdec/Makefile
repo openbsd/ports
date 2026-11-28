@@ -1,9 +1,8 @@
 COMMENT=	Versatile Video Coding (VVC) decoder
 
-DISTNAME=	vvdec-3.1.0pl20260121
 GH_ACCOUNT=	fraunhoferhhi
 GH_PROJECT=	vvdec
-GH_COMMIT=	872a790411cbb6b5a296085d02253335ccda47b2
+GH_TAGNAME=	v3.3.0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	vvdec	0.0
@@ -29,5 +28,14 @@ CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=ON \
 .if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS+=-DVVDEC_ENABLE_LINK_TIME_OPT=OFF
 .endif
+
+VVDEC_BITSTREAMS =	${WRKSRC}/ext/bitstreams
+
+pre-test:
+	@if ! [ -e ${VVDEC_BITSTREAMS}/WRAP_D_InterDigital_4/WRAP_D_InterDigital_4.bit ]; then \
+		echo "\n>>> Tests require the JVET VVC conformance bitstreams. Please run:"; \
+		echo ">>> cd ${WRKBUILD} && ${LOCALBASE}/bin/cmake -DVVDEC_ENABLE_BITSTREAM_DOWNLOAD=ON .\n"; \
+		exit 1; \
+	fi
 
 .include <bsd.port.mk>
